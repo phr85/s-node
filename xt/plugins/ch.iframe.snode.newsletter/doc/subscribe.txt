@@ -1,0 +1,37 @@
+= ch.iframe.snode.newsletter (subscribe) =
+
+== Funktion ==
+
+
+== Möglicher Einsatzbereich ==
+
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+*data array Alle Daten inklusive Status- und Fehlermeldungen
+*MAIL_DATA gleich wie data, nur für die Notifikation via E-Mail
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Im Standard-Template gibt es eine Liste mit allen Kategorien, in denen man sich einschreiben kann. Will man gezielt nur für bestimmte
+Kategorien eine Einschreibung möglich machen, muss man diese im Template als versteckte Felder angeben.
+
+Der Benutzer wird nach dem Einschreiben mit einem E-Mail informiert. Unter /ch.iframe.snode.newsletter/mail/confirmation.tpl 
+befindet sich das zugehörige Template.
+
+Wenn in der Konfiguration (config.inc.php) des Plugins der Wert "inform_subscriptions" auf true gesetzt wird, wird automatisch auch 
+noch der Adminstrator der Seite über eingehende Eintragungen informiert.
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.newsletter" module="subscribe" style="default.tpl" ncpos="1"}
+
+== Todo ==

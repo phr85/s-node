@@ -1,0 +1,3 @@
+{include file="includes/header/header.tpl"}
+{plugin package="ch.iframe.snode.articles" module="viewer" style="default.tpl" id="32"}{plugin package="ch.iframe.snode.filemanager" module="downloadcenter" folder="3" style="default.tpl" ncpos=""}{plugin package="ch.iframe.snode.articles" module="viewer" }{plugin package="ch.iframe.snode.news" module="viewer" }{plugin package="ch.iframe.snode.articles" module="viewer" }
+{include file="includes/footer/footer.tpl"}

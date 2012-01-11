@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>2900</baseid>
+    <id>ch.iframe.snode.units</id>
+    <version>$Rev: 2158 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Units</name>
+            <description>Einheiten</description>
+        </de>
+        <en>
+            <name>Units</name>
+            <description>Units</description>
+        </en>
+    </lang>
+    <contenttype>
+        <id>2900</id>
+        <title>Units</title>
+        <content_table>units</content_table>
+        <title_field>standard</title_field>
+        <icon>document.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    <page>
+        <parentnode>100</parentnode>
+        <id>142</id>
+        <lang>
+            <de>
+                <url>index.php?TPL=143&amp;adminmode=1</url>
+                <title>Katalog</title>
+                <file>142.tpl</file>
+            </de>
+            <en>
+                <url>index.php?TPL=143&amp;adminmode=1</url>
+                <title>Catalog</title>
+                <file>142.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <page>
+        <parentnode>142</parentnode>
+        <id>144</id>
+        <lang>
+            <de>
+                <title>Einheiten</title>
+                <file>144.tpl</file>
+            </de>
+            <en>
+                <title>Einheiten</title>
+                <file>144.tpl</file>
+            </en>
+        </lang>
+    </page>     
+    
+    <table>
+        <id>units</id>
+        <mysql>
+           CREATE TABLE `{TABLE.units}` (
+           `id` int(11) unsigned NOT NULL auto_increment,
+           `standard` varchar(20) default NULL,
+           PRIMARY KEY  (`id`),
+           UNIQUE KEY `id` (`id`),
+           KEY `id_2` (`id`)
+           ) ENGINE=MyISAM;
+        </mysql>
+    </table>
+    
+    <table>
+        <id>units_details</id>
+        <mysql>
+           CREATE TABLE `{TABLE.units_details}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `lang` varchar(5) NOT NULL default '',
+              `short` varchar(10) NOT NULL default '',
+              `full` varchar(100) NOT NULL default '',
+              PRIMARY KEY  (`id`,`lang`)
+            ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+        </mysql>
+    </table>
+    
+    <table>
+        <id>units_relations</id>
+        <mysql>
+           CREATE TABLE `{TABLE.units_relations}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `relation_id` int(10) unsigned NOT NULL default '0',
+              `factor` float NOT NULL default '1',
+              PRIMARY KEY  (`id`,`relation_id`),
+              UNIQUE KEY `id` (`id`,`relation_id`),
+              KEY `id_2` (`id`)
+            ) ENGINE=MyISAM;
+        </mysql>
+    </table>
+    
+    <changelog>
+        <rev>1898 changelog added</rev>
+    </changelog>
+</package>

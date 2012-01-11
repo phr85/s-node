@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>270</baseid>
+    <id>ch.iframe.snode.articles</id>
+    <version>$Rev: 1533 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Artikel (Demodaten)</name>
+            <description>Demodaten für die Artikelverwaltung</description>
+        </de>
+        <en>
+            <name>Articles (Sample Data)</name>
+            <description>Demo data for the articles manager</description>
+        </en>
+    </lang>
+  
+    <changelog>
+        <rev>2700 new sampledata</rev>
+        <rev>1600 Initial release</rev>
+    </changelog>
+</package>

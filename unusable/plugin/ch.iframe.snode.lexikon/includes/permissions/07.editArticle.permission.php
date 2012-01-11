@@ -1,0 +1,23 @@
+<?php
+$GLOBALS['plugin']->addPermission("Edit Article", array("deactivateArticle",
+                                                        "activateArticle",
+                                                        "editArticle",
+                                                        "saveArticle",
+                                                        "activateArticleLang",
+                                                        "deactivateArticleLang",
+                                                        "removeArticleFromTree",
+                                                        "addArticlesToTreeTab",
+                                                        "addArticleToTree",
+                                                        "addImageToArticle",
+                                                        "deleteImageFromArticle",
+                                                        "setMainImage",
+                                                        "exitArticle",
+                                                        "exitSaveArticle",
+                                                        "moveImageDown",
+                                                        "moveImageUp",
+                                                        "addArticleRelation",
+                                                        "removeRelatedArticleFromArticle",
+                                                        "addArticleSet",
+                                                        "removeSetArticleFromArticle"
+                                                        ));
+?>

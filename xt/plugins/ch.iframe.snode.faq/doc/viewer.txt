@@ -1,0 +1,32 @@
+= ch.iframe.snode.faq (viewer) =
+
+== Funktion ==
+Darstellung einer Frage mit Antwort
+
+== Möglicher Einsatzbereich ==
+
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+faq_id           | integer      | Identifikationsnummer der darzustellenden Frage (Autoval R)| 23
+list_tpl         | string       | Seitennummer der Listenansicht (Autoval R)| 10252
+
+
+
+== Templatevariablen ==
+*xt1400_selected array Daten zur ausgewählten Kategorie
+*xt1400_question array  Daten zur Frage
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.faq" module="viewer" list_tpl=10210 faq_id=1 style="default.tpl"}
+
+== Todo ==

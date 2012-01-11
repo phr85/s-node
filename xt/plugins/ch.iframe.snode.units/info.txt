@@ -1,0 +1,6 @@
+Faktoren
+select f.id as main_id , u.id,f.factor, u.standard,  m.standard
+from xt_units_relations as f 
+LEFT JOIN xt_units as u on(f.relation_id=u.id)
+LEFT JOIN xt_units as m on(m.id = 2)
+where f.relation_id = 2 or f.id = 2 order by f.factor asc

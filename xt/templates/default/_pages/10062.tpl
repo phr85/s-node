@@ -1,0 +1,1 @@
+{plugin package="ch.iframe.snode.filemanager" module="impressions" category="15" count="1" style="default.tpl" ncpos="1"}{plugin package="ch.iframe.snode.navigation" module="single_node" level="2" style="default.tpl" ncpos="2"}

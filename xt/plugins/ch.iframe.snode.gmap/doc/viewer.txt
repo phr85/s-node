@@ -1,0 +1,34 @@
+= ch.iframe.snode.gmap (viewer) =
+
+== Funktion ==
+Dieses Modul integriert Karten von Google-Maps.
+
+== Möglicher Einsatzbereich ==
+Kartendarstellung
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+id               | integer      | Identifikationsnummer der zu ladenden Karte | default.tpl
+width            | integer      | Kartenbreite in Pixel | 300
+height           | string       | Kartenhöhe in Pixel | 300
+keepassignment	 | boolen		| Templatezuweisungen behalten | true
+
+== Templatevariablen ==
+*xt7000_viewer array Alle Daten Zur Karte
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Geben Sie ihren API-Key von google maps in der Konfigurationsdatei dieses Plugins an.
+Beispiel für ch.iframe.snode.gmap/includes/config.inc.php:
+XT::addConfig("key","ABQIAAAAzsQgAraedoQ0iLtU3UoBpBRXOyrdeTyf6c28WuREa1OaB5p1rBQj-l_CHT1f7eczYWrQdcOH4gTzUw");
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.gmap" module="viewer" id="123" width="200" height="150"}
+
+== Todo ==

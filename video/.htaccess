@@ -1,0 +1,4 @@
+#Rewrite Rule fuer videos
+RewriteEngine on
+RewriteBase /video
+RewriteRule ^(.+).(.*)$ /videodownload.php?file_id=$1 [L]

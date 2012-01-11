@@ -1,0 +1,3 @@
+{include file="includes/header/header.tpl"}
+{plugin package="ch.iframe.snode.newsmanager" module="list" categories="0,3,2,1" target_tpl="194" count="5" style="default.tpl" link2details="yes" mode="normal" ncpos="1"}{plugin package="ch.iframe.snode.articles" module="list" categories="0,9,2,4" target_tpl="113" count="5" style="default.tpl" ncpos="2"}{plugin package="ch.iframe.snode.newsmanager" module="list" categories="0,2,3" target_tpl="194" count="5" style="default.tpl" ncpos="3"}
+{include file="includes/footer/footer.tpl"}

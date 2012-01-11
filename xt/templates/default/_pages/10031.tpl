@@ -1,0 +1,1 @@
+{plugin package="ch.iframe.snode.articles" module="viewer" id="6" style="default.tpl" ncpos="1"}{plugin package="ch.iframe.snode.articles" module="viewer" style="default.tpl" id="26" ncpos="2"}{plugin package="ch.iframe.snode.articles" module="list" link2details="yes" mode="small" categories="0,9,2,4,5" target_tpl="113" count="5" style="default.tpl" ncpos="3"}

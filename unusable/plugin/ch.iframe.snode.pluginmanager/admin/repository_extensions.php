@@ -1,0 +1,1 @@
+<?php  XT::log('C:\svn\xt\public_html/../plugins/ch.iframe.snode.pluginmanager/admin/repository_extensions.php autocreated',__FILE__,__LINE__,XT_WARNING); ?>

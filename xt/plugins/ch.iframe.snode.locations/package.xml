@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>2000</baseid>
+    <id>ch.iframe.snode.locations</id>
+    <version>$Rev: 0 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Standorte</name>
+            <description>Verwalten der Firmenniederlassungen und Standorte</description>
+        </de>
+        <en>
+            <name>Company locations</name>
+            <description>Manage company locations</description>
+        </en>
+    </lang>
+    
+    <page>
+        <parentnode>100</parentnode>
+        <id>250</id>
+        <lang>
+            <de>
+                <url>/index.php?TPL=275&amp;adminmode=1</url>
+                <title>Unternehmen</title>
+                <file>250.tpl</file>
+            </de>
+            <en>
+                <url>/index.php?TPL=275&amp;adminmode=1</url>
+                <title>Company</title>
+                <file>250.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>250</parentnode>
+        <id>275</id>
+        <lang>
+            <de>
+                <title>Standorte</title>
+                <file>275.tpl</file>
+            </de>
+            <en>
+                <title>Company locations</title>
+                <file>275.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <contenttype>
+        <id>2000</id>
+        <title>Company location</title>
+        <open_url></open_url>
+        <content_table>company_locations</content_table>
+        <title_field>title</title_field>
+        <icon>factory.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    
+    <table>
+        <id>company_locations</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.company_locations}` (
+                  `id` int(11) unsigned NOT NULL auto_increment,
+                  `active` tinyint(1) NOT NULL default '0',
+                  `title` varchar(255) default NULL,
+                  `cityCode` varchar(10) default NULL,
+                  `city` varchar(255) default NULL,
+                  `street` varchar(255) default NULL,
+                  `street_nr` varchar(10) default NULL,
+                  `country` char(3) default NULL,
+                  `description` varchar(255) NOT NULL default '',
+                  `image` int(11) NOT NULL default '0',
+                  `image_version` int(11) NOT NULL default '0',
+                  `creation_date` int(11) NOT NULL default '0',
+                  `creation_user` int(11) NOT NULL default '0',
+                  `mod_date` int(11) NOT NULL default '0',
+                  `mod_user` int(11) NOT NULL default '0',
+                  PRIMARY KEY  (`id`)
+                ) ENGINE=MyISAM
+            ]]>
+        </mysql>
+    </table>
+    <file>xt/templates/default/_pages/275.tpl</file>
+    <changelog>
+        <rev>0 initial release</rev>
+    </changelog>
+</package>

@@ -1,0 +1,1 @@
+{"Your new password has been sent to"|translate}: <b>{$EMAIL}</b>

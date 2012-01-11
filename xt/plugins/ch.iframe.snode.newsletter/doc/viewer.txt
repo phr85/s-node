@@ -1,0 +1,29 @@
+= ch.iframe.snode.newsletter (viewer) =
+
+== Funktion ==
+Anzeige eines Newsletters
+
+== Möglicher Einsatzbereich ==
+Anzeige eines Newsletters aus einer Archivliste (Modul list) oder aus dem Newsletter selber.
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+id               | int          | id des Newsletters	 | default.tpl
+
+== Templatevariablen ==
+*xt5300_viewer array Alle Daten zum gewählten Newsletter
+== Sessionvarablen ==
+
+== Hinweise ==
+Diese Funktion ist standardmässig in Template 172 implementiert.
+
+Wird kein Parameter id angeben, wird diese aus der Requestvariable entnommen.
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.newsletter" module="viewer"}
+
+== Todo ==

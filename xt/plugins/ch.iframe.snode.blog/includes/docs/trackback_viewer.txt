@@ -1,0 +1,23 @@
+trackback_viewer
+================
+Das Modul trackback_viewer stellt alle eingehenden Trackbacks dar.
+
+Bsp für ch.iframe.snode.articles/viewer/default.txt:
+
+{subplugin
+	package="ch.iframe.snode.blog"
+	module="trackback_viewer"
+	content_type="270"
+	content_id=$ARTICLE.id
+}
+
+Parameter:
+----------
+
+package			: 	Package in dem sich der trackback_viewer befindet.
+
+moduel			:	Name des Moduls, also trackback_viewer.
+
+content_type	:	Content type des einkommenden Trackbacks.
+
+content_id		:	Content id des einkommenden Trackbacks. 

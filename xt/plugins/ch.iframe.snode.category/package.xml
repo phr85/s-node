@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>5500</baseid>
+    <id>ch.iframe.snode.category</id>
+    <version>$Rev: 4563 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Kategorien</name>
+            <description>Kategorien verwalten</description>
+        </de>
+        <en>
+            <name>Categories</name>
+            <description>Manage categories</description>
+        </en>
+    </lang>
+    <contenttype>
+        <id>5500</id>
+        <title>Category</title>
+        <open_url></open_url>
+        <content_table>category_nodes</content_table>
+        <title_field>title</title_field>
+        <icon>colors.png</icon>
+        <id_field>node_id</id_field>
+    </contenttype>
+
+    <page>
+        <parentnode>121</parentnode>
+        <id>550</id>
+        <lang>
+            <de>
+                <url></url>
+                <title>Kategorien</title>
+                <file>550.tpl</file>
+            </de>
+            <en>
+                <url></url>
+                <title>Categories</title>
+                <file>550.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <page>
+        <parentnode>111</parentnode>
+        <id>555</id>
+        <lang>
+            <de>
+                <title>Kategorie Picker</title>
+                <file>555.tpl</file>
+            </de>
+            <en>
+                <title>Category Picker</title>
+                <file>555.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>557</id>
+        <lang>
+            <de>
+                <title>Univeral Picker 1</title>
+                <file>557.tpl</file>
+            </de>
+            <en>
+                <title>Universal Picker 1</title>
+                <file>557.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <contenttree>
+        <id>5500</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Kategorien</title>
+            </de>
+            <en>
+                <title>Categories</title>
+            </en>
+        </lang>
+    </contenttree>
+    <module>
+        <id>tree</id>
+        <treenode>5500</treenode>
+        <lang>
+            <de>
+                <name>Kategorien Baum</name>
+                <description>Anzeigen der Kategorien</description>
+            </de>
+            <en>
+                <name>Category tree</name>
+                <description>Shows categories</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>start_node</id>
+            <lang>
+                <de>
+                    <title>Startpunkt</title>
+                    <description>Optional: Ab welchem node (als id) soll die Navigation dargestellt werden</description>
+                </de>
+                <en>
+                    <title>Start node</title>
+                    <description>optional: From wich node you want to display the tree</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+        <param>
+            <id>details_tpl</id>
+            <lang>
+                <de>
+                    <title>Detailseite</title>
+                    <description>Gibt an welches TPL die detailieren Informationen zum node enthält (in der Regel ist dies das TPL welches das modul "category_listing enth�lt", dies kann auch das TPL sein das "category_tree" ,also sich selbst, enth�lt)</description>
+                </de>
+                <en>
+                    <title>Details page</title>
+                    <description>Which page (TPL) contains the module category_listing?</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>lang</id>
+            <lang>
+                <de>
+                    <title>Sprache</title>
+                    <description>Optional: Welche Sprachversion vom Baum soll verwendet werden (Default: aktuelle Sprache)</description>
+                </de>
+                <en>
+                    <title>Language</title>
+                    <description>optional: which language of the tree you want have to display (default: actual system language)</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+
+    <table>
+        <id>category_tree</id>
+        <mysql>
+            CREATE TABLE `{TABLE.category_tree}` (
+            `id` int(11) NOT NULL auto_increment,
+            `l` int(11) NOT NULL default '0',
+            `r` int(11) NOT NULL default '0',
+            `pid` int(11) NOT NULL default '0',
+            `level` int(11) NOT NULL default '0',
+            `tree_id` int(11) unsigned default '1',
+            PRIMARY KEY  (`id`),
+            KEY `l` (`l`),
+            KEY `r` (`r`),
+            KEY `level` (`level`),
+            KEY `pid` (`pid`)
+            ) ENGINE=MyISAM;
+            INSERT INTO {TABLE.category_tree} VALUES("1","1","2","0","1","1");
+        </mysql>
+    </table>
+
+    <table>
+        <id>category_nodes</id>
+        <mysql>
+            CREATE TABLE `{TABLE.category_nodes}` (
+            `node_id` int(11) unsigned NOT NULL default '0',
+            `title` varchar(255) default NULL,
+            `subtitle` varchar(255) default NULL,
+            `description` text,
+            `lang` char(3) NOT NULL default '',
+            `use_description` tinyint(3) unsigned default '0',
+            `public` tinyint(1) NOT NULL default '1',
+            `active` tinyint(1) unsigned NOT NULL default '1',
+            `image` int(11) unsigned NOT NULL default '0',
+            `image_version` int(11) unsigned NOT NULL default '0',
+            PRIMARY KEY  (`node_id`,`lang`)
+            ) ENGINE=MyISAM;
+
+            INSERT INTO {TABLE.category_nodes} VALUES("1","Root","","","de","0","1","1","0","0");
+            INSERT INTO {TABLE.category_nodes} VALUES("1","Root","","","en","0","1","1","0","0");
+        </mysql>
+    </table>
+    <changelog>
+        <rev>2489 started</rev>
+    </changelog>
+</package>

@@ -1,0 +1,33 @@
+= ch.iframe.snode.googlemaps (viewer) =
+
+== Funktion ==
+Darstellung und einer Karte
+
+== Möglicher Einsatzbereich ==
+Standorte einer Organisation, Tourdaten für ein Konzert..
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+id               | integer      | Identifikationsnummer der Karte (Autoval R)| 15
+directiontpl     | integer      | Templateseitennummer des Directions Modul (Autoval P)| 10065
+listtpl          | integer      | Templateseitennummer der Kartenliste | 10067
+width            | integer      | Breite der Karte | 400
+height           | integer     	| Hoehe der Karte | 250
+
+== Templatevariablen ==
+*xt9100_viewer array Sämtliche Daten zur Karte
+
+== Sessionvarablen ==
+
+== Hinweise ==
+-
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.googlemaps" directiontpl=10124 listtpl=10122 module="viewer" width="400" height="250" style="default.tpl"}
+
+== Todo ==

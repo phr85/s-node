@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>4600</baseid>
+    <id>ch.iframe.snode.translations</id>
+    <version>$Rev: 4577 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Übersetzungen</name>
+            <description>Übersetzungen verwalten</description>
+        </de>
+        <en>
+            <name>Translations</name>
+            <description>Manage translations</description>
+        </en>
+    </lang>
+    <page>
+        <parentnode>100</parentnode>
+        <id>121</id>
+        <lang>
+            <de>
+                <title>System</title>
+                <file>121.tpl</file>
+                <url>/index.php?TPL=122&amp;adminmode=1</url>
+            </de>
+            <en>
+                <title>System</title>
+                <file>121.tpl</file>
+                <url>/index.php?TPL=122&amp;adminmode=1</url>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>121</parentnode>
+        <id>243</id>
+        <lang>
+            <de>
+                <title>Übersetzungen</title>
+                <file>243.tpl</file>
+            </de>
+            <en>
+                <title>Translations</title>
+                <file>243.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>244</id>
+        <lang>
+            <de>
+                <title>Live Übersetzungen</title>
+                <file>244.tpl</file>
+            </de>
+            <en>
+                <title>Live Translations</title>
+                <file>244.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <file>xt/includes/classes/lang.class.php</file>
+</package>

@@ -1,0 +1,1 @@
+{plugin package="ch.iframe.snode.shop" module="myaccount"}

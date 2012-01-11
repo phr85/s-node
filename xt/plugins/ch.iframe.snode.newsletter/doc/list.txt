@@ -1,0 +1,31 @@
+= ch.iframe.snode.newsletter (list) =
+
+== Funktion ==
+Dieses Modul listet alle bereits versendeten Newsletter auf.
+
+== Möglicher Einsatzbereich ==
+Archiv aller bereits versendeten Newsletter.
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+order            | string       | Sortierung der Liste   | ORDER BY nl.sent_date DESC
+limit            | int          | Anzahl Einträge in der Liste | 55
+categories       | string       | Mit komma separiert alle Kategorien, die berücksichtigt werden sollen. Bei 0 werden alle Berücksichtigt| 1,8,11
+target_tpl       | int          | template welches den Newsletter viewer implementiert | 172
+
+
+== Templatevariablen ==
+xt5300_list array	Gesamte Liste und zusätzliche Informationen sowie Parameter
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.newsletter" module="list" categories="0" style="default.tpl" target_tpl="10166" ncpos="1" order="ORDER BY nl.sent_date DESC"}
+
+== Todo ==

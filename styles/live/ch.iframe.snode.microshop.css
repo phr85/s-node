@@ -1,0 +1,314 @@
+/* admin */
+#XT_list .element{
+border-bottom:1px solid #DEDEDE;
+padding:4px;
+position:relative;
+overflow:hidden;
+}
+
+#XT_list .options{
+border-bottom:1px solid #DEDEDE;
+padding:4px;
+background-color:#F1F1F1;
+}
+
+#XT_list .display{
+border-bottom:3px solid #F1F1F1;
+
+}
+
+#XT_list .title{
+font-size:15px;
+padding:2px;
+}
+
+
+#XT_list .rightopt{
+border:1px solid #000000;
+padding:2px 2px 4px 2px;
+background-color:#FEA123;
+position:absolute;
+right: 2px;
+top:-16px;
+}
+
+#XT_list .rightopt:hover{
+background-color:#F1F1F1;
+padding:2px;
+right: 2px;
+top: -1px;
+}
+
+#XT_list .inactivedisplay{
+border-right:4px solid red;
+}
+
+#XT_list .inactive{
+border-left:4px solid red;
+}
+
+/* live */
+html, body {
+background: #bbbbbb url(/images/ch.iframe.snode.microshop/bg.png) repeat-x top;
+margin: 0;
+position: relative;
+top: 0;
+}
+
+#wrapper {
+background: #fff url(/images/ch.iframe.snode.microshop/contentbg.png) no-repeat;
+height: 500px;
+float: none;
+margin: 221px auto 0 auto;
+padding: 10px;
+position: relative;
+width: 700px;
+}
+
+#lang {
+color: #9d162a;
+font-size: 11px;
+position: relative;
+top: 220px;
+margin: 0 auto;
+width: 700px;
+}
+
+#lang a {
+color: #9d162a;
+}
+
+#footer {
+background-color: transparent;
+height: auto;
+font-size: 11px;
+color: #2d3d50;
+border: none;
+width: 700px;
+margin: 0 auto;
+padding: 5px 0 0 0;
+position: relative;
+top: 1px;
+}
+
+#footer a {
+float: right;
+margin: -5px 0 0 0;
+}
+
+#content {
+color: #333333;
+float: left;
+font-size: 14px;
+height: 367px !important;
+line-height: 30px;
+min-height: 367px;
+padding: 100px 30px 0 30px;
+width: 670px;
+}
+
+#nav ul {
+background-color: #000;
+float: left;
+height: 33px;
+margin:0;
+padding:0;
+width: 700px;
+list-style: none;
+}
+
+#nav li {
+background: transparent url(/images/ch.iframe.snode.microshop/nav_inactive.png) no-repeat right;
+float: left;
+height: 25px;
+padding: 8px 0 0 0;
+text-align: center;
+width: 140px;
+color: #fff;
+}
+
+#nav li span {
+margin: 0 15px 0 0;
+}
+
+#nav li a {
+color: #fff;
+margin: 0 15px 0 0;
+}
+
+#nav li.prev {
+background: transparent url(/images/ch.iframe.snode.microshop/nav_last.png) no-repeat right;
+}
+
+#nav li.active {
+background: #b80e26 url(/images/ch.iframe.snode.microshop/nav_active.png) no-repeat right;
+}
+
+#nav li.last {
+background-image:none;
+}
+
+#next {
+position: absolute;
+top: 170px;
+right: -74px;
+}
+
+div.product {
+float: left;
+width: 660px;
+position: relative;
+margin: 0 0 35px 0;
+}
+
+div.description {
+clear: left;
+float: left;
+width: 210px;
+}
+
+div.price {
+color: #9d162a;
+float: left;
+font-size: 48px;
+text-align: right;
+width: 120px;
+margin: 65px 0 0 0;
+position: absolute;
+bottom: 0px;
+left: 210px;
+}
+
+div.erroricon_products {
+position: absolute;
+left: 122px;
+bottom: 3px;
+}
+
+div.erroricon_order {
+position: absolute;
+right: 20px;
+bottom: 3px;
+}
+
+div.price span {
+color: #333333;
+font-size: 24px;
+}
+
+div.price input {
+border: 1px solid #333333;
+width: 30px;
+margin: 3px 0 0 0;
+height: 20px;
+font-size: 14px;
+padding: 2px 0 0 0;
+float:left;
+text-align: center;
+}
+
+div.price label {
+color: #333333;
+float: left;
+margin: 0 0 0 3px;
+font-size: 14px;
+}
+
+img.productleft {
+float: left;
+}
+
+input.submit {
+position: absolute;
+right: -74px;
+top: 169px;
+cursor: pointer;
+}
+
+img.hide {
+position: absolute;
+right: -76px;
+top: 169px;
+}
+
+div.ordercolumnleft {
+clear: left;
+float: left;
+width: 300px;
+}
+
+div.ordercolumnright {
+clear: right;
+float: right;
+margin: 0 0 30px 0;
+width: 290px;
+}
+
+div.ordercolumnleft label {
+float: left;
+width: 100px;
+}
+
+div.ordercolumnleft input {
+float: left;
+width: 150px;
+border: 1px solid #333333;
+margin: 3px 0 0 0;
+height: 20px;
+font-size: 14px;
+padding: 2px 0 0 0;
+}
+
+div.ordercolumnright input.text {
+width: 30px;
+border: 1px solid #fff;
+margin: 3px 5px 0 0;
+height: 20px;
+font-size: 14px;
+padding: 2px 0 0 0;
+}
+
+div.ordercolumnright label.product {
+float: left;
+width: 190px;
+}
+
+div.agb {
+font-size: 10px;
+line-height: 15px;
+padding: 0 30px 0 0;
+width: 260px;
+}
+
+div.buttons {
+width: 295px;
+}
+
+h2.total {
+width: 265px;
+}
+
+h2.total span {
+float: right;
+}
+
+.error {
+color: #B9121E !important;
+}
+
+input.error {
+border: 1px solid #B9121E !important;
+}
+
+div.pricelist {
+float:right;
+margin-right:25px;
+}
+
+.freeproduct {
+color: red;
+}
+
+.form_element {
+position: relative;
+}

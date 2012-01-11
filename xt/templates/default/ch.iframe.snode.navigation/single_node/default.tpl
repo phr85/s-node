@@ -1,0 +1,1 @@
+<a target="{$NAV.target}" href="{if $NAV.ext_link}{$NAV.ext_link|htmlentities}{else}{$smarty.server.PHP_SELF}?TPL={$NAV.id}&amp;adminmode=1&amp;{get_param param=additional}{/if}" style="color:white; text-decoration:none;">{$NAV.title}</a>

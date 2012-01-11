@@ -1,0 +1,33 @@
+= ch.iframe.snode.fsintegrator (viewer) =
+
+== Funktion ==
+Mit Hilfe des Filesystemintegrators können Dateien, die nicht im Dateimanager, sondern direkt in einem Verzeichnis auf dem 
+Hosting gespeichert sind als Liste ausgelesen und zugänglich gemacht werden.
+
+== Möglicher Einsatzbereich ==
+Downloadlisten etc.
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+dir              | string       | Pfad zu einem Ordner, der ausgelesen werden soll | prospekte/pdfs/
+filter           | string       | Filter für Dateien und Ordner als Suchmuster für preg_match | /\.txt/i
+sort             | string       | Sortieren nach Dateiname oder Modifikationsdatum | "filename" oder "lastmodified"
+style            | string       | template für den build | default.tpl
+style            | string       | template für den build | default.tpl
+
+== Templatevariablen ==
+*FILES array Gesammte Dateiliste gemäss den Parametern
+== Sessionvarablen ==
+
+== Hinweise ==
+Dateien innerhalb des xt-Ordners sind für die öffentlichkeit nicht zugänglich, wegen der Restriktion in der .htaccess Datei!
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.fsintegrator" module="viewer" dir="packages/" sort="filename"  style="default.tpl" ncpos="1"}
+
+== Todo ==

@@ -1,0 +1,140 @@
+/* Tabs */
+TD.tab_container {
+    background-image: url(../../images/admin/bg_light_3.gif);
+}
+TD.tab {
+    cursor: hand;
+    cursor: pointer;
+    padding: 3px 5px;
+    text-align: center;
+    background-image: url(../../images/admin/gfx/bg_light.gif);
+    border-right: 1px solid #6384C6;
+    border-bottom: 1px solid #14409A;
+    height: 22px;
+}
+TD.tab:hover {
+    cursor: hand;
+    cursor: pointer;
+    padding: 3px 5px;
+    text-align: center;
+    background-image: url(../../images/admin/gfx/bg_light_active.gif);
+    height: 22px;
+}
+TD.tab_active {
+    cursor: hand;
+    cursor: pointer;
+    padding: 3px 5px;
+    text-align: center;
+    border-right: 1px solid #14409A;
+    background-image: url(../../images/admin/orange_gradient.gif);
+    height: 22px;
+}
+.top_head {
+    height: 24px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-top: 3px;
+    vertical-align: top;
+    background-image: url(../../images/admin/gfx/blue_head_bg.gif);
+    color: white;
+}
+/* Toolbar */
+TD.toolbar {
+    padding: 4px 5px;
+    background-color: #DAEAFE;
+    background-image: url(../../images/admin/gfx/toolbar_bg.gif);
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+div.toolbar {
+    padding:5px;
+    background-color: #DAEAFE;
+    background-image: url(../../images/admin/gfx/toolbar_bg.gif);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    min-height:18px;
+}
+div.ab{
+    float:left;
+}
+
+div.bbar{
+    background-image: url(../../images/admin/gfx/toolbar_left.gif);
+    background-position: bottom;
+    width:7px;
+    height:12px;
+    float:left;
+}
+div.tb {
+    padding: 0px 6px 0px 3px;
+    float:left;
+}
+div.tbicon {
+    padding: 0px;
+    float:left;
+}
+/* admin */
+TD.adminleft {
+    padding: 6px;
+    width: 110px;
+    background-color: #EEEEEE;
+    border-bottom: 1px solid #A6B3C1;
+    vertical-align: top;
+    color: #000000;
+    line-height: 100%; 
+}
+TD.adminright {
+    padding: 6px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #A6B3C1;
+    vertical-align: top;
+    color: #000000;
+}
+.admingray {
+	color: #6A7F96;
+}
+TD.lang_tab {
+    color: #999999;
+    text-transform: uppercase;
+    padding: 3px 5px;
+    background-image: url(../../images/admin/gfx/toolbar_bg_light_active.gif);
+    height: 25px;
+}
+TD.lang_tab_active {
+    text-transform: uppercase;
+    padding: 3px 5px;
+    background-image: url(../../images/admin/gfx/toolbar_bg_light.gif);
+    height: 25px;
+}
+TD.view_header {
+	padding: 6px;
+	font-size: 14px;
+	font-weight: bold;
+}
+TD.view_separator {
+    background-color: #7DA5E0;
+    height: 2px;
+}
+TR.row_a {
+    background-color: #FFFFFF;
+}
+TR.row_b {
+    background-color: #EEEEEE;
+}
+TD.button {
+    padding: 5px 5px 4px 5px;
+    vertical-align: top;
+    border-bottom: 1px solid #DDDDDD;
+    font-size:11px;
+}
+TD.row {
+    padding: 6px;
+    vertical-align: top;
+    border-bottom: 1px solid #DDDDDD;
+    font-size:11px;
+}
+TABLE.embed {
+    border: 1px solid #DDDDDD;
+}

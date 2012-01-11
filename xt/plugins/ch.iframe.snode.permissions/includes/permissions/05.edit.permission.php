@@ -1,0 +1,19 @@
+<?php
+$GLOBALS['plugin']->addPermission("Edit permissions", array(
+                                        'switch2UserMode',
+                                        'switch2GroupMode',
+                                        'switch2RoleMode',
+                                        'clickOnUser',
+                                        'clickOnGroup',
+                                        'clickOnRole',
+                                        's1SaveUserPermission',
+                                        's1SaveUserPermissionAllLang',
+                                        's1UnsetUserPermission',
+                                        's1SaveGroupPermission',
+                                        's1SaveGroupPermissionAllLang',
+                                        's1UnsetGroupPermission',
+                                        's1SaveRolePermission',
+                                        's1SaveRolePermissionAllLang',
+                                        's1UnsetRolePermission'
+                                        ));
+?>

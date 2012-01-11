@@ -1,0 +1,32 @@
+= ch.iframe.snode.gallery (top_images) =
+
+== Funktion ==
+Anzeigen der meist betrachteten Bilder einer Gallerie
+
+== Möglicher Einsatzbereich ==
+Gallerie
+
+== Mitgelieferte Templates ==
+*default.tpl
+*with_images.tpl
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+count            | integer      | Anzahl der darzustellenden Bilder |5
+gallery_id       | integer      | Identifikationsnummer der zu wählenden Gallerie | 4
+gallery_tpl		 | int   		| Templatenummer des Gallerietemplate | 10211
+
+== Templatevariablen ==
+*IMAGES array Daten zu den Bilder
+*GALLERY_TPL int Templatenummer des Gallerietemplate
+*COUNT int Anzahl der darzustellenden Bilder
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.gallery" module="top_images" count="5" style="default.tpl"}
+
+== Todo ==

@@ -1,0 +1,35 @@
+= ch.iframe.snode.filemanager (downloadlist) =
+
+== Funktion ==
+Anzeige eines Ordnerinhaltes aus dem Dateimanager
+
+== Möglicher Einsatzbereich ==
+Downloadliste
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+node             | integer      | Identifikationsnummer des Ordners (autoval R) | 2
+count            | integer      | Anzahl darzustellende Dateien der Liste (autoval P) | 20
+image_version    | integer      | Bildversion für Vorschau (autoval p) | 1
+min_width        | integer      | Minimale Bildbreite über die Bilder verfügen müssen | 200
+
+
+== Templatevariablen ==
+*VERSION string Bildversion für die Vorschau
+*FILES array Daten zu allen Dateien
+*DATA array Daten zu allen Dateien
+
+== Sessionvarablen ==
+keine
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.filemanager" module="downloadlist" node=22 count=15 image_version=1 style="default.tpl" ncpos="1"}
+
+== Todo ==

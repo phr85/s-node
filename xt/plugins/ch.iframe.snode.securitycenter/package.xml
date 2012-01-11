@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>100</baseid>
+    <id>ch.iframe.snode.securitycenter</id>
+    <version>$Rev: 5388 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>securitycenter</name>
+            <description>Benutzer, Gruppen, Rollen und Pools erstellen und bearbeiten</description>
+        </de>
+        <en>
+            <name>securitycenter</name>
+            <description>Manage users, groups, roles and pools</description>
+        </en>
+    </lang>
+
+    <page>
+        <parentnode>1</parentnode>
+        <id>100</id>
+        <lang>
+            <de>
+                <title>Administration</title>
+                <file>100.tpl</file>
+            </de>
+            <en>
+                <title>Adminstration</title>
+                <file>100.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>100</parentnode>
+        <id>170</id>
+        <lang>
+            <de>
+                <title>Sicherheitscenter</title>
+                <file>170.tpl</file>
+            </de>
+            <en>
+                <title>Securitycenter</title>
+                <file>170.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>109</id>
+        <lang>
+            <de>
+                <title>Permission Manager</title>
+                <file>109.tpl</file>
+            </de>
+            <en>
+                <title>Permission Manager</title>
+                <file>109.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>110</id>
+        <lang>
+            <de>
+                <title>Node Permission Manager</title>
+                <file>110.tpl</file>
+            </de>
+            <en>
+                <title>Node Permission Manager</title>
+                <file>110.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+        <contenttree>
+        <id>100</id>
+        <parentnode>4</parentnode>
+        <lang>
+            <de>
+                <title>Securitycenter</title>
+            </de>
+            <en>
+                <title>Securitycenter</title>
+            </en>
+        </lang>
+    </contenttree>
+
+	<module>
+        <id>register</id>
+        <treenode>100</treenode>
+        <main_param>style</main_param>
+        <main_content_type>100</main_content_type>
+        <lang>
+            <de>
+                <name>Registrierung</name>
+                <description>Registrierungsformular</description>
+            </de>
+            <en>
+                <name>Register</name>
+                <description>Register form</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>role</id>
+            <lang>
+                <de>
+                    <title>Rollen</title>
+                    <description>Geben Sie an, in welche Rollen der Benutzer eingetragen werden soll. Einzutragen sind die Identifikationsnummern der Rollen mit kommas getrennt.</description>
+                </de>
+                <en>
+                    <title>Roles</title>
+                    <description>Set all roles seperated with commas in which the user will be inserted.</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>group</id>
+            <lang>
+                <de>
+                    <title>Gruppen</title>
+                    <description>Geben Sie an, in welcher Gruppe der Benutzer eingetragen werden soll. Einzutragen sind die Identifikationsnummern der Gruppen mit kommas getrennt.</description>
+                </de>
+                <en>
+                    <title>Groups</title>
+                    <description>Set all groups seperated with commas in which the user will be inserted.</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>autologin</id>
+            <lang>
+                <de>
+                    <title>Automatischer Login</title>
+                    <description>Soll der Benutzer nach der Registration automatisch eingelogt werden.</description>
+                </de>
+                <en>
+                    <title>automatical login</title>
+                    <description>Should the user be logged in after the registration.</description>
+                </en>
+            </lang>
+            <values>yes,no</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>redirect_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Auf welche Seite soll nach der Registrierung weitergeleitet werden?</description>
+                </de>
+                <en>
+                    <title>redirect TPL</title>
+                    <description>Which Page (TPL) is displayed after adding an address?</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <contenttype>
+        <id>3</id>
+        <title>User</title>
+        <open_url></open_url>
+        <content_table>user</content_table>
+        <title_field>username</title_field>
+        <icon>user.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    <table>
+        <id>security_pools</id>
+        <mysql>
+            CREATE TABLE `{TABLE.security_pools}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `l` int(11) unsigned default NULL,
+              `r` int(11) unsigned default NULL,
+              `pid` int(11) unsigned default NULL,
+              `level` int(11) unsigned default NULL,
+              `tree_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`id`)
+            ) TYPE=MyISAM;
+
+            INSERT INTO `{TABLE.security_pools}` (id, l, r, pid, level, tree_id) VALUES (1, 1, 4, 0, 1, 1);
+            INSERT INTO `{TABLE.security_pools}` (id, l, r, pid, level, tree_id) VALUES (2, 2, 3, 1, 2, 1);
+        </mysql>
+    </table>
+    <table>
+        <id>security_pools_details</id>
+        <mysql>
+            CREATE TABLE `{TABLE.security_pools_details}` (
+              `node_id` int(11) unsigned default NULL,
+              `title` varchar(255) default NULL,
+              `active` tinyint(1) unsigned default '0',
+              `lang` char(3) default 'sys',
+              `public` tinyint(1) unsigned NOT NULL default '0'
+            ) TYPE=MyISAM;
+
+            INSERT INTO `{TABLE.security_pools_details}` (node_id, title, active, lang, public) VALUES (1, 'Root', 1, 'sys', 0);
+            INSERT INTO `{TABLE.security_pools_details}` (node_id, title, active, lang, public) VALUES (2, 'System Administration', 1, 'sys', 0);
+        </mysql>
+    </table>
+    <table>
+        <id>security_pools_rel</id>
+        <mysql>
+            CREATE TABLE `{TABLE.security_pools_rel}` (
+              `node_id` int(11) unsigned default NULL,
+              `principal_id` int(11) unsigned default NULL,
+              `principal_type` tinyint(3) unsigned default '0'
+            ) TYPE=MyISAM;
+
+            INSERT INTO `{TABLE.security_pools_rel}` (node_id, principal_id, principal_type) VALUES (2, 1, 2);
+            INSERT INTO `{TABLE.security_pools_rel}` (node_id, principal_id, principal_type) VALUES (2, 1, 1);
+            INSERT INTO `{TABLE.security_pools_rel}` (node_id, principal_id, principal_type) VALUES (2, 1, 3);
+        </mysql>
+    </table>
+    <table>
+        <id>groups</id>
+        <mysql>
+            CREATE TABLE `{TABLE.groups}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `title` varchar(255) default NULL,
+              `maintainer` int(11) unsigned default NULL,
+              `description` varchar(255) default NULL,
+              `creation_date` int(11) unsigned default NULL,
+              `creation_user` int(11) unsigned default NULL,
+              `mod_date` int(11) unsigned default NULL,
+              `mod_user` int(11) unsigned default NULL,
+              `active` tinyint(1) unsigned default '0',
+              PRIMARY KEY  (`id`)
+            ) TYPE=MyISAM;
+
+            INSERT INTO `{TABLE.groups}` (id, title, maintainer, description, creation_date, creation_user, mod_date, mod_user, active) VALUES (1, 'Systemverwaltung', 0, '', 1121339238, 1, 1121339238, 1, 0);
+        </mysql>
+    </table>
+    <table>
+        <id>group_roles</id>
+        <mysql>
+        CREATE TABLE `{TABLE.group_roles}` (
+          `group_id` int(11) unsigned NOT NULL default '0',
+          `role_id` int(11) unsigned NOT NULL default '0',
+          PRIMARY KEY  (`role_id`,`group_id`)
+        ) TYPE=MyISAM;
+        </mysql>
+    </table>
+    <table>
+        <id>roles</id>
+        <mysql>
+            CREATE TABLE `{TABLE.roles}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `title` varchar(255) default NULL,
+              `maintainer` int(11) unsigned default NULL,
+              `description` varchar(255) default NULL,
+              `creation_date` int(11) unsigned default NULL,
+              `creation_user` int(11) unsigned default NULL,
+              `mod_date` int(11) unsigned default NULL,
+              `mod_user` int(11) unsigned default NULL,
+              `active` tinyint(1) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`id`)
+            ) TYPE=MyISAM;
+
+            INSERT INTO `{TABLE.roles}` (id, title, maintainer, description, creation_date, creation_user, mod_date, mod_user, active) VALUES (1, 'Superusers', 0, 'Systemadministratoren', 1121339193, 1, 1121339193, 1, 1);
+            INSERT INTO `{TABLE.roles}` (id, title, maintainer, description, creation_date, creation_user, mod_date, mod_user, active) VALUES (2, 'Users', 0, 'Registred users', 1121339193, 1, 1121339193, 1, 1);
+            INSERT INTO `{TABLE.roles}` (id, title, maintainer, description, creation_date, creation_user, mod_date, mod_user, active) VALUES (3, 'All', 0, 'Everyone inc. page visitors', 1121339193, 1, 1121339193, 1, 1);
+        </mysql>
+    </table>
+
+    <table>
+        <id>user_groups</id>
+        <mysql>
+            CREATE TABLE `{TABLE.user_groups}` (
+              `user_id` int(11) unsigned NOT NULL default '0',
+              `group_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`group_id`,`user_id`)
+            ) TYPE=MyISAM;
+        </mysql>
+    </table>
+    <table>
+        <id>user_roles</id>
+        <mysql>
+            CREATE TABLE `{TABLE.user_roles}` (
+              `user_id` int(11) unsigned NOT NULL default '0',
+              `role_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`role_id`,`user_id`)
+            ) TYPE=MyISAM;
+        </mysql>
+    </table>
+    <table>
+        <id>node_perms</id>
+        <mysql>
+            CREATE TABLE `{TABLE.node_perms}` (
+              `base_id` int(11) unsigned NOT NULL default '0',
+              `node_id` int(11) unsigned NOT NULL default '0',
+              `principal_id` int(11) unsigned NOT NULL default '0',
+              `principal_type` tinyint(1) unsigned NOT NULL default '0',
+              `tree` varchar(50) NOT NULL default '',
+              `perms` int(11) unsigned default '0',
+              `lang` char(3) NOT NULL default '',
+              PRIMARY KEY  (`base_id`,`node_id`,`tree`,`lang`,`principal_id`,`principal_type`)
+            ) TYPE=MyISAM;
+        </mysql>
+    </table>
+    <table>
+        <id>perms</id>
+        <mysql>
+            CREATE TABLE `{TABLE.perms}` (
+              `base_id` int(11) unsigned NOT NULL default '0',
+              `principal_id` int(11) unsigned NOT NULL default '0',
+              `perms` int(11) unsigned NOT NULL default '0',
+              `principal_type` tinyint(1) NOT NULL default '1',
+              `lang` char(3) NOT NULL default '',
+              PRIMARY KEY  (`base_id`,`principal_id`,`principal_type`,`lang`)
+            ) TYPE=MyISAM;
+
+            INSERT INTO `{TABLE.perms}` (base_id, principal_id, perms, principal_type, lang) VALUES (5, 1, 16, 1, 'de');
+            INSERT INTO `{TABLE.perms}` (base_id, principal_id, perms, principal_type, lang) VALUES (5, 1, 16, 1, 'en');
+        </mysql>
+    </table>
+
+    <openfile>xt/includes/template/ch.iframe.snode.securitycenter.inc.php</openfile>
+    <openfile>xt/includes/classes/xt.class.php</openfile>
+    <openfile>xt/includes/classes/plugin.class.php</openfile>
+
+	<openfile>ajax.php</openfile>
+    <file>scripts/postajax.js</file>
+    <excludefile>xt/plugins/ch.iframe.snode.securitycenter/includes/actions/register.ch.iframe.snode.filemanager.postaction.php</excludefile>
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

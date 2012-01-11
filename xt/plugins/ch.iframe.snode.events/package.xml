@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>5100</baseid>
+    <id>ch.iframe.snode.events</id>
+    <version>$Rev: 6303 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Events</name>
+            <description>Events verwalten</description>
+        </de>
+        <en>
+            <name>Events</name>
+            <description>Manage events</description>
+        </en>
+    </lang>
+    <contenttype>
+        <id>5100</id>
+        <title>Events</title>
+        <open_url></open_url>
+        <content_table>events_details</content_table>
+        <title_field>title</title_field>
+        <icon>document.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    <page>
+        <parentnode>101</parentnode>
+        <id>290</id>
+        <lang>
+            <de>
+                <title>Events</title>
+                <file>290.tpl</file>
+            </de>
+            <en>
+                <title>Events</title>
+                <file>290.tpl</file>
+            </en>
+        </lang>
+    </page>
+     <page>
+        <parentnode>111</parentnode>
+        <id>291</id>
+        <lang>
+            <de>
+                <title>Datum selektieren</title>
+                <file>291.tpl</file>
+            </de>
+            <en>
+                <title>Datepicker</title>
+                <file>291.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>306</id>
+        <lang>
+            <de>
+                <title>Datum selektieren (core)</title>
+                <file>306.tpl</file>
+            </de>
+            <en>
+                <title>Datepicker (core)</title>
+                <file>306.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>292</id>
+        <lang>
+            <de>
+                <title>Kategorie selektieren</title>
+                <file>292.tpl</file>
+            </de>
+            <en>
+                <title>Datepicker</title>
+                <file>292.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>293</id>
+        <lang>
+            <de>
+                <title>Event selektieren</title>
+                <file>293.tpl</file>
+            </de>
+            <en>
+                <title>Event picker</title>
+                <file>293.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <contenttree>
+        <id>5100</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Events</title>
+            </de>
+            <en>
+                <title>Events</title>
+            </en>
+        </lang>
+    </contenttree>
+    <module>
+        <id>monthlist</id>
+        <treenode>5100</treenode>
+        <main_param>category_id</main_param>
+        <lang>
+            <de>
+                <name>Events Monatlich getrennte Liste</name>
+                <description>Liste der Events in Jahr und Monat unterteilt</description>
+            </de>
+        </lang>
+        <param>
+            <id>details_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Welches ist die Seite welche den vollen Event darstellen soll?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which is the Page (TPL) for displaying the Event</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>year_absolute</id>
+            <lang>
+                <de>
+                    <title>Jahr</title>
+                    <description>Welches Jahr soll in der Liste dargestellt werden, falls kein Jahr angegeben wird gilt das aktuelle Jahr. Beispiel: 2008</description>
+                </de>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>start_month</id>
+            <lang>
+                <de>
+                    <title>Jahresbeginn</title>
+                    <description>Mit welchem Monat beginnt das Jahr?</description>
+                </de>
+            </lang>
+            <values>01,02,03,04,05,06,07,08,09,10,11,12</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>year</id>
+            <lang>
+                <de>
+                    <title>Jahr (relativ)</title>
+                    <description>Welches Jahr, relativ vom aktuellen, soll in der Liste dargestellt werden</description>
+                </de>
+            </lang>
+            <values>-5,-4,-3,-2,-1,1,2,3,4,5</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>archiv</id>
+            <lang>
+                <de>
+                    <title>Archiv oder Jahresliste</title>
+                    <description>Sollen nur die Vergangenen Events dargestellt werden (Archiv, 1) oder alle (Jahresliste, 0)</description>
+                </de>
+            </lang>
+            <values>0,1</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>category_id</id>
+            <lang>
+                <de>
+                    <title>Kategorie</title>
+                    <description>Aus Welcher Kategorie wollen sie den Event darstellen?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which Kategory you want to use for displaying the Events</description>
+                </en>
+            </lang>
+           <values>[SELECT node_id,title FROM {PREFIX}events_tree_details WHERE active="1" and lang =\'{LANG}\' ORDER BY title ASC][node_id][title]</values>
+           <valuetype>sql</valuetype>
+        </param>
+        <param>
+            <id>recursive</id>
+            <lang>
+                <de>
+                    <title>Events rekursiv darstellen?</title>
+                    <description>Wollen sie das Events aus Unterordnern auch dargestellt werden schalten sie auf true</description>
+                </de>
+            </lang>
+            <values>false,true</values>
+            <valuetype>normal</valuetype>
+        </param>
+
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+         <param>
+            <id>limit</id>
+            <lang>
+                <de>
+                    <title>Anzahl</title>
+                    <description>Wieviele Einträge sollen dargestellt werden?</description>
+                </de>
+                <en>
+                    <title>Count</title>
+                    <description>How many entries you want to be displayed in the list?</description>
+                </en>
+            </lang>
+            <values>100</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <module>
+        <id>list</id>
+        <treenode>5100</treenode>
+        <main_param>details_tpl</main_param>
+        <lang>
+            <de>
+                <name>Events (Liste)</name>
+                <description>Liste der Events</description>
+            </de>
+            <en>
+                <name>Event (List)</name>
+                <description>List of events</description>
+            </en>
+        </lang>
+        <param>
+            <id>details_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Welches ist die Seite welche den vollen Event darstellen soll?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which is the Page (TPL) for displaying the Event</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>recursive</id>
+            <lang>
+                <de>
+                    <title>Events rekursiv darstellen?</title>
+                    <description>Wollen sie das Events aus Unterordnern auch dargestellt werden schalten sie auf true</description>
+                </de>
+            </lang>
+            <values>false,true</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>display_old</id>
+            <lang>
+                <de>
+                    <title>Nur vergangene Events anzeigen</title>
+                    <description>Wenn sie vergangene Events darstellen wollen, setzen sie den wert auf true.</description>
+                </de>
+            </lang>
+            <values>false,true</values>
+            <valuetype>normal</valuetype>
+        </param>
+         <param>
+            <id>category_id</id>
+            <lang>
+                <de>
+                    <title>Kategorie</title>
+                    <description>Aus Welcher Kategorie wollen sie den Event darstellen?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which Kategory you want to use for displaying the Events</description>
+                </en>
+            </lang>
+           <values>[SELECT node_id,title FROM {PREFIX}events_tree_details WHERE active="1" and lang =\'{LANG}\' ORDER BY title ASC][node_id][title]</values>
+           <valuetype>sql</valuetype>
+        </param>
+
+
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+         <param>
+            <id>limit</id>
+            <lang>
+                <de>
+                    <title>Anzahl</title>
+                    <description>Wieviele Einträge sollen dargestellt werden?</description>
+                </de>
+                <en>
+                    <title>Count</title>
+                    <description>How many entries you want to be displayed in the list?</description>
+                </en>
+            </lang>
+            <values>100</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>viewer</id>
+        <treenode>5100</treenode>
+        <main_param>id</main_param>
+        <lang>
+            <de>
+                <name>Event</name>
+                <description>Darstellung eines Events</description>
+            </de>
+            <en>
+                <name>Event</name>
+                <description>Displays an event</description>
+            </en>
+        </lang>
+        <param>
+            <id>event_id</id>
+            <lang>
+                <de>
+                    <title>ID</title>
+                    <description>Wählen Sie einen Event aus</description>
+                </de>
+                <en>
+                    <title>ID</title>
+                    <description>Select an event</description>
+                </en>
+            </lang>
+            <values>[293][5100]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>registration_tpl</id>
+            <lang>
+                <de>
+                    <title>Registrierungs-Template</title>
+                    <description>Template in welchem sich das Formular für die Registrierung befindet</description>
+                </de>
+                <en>
+                    <title>Registration template</title>
+                    <description>Template containing the registration form</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+     </module>
+
+     <module>
+        <id>categories</id>
+        <treenode>5100</treenode>
+        <main_param>start_node</main_param>
+        <lang>
+            <de>
+                <name>Kategorien</name>
+                <description>Darstellung der Event-Kategorien</description>
+            </de>
+            <en>
+                <name>Categories</name>
+                <description>Displays event categories</description>
+            </en>
+        </lang>
+        <param>
+            <id>start_node</id>
+            <lang>
+                <de>
+                    <title>Start Kategorie</title>
+                    <description>Ab welcher Kategorie sollen Unterkategorien angezeigt werden?</description>
+                </de>
+                <en>
+                    <title>Start category</title>
+                    <description>Which start category do you want?</description>
+                </en>
+            </lang>
+            <values>[292][5100]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>details_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Welches ist die Seite welche den vollen Event darstellen soll?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which is the Page (TPL) for displaying the Event</description>
+                </en>
+            </lang>
+            <values>$TPL</values>
+            <valuetype>userinput</valuetype>
+        </param>
+     </module>
+
+    <requires>
+        <package>
+        <id>ch.iframe.snode.addresses</id>
+        <version>1000</version>
+        </package>
+    </requires>
+
+    <requires>
+        <package>
+        <id>ch.iframe.snode.formmanager</id>
+        <version>1000</version>
+        </package>
+    </requires>
+
+    <table>
+        <id>events</id>
+        <mysql>
+        <![CDATA[
+             CREATE TABLE `{TABLE.events}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `from_date` int(11) unsigned default NULL,
+              `end_date` int(11) unsigned default NULL,
+              `duration` int(11) unsigned default NULL,
+              `duration_type` varchar(50) default NULL,
+              `country` char(2) default NULL,
+              `region_id` int(11) unsigned default '0',
+              `address` int(11) unsigned default NULL,
+              `user_id` int(11) unsigned default NULL,
+              PRIMARY KEY  (`id`)
+            ) ENGINE=MyISAM;
+            alter table `{TABLE.events}` add column `country` char (2)   NULL  after `duration_type`;
+            alter table `{TABLE.events}` add column `region_id` int (11) UNSIGNED  DEFAULT '0' NULL  after `country`;
+            alter table `{TABLE.events}` add column `alt_date` int (11) UNSIGNED   NULL  after `end_date`;
+            alter table `{TABLE.events}` add column `door` text   NULL  after `address`;
+            alter table `{TABLE.events}` add column `contact_person_id` int (11) UNSIGNED   NULL  after `door`;
+            alter table `{TABLE.events}` add column `max_visitors` int (11) UNSIGNED  DEFAULT '0' NULL  after `contact_person_id`;
+            alter table `{TABLE.events}` add column `reg_visitors` int (11) UNSIGNED  DEFAULT '0' NULL ,change `end_date` `end_date` int (11) UNSIGNED   NULL ;
+            alter table `{TABLE.events}` add column `costs` text   NULL  after `reg_visitors`;
+            alter table `{TABLE.events}` add column `display_time_type` int (1) UNSIGNED  DEFAULT '0' NOT NULL  after `costs`;
+            alter table `{TABLE.events}` add column `display_time_start` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `display_time_type`;
+            alter table `{TABLE.events}` add column `display_time_end` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `display_time_start`;
+            alter table `{TABLE.events}` add column `user_id` int(11) unsigned default NULL  after `address`;
+            alter table `{TABLE.events}` add column `set_start_date_only` int(1) unsigned NOT NULL default 0  after `display_time_end`;
+            ALTER TABLE `{TABLE.events}` ADD `speaker_id` int(11) unsigned default NULL AFTER `contact_person_id`;
+			ALTER TABLE `{TABLE.events}` ADD `meeting_place_id` int(11) unsigned default NULL AFTER `speaker_id`;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>events_details</id>
+        <mysql>
+        <![CDATA[
+             CREATE TABLE `{TABLE.events_details}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `active` tinyint(1) unsigned default '0',
+              `lang` varchar(5) NOT NULL default '',
+              `title` varchar(255) default NULL,
+              `introduction` text,
+              `maintext` text,
+              `mod_date` int(11) unsigned default NULL,
+              `mod_user` int(11) unsigned default NULL,
+              `creation_date` int(11) unsigned default NULL,
+              `creation_user` int(11) unsigned default NULL,
+              `image` int(11) unsigned default NULL,
+              `image_version` int(11) unsigned default NULL,
+              `author` int(11) unsigned default NULL,
+              `form` int(11) unsigned default NULL,
+              `link` text,
+              `link_external` int(1) unsigned default NULL,
+              PRIMARY KEY  (`id`,`lang`)
+            ) ENGINE=MyISAM;
+            alter table `{TABLE.events_details}` ,add column `registertpl` varchar(255) NOT NULL default ''  after `link_external`;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>events_tree</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.events_tree}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `l` int(11) unsigned NOT NULL default '0',
+              `r` int(11) unsigned NOT NULL default '0',
+              `pid` int(11) unsigned NOT NULL default '0',
+              `level` int(11) unsigned NOT NULL default '0',
+              `tree_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`id`)
+            ) ENGINE=MyISAM;
+            INSERT INTO `{TABLE.events_tree}` (id, l, r, pid, level,tree_id) VALUES(1, 1, 2, 0, 1, 1);
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>events_tree_details</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.events_tree_details}` (
+              `node_id` int(11) unsigned NOT NULL auto_increment,
+              `lang` char(3) NOT NULL default '',
+              `creation_date` int(11) unsigned default NULL,
+              `creation_user` int(11) unsigned default NULL,
+              `mod_date` int(11) unsigned default NULL,
+              `mod_user` int(11) unsigned default NULL,
+              `title` varchar(255) default NULL,
+              `description` varchar(255) default NULL,
+              `active` tinyint(1) unsigned NOT NULL default '0',
+              `isFolder` tinyint(1) unsigned NOT NULL default '0',
+              `public` tinyint(1) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`node_id`,`lang`)
+            ) ENGINE=MyISAM;
+            INSERT INTO `{TABLE.events_tree_details}` (node_id, lang, title, active, isFolder) VALUES (1, 'de', 'Root', 1, 1);
+            INSERT INTO `{TABLE.events_tree_details}` (node_id, lang, title, active, isFolder) VALUES (1, 'en', 'Root', 1, 1);
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>events_tree_rel</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.events_tree_rel}` (
+              `node_id` int(11) NOT NULL default '0',
+              `event_id` int(11) NOT NULL default '0',
+              PRIMARY KEY  (`node_id`,`event_id`)
+            ) ENGINE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>events_registrations</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.events_registrations}` (
+              `event_id` int(11) NOT NULL default '0',
+              `address_id` int(11) NOT NULL default '0',
+              PRIMARY KEY  (`event_id`,`address_id`)
+            ) ENGINE=MyISAM;
+
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>events_registrations_details</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.events_registrations_details}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `event_id` int(11) unsigned NOT NULL default '0',
+              `address_id` int(11) unsigned NOT NULL default '0',
+              `fieldname` varchar(255) default NULL,
+              `fieldvalue` varchar(255) default NULL,
+              PRIMARY KEY  (`id`)
+            ) ENGINE=MyISAM;
+            alter table `{TABLE.events_registrations_details}` ,add column `person_nr` int(11) NOT NULL default 0  after `fieldvalue`;
+            ]]>
+        </mysql>
+    </table>
+    <folder>images/icons</folder>
+    <file>styles/live/events.css</file>
+    <file>styles/live/calendar.css</file>
+    <file>xt/includes/classes/ics.class.php</file>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/5100.php</openfile>
+<changelog>
+    <rev>1978 Initial</rev>
+</changelog>
+</package>

@@ -1,0 +1,4 @@
+Notification Types:
+0 == topic
+1 == forum
+2 ==

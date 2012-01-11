@@ -1,0 +1,32 @@
+= ch.iframe.snode.ratings (vote) =
+
+== Funktion ==
+Ermöglicht es dem User, jeglichen Content zu bewerten.
+
+== Möglicher Einsatzbereich ==
+Blogs etc.
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+id	             | integer      | Identifikationsnummer der Bewertung falls der Benutzer bereits bewertet hat (Autoval R)| 232
+content_id       | integer      | Identifikationsnummer des Inhalts der bewertet werden soll (Bsp: $TPL für die aktuelle Seite) (Autoval R)| $TPL
+content_type     | integer      | Typ des Inhalts der bewertet werden soll (Bsp: 60 für Seiten) (Autoval R) | default.tpl
+
+== Templatevariablen ==
+*xt8400_viewer array Daten zum aktuellen Element
+*xt8400_content_type integer Typ des Inhalts der bewertet werden soll
+*xt8400_content_id integer Identifikationsnummer des Inhalts der bewertet werden soll
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Dies ist ein Ajax-Modul, welches vom Modul "ratings" verwendet wird.
+
+== Beispiel ==
+
+== Todo ==

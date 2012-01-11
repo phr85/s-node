@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>1400</baseid>
+    <id>ch.iframe.snode.faq</id>
+    <version>$Rev: 4666 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>FAQ</name>
+            <description>Erstellen und verwalten von oft gestellten Fragen</description>
+        </de>
+        <en>
+            <name>FAQ</name>
+            <description>Create and manage frequently asked questions</description>
+        </en>
+    </lang>
+    <contenttype>
+        <id>1400</id>
+        <title>FAQ</title>
+        <content_table>faq</content_table>
+        <title_field>title</title_field>
+        <id_field>id</id_field>
+    </contenttype>
+    <page>
+        <parentnode>101</parentnode>
+        <id>1400</id>
+        <lang>
+            <de>
+                <title>FAQ</title>
+                <file>1400.tpl</file>
+            </de>
+            <en>
+                <title>FAQ</title>
+                <file>1400.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>1401</id>
+        <lang>
+            <de>
+                <title>FAQ Categorypicker</title>
+                <file>1401.tpl</file>
+            </de>
+            <en>
+                <title>FAQ Categorypicker</title>
+                <file>1401.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <contenttree>
+        <id>1400</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>FAQ</title>
+                <description>Oft gestellte Fragen</description>
+            </de>
+            <en>
+                <title>FAQ</title>
+                <description>Frequently asked questions</description>
+            </en>
+        </lang>
+    </contenttree>
+    <module>
+        <id>viewer</id>
+        <treenode>1400</treenode>
+        <main_param>faq_id</main_param>
+        <main_content_type>1400</main_content_type>
+        <lang>
+            <de>
+                <name>Fragen Viewer</name>
+                <description>Einzelne Frage darstellen</description>
+            </de>
+            <en>
+                <name>Question Viewer</name>
+                <description>Display single question</description>
+            </en>
+        </lang>
+        <param>
+            <id>faq_id</id>
+            <lang>
+                <de>
+                    <title>Frage</title>
+                    <description>Waehlen Sie eine Frage aus.</description>
+                </de>
+                <en>
+                    <title>Question</title>
+                    <description>Select a question.</description>
+                </en>
+            </lang>
+            <values>[SELECT id,title FROM {PREFIX}faq WHERE active=1 ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+          <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard Style zu verwenden, oder Ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl, otherwise use default.tpl.</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>list_tpl</id>
+            <lang>
+                <de>
+                    <title>List TPL</title>
+                    <description>Geben sie das TPL an auf welchem ggf. eine Liste aller aktiven Fragen und Kategorien dargestellt wird.</description>
+                </de>
+                <en>
+                    <title>List TPL</title>
+                    <description>Please enter the TPL of your FAQ-Tree.</description>
+                </en>
+            </lang>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+	<module>
+        <id>tree</id>
+        <treenode>1400</treenode>
+        <main_param>node_id</main_param>
+        <main_content_type>1400</main_content_type>
+        <lang>
+            <de>
+                <name>Kategorienbaum</name>
+                <description>Stellt einen Baum mit allen aktiven Fragen und Kategorien dar</description>
+            </de>
+            <en>
+                <name>Category tree</name>
+                <description>Display a tree with all active questions and trees</description>
+            </en>
+        </lang>
+          <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard Style zu verwenden, oder Ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl, otherwise use default.tpl.</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>viewer_tpl</id>
+            <lang>
+                <de>
+                    <title>Viewer TPL</title>
+                    <description>Wie lautet das TPL welches den Fragen-Viewer beherbergt?</description>
+                </de>
+                <en>
+                    <title>Viewer TPL</title>
+                    <description>Which TPL does display Questions?</description>
+                </en>
+            </lang>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <module>
+        <id>category_list</id>
+        <treenode>1400</treenode>
+        <main_param>cat_id</main_param>
+        <main_content_type>1400</main_content_type>
+        <lang>
+            <de>
+                <name>Kategorienliste</name>
+                <description>Stellt eine Liste von Kategorien und Fragen innerhalb der selektieren Kategorie dar</description>
+            </de>
+            <en>
+                <name>Category tree</name>
+                <description>Display categories and questions withi the selected category</description>
+            </en>
+        </lang>
+          <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard Style zu verwenden, oder Ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl, otherwise use default.tpl.</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>viewer_tpl</id>
+            <lang>
+                <de>
+                    <title>Viewer TPL</title>
+                    <description>Wie lautet das TPL welches den Fragen-Viewer beherbergt?</description>
+                </de>
+                <en>
+                    <title>Viewer TPL</title>
+                    <description>Which TPL does display Questions?</description>
+                </en>
+            </lang>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>cat_id</id>
+            <lang>
+                <de>
+                    <title>Kategorie</title>
+                    <description>Waehlen Sie eine zu darstellende Ober-Kategorie aus.</description>
+                </de>
+                <en>
+                    <title>Category</title>
+                    <description>Select a displayable category.</description>
+                </en>
+            </lang>
+            <values>[SELECT node_id,title FROM {PREFIX}faq_tree_details WHERE active=1 ORDER BY title ASC][node_id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+    </module>
+    <module>
+        <id>question</id>
+        <treenode>1400</treenode>
+        <main_content_type>1400</main_content_type>
+        <lang>
+            <de>
+                <name>Frage stellen</name>
+                <description>Frage-stellen Formular einbinden.</description>
+            </de>
+            <en>
+                <name>Ask a question</name>
+                <description>Display ask-a-question form</description>
+            </en>
+        </lang>
+           <param>
+            <id>captcha</id>
+            <lang>
+                <de>
+                    <title>Captchabild einblenden?</title>
+                    <description>Moechten Sie ein Captchabild einblenden um Spam-Eintraege von Robotern zu verhindern? (1 = Ja, 0 = Nein)</description>
+                </de>
+                <en>
+                    <title>Display title?</title>
+                    <description>Would you like to display a captcha to protect your guestbook from spam robots? (1 = Yes, 0 = No)</description>
+                </en>
+            </lang>
+            <values>1,0</values>
+            <valuetype>normal</valuetype>
+        </param>
+       </module>
+    <module>
+        <id>listall</id>
+        <treenode>1400</treenode>
+        <main_content_type>1400</main_content_type>
+        <lang>
+            <de>
+                <name>Alle fragen auflisten</name>
+                <description>Zeigt eine Liste aller Fragen aus allen Kategorien an.</description>
+            </de>
+            <en>
+                <name>Display all questions</name>
+                <description>Displays all active questions from all categories.</description>
+            </en>
+        </lang>
+           <param>
+            <id>limit</id>
+            <lang>
+                <de>
+                    <title>Limitierung der Anzeige</title>
+                    <description>Wie viele Fragen und Antworten wollen Sie anzeigen?</description>
+                </de>
+                <en>
+                    <title>Display Limiter</title>
+                    <description>How many items do you want to display?</description>
+                </en>
+            </lang>
+            <value>1,0</value>
+            <valuetype>normal</valuetype>
+        </param>
+       </module>
+    <table>
+        <id>faq</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.faq}` (
+  				`id` int(11) NOT NULL auto_increment,
+			    `title` varchar(255) NOT NULL default '',
+			    `active` tinyint(1) NOT NULL default '0',
+			    `date` int(11) NOT NULL default '0',
+			    `public` tinyint(1) NOT NULL default '0',
+			    `is_answered` tinyint(1) NOT NULL default '0',
+			    `answer` text NOT NULL,
+			    `questioner` varchar(255) NOT NULL default '',
+			    `answer_date` int(11) NOT NULL default '0',
+			    `image` int(11) NOT NULL default '0',
+			    `image_version` varchar(11) NOT NULL default '',
+			    `image_zoom` tinyint(1) NOT NULL default '0',
+			    `lang` char(3) NOT NULL default '',
+			    `description` text NOT NULL,
+			    `mod_date` int(11) NOT NULL default '0',
+			    `mod_user` int(11) NOT NULL default '0',
+			    `c_user` int(11) NOT NULL default '0',
+			    `questioner_mail` varchar(255) NOT NULL default '',
+			    `answer_title` varchar(255) NOT NULL default '',
+			    `answer_name` varchar(255) NOT NULL default '',
+			    `answer_address` varchar(255) NOT NULL default '',
+			    PRIMARY KEY  (`id`,`lang`)
+			);
+            ]]>
+        </mysql>
+    </table>
+	<table>
+        <id>faq2cat</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.faq2cat}` (
+		    `faq_id` int(11) NOT NULL default '0',
+		    `node_id` int(11) NOT NULL default '0',
+  			`position` int(11) NOT NULL default '0'
+	        );
+            ALTER TABLE `{TABLE.faq2cat}` ADD COLUMN `position` int(11) NOT NULL default '0' AFTER `node_id`;
+           ]]>
+        </mysql>
+	</table>
+    <table>
+        <id>faq_tree</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.faq_tree}` (
+			  `id` int(11) NOT NULL auto_increment,
+			  `l` int(11) NOT NULL default '0',
+			  `r` int(11) NOT NULL default '0',
+			  `pid` int(11) NOT NULL default '0',
+			  `level` int(11) NOT NULL default '0',
+			  `tree_id` int(11) unsigned NOT NULL default '0',
+			  PRIMARY KEY  (`id`),
+			  KEY `l` (`l`),
+			  KEY `r` (`r`),
+			  KEY `level` (`level`),
+			  KEY `pid` (`pid`)
+			);
+			insert into `{TABLE.faq_tree}` values('1','1','4','0','1','1'),
+ 				('2','2','3','1','2','1');
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>faq_tree_details</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.faq_tree_details}` (
+			  `node_id` int(11) NOT NULL auto_increment,
+			  `lang` char(3) NOT NULL default '',
+			  `creation_date` int(11) NOT NULL default '0',
+			  `creation_user` int(11) NOT NULL default '0',
+			  `mod_date` int(11) NOT NULL default '0',
+			  `mod_user` int(11) NOT NULL default '0',
+			  `description` varchar(255) default '',
+			  `title` varchar(255) default '',
+			  `active` tinyint(4) NOT NULL default '0',
+			  `md5` varchar(32) NOT NULL default '',
+			  `isFolder` tinyint(1) unsigned NOT NULL default '1',
+			  `public` tinyint(1) unsigned default '0',
+			  `image` int(11) default NULL,
+			  `image_version` int(11) default NULL,
+			  PRIMARY KEY  (`node_id`,`lang`)
+			);
+			insert into `{TABLE.faq_tree_details}` values('1','de','0','0','0','0','','Root','0','','1','0',null,null),
+ ('2','de','0','0','0','0','','Uncategorized','1','','1','0',null,null);
+            ]]>
+        </mysql>
+    </table>
+    <openfile>styles/live/faq.css</openfile>
+    <openfile>scripts/jquery.js</openfile>
+    <folder>styles/live/ch.iframe.snode.faq</folder>
+    <folder>scripts/ch.iframe.snode.faq</folder>
+    <folder>images/icons</folder>
+    <folder>images/icons/big</folder>
+  <changelog>
+      <rev>4666 initial version</rev>
+  </changelog>
+</package>

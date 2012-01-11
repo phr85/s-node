@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>4500</baseid>
+    <id>ch.iframe.snode.addresses</id>
+    <version>$Rev: 2759 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Adressverzeichnis</name>
+            <description>Verwalten der Adressen</description>
+        </de>
+        <en>
+            <name>Address Directory</name>
+            <description>Manage addresses</description>
+        </en>
+    </lang>
+    
+    <page>
+        <parentnode>100</parentnode>
+        <id>250</id>
+        <lang>
+            <de>
+                <url>/index.php?TPL=280&amp;adminmode=1</url>
+                <title>Unternehmen</title>
+                <file>250.tpl</file>
+            </de>
+            <en>
+                <url>/index.php?TPL=280&amp;adminmode=1</url>
+                <title>Company</title>
+                <file>250.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>250</parentnode>
+        <id>280</id>
+        <lang>
+            <de>
+                <title>Adressverzeichnis</title>
+                <file>280.tpl</file>
+            </de>
+            <en>
+                <title>Address Directory</title>
+                <file>280.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>106</parentnode>
+        <id>111</id>
+        <lang>
+            <de>
+                <title>Popups</title>
+                <file>111.tpl</file>
+            </de>
+            <en>
+                <title>Popups</title>
+                <file>111.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>281</id>
+        <lang>
+            <de>
+                <title>Adress Picker</title>
+                <file>281.tpl</file>
+            </de>
+            <en>
+                <title>Address Picker</title>
+                <file>281.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <contenttype>
+        <id>4800</id>
+        <title>Address</title>
+        <open_url></open_url>
+        <content_table>addresses</content_table>
+        <title_field>title</title_field>
+        <icon>factory.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    
+    <table>
+        <id>addresses</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.addresses}` (
+                  `id` int(11) NOT NULL auto_increment,
+                  `title` varchar(255) NOT NULL default '',
+                  `type` tinyint(1) NOT NULL default '0',
+                  `organization` int(11) NOT NULL default '0',
+                  `organizationalUnit` int(11) NOT NULL default '0',
+                  `firstName` varchar(255) NOT NULL default '',
+                  `lastName` varchar(255) NOT NULL default '',
+                  `email` varchar(255) NOT NULL default '',
+                  `email_private` varchar(255) NOT NULL default '',
+                  `postalCode` varchar(10) NOT NULL default '',
+                  `city` varchar(255) NOT NULL default '',
+                  `street` varchar(255) NOT NULL default '',
+                  `state` int(11) NOT NULL default '0',
+                  `country` char(3) NOT NULL default '0',
+                  `gender` tinyint(1) NOT NULL default '0',
+                  `status` tinyint(3) NOT NULL default '0',
+                  `position` varchar(255) NOT NULL default '',
+                  `tel` varchar(30) NOT NULL default '',
+                  `tel_private` varchar(30) NOT NULL default '',
+                  `tel_mobile` varchar(30) NOT NULL default '',
+                  `tel_mobile_private` varchar(30) NOT NULL default '',
+                  `fax` varchar(30) NOT NULL default '',
+                  `fax_private` varchar(30) NOT NULL default '',
+                  `website` varchar(255) NOT NULL default '',
+                  `mod_date` int(11) NOT NULL default '0',
+                  `mod_user` int(11) NOT NULL default '0',
+                  `creation_date` int(11) NOT NULL default '0',
+                  `creation_user` int(11) NOT NULL default '0',
+                  PRIMARY KEY (`id`)
+                ) ENGINE=MyISAM;
+                
+                ALTER TABLE `{TABLE.addresses}` ADD `image` int(11);
+                alter table `{TABLE.addresses}` ,add column `display_time_type` int (1) UNSIGNED  DEFAULT '0' NOT NULL  after `image`, add column `display_time_start` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `display_time_type`, add column `display_time_end` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `display_time_start`;
+                alter table `{TABLE.addresses}` ADD `user_id` int (11) UNSIGNED;
+                alter table `{TABLE.addresses}` ADD `public` int (1) UNSIGNED  DEFAULT '0' NOT NULL;
+            ]]>
+        </mysql>
+    </table>
+    <file>xt/includes/classes/address.class.php</file>
+    <changelog>
+        <rev>0 initial release</rev>
+    </changelog>
+</package>

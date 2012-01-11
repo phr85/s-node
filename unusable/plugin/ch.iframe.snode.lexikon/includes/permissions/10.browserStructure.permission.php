@@ -1,0 +1,20 @@
+<?php
+$GLOBALS['plugin']->addPermission("Browser structure", array(
+                                                       'addNode',
+                                                       'exitSaveNode',
+                                                       'exitNode',
+                                                       'cancel',
+                                                       'insertNode',
+                                                       'addFirstNode',
+                                                       'saveNode',
+                                                       'editNode',
+                                                       'editNodePerms',
+                                                       'moveNodeDown',
+                                                       'moveNodeUp',
+                                                       'deleteNode',
+                                                       'openNode',
+                                                       'deactivateNodeLang',
+                                                       'activateNodeLang',
+                                                       'cutNode'
+                                                       ));
+?>

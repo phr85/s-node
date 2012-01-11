@@ -1,0 +1,24 @@
+**Funktion:
+Mit diesem Modul kann ein eingeloggter Benutzer sein Passwort ändern
+
+**Möglicher Einsatzbereich:
+Pages welche user haben die sich im "live" teil der page bewegen und dort daten managen können
+
+**Mitgelieferte Templates:
+default.tpl     2 Kennwort boxen und ein submit button in einem formular
+
+**Parameter:
+Name       | DatenTyp     | BESCHREIBUNG           | BEISPIELDATEN
+style      | string       | template für den build | default.tpl
+
+**Modulvariablen
+x110_password                                   // gewünschtes Kennwort
+x110_password_repeat                            // gewünschtes Kennwort wiederholung
+
+**Templatevariablen:
+$xt.110.passwdchange.data       //enthält alle SessionWerte des angemeldetem Besucher
+$xt.110.passwdchange.errors     //enthält mögliche fehler
+$xt.110.passwdchange.messages   //enthält mögliche benachrichtigungen
+
+**Hinweise:
+Templatevariablen werden nach dem build des Templates gelöscht.

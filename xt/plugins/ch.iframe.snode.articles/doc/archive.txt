@@ -1,0 +1,31 @@
+= ch.iframe.snode.articles (archive) =
+
+== Funktion ==
+Eine Archivlist aller Artikel
+
+== Möglicher Einsatzbereich ==
+Archiv aller Artikel
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+months_back		 | int			| Wie viele Monate soll man zurückbrowsen können im Archiv?	| 4
+
+== Templatevariablen ==
+$xt270_archive	Beinhaltet alle relevanten Daten
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Das Archive Modul muss stets mit einer Artikelliste eingebunden werden. 
+Zudem muss das Archive Modul eine höhere Priorität erhalten als die Artikelliste.
+== Beispiel ==
+{plugin package="ch.iframe.snode.articles" module="archive" priority=9 months_back=34 style="default.tpl"}
+{plugin package="ch.iframe.snode.articles" module="list" link2details="yes" categories="0,11" target_tpl="113" count="5" order="date desc" style="default.tpl"}
+
+== Todo ==
+Dokumentation ergänzen

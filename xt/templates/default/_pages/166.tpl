@@ -1,0 +1,1 @@
+{plugin package="ch.iframe.snode.securitycenter" module="register" autologin=true redirect_tpl="163"}

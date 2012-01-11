@@ -1,0 +1,30 @@
+= ch.iframe.snode.search (googlemap) =
+
+== Funktion ==
+Generierung von Sitemaps für Google
+(Siehe https://www.google.com/webmasters/tools/docs/de/protocol.html)
+
+== Möglicher Einsatzbereich ==
+Optimierung für Suchmaschinen
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+*DATA array Daten zum gesammten indexierten Inhalt der Seite
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Die Ausgabe ist eine XML-Datei. Die URL zu dieser Seite muss bei Google im Kontrollzentrum für die Webmastertools hinterlegt werden.
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.search" module="googlemap"  style="default.tpl"}
+
+== Todo ==

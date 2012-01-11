@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>7400</baseid>
+    <id>ch.iframe.snode.addressmanager</id>
+    <version>4000</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Adressverwaltung</name>
+            <description>Adressverwaltung</description>
+        </de>
+        <en>
+            <name>Address manager</name>
+            <description>Adress manager</description>
+        </en>
+    </lang>
+    <page>
+        <parentnode>101</parentnode>
+        <id>7400</id>
+        <lang>
+            <de>
+                <title>Adressen</title>
+                <file>7400.tpl</file>
+            </de>
+            <en>
+                <title>Addresses</title>
+                <file>7400.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>281</id>
+        <lang>
+            <de>
+                <title>Adress Picker</title>
+                <file>281.tpl</file>
+            </de>
+            <en>
+                <title>Address Picker</title>
+                <file>281.tpl</file>
+            </en>
+        </lang>
+    </page>
+     <page>
+        <parentnode>106</parentnode>
+        <id>7401</id>
+        <lang>
+            <de>
+                <title>Adresse Anzeige</title>
+                <file>7401.tpl</file>
+                <public>1</public>
+                <visible>0</visible>
+            </de>
+            <en>
+                <title>Address Viewer</title>
+                <file>7401.tpl</file>
+                <public>1</public>
+                <visible>0</visible>
+            </en>
+        </lang>
+    </page>
+    <contenttype>
+        <id>7400</id>
+        <title>Addressmanager</title>
+        <open_url>index.php?TPL=7401&amp;x7400_id=%id%</open_url>
+        <content_table>addresses</content_table>
+        <title_field>title</title_field>
+        <icon>member1.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <contenttree>
+        <id>7400</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Addressmanager</title>
+            </de>
+            <en>
+                <title>Addressmanager</title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <module>
+        <id>filtered_list</id>
+        <treenode>7400</treenode>
+        <main_param>id</main_param>
+        <main_content_type>7400</main_content_type>
+        <lang>
+            <de>
+                <name>Adressliste (gefiltert, kat,prop)</name>
+                <description>Liste der Adressen gefiltert nach Kategorie oder Propertie</description>
+            </de>
+            <en>
+                <name>Adressliste (gefiltert)</name>
+                <description>Liste der Adressen gefiltert nach Kategorie oder Propertie</description>
+            </en>
+        </lang>
+        <param>
+            <id>count</id>
+            <lang>
+                <de>
+                    <title>Anzahl</title>
+                    <description>Wieviele Einträge sollen dargestellt werden?</description>
+                </de>
+                <en>
+                    <title>Count</title>
+                    <description>How many entries you want to be displayed in the list?</description>
+                </en>
+            </lang>
+            <values>50</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>details_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Welches ist die Seite welche den vollen Event darstellen soll?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which is the Page (TPL) for displaying the Event</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>categories</id>
+            <lang>
+                <de>
+                    <title>Kategorien</title>
+                    <description>Aus welcher Kategorie wollen sie Adressen darstellen?
+                    Wenn Adressen aus allen Kategorien dargestellt werden sollen lassen sie dieses Feld leer, sonst geben Sie die IDs der Kategorien mit Kommas getrennt an (Bsp.: "2,17" oder nur "2"). </description>
+                </de>
+                <en>
+                    <title>Categories</title>
+                    <description>From which categories you want to display adresses?
+                    Leave this field empty if you want to display the news from all categories.</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>order</id>
+            <lang>
+                <de>
+                    <title>Sortierung</title>
+                    <description>Wonach soll die Liste sortiert werden?</description>
+                </de>
+                <en>
+                    <title>Ordering</title>
+                    <description>Wonach soll die Liste sortiert werden?</description>
+                </en>
+            </lang>
+            <values>title asc,title desc,id desc,id asc,date desc, date asc</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>mixFilterResults</id>
+            <lang>
+                <de>
+                    <title>Nur Resultate die in beiden Filtern vorkommen darstellen? </title>
+                    <description>Es wird die Schnittmenge der Filterresultate verwendet</description>
+                </de>
+                <en>
+                    <title>intersect filter results</title>
+                    <description>intersect filter results</description>
+                </en>
+            </lang>
+            <values>true,false</values>
+            <valuetype>normal</valuetype>
+        </param>
+    </module>
+
+	<module>
+        <id>add</id>
+        <treenode>7400</treenode>
+        <main_param>style</main_param>
+        <lang>
+            <de>
+                <name>Adresse hinzufügen</name>
+                <description>Maske um eine Adresse hinzu zu fügen.</description>
+            </de>
+            <en>
+                <name>Add address</name>
+                <description>From to add an address</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+         <param>
+            <id>redirect_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Auf welche Seite soll weitergeleitet werden, nachdem die Adresse erfasst wurde?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which Page (TPL) is displayed after adding an address?</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>user_edit</id>
+        <treenode>7400</treenode>
+        <main_param>style</main_param>
+        <lang>
+            <de>
+                <name>Adresse editieren</name>
+                <description>Maske um eine Adresse zu ändern.</description>
+            </de>
+            <en>
+                <name>Edit address</name>
+                <description>From to edit an address</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+         <param>
+            <id>redirect_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Auf welche Seite soll weitergeleitet werden, nachdem die Adresse erfasst wurde?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which Page (TPL) is displayed after adding an address?</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <table>
+        <id>addresses</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.addresses}` (
+                  `id` int(11) NOT NULL auto_increment,
+                  `title` varchar(255) NOT NULL default '',
+                  `type` tinyint(1) NOT NULL default '0',
+                  `organization` int(11) NOT NULL default '0',
+                  `organizationalUnit` int(11) NOT NULL default '0',
+                  `firstName` varchar(255) NOT NULL default '',
+                  `lastName` varchar(255) NOT NULL default '',
+                  `company` varchar(255) NOT NULL default '',
+                  `email` varchar(255) NOT NULL default '',
+                  `email_private` varchar(255) NOT NULL default '',
+                  `postalCode` varchar(10) NOT NULL default '',
+                  `city` varchar(255) NOT NULL default '',
+                  `street` varchar(255) NOT NULL default '',
+                  `state` varchar(3) NOT NULL default '0',
+                  `country` char(3) NOT NULL default '0',
+                  `gender` tinyint(1) NOT NULL default '0',
+                  `status` tinyint(3) NOT NULL default '0',
+                  `position` varchar(255) NOT NULL default '',
+                  `tel` varchar(30) NOT NULL default '',
+                  `tel_private` varchar(30) NOT NULL default '',
+                  `tel_mobile` varchar(30) NOT NULL default '',
+                  `tel_mobile_private` varchar(30) NOT NULL default '',
+                  `fax` varchar(30) NOT NULL default '',
+                  `fax_private` varchar(30) NOT NULL default '',
+                  `website` varchar(255) NOT NULL default '',
+                  `mod_date` int(11) NOT NULL default '0',
+                  `mod_user` int(11) NOT NULL default '0',
+                  `creation_date` int(11) NOT NULL default '0',
+                  `creation_user` int(11) NOT NULL default '0',
+                  `display_time_type` int(11) NOT NULL default '0',
+                  `display_time_start` int(11) NOT NULL default '0',
+                  `display_time_end` int(11) NOT NULL default '0',
+                  `user_id` int(11) unsigned default NULL,
+                  `is_primary_user_address` int(1) NOT NULL default '0',
+  				  `public` int(1) unsigned NOT NULL default '0',
+  				  `active` int(1) unsigned NOT NULL default '0',
+                  `description` text,
+                  `skype` varchar(255) NOT NULL default '',
+                  `birthdate` int(11) default NULL,
+                  `birthday` int(11) default NULL,
+                  `identifier` varchar(255) default NULL,
+                  `image` int(11) default NULL,
+                  `lat` double NOT NULL,
+                  `lon` double NOT NULL,
+                  `lang` char(3) NOT NULL default '',
+                  PRIMARY KEY (`id`),
+                  KEY `primary_usser_id` (`user_id`,`is_primary_user_address`),
+  				  KEY `user_id` (`user_id`)
+                ) ENGINE=MyISAM;
+
+                ALTER TABLE `{TABLE.addresses}` MODIFY state varchar(3) NOT NULL default '0';
+                ALTER TABLE `{TABLE.addresses}` ADD `company` varchar(255) AFTER `lastName`;
+                ALTER TABLE `{TABLE.addresses}` ADD `display_time_type` int(11) NOT NULL default '0' AFTER `creation_user`;
+                ALTER TABLE `{TABLE.addresses}` ADD `display_time_start` int(11) NOT NULL default '0' AFTER `display_time_type`;
+                ALTER TABLE `{TABLE.addresses}` ADD `display_time_end` int(11) NOT NULL default '0'  AFTER `display_time_start`;
+                ALTER TABLE `{TABLE.addresses}` ADD `user_id` int (11) UNSIGNED AFTER `display_time_end`;
+                ALTER TABLE `{TABLE.addresses}` ADD `is_primary_user_address` int (1) UNSIGNED  DEFAULT '0' NOT NULL  after `user_id`;
+                ALTER TABLE `{TABLE.addresses}` ADD `public` int (1) UNSIGNED  DEFAULT '0' NOT NULL AFTER `is_primary_user_address`;
+                ALTER TABLE `{TABLE.addresses}` ADD `active` int(1) unsigned NOT NULL default '0' AFTER `public`;
+                ALTER TABLE `{TABLE.addresses}` ADD `description` text AFTER `active`;
+                ALTER TABLE `{TABLE.addresses}` ADD `skype` varchar(255) NOT NULL default '' AFTER `description`;
+                ALTER TABLE `{TABLE.addresses}` ADD `birthdate` int(11) AFTER `skype`;
+                ALTER TABLE `{TABLE.addresses}` ADD `birthday` int(11) AFTER `birthdate`;
+                ALTER TABLE `{TABLE.addresses}` ADD `identifier` varchar(255) default NULL AFTER `birthday`;
+                ALTER TABLE `{TABLE.addresses}` ADD `image` int(11) default NULL AFTER `identifier`;
+                ALTER TABLE `{TABLE.addresses}` ADD `lat` double NOT NULL AFTER `image`;
+                ALTER TABLE `{TABLE.addresses}` ADD `lon` double NOT NULL AFTER `lat`;
+                ALTER TABLE `{TABLE.addresses}` ADD `lang` char(3) NOT NULL default '' after `lon`;
+                ALTER TABLE `{TABLE.addresses}` ADD KEY `primary_usser_id` (`user_id`,`is_primary_user_address`);
+                ALTER TABLE `{TABLE.addresses}` ADD KEY `user_id` (`user_id`);
+            ]]>
+        </mysql>
+    </table>
+    <file>xt/includes/classes/address.class.php</file>
+    <file>xt/includes/classes/coordinates.class.php</file>
+    <file>xt/includes/classes/xls.class.php</file>
+    <file>xt/includes/classes/vcard.class.php</file>
+    <file>styles/live/addressmanager.css</file>
+    <file>xt/includes/template/ch.iframe.snode.addressmanager.inc.php</file>
+    <folder>images/icons/</folder>
+    <changelog>
+        <rev>3500 initial plugin</rev>
+    </changelog>
+</package>

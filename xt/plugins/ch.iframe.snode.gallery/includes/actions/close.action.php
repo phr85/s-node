@@ -1,0 +1,6 @@
+<?php
+
+XT::setAdminModule('en');
+
+
+?>

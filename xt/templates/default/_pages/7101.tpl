@@ -1,0 +1,1 @@
+{plugin package="ch.iframe.snode.filloutsviewer" module="viewer"}

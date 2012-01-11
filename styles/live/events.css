@@ -1,0 +1,128 @@
+/* Events CSS File */
+/* generell */
+span.xt_evIntroduction{
+}
+
+a.xt_evTite{
+font-weight:bold;
+}
+
+/* module monthlist */
+div.xt_event{
+margin-bottom:20px;
+clear:both;
+}
+
+div.xt_event h1, div.xt_event h2{
+}
+
+div.xt_evListodd{
+background-color:#DCDCDC;
+}
+div.xt_evListeven{
+background-color:#F0F0F0;
+}
+div.xt_evListday{
+padding:3px;
+clear:left;
+}
+
+div.xt_evListcontent{
+padding:3px;
+float:left;
+}
+
+/* module listing */
+div.xt_evListitem {
+    clear:both;
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom:12px;
+	padding-bottom:10px;
+}
+
+/* Registration */
+
+h1.event_register_title {
+    margin-bottom: 15px;
+}
+
+h2.event_register_subtitles {
+    clear: both;
+    width: 100%;
+    border-bottom: 1px solid #A0AEC0;;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+span.event_register_success {
+    font-weight: bold;
+    color: green;
+}
+
+div.event_register_wrapper {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+div.event_register_description {
+    float: left;
+    width: 120px;
+    padding-right: 15px;
+    height: 10px;
+    height: auto !important;
+    min-height: 10px;
+}
+
+div.event_register_value {
+    float: left;
+    padding-right: 5px;
+    height: 10px;
+    height: auto !important;
+    min-height: 10px;
+}
+
+div.event_register_wrapper select {
+    width: 155px;
+    border: 1px solid #A0AEC0;;
+    background-color: #DEDEDE;
+    padding: 2px;  
+}
+
+div.event_register_wrapper input {
+    width: 150px;
+    border: 1px solid #A0AEC0;;
+    background-color: #DEDEDE;
+    padding: 2px;
+}
+
+div.event_register_wrapper input.short {
+    width: 95px;
+}
+
+div.event_register_wrapper input.extremeshort {
+    width: 44px;
+}
+
+div.event_register_wrapper input.submit {
+    padding: 2px 5px;
+    width: 60px;
+    width: auto !important;
+    min-width: 60px;
+}
+
+div.event_register_wrapper textarea {
+    width: 250px;
+    height: 80px;
+    border: 1px solid #A0AEC0;;
+    background-color: #DEDEDE;
+    padding: 2px;
+}
+
+div.event_register_wrapper .event_register_field_error {
+    border: 1px solid #BC8482;
+    background-color: #DDB2B0;
+}
+
+/* EOF Registration */

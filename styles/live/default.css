@@ -1,0 +1,124 @@
+@import url(/styles/live/articles.css);
+@import url(/styles/live/navigation.css);
+@import url(/styles/live/thickbox.css);
+
+/* Structure */
+html, body {
+    background-color : #D8D8D8;
+}
+
+body {
+    font-family : "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size : 12px;
+    color : #36393d;
+    text-align : left;
+}
+
+.mceVisualAid {
+    border : 1px dashed #ffbbbb;
+}
+
+p, input { margin: 0; }
+
+
+input.button {
+    height: 21px;
+    padding: 0 6px;
+}
+
+/* Images */
+img { border: 0; }
+
+.clear {
+    clear: both;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #60ACDA;
+
+}
+
+a:hover {
+    text-decoration: none;
+    color: #36393D;
+}
+
+/* remove dashed boxes from around links in firefox */
+a:focus {
+    user-focus: none;
+    outline: none;
+    -moz-user-focus: none;
+    -moz-outline: none;
+}
+
+/* Headings */
+h1, h2, h3 {
+    margin: 0;
+    font-weight: bold;
+}
+h1 { font-size: 20px; }
+h2 { font-size: 15px; }
+h3 { font-size: 15px; }
+
+/* Body - Container */
+#container_tb {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#container {
+    width: 960px;
+    background:#FFFFFF;
+    margin-bottom:30px;
+}
+
+#header {
+    background-color: #F5F5F5;
+}
+
+#topnav {
+    background-color: #FFFFFF;
+    border-top: 1px solid #DEDEDE;
+    border-bottom: 1px solid #DEDEDE;
+    padding: 3px 10px;
+}
+
+#sidenav {
+    background-color: #F5F5F5;
+    width: 245px;
+    min-height: 400px;
+    height: auto !important;  /* for modern Browsers */
+    height: 400px;  /*for IE */
+    float: left;
+}
+
+#content {
+    background-color: #FFFFFF;
+    width: 700px;
+    min-height: 400px;
+    height: auto !important;  /* for modern Browsers */
+    height: 400px;  /*for IE */
+    float: right;
+}
+
+#footer {
+    border-top: 1px solid #DEDEDE;
+    height: 80px;
+    clear: both;
+    background-color: #F5F5F5;
+}
+
+
+.label {
+    display: block;
+}
+
+input.field {
+    background-color: #CDCDCD;
+    border: 1px solid #A0AEC0;
+    padding:2px;
+}
+
+ul { list-style-position:outside; }

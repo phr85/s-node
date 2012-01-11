@@ -1,0 +1,32 @@
+= ch.iframe.snode.addressmanager (filtered_list) =
+
+== Funktion ==
+Adressliste welche anhand Kategorien und/oder Eigenschaften eingeschränkt werden kann.
+
+== Möglicher Einsatzbereich ==
+Adresslisten
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+categories       | string       | filtern nach categories (ids komma seppariert) [autoval R] | 2,5,66
+property_id      | integer      | Identifikationsnummer für eine Eigenschaft | 5
+mixFilterResults | boolen       | false für "AND", true für "OR" - beide filterresultate mischen | true
+
+
+== Templatevariablen ==
+*xt7400_filtered_list array Alle Daten zur Adressliste
+
+== Sessionvarablen ==
+*property int Eigenschaft aus der Session 
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.addressmanager" module="filtered_list" style="defult.tpl"}
+
+== Todo ==

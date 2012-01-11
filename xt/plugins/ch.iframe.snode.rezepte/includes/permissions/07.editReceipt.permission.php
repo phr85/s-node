@@ -1,0 +1,22 @@
+<?php
+$GLOBALS['plugin']->addPermission("Edit Recipe", array("deactivateRecipe",
+                                                        "activateRecipe",
+                                                        "editRecipe",
+                                                        "saveRecipe",
+                                                        "activateRecipeLang",
+                                                        "deactivateRecipeLang",
+                                                        "removeRecipeFromTree",
+                                                        "addRecipeToTreeTab",
+                                                        "addRecipeToTree",
+                                                        "addImageToRecipe",
+                                                        "deleteImageFromRecipe",
+                                                        "setMainImage",
+                                                        "exitRecipe",
+                                                        "exitSaveRecipe",
+                                                        "moveImageDown",
+                                                        "moveImageUp",
+                                                        "addRecipeRelation",
+                                                        "removeRelatedRecipeFromRecipe",
+                                                        "removeSetRecipeFromRecipe",
+                                                        ));
+?>

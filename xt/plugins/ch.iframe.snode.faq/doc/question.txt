@@ -1,0 +1,29 @@
+= ch.iframe.snode.faq (question) =
+
+== Funktion ==
+Neue Frage erstellen (Öffentliches Interface)
+
+== Möglicher Einsatzbereich ==
+
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+captcha          | boolen       | Captcha-Abfrage einbinden wenn true | true
+confirmation_tpl | integer      | Template für die Bestätigung | notify_de.tpl
+
+== Templatevariablen ==
+*xt1400_question array Alle Daten zum Modul
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.faq" module="question" captcha=true confirmation_tpl="notify_de.tpl" style="default.tpl"}
+
+== Todo ==

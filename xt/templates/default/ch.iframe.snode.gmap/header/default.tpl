@@ -1,0 +1,2 @@
+<script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key={"key"|getConfigValue}" type="text/javascript"></script>
+<script src="http://www.google.com/jsapi?key={"map_key"|getConfigValue}" type="text/javascript"></script>

@@ -1,0 +1,49 @@
+BODY {
+    margin: 0px;
+}
+
+BODY, TD, INPUT, SELECT, TEXTAREA {
+	font-family: Tahoma, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+INPUT.button {
+    padding: 2px 4px;
+}
+
+TEXTAREA {
+    font-family: 'Bitstream Vera Sans Mono', Courier, serif; 
+    font-size: 11px;
+    color: black;
+    padding: 10px;
+    background-color: #EFEFEF;
+    border: 1px solid #BBBBBB;
+}
+
+/* Toolbox */
+TD.toolbox { 
+    padding: 3px; 
+    background-color: #DAEAFE;
+    background-image: url(/images/admin/gfx/toolbar_bg.gif);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    font-family: Tahoma, Helvetica, sans-serif; 
+    color: black;
+}
+
+TD.toolbox INPUT { 
+    color: black; 
+}
+
+TD.view_left {
+    padding: 8px 15px;
+    color: #999999;
+    width: 150px;
+    border-bottom: 1px solid #EEEEEE;
+    vertical-align: top;
+}
+
+TD.view_right {
+    padding: 8px 15px;
+    border-bottom: 1px solid #EEEEEE;
+}

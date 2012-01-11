@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- generator="FeedCreator 1.6" -->
+<opml xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <head>
+        {if $FEED.title != ''}<title>{$FEED.title}</title>{/if}
+    </head>
+    <body>
+    {foreach from=$ITEMS item=ITEM}
+      <outline type="rss"  {if $ITEM.title != ''}title="{$ITEM.title}"{/if} {if $ITEM.text != ''}text="{$ITEM.description}"{/if} {if $ITEM.url != ''}url="{$ITEM.url}"{/if}/>
+    {/foreach}
+    </body>
+</opml>

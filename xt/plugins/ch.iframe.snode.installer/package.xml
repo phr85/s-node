@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>5</baseid>
+    <id>ch.iframe.snode.installer</id>
+    <version>$Rev: 3820 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Installationen und Updates</name>
+            <description>Systemerweiterungen und Updates installieren</description>
+        </de>
+        <en>
+            <name>Install and update</name>
+            <description>Install and update systemextensions</description>
+        </en>
+    </lang>
+
+    
+ 
+    <page>
+        <parentnode>100</parentnode>
+        <id>121</id>
+        <lang>
+            <de>
+                <title>System</title>
+                <file>121.tpl</file>
+                <url>/index.php?TPL=122&amp;adminmode=1</url>
+            </de>
+            <en>
+                <title>System</title>
+                <file>121.tpl</file>
+                <url>/index.php?TPL=122&amp;adminmode=1</url>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>121</parentnode>
+        <id>1003</id>
+        <lang>
+            <de>
+                <title>Installer</title>
+                <file>1003.tpl</file>
+            </de>
+            <en>
+                <title>Installer</title>
+                <file>1003.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <file>xt/includes/classes/install.class.php</file>
+    <changelog>
+    	<rev>3320 add prevention of overwriting changed configuration files and language files</rev>
+        <rev>1771 installer page moved to system path</rev>
+        <rev>1523 content type install</rev>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

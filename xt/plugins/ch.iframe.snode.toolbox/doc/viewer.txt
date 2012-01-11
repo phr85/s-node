@@ -1,0 +1,37 @@
+= ch.iframe.snode.toolbox (viewer) =
+
+== Funktion ==
+Die Toolbox ist die Administrationsansicht auf der Seite im öffentlichen Bereich
+und wird dargestellt, sobald genügend Rechte vorhanden sind.
+
+== Möglicher Einsatzbereich ==
+Basissystem
+
+== Mitgelieferte Templates ==
+*content.tpl
+*footer.tpl
+*header.tpl
+*info.tpl
+*settings.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+*TABS array Alle verfügbaren tabs (info, content und settings)
+
+== Sessionvarablen ==
+*tab string Aktuell geöffneter Tab.
+
+== Hinweise ==
+Je nach Tab wird das entsprechende PHP-Script ausgeführt und das dazugehörige Template verwendet.
+Bsp: im Tab info wird info.php eingebunden und das Template info.tpl verwendet.
+
+== Beispiel ==
+Der Pluginaufruf geschieht standardmässig im Header und die Position wird mittels CSS definiert.
+{plugin package="ch.iframe.snode.toolbox" module="viewer"}
+
+== Todo ==

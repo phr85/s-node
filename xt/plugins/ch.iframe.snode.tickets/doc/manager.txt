@@ -1,0 +1,30 @@
+= ch.iframe.snode.tickets (manager) =
+
+== Funktion ==
+Der Manager ist ein kleines Popup-Fenster, in welchem offene Tickets schnell bearbeitet werden können.
+
+== Möglicher Einsatzbereich ==
+Ticket-Center
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+*xt8100_manager array Alle offenen Tickets eines Users inklusive deren Status
+
+== Sessionvarablen ==
+*timer array Zeitmessung, die zusätzlich serialisiert wird.
+
+== Hinweise ==
+Implementation Standardmässig im TPL 8101, welches nach der Installation bereits verfügbar ist.
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.tickets" module="manager"}
+
+== Todo ==

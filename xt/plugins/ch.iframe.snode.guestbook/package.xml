@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>1500</baseid>
+    <id>ch.iframe.snode.guestbook</id>
+    <version>$Rev: 6036 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Gästebuch</name>
+            <description>Gästebuch</description>
+        </de>
+        <en>
+            <name>Guestbook</name>
+            <description>Guestbook</description>
+        </en>
+    </lang>
+    <contenttype>
+        <id>1500</id>
+        <title>Guestbook</title>
+        <open_url></open_url>
+        <content_table></content_table>
+        <title_field></title_field>
+        <icon>package.png</icon>
+        <id_field></id_field>
+    </contenttype>
+
+    <page>
+        <parentnode>101</parentnode>
+        <id>560</id>
+        <lang>
+            <de>
+                <url></url>
+                <title>Gästebuch</title>
+                <file>560.tpl</file>
+            </de>
+            <en>
+                <url></url>
+                <title>Guestbook</title>
+                <file>560.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <contenttree>
+        <id>1500</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Gästebuch</title>
+            </de>
+            <en>
+                <title>Guestbook</title>
+            </en>
+        </lang>
+    </contenttree>
+    <module>
+        <id>list</id>
+        <treenode>1500</treenode>
+        <lang>
+            <de>
+                <name>Gästebuch list</name>
+                <description>Anzeigen des Gästebuches</description>
+            </de>
+            <en>
+                <name>Guestbook list</name>
+                <description>Shows Guestbook</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+	<module>
+        <id>add</id>
+        <treenode>1500</treenode>
+        <lang>
+            <de>
+                <name>Gästebucheintrag hinzufügen </name>
+                <description>Gästebucheintrag hinzufügen</description>
+            </de>
+            <en>
+                <name>Add a guestbook entry</name>
+                <description>Add a guestbook entry</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>target_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Geben sie die Seite (TPL Nummer) mit der Liste an?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which is the Page (TPL) for displaying the List</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>captcha</id>
+            <lang>
+                <de>
+                    <title>Captchabild einblenden?</title>
+                    <description>Möchten Sie ein Captchabild einblenden um Spam-Einträge von Robotern zu verhindern? (1 = Ja, 0 = Nein)</description>
+                </de>
+                <en>
+                    <title>Display title?</title>
+                    <description>Would you like to display a captcha to protect your guestbook from spam robots? (1 = Yes, 0 = No)</description>
+                </en>
+            </lang>
+            <values>1,0</values>
+            <valuetype>normal</valuetype>
+        </param>
+    </module>
+
+    <table>
+        <id>guestbook</id>
+        <mysql>
+            CREATE TABLE `{TABLE.guestbook}` (
+                `id` int(11) unsigned NOT NULL auto_increment,
+                `active` tinyint(1) unsigned NOT NULL default '0',
+                `creation_date` int(11) unsigned NOT NULL default '0',
+                `creation_user` int(11) unsigned NOT NULL default '0',
+                `mod_date` int(11) unsigned NOT NULL default '0',
+                `mod_user` int(11) unsigned NOT NULL default '0',
+                `ip` varchar(15) NOT NULL default '0',
+                `name` varchar(255) default NULL,
+                `email` varchar(255) default NULL,
+                `website` varchar(255) default NULL,
+                `comment` text,
+                `blockip` tinyint(1) unsigned NOT NULL default '0',
+                PRIMARY KEY  (`id`)
+              ) ENGINE=MyISAM;
+        </mysql>
+    </table>
+
+ 	<openfile>xt/templates/default/includes/widgets/captcha.tpl</openfile>
+    <openfile>xt/includes/template/ch.iframe.snode.guestbook.inc.php</openfile>
+    <openfile>xt/includes/classes/captchaxt.class.php</openfile>
+	<openfile>captcha_image.php</openfile>
+	<openfolder>/fonts/</openfolder>
+	
+    <changelog>
+        <rev>2489 started</rev>
+    </changelog>
+</package>

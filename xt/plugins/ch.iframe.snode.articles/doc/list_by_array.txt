@@ -1,0 +1,38 @@
+= ch.iframe.snode.articles (list_by_array) =
+
+== Funktion ==
+Erstellt eine Liste von Artikeln anhand bekannter Identifikationsnummern der Artikel
+
+== Möglicher Einsatzbereich ==
+Diverse Artikelisten, RSS-Feed, etc.
+
+== Mitgelieferte Templates ==
+*default.tpl
+*feed.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+ids              | string       | Liste mit allen ids durch kommas getrennt | default.tpl
+xml				 | boolen		| XML-Header hinzufügen	 | false
+link2details     | string       | Link für Detailansicht erstellen | no
+order			 | string		| Sortierungsoption		 | 
+count			 | int			| Anzahl der Eintäge	 | 5
+target_tpl		 | int			| Template für die Artikeldetails | 113
+
+== Templatevariablen ==
+*LINK2DETAILS Boolen Details verlinken
+*TARGET_TPL int Template für die Artikeldetails
+*DATA array Daten für die Liste
+*ADMIN_TPL	int Template für die Administrationsoberfläche
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.articles" module="list_by_array" ids="0,15" count="5" link2details="yes" order="mod_date desc" style="default.tpl" target_tpl="10062" ncpos="1"}
+
+
+== Todo ==

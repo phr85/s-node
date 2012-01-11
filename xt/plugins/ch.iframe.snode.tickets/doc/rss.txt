@@ -1,0 +1,32 @@
+= ch.iframe.snode.tickets (rss) =
+
+== Funktion ==
+Exportiert alle Offenen Ticketes eines Benutzers als RSS-Feed
+
+== Möglicher Einsatzbereich ==
+Ticket System
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+*xt8100_rss array Alle Relevantent Daten
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Standardimplementation in TPL 8002. 
+Der Benutzer muss eingeloggt sein! Beispiel URL zu einem Feed mit Login:
+http://doc.iframe.ch/index.php?TPL=8102&username=XYZ&password=XYZ
+Es müssen lediglich XYZ mit den entsprechenden Account-Daten ersetzt werden.
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.tickets" module="rss"}
+
+== Todo ==

@@ -1,0 +1,28 @@
+= ch.iframe.snode.poll (list) =
+
+== Funktion ==
+Liste aller verfügbaren Umfragen
+
+== Möglicher Einsatzbereich ==
+Umfragen
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+viewertpl        | integer      | Templateseitennummer für die Darstellung einer eizelnen Umfrage | 10225
+
+== Templatevariablen ==
+*xt8000_list array Daten der Umfrageliste
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.poll" module="list" viewertpl=10225 style="default.tpl"}
+
+== Todo ==

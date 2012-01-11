@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>3600</baseid>
+    <id>ch.iframe.snode.forum</id>
+    <version>$Rev: 4052 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Forum</name>
+            <description>Diskussionen führen</description>
+        </de>
+        <en>
+            <name>Forum</name>
+            <description>Discussion boards</description>
+        </en>
+    </lang>
+
+    <contenttype>
+        <id>3601</id>
+        <title>Forum Entry</title>
+        <open_url>/index.php?TPL=3606&amp;x3600_entry_id=%id%</open_url>
+        <content_table>forum_postings</content_table>
+        <title_field>title</title_field>
+        <icon>text.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <contenttype>
+        <id>3602</id>
+        <title>Forum Topic</title>
+        <open_url>/index.php?TPL=3606&amp;x3600_topic_id=%id%</open_url>
+        <content_table>forum_topics</content_table>
+        <title_field>title</title_field>
+        <icon>document.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <contenttype>
+        <id>3603</id>
+        <title>Forum Forum</title>
+        <open_url>/index.php?TPL=3601&amp;x3600_forum_id=%id%</open_url>
+        <content_table>forum_forums</content_table>
+        <title_field>title</title_field>
+        <icon>document.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <page>
+        <parentnode>101</parentnode>
+        <id>3610</id>
+        <lang>
+            <de>
+                <title>Forum</title>
+                <file>3610.tpl</file>
+            </de>
+            <en>
+                <title>Forum</title>
+                <file>3610.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+
+    <page>
+        <parentnode>1</parentnode>
+        <id>3600</id>
+        <lang>
+            <de>
+                <title>Forum Kategorien</title>
+                <file>3600.tpl</file>
+            </de>
+            <en>
+                <title>Forum</title>
+                <file>3600.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>3600</parentnode>
+        <id>3601</id>
+        <lang>
+            <de>
+                <title>Forum</title>
+                <file>3601.tpl</file>
+            </de>
+            <en>
+                <title>Forum</title>
+                <file>3601.tpl</file>
+            </en>
+        </lang>
+    </page>
+     <page>
+        <parentnode>3601</parentnode>
+        <id>3602</id>
+        <lang>
+            <de>
+                <title>New Forum</title>
+                <file>3602.tpl</file>
+            </de>
+            <en>
+                <title>New Forum</title>
+                <file>3602.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>3600</parentnode>
+        <id>3603</id>
+        <lang>
+            <de>
+                <title>Topic</title>
+                <file>3603.tpl</file>
+            </de>
+            <en>
+                <title>Topic</title>
+                <file>3603.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>3603</parentnode>
+        <id>3604</id>
+        <lang>
+            <de>
+                <title>New Topic</title>
+                <file>3604.tpl</file>
+            </de>
+            <en>
+                <title>New Topic</title>
+                <file>3604.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>3603</parentnode>
+        <id>3605</id>
+        <lang>
+            <de>
+                <title>Reply Topic</title>
+                <file>3605.tpl</file>
+            </de>
+            <en>
+                <title>Reply Topic</title>
+                <file>3605.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>3600</parentnode>
+        <id>3606</id>
+        <lang>
+            <de>
+                <title>Suchen im Forum</title>
+                <file>3606.tpl</file>
+            </de>
+            <en>
+                <title>Search</title>
+                <file>3606.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>3600</parentnode>
+        <id>3607</id>
+        <lang>
+            <de>
+                <title>report entry</title>
+                <file>3607.tpl</file>
+            </de>
+            <en>
+                <title>report entry</title>
+                <file>3607.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <table>
+        <id>forum_categories</id>
+        <mysql>
+            CREATE TABLE `{TABLE.forum_categories}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+           `l` int(11) unsigned default NULL,
+           `r` int(11) unsigned default NULL,
+           `pid` int(11) unsigned default NULL,
+           `level` int(11) unsigned default NULL,
+           `tree_id` int(11) unsigned default '1',
+           PRIMARY KEY  (`id`),
+           KEY `l` (`l`,`r`,`pid`,`level`)
+         );
+		INSERT INTO `{TABLE.forum_categories}` (`id`,`l`,`r`,`pid`,`level`,`tree_id`) VALUES ("1","1","2","0","1","1");
+        </mysql>
+    </table>
+    <table>
+        <id>forum_categories_details</id>
+        <mysql>
+            CREATE TABLE `{TABLE.forum_categories_details}` (
+            `node_id` int(11) unsigned NOT NULL auto_increment,
+            `lang` char(2) NOT NULL default 'de',
+            `title` varchar(255) default NULL,
+            `description` varchar(255) default NULL,
+            `public` int(1) unsigned NOT NULL default '1',
+            `active` int(1) unsigned NOT NULL default '1',
+            `image` int(11) unsigned default NULL,
+            `image_version` int(1) unsigned default NULL,
+            PRIMARY KEY  (`node_id`,`lang`)
+            );
+         	INSERT INTO `{TABLE.forum_categories_details}` (`node_id`,`lang`,`title`,`description`,`public`,`active`,`image`,`image_version`) VALUES ("1","de","root",NULL,"1","1",NULL,NULL);
+
+        </mysql>
+    </table>
+    <table>
+        <id>forum_user_settings</id>
+        <mysql>
+            CREATE TABLE `{TABLE.forum_user_settings}` (
+            `user_id` int(11) unsigned NOT NULL default '0',
+            `notify_new_topic` int(1) unsigned NOT NULL default '1',
+            `signature` text,
+            PRIMARY KEY  (`user_id`)
+            );
+        </mysql>
+    </table>
+    <table>
+        <id>forum_forums</id>
+        <mysql>
+            CREATE TABLE `{TABLE.forum_forums}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `category_id` int(11) unsigned default '0',
+            `title` varchar(255) default NULL,
+            `description` varchar(255) default NULL,
+            `topic_count` int(11) unsigned default NULL,
+            `posting_count` int(11) unsigned default NULL,
+            `lastentry_user` int(11) unsigned default NULL,
+            `lastentry_date` int(11) unsigned default NULL,
+            `lastentry_topic` int(11) unsigned default NULL,
+            `lastentry_posting` int(11) unsigned default NULL,
+            `creation_date` int(11) unsigned default NULL,
+            `creation_user` int(11) unsigned default NULL,
+            `mod_date` int(11) unsigned default NULL,
+            `mod_user` int(11) unsigned default NULL,
+            `lastentry_posting_title` varchar(255) NOT NULL default '',
+            `active` int(1) unsigned NOT NULL default '1',
+            `image` int(11) unsigned NOT NULL default '0',
+            `image_version` int(1) unsigned NOT NULL default '0',
+            PRIMARY KEY  (`id`),
+            KEY `category_id` (`category_id`)
+            ) ;
+     </mysql>
+    </table>
+    <table>
+        <id>forum_postings</id>
+        <mysql>
+            CREATE TABLE `{TABLE.forum_postings}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `topic_id` int(11) unsigned default NULL,
+            `l` int(11) unsigned default NULL,
+            `r` int(11) unsigned default NULL,
+            `pid` int(11) unsigned default NULL,
+            `level` int(11) unsigned default NULL,
+            `title` varchar(255) default NULL,
+            `body` text,
+            `creation_user` int(11) unsigned default NULL,
+            `creation_date` int(11) unsigned default NULL,
+            `mod_user` int(11) unsigned default NULL,
+            `mod_date` int(11) unsigned default NULL,
+            `view_count` tinyint(3) unsigned default '0',
+            `tree_id` int(11) unsigned default NULL,
+            `active` int(1) unsigned NOT NULL default '1',
+            PRIMARY KEY  (`id`),
+            KEY `tree_id` (`tree_id`),
+            KEY `l` (`l`),
+            KEY `r` (`r`),
+            KEY `pid` (`pid`),
+            KEY `level` (`level`)
+            );
+            alter table `{TABLE.forum_postings}` ,add column `upload_file_id` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `active`;
+        </mysql>
+    </table>
+    <table>
+        <id>forum_postings_alerts</id>
+        <mysql>
+            CREATE TABLE `{TABLE.forum_postings_alerts}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `message` text,
+            `user` int(11) unsigned NOT NULL default '0',
+            `date` int(11) unsigned default NULL,
+            PRIMARY KEY  (`id`,`user`)
+            ) ;
+        </mysql>
+    </table>
+
+    <table>
+        <id>forum_notification</id>
+        <mysql>
+        CREATE TABLE `{TABLE.forum_notification}` (
+        `topic_id` int(11) unsigned NOT NULL auto_increment,
+        `user_id` int(11) unsigned NOT NULL default '0',
+        `watchdate` int(11) unsigned default NULL,
+        `notified` int(1) unsigned default '0',
+        `type` int(1) unsigned NOT NULL default '0',
+        PRIMARY KEY  (`topic_id`,`user_id`)
+        );
+        </mysql>
+    </table>
+
+    <table>
+        <id>forum_topics</id>
+        <mysql>
+            CREATE TABLE `{TABLE.forum_topics}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `forum_id` int(11) unsigned default NULL,
+            `creation_date` int(11) unsigned default NULL,
+            `creation_user` int(11) unsigned default NULL,
+            `mod_date` int(11) unsigned default NULL,
+            `mod_user` int(11) unsigned default NULL,
+            `title` varchar(255) default NULL,
+            `type` tinyint(3) unsigned default '0',
+            `view_count` int(11) unsigned default '0',
+            `posting_count` int(11) unsigned default '0',
+            `lastentry_user` int(11) unsigned default NULL,
+            `lastentry_date` int(11) unsigned default NULL,
+            `active` int(1) unsigned NOT NULL default '1',
+            PRIMARY KEY  (`id`),
+            KEY `forum_id` (`forum_id`)
+            ) ;
+        </mysql>
+    </table>
+     <table>
+        <id>search_assoc_forum_sys</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_assoc_forum_sys}` (
+             `info_id` int(14) NOT NULL default '0',
+             `kw_id` int(14) NOT NULL default '0',
+             `weight` smallint(4) NOT NULL default '0',
+             KEY `spider_id` (`info_id`),
+             KEY `key_id` (`kw_id`)
+           ) TYPE=MyISAM
+        </mysql>
+    </table>
+    <table>
+        <id>search_infos_forum_sys</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_infos_forum_sys}` (
+             `id` int(14) unsigned NOT NULL auto_increment,
+             `title` varchar(255) NOT NULL default '',
+             `description` text NOT NULL,
+             `active` int(1) NOT NULL default '1',
+             `ext_link` varchar(255) default NULL,
+             `content_id` int(14) unsigned NOT NULL default '0',
+             `content_type` int(8) unsigned NOT NULL default '0',
+             `mod_date` int(11) unsigned NOT NULL default '0',
+             `image` int(11) unsigned default '0',
+             `public` tinyint(1) unsigned default '0',
+             `creation_date` int(11) default NULL,
+             `creation_user` int(11) default NULL,
+             `mod_user` int(11) default NULL,
+             `valid_from` int(11) unsigned default '0',
+             `valid_until` int(11) unsigned default '0',
+             PRIMARY KEY  (`id`)
+           ) ;
+        </mysql>
+    </table>
+    <openfile>xt/includes/classes/abbc/abbc.cfg.php</openfile>
+    <openfile>xt/includes/classes/abbc/abbc.lib.php</openfile>
+    <folder>images/emoticons</folder>
+    <file>xt/includes/widgets/relations.tpl</file>
+    <file>derefer.php</file>
+    <file>images/icons/hand_red_card.png</file>
+    <changelog>
+        <rev>2600 First working release</rev>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

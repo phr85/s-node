@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>110</baseid>
+    <id>ch.iframe.snode.usermanager</id>
+    <version>$Rev: 5961 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Benutzeradministration</name>
+            <description>Benutzerrechte verwalten</description>
+        </de>
+        <en>
+            <name>Usermanager</name>
+            <description>Manage User rights</description>
+        </en>
+    </lang>
+
+    <page>
+        <parentnode>99</parentnode>
+        <id>702</id>
+        <lang>
+            <de>
+                <title>Passwort vergessen</title>
+                <file>702.tpl</file>
+                <public>1</public>
+                <visible>0</visible>
+            </de>
+            <en>
+                <title>Lost Password</title>
+                <file>702.tpl</file>
+                <public>1</public>
+                <visible>0</visible>
+            </en>
+        </lang>
+    </page>
+
+    <contenttype>
+        <id>110</id>
+        <title>User</title>
+        <open_url></open_url>
+        <content_table>user</content_table>
+        <title_field>username</title_field>
+        <icon>user.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <contenttree>
+        <id>4</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>System</title>
+            </de>
+            <en>
+                <title>System</title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <contenttree>
+        <id>110</id>
+        <parentnode>4</parentnode>
+        <lang>
+            <de>
+                <title>Authentifikation</title>
+                <description>...</description>
+            </de>
+            <en>
+                <title>Authentification</title>
+                <description>...</description>
+            </en>
+        </lang>
+    </contenttree>
+
+
+    <module>
+        <id>passwdchange</id>
+        <treenode>110</treenode>
+        <lang>
+            <de>
+                <name>passwdchange</name>
+                <description>Kennwort ändern</description>
+            </de>
+            <en>
+                <name>passwdchange</name>
+                <description>change password</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+     </module>
+
+    <module>
+        <id>loginbox</id>
+        <treenode>110</treenode>
+        <lang>
+            <de>
+                <name>Loginbox</name>
+                <description>Benutzerlogin</description>
+            </de>
+            <en>
+                <name>Loginbox</name>
+                <description>Login</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>lostpassword</id>
+        <treenode>110</treenode>
+        <lang>
+            <de>
+                <name>Passwort vergessen</name>
+                <description>Neues Passwort anfordern</description>
+            </de>
+            <en>
+                <name>Lost Password</name>
+                <description>Request a new password</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <comment>Die Tabellen kommen schon mit dem core package mit.</comment>
+
+     <table>
+        <id>user</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.user}` (
+              `id` int(11) NOT NULL auto_increment,
+              `username` varchar(40) default NULL,
+              `email` varchar(255) NOT NULL default '',
+              `password` varchar(40) NOT NULL default '',
+              `creation_date` int(11) NOT NULL default '0',
+              `creation_user` int(11) NOT NULL default '0',
+              `mod_date` int(11) NOT NULL default '0',
+              `mod_user` int(11) NOT NULL default '0',
+              `last_login_date` int(11) NOT NULL default '0',
+              `active` int(1) NOT NULL default '0',
+              `lang` char(3) NOT NULL default '',
+              `description` text NOT NULL,
+              `image` int(11) unsigned default NULL,
+              `home_node_id` int(11) default NULL,
+              PRIMARY KEY  (`id`),
+              UNIQUE KEY `username` (`username`)
+            );
+            alter table `{TABLE.user}` ADD `home_node_id` int (11)  NULL  after `image`;
+            ]]>
+        </mysql>
+    </table>
+
+
+    <openfile>ajax.php</openfile>
+    <file>scripts/postajax.js</file>
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>
+

@@ -1,0 +1,25 @@
+= PLUGIN (MODULE) =
+
+== Funktion ==
+
+
+== Möglicher Einsatzbereich ==
+
+
+== Mitgelieferte Templates ==
+* default.tpl     Kurze Beschreibung des Templates (was ist speziell)
+                Kann auch mehrere Zeilen enthalten, dann müssen
+                diese aber so untereinander geschrieben werden
+
+== Parameter ==
+Name             | DatenTyp     | BESCHREIBUNG           | BEISPIELDATEN
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Todo ==

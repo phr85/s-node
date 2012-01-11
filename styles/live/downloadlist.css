@@ -1,0 +1,31 @@
+div.downloadlistwrapper {
+    width: 100%;
+    padding: 5px 0 15px;
+}
+
+table.downloadlisttable {
+    width: 100%;
+}
+
+tr.downloadlistfilewrapper {
+
+}
+
+td.downloadlistfiletitle {
+    width: 50%;
+    padding-bottom: 5px;
+}
+
+td.downloadlistfilesize {
+    width: 25%;
+    padding-bottom: 5px;
+}
+
+td.downloadlistfiledate {
+    width: 25%;
+    padding-bottom: 5px;
+}
+
+span.downloadlistfiledescription {
+    color: #999999;
+}

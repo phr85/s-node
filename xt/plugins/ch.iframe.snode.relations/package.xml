@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>3700</baseid>
+    <id>ch.iframe.snode.relations</id>
+    <version>$Rev: 6218 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Beziehungen</name>
+            <description>Beziehungen erstellen und bearbeiten</description>
+        </de>
+        <en>
+            <name>Relations</name>
+            <description>Manage Content Relations</description>
+        </en>
+    </lang>
+    <page>
+        <parentnode>121</parentnode>
+        <id>236</id>
+        <lang>
+            <de>
+                <title>Beziehungen</title>
+                <file>236.tpl</file>
+            </de>
+            <en>
+                <title>Relations</title>
+                <file>236.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+
+
+    <table>
+        <id>relations</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.relations}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `lang` char(2) NOT NULL default '',
+            `content_id` int(11) unsigned NOT NULL default '0',
+            `content_type` int(11) unsigned NOT NULL default '0',
+            `target_content_type` int(11) unsigned NOT NULL default '0',
+            `target_content_id` int(11) unsigned NOT NULL default '0',
+            `priority` int(11) unsigned NOT NULL default '0',
+            `title` varchar(255) default NULL,
+            `target_title` varchar(255) default NULL,
+            `description` varchar(255) default NULL,
+            `image` int(11) unsigned NOT NULL default '0',
+            `type` tinyint(3) unsigned default '0',
+            `position` int(11) unsigned default '1',
+            PRIMARY KEY  (`id`)
+            );
+            alter table `{TABLE.relations}` ADD `priority` int(11) unsigned NOT NULL default '0' after `target_content_id`;
+            alter table `{TABLE.relations}` ADD `title` varchar(255) default NULL after `priority`;
+            alter table `{TABLE.relations}` ADD `target_title` varchar(255) default NULL after `title`;
+            alter table `{TABLE.relations}` ADD `description` varchar(255) default NULL after `target_title`;
+            alter table `{TABLE.relations}` ADD `image` int(11) unsigned NOT NULL default '0' after `description`;
+            alter table `{TABLE.relations}` ADD `type` tinyint(3) unsigned default '0' after `image`;
+            alter table `{TABLE.relations}` ADD `position` int(11) unsigned default '1' after `type`;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>pickers</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.pickers}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `title` varchar(255) default NULL,
+            `description` varchar(255) default NULL,
+            `content_type` int(11) unsigned NOT NULL default '0',
+            `template` int(11) unsigned NOT NULL default '0',
+            `is_main` int(1) unsigned NOT NULL default '0',
+            PRIMARY KEY  (`id`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    <file>xt/templates/default/includes/widgets/relations.tpl</file>
+    <file>xt/includes/template/ch.iframe.snode.relations.inc.php</file>
+    <changelog>
+        <rev>2191 simplification</rev>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

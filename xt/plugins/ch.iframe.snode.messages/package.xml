@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>50</baseid>
+    <id>ch.iframe.snode.messages</id>
+    <version>$Rev: 5951 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Mitteilungen</name>
+            <description>Mitteilungen vom System und anderen Usern empfangen und senden</description>
+        </de>
+        <en>
+            <name>Messages</name>
+            <description>Receive messages from the system and other users</description>
+        </en>
+    </lang>
+    
+   
+    <table>
+        <id>messages</id>
+        <mysql>
+            CREATE TABLE `{TABLE.messages}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+              `sender` int(11) unsigned default NULL,
+              `subject` varchar(255) default NULL,
+              `text` text,
+              `priority` tinyint(3) unsigned default '0',
+              `receiver` int(11) unsigned default NULL,
+              `send_date` int(11) unsigned default '0',
+              `read_date` int(11) unsigned default NULL,
+              `deleted` tinyint(1) unsigned default '0',
+              `message_flow` int(11) unsigned default '0',
+              `parent_message` int(11) unsigned default '0',
+              PRIMARY KEY  (`id`)
+            ) TYPE=MyISAM;
+        </mysql>
+    </table>
+    <table>
+        <id>messages_attachements</id>
+        <mysql>
+            CREATE TABLE `{TABLE.messages_attachements}` (
+              `msg_id` int(11) unsigned NOT NULL auto_increment,
+              `file` varchar(255) default NULL,
+              PRIMARY KEY  (`msg_id`)
+            ) TYPE=MyISAM;
+        </mysql>
+    </table>
+    
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

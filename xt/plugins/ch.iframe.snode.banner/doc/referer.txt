@@ -1,0 +1,27 @@
+= ch.iframe.snode.banner (referer) =
+
+== Funktion ==
+Das Referer-Modul zeichnet die Klicks auf Banner auf.
+
+== Möglicher Einsatzbereich ==
+Banner
+
+== Mitgelieferte Templates ==
+
+== Parameter ==
+keine
+
+== Templatevariablen ==
+keine
+
+== Sessionvarablen ==
+keine
+
+== Hinweise ==
+Der Banner verlinkt auf eine interne Seite, auf der das Referer-Modul implementiert ist. 
+Erst dieses leitet den Betrachter des Banners weiter auf die eigentliche Seite, nach dem 
+der Klick in der Datenbank erfasst wurde.
+
+== Beispiel ==
+
+== Todo ==

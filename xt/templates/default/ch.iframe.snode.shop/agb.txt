@@ -1,0 +1,1 @@
+Geben Sie Hier die Ihre AGBs ein. Diese Datei befindet sich in xt/templates/default/ch.iframe.snode.shop/agb.txt

@@ -1,0 +1,32 @@
+= ch.iframe.snode.articles (slave) =
+
+== Funktion ==
+Stellt die Daten die er von Seinem Master Bekommen hat dar
+
+
+== Möglicher Einsatzbereich ==
+
+
+== Mitgelieferte Templates ==
+*default.tpl Dasselbe wie beim Article viewer
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+master           | string       | Name des Masters       | master="einname"
+
+== Templatevariablen ==
+$xt.270.slave.DATA enthält alle Werte die von diesem Plugin verwendet werden.
+
+
+== Sessionvarablen ==
+
+== Hinweise ==
+$xt270_slave wird nach dem build des Templates gelöscht.
+
+
+== Beispiel ==
+
+== Todo ==
+Assistenten implementieren.

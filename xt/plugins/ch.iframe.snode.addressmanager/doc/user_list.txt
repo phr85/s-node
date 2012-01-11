@@ -1,0 +1,31 @@
+= ch.iframe.snode.addressmanager (user_list) =
+
+== Funktion ==
+Liste aller einem Benutzer zugeordneten Adressen
+
+== Möglicher Einsatzbereich ==
+Liste um eigne Adressen zum bearbeiten aus zu wählen.
+
+== Mitgelieferte Templates ==
+*default.tpl
+*login.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+mode             | string       | Modus der Liste. Im Modus "admin" werden auch inaktive adressen aufgelistet | admin
+
+
+== Templatevariablen ==
+*xt7400_user_list array Alle Daten zur Liste
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Hat der Benutzer nicht die Rechte "selfmanage" oder ist nicht angemolden, wird das Template login.tpl geladen. 
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.addressmanager" module="user_list" mode="admin" style="defult.tpl"}
+
+== Todo ==

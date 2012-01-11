@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>5600</baseid>
+    <id>ch.iframe.snode.roombooking</id>
+    <version>$Rev: 4212 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>roombooking</name>
+            <description>Rooms verwalten</description>
+        </de>
+        <en>
+            <name>roombooking</name>
+            <description>Manage Rooms</description>
+        </en>
+    </lang>
+
+
+    <contenttype>
+        <id>5600</id>
+        <title>Room</title>
+        <open_url>/index.php</open_url>
+        <content_table>rbs_room</content_table>
+        <title_field>title</title_field>
+        <icon>document.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+ 
+
+    <page>
+        <parentnode>101</parentnode>
+        <id>5600</id>
+        <lang>
+            <de>
+                <title>roombooking</title>
+                <file>5600.tpl</file>
+            </de>
+            <en>
+                <title>roombooking</title>
+                <file>5600.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    
+
+    <contenttree>
+        <id>5</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Bannerwerbung</title>
+            </de>
+            <en>
+                <title>Affiliates</title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <contenttree>
+        <id>7</id>
+        <parentnode>5</parentnode>
+        <lang>
+            <de>
+                <title>Banner</title>
+                <description>Module fuer Banner</description>
+            </de>
+            <en>
+                <title>Banner</title>
+                <description>Modules for banners</description>
+            </en>
+        </lang>
+    </contenttree>
+ 
+    <table>
+        <id>rbs_bookings</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.rbs_bookings}` (
+            `id` int(11) unsigned NOT NULL auto_increment,      
+            `room_id` int(11) unsigned NOT NULL default '0',    
+            `creation_date` int(11) unsigned default NULL,      
+            `creation_user` int(11) unsigned default NULL,      
+            `mod_date` int(11) unsigned default NULL,           
+            `mod_user` int(11) unsigned default NULL,           
+            `title` varchar(255) default NULL,                  
+            `comment` text,                                     
+            `date_from` int(11) unsigned NOT NULL default '0',  
+            `date_to` int(11) unsigned NOT NULL default '0',    
+            PRIMARY KEY  (`id`), 
+            KEY `room_id` (`room_id`)        
+            ) ;
+            ]]>
+        </mysql>
+    </table> 
+     <table>
+        <id>rbs_rooms</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.rbs_rooms}` (
+            `id` int(11) unsigned NOT NULL auto_increment,  
+            `title` varchar(255) default NULL,              
+            `area` int(11) unsigned default NULL,           
+            `seats` int(11) unsigned default NULL,          
+            `image` int(11) default NULL,                   
+            `image_version` int(11) default NULL,           
+            `creation_date` int(11) unsigned default NULL,  
+            `creation_user` int(11) unsigned default NULL,  
+            `mod_date` int(11) unsigned default NULL,       
+            `mod_user` int(11) unsigned default NULL,       
+            `description` varchar(255) default NULL,        
+            `type` tinyint(3) default NULL,                 
+            `contact_person` int(11) default NULL,          
+            PRIMARY KEY  (`id`)         
+            );
+            ]]>
+        </mysql>
+    </table> 
+<changelog>
+    <rev>2900 init</rev>
+</changelog>
+</package>

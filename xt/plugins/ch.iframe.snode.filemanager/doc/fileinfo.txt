@@ -1,0 +1,29 @@
+= ch.iframe.snode.filemanager (fileinfo) =
+
+== Funktion ==
+Darstellung detailierter Informationen zu einer Datei.
+
+== Möglicher Einsatzbereich ==
+Downloadlisten, etc.
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+id	             | integer (Autoval P) | Identifikationsnummer der Datei | 22
+
+== Templatevariablen ==
+*xt240_fileinfo array Alle daten zur Datei
+
+== Sessionvarablen ==
+keine
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.filemanager" module="fileinfo" id=22 style="default.tpl" ncpos="1"}
+
+== Todo ==

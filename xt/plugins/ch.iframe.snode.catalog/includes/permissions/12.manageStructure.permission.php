@@ -1,0 +1,19 @@
+<?php
+$GLOBALS['plugin']->addPermission("Manage structure", array(
+                                                       'addNode',
+                                                       'exitSaveNode',
+                                                       'exitNode',
+                                                       'cancel',
+                                                       'insertNode',
+                                                       'addFirstNode',
+                                                       'saveNode',
+                                                       'editNode',
+                                                       'moveNodeDown',
+                                                       'moveNodeUp',
+                                                       'deleteNode',
+                                                       'deactivateNodeLang',
+                                                       'activateNodeLang',
+                                                       'cutNode',
+                                                       "browserRemoveArticleFromTree"
+                                                       ));
+?>

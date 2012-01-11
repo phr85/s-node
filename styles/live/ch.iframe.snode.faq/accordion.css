@@ -1,0 +1,44 @@
+#faqaccordion dl {
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
+#faqaccordion dt {
+    clear: both;
+    margin: 0;
+    padding: 0 0 4px 20px;
+    background-image: url(/images/icons/faq-inactive.gif);
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+
+#faqaccordion dt.selected {
+    background-image: url(/images/icons/faq-active.gif);
+}
+
+#faqaccordion dt.node {
+    font-weight: bold;
+}
+
+#faqaccordion dt.nosubelement {
+    background-image: none !important;
+}
+
+#faqaccordion dt:focus {
+    outline: none;
+    -moz-user-focus: none;
+    -moz-outline: none;
+}
+
+#faqaccordion dd {
+    clear: both;
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+
+#faqaccordion dd.question {
+    padding: 0 0 10px 20px;
+    font-style: italic;
+    color: #000000;
+}

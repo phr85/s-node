@@ -1,0 +1,7 @@
+= ch.iframe.snode.faq (categorypicker) =
+
+== Funktion ==
+Kategorienpicker für die Administrationsoberfläche
+
+== Mitgelieferte Templates ==
+*tree.tpl

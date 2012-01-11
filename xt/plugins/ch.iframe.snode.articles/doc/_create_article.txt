@@ -1,0 +1,26 @@
+= ch.iframe.snode.articles (_create_article) =
+
+== Funktion ==
+
+
+== Möglicher Einsatzbereich ==
+
+
+== Mitgelieferte Templates ==
+*chooseCategory.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+
+== Todo ==

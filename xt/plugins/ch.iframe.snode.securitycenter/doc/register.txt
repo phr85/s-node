@@ -1,0 +1,34 @@
+= ch.iframe.snode.securitycenter (register) =
+
+== Funktion ==
+Registrationsformular
+
+== Möglicher Einsatzbereich ==
+Registrationsmäglichkeit für geschlossene Bereiche z.B: Shop, Forum, etc.
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+role             | string       | Komma getrennt die IDs aller Rollen in der der neue Benutzer eingetragen werden soll.| 1,9,5
+group            | string       |  Komma getrennt die IDs aller Gruppen in der der neue Benutzer eingetragen werden soll.| default.tpl
+autologin        | boolen       | Der Benutzer wird automatisch angemolden nach der Registration | default.tpl
+redirect_tpl     | int          | template das dargestellt werden soll nach erfolgreicher Registration | default.tpl
+keepassignment	 | boolen		| Templatevariablen behalten? | 
+
+== Templatevariablen ==
+*xt100_register array Sätliche Daten und Fehlermeldungen
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Mittels der Pluginkonfiguration kann über "condition" die Registration gefiltert, resp. begrenzt werden. Bsp: Nur mit einer @iframe.ch E-Mailadresse.
+
+ 
+== Beispiel ==
+{plugin package="ch.iframe.snode.securitycenter" module="register" style="default.tpl" role="1,9,5" group="2,4" autologin="1" redirect_tpl="10000"}
+
+== Todo ==

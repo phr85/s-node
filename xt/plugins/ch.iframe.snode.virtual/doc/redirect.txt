@@ -1,0 +1,25 @@
+= ch.iframe.snode.virtual (redirect) =
+
+== Funktion ==
+
+
+== Möglicher Einsatzbereich ==
+
+
+== Mitgelieferte Templates ==
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+
+== Todo ==

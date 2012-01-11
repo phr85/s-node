@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>6</baseid>
+    <id>ch.iframe.snode.Packagebuilder</id>
+    <version>$Rev: 3041 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Build Packages</name>
+            <description>S-Node Packages bauen</description>
+        </de>
+        <en>
+            <name>Build Packages</name>
+            <description>S-Node Packages bauen</description>
+        </en>
+    </lang>
+
+    <page>
+        <parentnode>100</parentnode>
+        <id>1002</id>
+        <lang>
+            <de>
+                <title>Updates And Installs</title>
+                <file>1003.tpl</file>
+            </de>
+            <en>
+                <title>Updates and installs</title>
+                <file>1003.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>1002</parentnode>
+        <id>1004</id>
+        <lang>
+            <de>
+                <title>Packagebuilder</title>
+                <file>1004.tpl</file>
+            </de>
+            <en>
+                <title>Packagebuilder</title>
+                <file>1004.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>112</parentnode>
+        <id>1005</id>
+        <forceupdate>1</forceupdate>
+        <lang>
+            <de>
+                <title>Packagebuilder Downloader</title>
+                <file>1005.tpl</file>
+            </de>
+            <en>
+                <title>Packagebuilder Downloader</title>
+                <file>1005.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

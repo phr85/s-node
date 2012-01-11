@@ -1,0 +1,10 @@
+User-agent: *
+Disallow:/xt/
+Disallow:/admin/
+Disallow:/fonts/
+Disallow:/scripts/
+Disallow:/styles/
+Disallow:/tools/
+Disallow:/trackback.log
+Disallow:/trackback.php
+Disallow:/captcha_image.php

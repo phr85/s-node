@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>7200</baseid>
+    <id>ch.iframe.snode.nettools</id>
+    <version>$Rev: 4439 $</version>
+    <permissions>false</permissions>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Net Tools</name>
+            <description>Sammlung von Internet Tools, wie ping, whois, etc...</description>
+        </de>
+        <en>
+            <name>Net tools</name>
+            <description>Collection of internet tools like ping, whois and more.</description>
+        </en>
+    </lang>
+    <changelog>
+        <rev></rev>
+    </changelog>
+</package>

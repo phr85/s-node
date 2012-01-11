@@ -1,0 +1,27 @@
+#tc_right {
+	float: right;
+	width: 40%;
+}
+
+#tc_left {
+	/*border: 1px solid green;*/
+	float: left;
+	width: 59%;
+}
+#tc_right td, #tc_left td {
+	font-size: 11px;
+}
+.TipCls1 {
+	width:300px;
+	background-color: #FFF3CF;
+	border: 1px solid #DDDDDD;
+	padding:5px;
+	color:black;
+}
+
+td.employee {
+	padding: 2px 2px 2px 2px;
+	vertical-align:top;
+	border-bottom: 1px solid #DDDDDD;
+	margin-bottom: 5px;
+}

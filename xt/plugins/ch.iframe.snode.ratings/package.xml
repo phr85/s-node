@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>8400</baseid>
+    <id>ch.iframe.snode.ratings</id>
+    <version>$Rev: 4803 $</version>
+    <permissions>false</permissions>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Ratings</name>
+            <description>Inhalte können mit Hilfe von diesem Modul bewertet werden.</description>
+        </de>
+        <en>
+            <name>Ratings</name>
+            <description>Using this module you'll be able to rate any type of content.</description>
+        </en>
+    </lang>
+	<contenttype>
+        <id>8400</id>
+        <title>Rating</title>
+        <open_url></open_url>
+        <content_table>ratings</content_table>
+        <title_field>title</title_field>
+        <icon>text.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <contenttree>
+        <id>4</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>System</title>
+            </de>
+            <en>
+                <title>System</title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <contenttree>
+        <id>8400</id>
+        <parentnode>4</parentnode>
+        <lang>
+            <de>
+                <title>Rating</title>
+                <description>Inhalte können mit Hilfe von diesem Modul bewertet werden.</description>
+            </de>
+            <en>
+                <title>Rating</title>
+                <description>Using this module you'll be able to rate any type of content.</description>
+            </en>
+        </lang>
+    </contenttree>
+    <module>
+        <id>ratings</id>
+        <treenode>8400</treenode>
+        <lang>
+            <de>
+                <name>Ratings</name>
+                <description>Bewertungsfunktion für bestimmten Inhalt einfügen.</description>
+            </de>
+            <en>
+                <name>Ratings</name>
+                <description>Enable ratings for specifical content</description>
+            </en>
+        </lang>
+        <param>
+            <id>content_type</id>
+            <lang>
+                <de>
+                    <title>Objekttyp</title>
+                    <description>Wählen Sie einen Objekttypen aus</description>
+                </de>
+                <en>
+                    <title>Content Type</title>
+                    <description>Select a content type</description>
+                </en>
+            </lang>
+            <values>[SELECT id,title FROM {PREFIX}content_types ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+        <param>
+            <id>content_id</id>
+            <lang>
+                <de>
+                    <title>Objekt ID</title>
+                    <description>Geben sie die ID eines Objektes an wenn Sie explizit ein bestimmtes Objekt bewerten wollen. Ansonsten wird s-node automatisch eine ID ermitteln.</description>
+                </de>
+                <en>
+                    <title>Content ID</title>
+                    <description>Use this ID to determine which content object should be rated.</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+     </module>
+    <module>
+        <id>viewer</id>
+        <treenode>8400</treenode>
+        <lang>
+            <de>
+                <name>Ratings Viewer</name>
+                <description>Aktuelle Bewertungen anzeigen.</description>
+            </de>
+            <en>
+                <name>Ratings Viewer</name>
+                <description>Show actual ratings</description>
+            </en>
+        </lang>
+        <param>
+            <id>content_type</id>
+            <lang>
+                <de>
+                    <title>Objekttyp</title>
+                    <description>Wählen Sie einen Objekttypen aus</description>
+                </de>
+                <en>
+                    <title>Content Type</title>
+                    <description>Select a content type</description>
+                </en>
+            </lang>
+            <values>[SELECT id,title FROM {PREFIX}content_types ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+        <param>
+            <id>content_id</id>
+            <lang>
+                <de>
+                    <title>Objekt ID</title>
+                    <description>Geben sie die ID eines Objektes an wenn Sie explizit ein bestimmtes Objekt bewerten wollen. Ansonsten wird s-node automatisch eine ID ermitteln.</description>
+                </de>
+                <en>
+                    <title>Content ID</title>
+                    <description>Use this ID to determine which content object should be rated.</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+     </module>
+    <table>
+        <id>ratings</id>
+        <mysql>
+            <![CDATA[
+                 CREATE TABLE `{TABLE.ratings}` (
+					  `id` int(11) NOT NULL auto_increment,
+					  `content_type` int(11) NOT NULL default '0',
+					  `content_id` int(11) NOT NULL default '0',
+					  `c_date` int(11) NOT NULL default '0',
+					  `m_date` int(11) NOT NULL default '0',
+					  `avg_total` char(3) NOT NULL default '0.0',
+					  `voters_total` int(11) NOT NULL default '0',
+					  PRIMARY KEY  (`id`)
+				);
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>ratings_votes</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.ratings_votes}` (
+				  `id` int(11) NOT NULL auto_increment,
+				  `rating_id` int(11) NOT NULL default '0',
+				  `c_date` int(11) NOT NULL default '0',
+				  `c_id` int(11) NOT NULL default '0',
+				  `value` int(11) NOT NULL default '0',
+				  `iplong` int(11) NOT NULL default '0',
+				  `sessid` varchar(255) NOT NULL default '0',
+				  PRIMARY KEY  (`id`)
+				);
+            ]]>
+        </mysql>
+    </table>
+    <folder>images/ratings</folder>
+    <openfile>styles/live/ratings.css</openfile>
+    <openfile>scripts/jquery.js</openfile>
+    <openfile>scripts/jquery.rater.js</openfile>
+</package>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>8600</baseid>
+    <id>ch.iframe.snode.widgets</id>
+    <version>$Rev: 4781 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Widgets</name>
+            <description>support package für widgets </description>
+        </de>
+        <en>
+            <name>Widgets</name>
+            <description>support package for widgets </description>
+        </en>
+    </lang>
+
+
+<folder>xt/templates/default/includes/widgets</folder>
+<openfile>styles/live/datepicker.css</openfile>
+</package>

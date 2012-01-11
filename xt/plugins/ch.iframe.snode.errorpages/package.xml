@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>20</baseid>
+    <id>ch.iframe.snode.errorpages</id>
+    <version>$Rev: 1523 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Fehlerseiten</name>
+            <description>...</description>
+        </de>
+        <en>
+            <name>Errorpages</name>
+            <description>...</description>
+        </en>
+    </lang>
+
+    <page>
+        <parentnode>1</parentnode>
+        <id>106</id>
+        <lang>
+            <de>
+                <title>System</title>
+                <file>106.tpl</file>
+            </de>
+            <en>
+                <title>System</title>
+                <file>106.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>106</parentnode>
+        <id>112</id>
+        <lang>
+            <de>
+                <title>Module</title>
+                <file>112.tpl</file>
+            </de>
+            <en>
+                <title>Modules</title>
+                <file>112.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>112</parentnode>
+        <id>404</id>
+        <lang>
+            <de>
+                <public>1</public>
+                <title>404</title>
+                <file>404.tpl</file>
+            </de>
+            <en>
+                <public>1</public>
+                <title>404</title>
+                <file>404.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

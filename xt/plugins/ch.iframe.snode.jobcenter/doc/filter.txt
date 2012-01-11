@@ -1,0 +1,24 @@
+= ch.iframe.snode.jobcenter (filter) =
+
+== Funktion ==
+
+== Möglicher Einsatzbereich ==
+
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+== Parameter ==
+Name                        | DatenTyp     | Beschreibung                           | Beispieldaten
+style                       | string       | template für den build                 | "default.tpl"
+category                    | int          | Kategorie                              | 1
+
+== Templatevariablen ==
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+
+== Todo ==

@@ -1,0 +1,26 @@
+= ch.iframe.snode.navigation (desktop) =
+
+== Funktion ==
+
+
+== Möglicher Einsatzbereich ==
+
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+
+== Todo ==

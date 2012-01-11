@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<feed version="0.3" xmlns="http://purl.org/atom/ns#" xml:lang="{if $FEED.lang != ''}{$FEED.lang}{else}en{/if}">
+    {if $FEED.title != ''}<title>{$FEED.title}</title>{/if}
+    {if $FEED.tagline != ''}<tagline>{$FEED.tagline}</tagline>{/if}
+    {if $FEED.link != ''}<link rel="alternate" type="text/html" href="{$FEED.link}"/>{/if}
+    {if $FEED.link != ''}<id>{$FEED.link}</id>{/if}
+    {if $FEED.modified != ''}<modified>{$FEED.modified}</modified>{/if}
+    {if $FEED.generator != ''}<generator>{$FEED.generator}</generator>{/if}
+    {foreach from=$ITEMS item=ITEM}
+    <entry>
+        {if $ITEM.title != ''}<title>{$ITEM.title}</title>{/if}
+        {if $ITEM.url != ''}<link rel="alternate" type="text/html" href="{$ITEM.url}"/>{/if}
+        {if $ITEM.lastBuildDate != ''}<created>{$ITEM.lastBuildDate}</created>{/if}
+        {if $ITEM.pubDate != ''}<issued>{$ITEM.pubDate}</issued>{/if}
+        {if $ITEM.modified != ''}<modified>{$ITEM.modified}</modified>{/if}
+        {if $ITEM.url != ''}<id>{$ITEM.url}</id>{/if}
+        {if $ITEM.managingEditor != ''}
+        <author>
+            <name>{$ITEM.managingEditor}</name>
+        </author>
+        {/if}
+        {if $ITEM.description != ''}<summary>{$ITEM.description}</summary>{/if}
+    </entry>
+    {/foreach}
+</feed>

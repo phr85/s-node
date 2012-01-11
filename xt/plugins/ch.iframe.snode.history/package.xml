@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>5800</baseid>
+    <id>ch.iframe.snode.history</id>
+    <version>$Rev: 4212 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Verlauf</name>
+            <description>Verlauf der Besuchten Seiten</description>
+        </de>
+        <en>
+            <name>History</name>
+            <description>History of visited sites</description>
+        </en>
+    </lang>
+    
+        <contenttree>
+        <id>5800</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>History</title>
+            </de>
+            <en>
+                <title>History</title>
+            </en>
+        </lang>
+    </contenttree>
+    
+    <module>
+        <id>marker</id>
+        <treenode>5800</treenode>
+        <main_param>title</main_param>
+        <main_content_type>5800</main_content_type>
+        <lang>
+            <de>
+                <name>Marker</name>
+                <description>Verwenden sie den Marker um einen Markierungspunkt zu setzten</description>
+            </de>
+            <en>
+                <name>Marker</name>
+                <description>Verwenden sie den Marker um einen Markierungspunkt zu setzten</description>
+            </en>
+        </lang>
+        <param>
+            <id>title</id>
+            <lang>
+                <de>
+                    <title>Titel</title>
+                    <description>Geben Sie einen Titel ein um einen expliziten Titel zum Marker zu Setzen </description>
+                </de>
+                <en>
+                    <title>Title</title>
+                    <description>Title to use</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param> 
+        <param>
+            <id>link</id>
+            <lang>
+                <de>
+                    <title>Link</title>
+                    <description>Geben Sie einen Titel ein um einen expliziten Titel zum Marker zu Setzen </description>
+                </de>
+                <en>
+                    <title>Link</title>
+                    <description>Title to use</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    
+    <module>
+        <id>viewer</id>
+        <treenode>5800</treenode>
+        <main_param>limit</main_param>
+        <main_content_type>5800</main_content_type>
+        <lang>
+            <de>
+                <name>Viewer</name>
+                <description>Verwenden sie den Viewer um Verlaufsdaten darzustellen</description>
+            </de>
+            <en>
+                <name>Viewer</name>
+                <description>Display History data</description>
+            </en>
+        </lang>
+        <param>
+            <id>title</id>
+            <lang>
+                <de>
+                    <title>Titel</title>
+                    <description>Geben Sie einen Titel f�r den Viewer ein (optional) </description>
+                </de>
+                <en>
+                    <title>Title</title>
+                    <description>Title for the viewer</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param> 
+       
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <changelog>
+        <rev>3000 changelog added</rev>
+    </changelog>
+</package>

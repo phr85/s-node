@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>140</baseid>
+    <id>ch.iframe.snode.permissions</id>
+    <version>$Rev: 1523 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Berechtigungen</name>
+            <description>Berechtigungen der Benutzer, Gruppen und Rollen erstellen und bearbeiten</description>
+        </de>
+        <en>
+            <name>Permissions</name>
+            <description>Manage permissions for users, groups and roles</description>
+        </en>
+    </lang>
+    
+    <page>
+        <parentnode>111</parentnode>
+        <id>109</id>
+        <lang>
+            <de>
+                <title>Permission Manager</title>
+                <file>109.tpl</file>
+            </de>
+            <en>
+                <title>Permission Manager</title>
+                <file>109.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

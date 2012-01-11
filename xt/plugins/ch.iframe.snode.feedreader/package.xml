@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>2300</baseid>
+    <id>ch.iframe.snode.feedreader</id>
+    <version>$Rev: 6089 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Feed Reader</name>
+            <description>Feed Anzeige</description>
+        </de>
+        <en>
+            <name>Feed Reader</name>
+            <description>Feed reader</description>
+        </en>
+    </lang>
+    <contenttype>
+        <id>2300</id>
+        <title>Feedreader</title>
+        <open_url></open_url>
+        <content_table>feedreader_feeds</content_table>
+        <title_field>title</title_field>
+        <icon>earth.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    <page>
+        <parentnode>101</parentnode>
+        <id>252</id>
+        <lang>
+            <de>
+                <title>Feed Anzeige</title>
+                <file>252.tpl</file>
+            </de>
+            <en>
+                <title>Feed Reader</title>
+                <file>252.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+     <contenttree>
+        <id>4400</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Feed Reader</title>
+            </de>
+            <en>
+                <title>Feed Reader</title>
+            </en>
+        </lang>
+    </contenttree>
+    <module>
+        <id>viewer</id>
+        <treenode>4400</treenode>
+        <main_param>feed_id</main_param>
+        <lang>
+            <de>
+                <name>Feed Feed</name>
+                <description>Darstellung eines Newsfeeds</description>
+            </de>
+            <en>
+                <name>Feed</name>
+                <description>Displays a newsfeed</description>
+            </en>
+        </lang>
+        <param>
+            <id>feed_id</id>
+            <lang>
+                <de>
+                    <title>feed_id</title>
+                    <description>Wählen Sie einen Feed aus</description>
+                </de>
+                <en>
+                    <title>feed_id</title>
+                    <description>Select a feed</description>
+                </en>
+            </lang>
+            <values>[SELECT id,title FROM {PREFIX}feedreader_feeds ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+        <param>
+            <id>show</id>
+            <lang>
+                <de>
+                    <title>Anzahl</title>
+                    <description>Geben sie die Anzahl der darzustellenden Elemente an (Defaultwert all).</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>How many entries should be displayed (default: all)</description>
+                </en>
+            </lang>
+            <values>all</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <table>
+        <id>feedreader_feeds</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.feedreader_feeds}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `title` varchar(255) default NULL,
+            `link` varchar(255) default NULL,
+            `url` varchar(255) default NULL,
+            `creation_date` int(11) unsigned default NULL,
+            `creation_user` int(11) unsigned default NULL,
+            `mod_date` int(11) unsigned default NULL,
+            `mod_user` int(11) unsigned default NULL,
+            `refresh_interval` int(11) unsigned default NULL,
+            `last_update` int(11) unsigned default NULL,
+            `protocol` varchar(10) default NULL,
+            `encoding` varchar(15) default 'UTF-8',
+            `active` int(1) unsigned default NULL,
+            `entries` int(2) unsigned default '100',
+            `generator` varchar(255) default NULL,
+            `language` varchar(10) default NULL,
+            `copyright` varchar(255) default NULL,
+            `docs` varchar(255) default NULL,
+            `description` text,
+            `managingeditor` varchar(255) default NULL,
+            `lastbuilddate` mediumint(11) unsigned default NULL,
+            `pubdate` int(11) unsigned default NULL,
+            `image_url` varchar(255) default NULL,
+            `image_link` varchar(255) default NULL,
+            `image_title` varchar(255) default NULL,
+            `image_width` int(3) unsigned default NULL,
+            `image_height` int(3) unsigned default NULL,
+            PRIMARY KEY  (`id`)
+            ) ENGINE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>feedreader_feedcontainer</id>
+        <mysql> <![CDATA[
+         CREATE TABLE `{TABLE.feedreader_feedcontainer}` (
+        `feed_id` int(10) unsigned NOT NULL default '0',
+        `id` varchar(255) default NULL,
+        `title` varchar(255) default NULL,
+        `updated` int(11) unsigned default NULL,
+        `author_name` varchar(255) default NULL,
+        `author_uri` varchar(255) default NULL,
+        `author_email` varchar(255) default NULL,
+        `content` text,
+        `content_type` varchar(50) default NULL,
+        `link` varchar(255) default NULL,
+        `link_type` varchar(50) default NULL,
+        `link_hreflang` varchar(5) default NULL,
+        `link_title` varchar(255) default NULL,
+        `link_length` varchar(255) default NULL,
+        `summary` text,
+        `summary_type` varchar(255) default NULL,
+        `category_term` varchar(255) default NULL,
+        `category_scheme` varchar(255) default NULL,
+        `category_uri` varchar(255) default NULL,
+        `contributor_name` varchar(255) default NULL,
+        `contributor_email` varchar(255) default NULL,
+        `contirbutor_uri` varchar(255) default NULL,
+        `published` int(11) default NULL,
+        `source_id` varchar(255) default NULL,
+        `source_title` varchar(255) default NULL,
+        `source_updated` int(11) default NULL,
+        `source_rights` text,
+        `rights` text,
+        `rights_type` varchar(50) default NULL,
+        `md5` varchar(32) default NULL,
+        `comments` varchar(255) default NULL,
+        `position_id` int(11) unsigned NOT NULL auto_increment,
+        PRIMARY KEY  (`position_id`)
+        ) ENGINE=MyISAM;
+
+        alter table {TABLE.feedreader_feedcontainer} ,
+        add column `enclosure_url` varchar (255)   NULL  after `position_id`,
+        add column `enclosure_length` int (11)   NULL  after `enclosure_url`,
+        add column `enclosure_type` varchar (100)   NULL  after `enclosure_length`;
+
+            ]]>
+        </mysql>
+    </table>
+
+    <folder>xt/includes/classes/feeds</folder>
+    <changelog>
+        <rev>2400 enclosure tag implementation</rev>
+        <rev>1786 Added folder tag</rev>
+        <rev>1785 changelog added</rev>
+    </changelog>
+</package>

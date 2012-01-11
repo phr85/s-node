@@ -1,0 +1,5 @@
+<?php
+
+XT::unsetSessionValue('ctrl');
+
+?>

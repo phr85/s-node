@@ -1,0 +1,1 @@
+{plugin package="ch.iframe.snode.addressmanager" module="user_edit" redirect_tpl=163}

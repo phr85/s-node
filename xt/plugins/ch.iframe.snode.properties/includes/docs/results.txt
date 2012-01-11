@@ -1,0 +1,29 @@
+Funktion:
+Gibt einen Array mit content_type und den entsprechenden content_ids aus welche über seine Parameter definiert wurden und vom viewer an ihn übergeben werden.
+
+Möglicher Einsatzbereich:
+Dies ist der Filter für (Dropdown der für einen Filter verwendet werden kann um alle datensätze darzustellen welches den Wert X in der eigenschaft Y hat).
+
+Mitgelieferte Templates:
+default.tpl     Das defaulttemplate gibt nur den array aus.
+
+
+Parameter:
+style - template für den build | default.tpl
+property   | integerwerte | Id der Eigenschaft(en) die ausgegeben werden soll | i.e. ="4,12,33" oder =9 oder ="9"
+intersect  | bool         | Nur die Schnittmenge der Resultate der verschiedenen Abfragen zurückgeben. | default ist true
+
+Templatevariablen:
+$xt.7500.results enthält alle Werte die von diesem Plugin verwendet werden. Wobei 7500 die BaseID des Packages ist
+
+Sessionvarablen:
+keine
+
+Hinweise:
+$xt.7500.results wird nach dem build des Templates gelöscht.
+
+Beispielaufruf:
+{subplugin package="ch.iframe.snode.properties" module="results" property="2,5,9" style="default.tpl" intersect="false"}
+
+Todo:
+Assistenten implementieren.

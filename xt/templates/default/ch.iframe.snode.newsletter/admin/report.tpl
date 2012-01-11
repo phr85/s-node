@@ -1,0 +1,1 @@
+{include file="ch.iframe.snode.newsletter/admin/hiddenValues.tpl"}

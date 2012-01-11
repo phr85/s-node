@@ -1,0 +1,19 @@
+div#mapError{
+	padding: 5px;
+	margin: 20px;
+	background-color: #FFF2EF;
+	border: 1px solid black;
+}
+
+h1.map{
+	margin: 0px 0px 10px 0px;
+}
+
+div.mapDescription{
+	float: left;
+	margin: 0px 10px 10px 0px;
+}
+
+div#map_canvas{
+	padding: 5px;
+}

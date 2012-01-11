@@ -1,0 +1,38 @@
+.xt_liveedit_articletitle button, .xt_liveedit_articlesubtitle button, .xt_liveedit_articleintroduction button, .xt_liveedit_chaptertitle button, .xt_liveedit_chaptersubtitle button, .xt_liveedit_chaptermaintext button {
+	margin: 6px 6px 0 0;
+	background-color: #fcfcfc;
+	border-color:#C4C3C8 #E4E3EB #E4E3EB;
+	border-style:solid;
+	border-width:1px;
+	padding:2px;
+}
+
+.xt_liveedit_articletitle input, .xt_liveedit_articlesubtitle input, .xt_liveedit_chaptertitle input,.xt_liveedit_chaptersubtitle input {
+	color: inherit;
+	margin: 6px 6px 0 0;
+	background-color: #fcfcfc;
+	border-color:#C4C3C8 #E4E3EB #E4E3EB;
+	border-style:solid;
+	border-width:1px;
+	padding:2px;
+	font-size: inherit;
+	font-weight: bold;
+}
+
+.versiontrigger {
+	position: relative;
+}
+
+.versioninfo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #000;
+	background-color: #fff;
+	opacity: 0;
+	padding: 5px;
+}
+
+.versioninfo a {
+	color: #000;
+}

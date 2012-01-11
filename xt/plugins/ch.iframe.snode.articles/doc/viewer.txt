@@ -1,0 +1,40 @@
+= ch.iframe.snode.articles (viewer) =
+
+== Funktion ==
+Anzeige eines Artikels anhand seiner Identifikationsnummer
+
+== Möglicher Einsatzbereich ==
+Inhaltsdarstellung
+
+== Mitgelieferte Templates ==
+*accordion.tpl
+*blogstyle.tpl
+*default.tpl
+*tabs.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+title            | string       | Einen eigenen Titel setzen | Hallo Welt
+slave            | boolen       | Daten zusätzlich als Slave zur Verfügung stellen | true
+id		         | integer (autoval:P)      | Identifikationsnummer des Artikels | 666
+
+
+== Templatevariablen ==
+*TITLE string Titel
+*IMAGE_VERSION int Bildversion
+*ARTICLE array Artikeldaten
+*CHAPTER array Kapiteldaten (für Kapiteltemplate)
+*CHAPTERCONTENT array Gerenderte Kapiteldaten (für Artikeltemplate)
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Hier wird sowohl das einzelne Kapitel (CHAPTER) sowie der ganze Artikel (ARTICLE) ausgegeben. Das Resultat aus dem Rendering der Kapitel
+wird via CHAPTERCONTENT in den Artikel eingebunden.
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.articles" module="viewer" id="56" style="default.tpl" slave="" ncpos="1"}
+
+== Todo ==

@@ -1,0 +1,34 @@
+= ch.iframe.snode.blog (trackback_viewer) =
+
+== Funktion ==
+Anzeige eingehender Trackbacks
+
+== Möglicher Einsatzbereich ==
+Einbinden von Blog-Funktionen.
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+content_type     | integer      | Typ des contents | 60
+content_id       | integer      | Identifikationsnummer innerhalb des Contents | 54
+reverseorder     | bool         | Die auflistung der Kommentare geschieht rückwärts. (Neuste Einträge zuerst) | true
+
+== Templatevariablen ==
+*xt7600_trackback_viewer array Alle Daten zur Liste der eingehenden Trackbacks
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Die Trackback-URL wird wiefolgt eingebunden:
+Ein Link auf /trackback.php?ctype=CONTENT_TYPE&cid=CONTENT_ID
+Dabei muss CONTENT_TYPE und CONTENT_ID jeweils mit dem entsprechenden content type resp. der entsprechenden content id versehen werden.
+Die so erstellte URL kann als Trackbackurl in anderen Blogsystemen verwendet werden.
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.blog" module="trackback_viewer" style="default.tpl" content_type=60 content_id=$TPL ncpos="1"}
+
+== Todo ==

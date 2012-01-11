@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>8000</baseid>
+    <id>ch.iframe.snode.poll</id>
+    <version>$Rev: 4666 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Polls</name>
+            <description>Erstellen und Verwalten von Umfragen</description>
+        </de>
+        <en>
+            <name>Polls</name>
+            <description>Create and manage Polls</description>
+        </en>
+    </lang>
+    <contenttype>
+        <id>8000</id>
+        <title>Poll</title>
+        <open_url></open_url>
+        <content_table>poll</content_table>
+        <title_field>title</title_field>
+        <id_field>id</id_field>
+    </contenttype>
+    <page>
+        <parentnode>101</parentnode>
+        <id>8000</id>
+        <lang>
+            <de>
+                <title>Polls</title>
+                <file>8000.tpl</file>
+            </de>
+            <en>
+                <title>Polls</title>
+                <file>8000.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <contenttree>
+        <id>8000</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Polls</title>
+                <description>Umfragemodule</description>
+            </de>
+            <en>
+                <title>Polls</title>
+                <description>Poll Modules</description>
+            </en>
+        </lang>
+    </contenttree>
+    <module>
+        <id>viewer</id>
+        <treenode>8000</treenode>
+        <treenode>1</treenode>
+        <main_param>id</main_param>
+        <main_content_type>8000</main_content_type>
+
+        <lang>
+            <de>
+                <name>Poll Viewer</name>
+                <description>Umfrage darstellen</description>
+            </de>
+            <en>
+                <name>Poll Viewer</name>
+                <description>Display a Poll</description>
+            </en>
+        </lang>
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>Poll</title>
+                    <description>Wählen Sie eine Umfrage aus.</description>
+                </de>
+                <en>
+                    <title>Poll</title>
+                    <description>Select a Poll.</description>
+                </en>
+            </lang>
+            <values>[SELECT id,title FROM {PREFIX}poll WHERE active=1 ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+          <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard Style zu verwenden, oder Ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl, otherwise use default.tpl.</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>listtpl</id>
+            <lang>
+                <de>
+                    <title>List TPL</title>
+                    <description>Geben sie das TPL an auf welchem ggf. eine Liste aller aktiven Umfragen dargestellt wird.</description>
+                </de>
+                <en>
+                    <title>List TPL</title>
+                    <description>Please enter the TPL of your poll-list.</description>
+                </en>
+            </lang>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+	<module>
+        <id>list</id>
+        <treenode>8000</treenode>
+        <main_param>id</main_param>
+        <main_content_type>8000</main_content_type>
+
+        <lang>
+            <de>
+                <name>Poll List</name>
+                <description>Liste mit aktiven Umfragen darstellen</description>
+            </de>
+            <en>
+                <name>Poll List</name>
+                <description>Display a list with all active Polls</description>
+            </en>
+        </lang>
+          <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard Style zu verwenden, oder Ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl, otherwise use default.tpl.</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>viewertpl</id>
+            <lang>
+                <de>
+                    <title>Viewer TPL</title>
+                    <description>Wie lautet das TPL welches das Poll-Anzeige/Viewermodul beherbergt?</description>
+                </de>
+                <en>
+                    <title>Viewer TPL</title>
+                    <description>Which TPL does the poll viewer have?</description>
+                </en>
+            </lang>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <table>
+        <id>poll</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.poll}` (
+			  `id` int(11) unsigned NOT NULL auto_increment,
+			  `active` tinyint(1) unsigned NOT NULL default '0',
+			  `title` varchar(255) default NULL,
+			  `date` int(11) default NULL,
+			  `description` text,
+			  `creation_date` int(11) unsigned NOT NULL default '0',
+			  `creation_user` int(11) unsigned NOT NULL default '0',
+			  `mod_date` int(11) unsigned NOT NULL default '0',
+			  `mod_user` int(11) unsigned NOT NULL default '0',
+			  `image` int(11) unsigned default NULL,
+			  `image_version` varchar(11) default NULL,
+			  `image_zoom` tinyint(1) unsigned default '0',
+			  `lang` char(3) NOT NULL default '',
+			  `display_time_type` int(1) unsigned NOT NULL default '0',
+			  `display_time_start` int(11) unsigned NOT NULL default '0',
+			  `display_time_end` int(11) unsigned NOT NULL default '0',
+			  `multiple` int(1) NOT NULL default '0',
+			  PRIMARY KEY  (`id`,`lang`)
+			);
+            ]]>
+        </mysql>
+    </table>
+	<table>
+        <id>poll_entries</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.poll_entries}` (
+			  `id` int(11) unsigned NOT NULL auto_increment,
+			  `poll_id` int(5) default NULL,
+			  `answer_id` int(5) NOT NULL default '0',
+			  `date` int(11) NOT NULL default '0',
+			  `ip` int(11) NOT NULL default '0',
+			  PRIMARY KEY  (`id`),
+			  KEY `poll_id` (`poll_id`),
+			  KEY `answer_id` (`answer_id`),
+			  KEY `date` (`date`)
+			);
+            ]]>
+        </mysql>
+	</table>
+    <table>
+        <id>poll_answers</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.poll_answers}` (
+			  `id` int(11) unsigned NOT NULL auto_increment,
+			  `title` varchar(255) default NULL,
+			  `lang` char(3) NOT NULL default '',
+			  `position` int(11) NOT NULL default '0',
+			  `poll_id` int(11) NOT NULL default '0',
+			  `poll_value` int(11) NOT NULL default '0',
+			  PRIMARY KEY  (`id`,`lang`,`position`)
+			);
+            ]]>
+        </mysql>
+    </table>
+  <changelog>
+      <rev>3200 initial version</rev>
+  </changelog>
+</package>

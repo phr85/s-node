@@ -1,0 +1,33 @@
+**Funktion:
+Gibt eine Adressliste anhand einse Filters (properties oder categories) aus
+
+**Möglicher Einsatzbereich:
+Addresslisten nach Themenbereichen oder "tags" ausgeben.
+
+**Mitgelieferte Templates:
+default.tpl     Kurze Beschreibung des Templates (was ist speziell)
+                Kann auch mehrere Zeilen enthalten, dann müssen
+                diese aber so untereinander geschrieben werden
+
+small.tpl       kleine Variante für den Einsatz in einer übersicht
+
+**Parameter:
+Name             | DatenTyp     | BESCHREIBUNG           | BEISPIELDATEN
+style            | string       | template für den build | default.tpl
+categories       | integerwerte | Initialkategorien      | i.e. ="5,8" oder =4 oder ="4" oder leer
+property_id      | int          | id
+mixFilterResults | boolean      | Resultate der Eigenschaftswerte mit denen der Kategorie mischen oder die Teilmenge
+                                  verwenden
+target_tpl       | int          | TPL id für die volle Darstellung der Adresse
+
+**Templatevariablen:
+$xt7400_filtered_list enthält alle Werte die von diesem Plugin verwendet werden.
+
+**Sessionvarablen:
+categories
+
+**Hinweise:
+categories wird neu gesetzt wenn es über post oder get variablen gesetzt wird. Initial wird der parameter wert genommen.
+
+**Todo:
+Assistenten implementieren

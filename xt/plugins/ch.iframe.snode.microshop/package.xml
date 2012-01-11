@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>9200</baseid>
+    <id>ch.iframe.snode.microshop</id>
+    <version>6000</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>MicroShop</name>
+            <description>mini shop system</description>
+        </de>
+        <en>
+            <name>MicroShop</name>
+            <description>mini shop system</description>
+        </en>
+    </lang>
+    <page>
+        <parentnode>101</parentnode>
+        <id>9200</id>
+        <lang>
+            <de>
+                <title>MicroShop</title>
+                <file>9200.tpl</file>
+            </de>
+            <en>
+                <title>MicroShop</title>
+                <file>9200.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <contenttype>
+        <id>9200</id>
+        <title>microshop</title>
+        <content_table>microshop_display</content_table>
+        <title_field>title</title_field>
+        <icon>member1.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <contenttree>
+        <id>9200</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>MicroShop</title>
+            </de>
+            <en>
+                <title>MicroShop</title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <module>
+        <id>display</id>
+        <treenode>9200</treenode>
+        <main_param>id</main_param>
+        <main_content_type>9200</main_content_type>
+        <lang>
+            <de>
+                <name>Shop Display</name>
+                <description></description>
+            </de>
+            <en>
+                <name>Shop Display</name>
+                <description></description>
+            </en>
+        </lang>
+
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>Display</title>
+                    <description>Welches Display?</description>
+                </de>
+                <en>
+                    <title>Display</title>
+                    <description>Which display?</description>
+                </en>
+            </lang>
+            <values>[SELECT main.id,main.title FROM {PREFIX}microshop_display as main WHERE active=1 ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <table>
+        <id>microshop_display</id>
+        <mysql> <![CDATA[
+				 CREATE TABLE IF NOT EXISTS `{TABLE.microshop_display}` (
+				 `id` int(11) unsigned NOT NULL auto_increment,
+				`title` varchar(255) NOT NULL,
+				`active` tinyint(1) NOT NULL,
+				`style` varchar(100) NOT NULL,
+				`pm_email` varchar(255) NOT NULL,
+				`meta_description` text NOT NULL,
+				`meta_keyword` text NOT NULL,
+				`text_head` text NOT NULL,
+				`op_title` varchar(255) NOT NULL default 'Bestellung',
+				`text_footer` text NOT NULL,
+				`image` int(11) NOT NULL,
+				`agb` text NOT NULL,
+				`currency` varchar(4) NOT NULL,
+				PRIMARY KEY  (`id`)
+				);
+            ]]>
+        </mysql>
+    </table>
+     <table>
+        <id>microshop_order_history</id>
+        <mysql> <![CDATA[
+				 CREATE TABLE IF NOT EXISTS `{TABLE.microshop_order_history}` (
+				`id` int(11) unsigned NOT NULL auto_increment,
+				`display_id` int(11) NOT NULL,
+				`order_date` int(11) NOT NULL,
+				`order_sum` decimal(11,3) NOT NULL,
+				`ordered_items` text NOT NULL,
+				`address` text NOT NULL,
+				`email` varchar(255) NOT NULL,
+				`additional_info` text NOT NULL,
+				PRIMARY KEY  (`id`)
+				);
+            ]]>
+        </mysql>
+    </table>
+    
+     <table>
+        <id>microshop_pages</id>
+        <mysql> <![CDATA[
+				 CREATE TABLE IF NOT EXISTS `{TABLE.microshop_pages}` (
+				`id` int(11) unsigned NOT NULL auto_increment,
+				`display_id` int(11) NOT NULL,
+				`position` smallint(11) unsigned NOT NULL,
+				`type` int(3) NOT NULL,
+				`foreign_id` int(11) NOT NULL,
+				`locked` tinyint(1) NOT NULL,
+				`active` tinyint(1) NOT NULL,
+				PRIMARY KEY  (`id`)
+				);
+            ]]>
+        </mysql>
+    </table>
+    
+     <table>
+        <id>microshop_productpage</id>
+        <mysql> <![CDATA[
+				 CREATE TABLE IF NOT EXISTS `{TABLE.microshop_productpage}` (
+				`id` int(11) unsigned NOT NULL auto_increment,
+				`display_id` int(11) NOT NULL,
+				`text` text NOT NULL,
+				`image` int(11) NOT NULL,
+				`site_title` varchar(255) NOT NULL,
+				`hide_title` tinyint(4) NOT NULL default '0',
+				`style` varchar(100) NOT NULL,
+				PRIMARY KEY  (`id`)
+				);
+            ]]>
+        </mysql>
+    </table>
+    
+     <table>
+        <id>microshop_products</id>
+        <mysql> <![CDATA[
+				 CREATE TABLE IF NOT EXISTS `{TABLE.microshop_products}` (
+				`id` int(11) unsigned NOT NULL auto_increment,
+				`product_page_id` int(11) NOT NULL,
+				`active` int(11) NOT NULL default '1',
+				`title` varchar(255) default NULL,
+				`position` int(11) NOT NULL,
+				`text` text NOT NULL,
+				`price` decimal(10,3) NOT NULL,
+				`image` int(11) NOT NULL,
+				`give_gift_by` int(5) NOT NULL,
+				`receive_items` int(5) NOT NULL,
+				PRIMARY KEY  (`id`)
+				);
+            ]]>
+        </mysql>
+    </table>
+    
+     <table>
+        <id>microshop_textpage</id>
+        <mysql> <![CDATA[
+				 CREATE TABLE IF NOT EXISTS `{TABLE.microshop_textpage}` (
+				`id` int(11) unsigned NOT NULL auto_increment,
+				`display_id` int(11) NOT NULL,
+				`text` text NOT NULL,
+				`image` int(11) NOT NULL,
+				`site_title` varchar(255) NOT NULL,
+				`hide_title` tinyint(4) NOT NULL,
+				`style` varchar(100) NOT NULL,
+				PRIMARY KEY  (`id`)
+				);
+            ]]>
+        </mysql>
+    </table>
+    
+    <openfile>styles/live/ch.iframe.snode.microshop.css</openfile>
+    <openfile>xt/includes/template_modifiers.inc.php</openfile>
+    <folder>images/ch.iframe.snode.microshop</folder>
+    <changelog>
+        <rev>6000 initial plugin</rev>
+    </changelog>
+</package>

@@ -1,0 +1,15 @@
+BaseID
+7600
+
+Tabellen
+xt_comments //   Alle Komentare sind in dieser Tabelle enthalten (nested set)
+                Die IP wird als long gespeichert und kann mit long2ip() ausgegeben werden
+
+xt_comments_trackback_incomming // Eingehende trackbacks von anderen Blogs
+
+xt_comments_trackback_outgoing // Trackbacks die an andere Blogs gesendet wurden.
+
+xt_user     //   Usertabelle um daten der bereits eingeloggten Benutzer zu holen
+
+
+Bemerkungen

@@ -1,0 +1,29 @@
+= ch.iframe.snode.newsletter (send) =
+
+== Funktion ==
+Sendet die Newsletter, die sich in der Warteschlange befinden.
+
+== Möglicher Einsatzbereich ==
+
+
+== Mitgelieferte Templates ==
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+debug            | int          | Gibt den Inhalt aus, der die Funktion BatchedSending generiert | 1
+
+== Templatevariablen ==
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Dieses Modul ist bereits standardmässig implementiert unter dem Template 173.
+
+Die Konfiguration des Sendens im Warteschlangenmodus muss in der Pluginkonfiguration vorgenommen werden.
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.newsletter" module="send" debug="1"}
+
+== Todo ==

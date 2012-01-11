@@ -1,0 +1,78 @@
+= ch.iframe.snode.properties (viewer) =
+
+== Funktion ==
+Stellt die Werte von eigenschaften dar. Dies macht in der Regel nur bei dropdown,bool,checkboxen,multiselect und radio sinn. Bei Text und single line text wird der defaulttext ausgegeben.
+
+== Möglicher Einsatzbereich ==
+Dropdown der für einen Filter verwendet werden kann um alle datensätze darzustellen welches den Wert X in der eigenschaft Y hat.
+
+== Mitgelieferte Templates ==
+*default.tpl
+*dropdown.tpl
+*dropdown_addressfilter.tpl
+
+
+== Parameter ==
+Name             | DatenTyp | Beschreibung                                                            | Beispieldaten
+style            | string   | template für den build                                                  | default.tpl
+properties       | int      | Id der Eigenschaft(en) die ausgegeben werden soll                       | i.e. ="4,12,33" oder =9 oder ="9"
+groups           | int      | Id der Eigenschaftsgruppe(n) deren Eigenschaften ausgegeben werden soll | i.e. ="5,8" oder =4 oder ="4"
+SOURCEBASEID     | int      | baseid für das Template (dropdown)
+
+
+
+
+== Templatevariablen ==
+$xt.7500.viewer enthält alle Werte die von diesem Plugin verwendet werden. Wobei 7500 die BaseID des Packages ist
+
+
+   *.DATA Array                                                           //$xt.7500.viewer.DATA
+    (
+        [3] => Array                                                // Id der Eigenschaft ist auch key des arrays
+            (
+                [id] => 3
+                [content_type] => 60                                //content_type der Eig.
+                [position] => 0                                     //Positionierungsnummer der Eig.
+                [type] => 4                                         //der Typ, siehe config.ext.inc.php
+                [value] => 111[|]aaa[;]333[|]bbb[;]222[|]ccc        //Systemwert
+                [public] => 1                                       //public flag
+                [title] => Artikeleigenschaft                       //Titel
+                [description] => Die Beschreibung                   //Beschreibung
+                [data] => Array                                     //Datenarray, variiert je nach type
+                    (
+                        [0] => Array
+                            (
+                                [value] => 111
+                                [label] => aaa
+                                [default] => 0
+                            )
+
+                        [1] => Array
+                            (
+                                [value] => 333
+                                [label] => bbb
+                                [default] => 1
+                            )
+
+                        [2] => Array
+                            (
+                                [value] => 222
+                                [label] => ccc
+                                [default] => 0
+                            )
+                    )
+            )
+    )
+
+
+== Sessionvarablen ==
+keine
+
+== Hinweise ==
+$xt.7500.viewer.DATA wird nach dem build des Templates gelöscht.
+
+== Beispiel ==
+{subplugin package="ch.iframe.snode.properties" module="viewer" property=2 style="dropdown.tpl" SOURCEBASEID=$BASEID}
+
+== Todo ==
+Assistenten implementieren.

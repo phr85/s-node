@@ -1,0 +1,29 @@
+= ch.iframe.snode.assessment (viewer) =
+
+== Funktion ==
+Welcher Typ sind Sie? Mittels Einschätzungstests können Sie den User durch geschickte Fragestellung herausfinden lassen, 
+wie er zu einem Produkt oder zu einer Eigenschaft steht.
+
+== Möglicher Einsatzbereich ==
+Einschätzungstest, Produktfinder
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+$xt8200_viewer	Beinhaltet alle Daten
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Das Plugin benötigt einen aktuellen Core (5245 oder höher) und das System muss JQuery unterstützen. 
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.assessment" module="viewer" style="default.tpl" id="1"}
+== Todo ==

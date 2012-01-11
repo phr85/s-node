@@ -1,0 +1,29 @@
+= ch.iframe.snode.formmanager (picker) =
+
+== Funktion ==
+Popup um ein Formular auszuwählen
+
+== Möglicher Einsatzbereich ==
+Administrationsoberfläche
+
+== Mitgelieferte Templates ==
+*forms_selector.tpl
+
+
+== Parameter ==
+keine
+
+
+== Templatevariablen ==
+*field string Feld welches die Identifikationsnummer des ausgewählen Formulares entegegen nimmt.
+*form string Formular welches die Identifikationsnummer des ausgewählen Formulares entegegen nimmt.
+*titlefield string Feld welches den Titel des ausgewählen Formulares entegegen nimmt.
+*DATA array Alle daten der Liste
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+
+== Todo ==

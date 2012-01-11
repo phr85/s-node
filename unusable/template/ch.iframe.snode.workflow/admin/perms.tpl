@@ -1,0 +1,1 @@
+{plugin package="ch.iframe.snode.permissions" module="manager" base_id="$BASEID"}

@@ -1,0 +1,238 @@
+@import url(/styles/live/articles.css);
+@import url(/styles/live/navigation.css);
+@import url(/styles/live/thickbox.css);
+
+/* Structure */
+html, body {
+    background-image : url(/images/default/border.gif);
+    background-repeat : repeat-y;
+    background-position : center;
+    background-color : #ffffff;
+}
+
+body {
+    margin : 0;
+    padding : 0;
+    font-family : "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size : 12px;
+    color : #36393d;
+    text-align : left;
+}
+
+.mceVisualAid {
+    border : 1px dashed #ffbbbb;
+}
+
+p {
+    margin: 0;
+}
+
+input {
+    margin: 0;
+}
+
+input.button {
+    height: 21px;
+    padding: 0 6px;
+}
+
+/* Images */
+img {
+    border: 0;
+}
+
+.headimage {
+	margin-left: 136px;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #60ACDA;
+
+}
+
+a:hover {
+    text-decoration: none;
+    color: #36393D;
+}
+
+/* remove dashed boxes from around links in firefox */
+a:focus {
+    user-focus: none;
+    outline: none;
+    -moz-user-focus: none;
+    -moz-outline: none;
+}
+
+/* Headings */
+h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Body - Container */
+#container_tb {
+    margin: 0 auto;
+    width: 1068px;
+    background-image: url(/images/default/border.gif);
+    background-repeat: repeat-y;
+}
+
+#container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#header {
+    height: 100px;
+    width: 960px;
+    background-color: #FFFFFF;
+}
+
+#topnav {
+    background-color: #FFFFFF;
+    border-top: 1px solid #A6A6A6;
+    border-bottom: 1px solid #A6A6A6;
+    border-left: 0;
+    border-right: 0;
+    padding: 3px 10px;
+    margin-bottom: 15px;
+    width: 940px;
+}
+
+#sidenav {
+    background-color: #F5F5F5;
+    width: 230px;
+    min-height: 480px;
+    height: auto !important;  /* for modern Browsers */
+    height: 480px;  /*for IE */
+    padding: 10px;
+    float: left;
+}
+
+#content {
+    background-color: #FFFFFF;
+    width: 680px;
+    padding: 10px 10px 10px 20px;
+    min-height: 480px;
+    height: auto !important;  /* for modern Browsers */
+    height: 480px;  /*for IE */
+    margin-bottom: 15px;
+    float: right;
+}
+
+#footer {
+    background-image: url(/images/default/footer.gif);
+    background-repeat: repeat-x;
+    background-color: #FFFFFF;
+    padding: 10px;
+    width: 940px;
+    height: 80px;
+    clear: both;
+}
+
+
+.label {
+    display: block;
+}
+
+input.field {
+    background-color: #CDCDCD;
+    border: 1px solid #A0AEC0;
+    padding:2px;
+}
+
+
+ul	{
+	list-style-position:outside;
+}
+
+
+/* validator icons */
+#xhtml {
+	display:block;
+	float: left;
+	height: 16px;
+	width: 16px;
+	margin: 5px 5px 5px 0;
+	background-image: url(/images/default/xhtml_valid.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+#xhtml:hover {
+	background-position: -16px 0px;
+}
+
+#css {
+	display:block;
+	float: left;
+	height: 16px;
+	width: 16px;
+	margin: 5px;
+	background-image: url(/images/default/css_valid.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+#css:hover {
+	background-position: -16px 0px;
+}
+
+#sitemap {
+	display:block;
+	float: left;
+	height: 16px;
+	width: 16px;
+	margin: 5px;
+	background-image: url(/images/default/sitemap.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+#sitemap:hover {
+	background-position: -16px 0px;
+}
+
+a.sitemaptop {
+	display: block;
+	background-image: url(/images/default/sitemapline.gif);
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	font-weight: bold;
+	width: 300px;
+}
+
+a.sitemaplow {
+	display: block;
+	padding-left: 20px;
+	width: 280px;
+}
+
+div.userimg{
+width:90px;
+float:left;
+}

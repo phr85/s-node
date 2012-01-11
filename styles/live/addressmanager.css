@@ -1,0 +1,38 @@
+.inpl {
+	padding:3px;
+	width:180px;
+		border: 1px solid #EEEEEE;
+}
+.inpr {
+	padding:3px;
+	border: 1px solid #EEEEEE;
+}
+td.addresslist {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+/* filtered list */
+div.addresslist{
+
+}
+
+div.addresslisttitle{
+float:left;
+width:100px;
+padding:2px;
+background-color:#CDCDCD;
+border-bottom: 1px solid #AAAAAA;
+font-weight:bold;
+}
+div.addresslistcell{
+float:left;
+width:100px;
+border-bottom: 1px solid black;
+padding:2px;
+}
+div.address_even{
+background-color:#DEDEDE;
+}
+div.address_odd{
+background-color:#FFFFFF;
+}

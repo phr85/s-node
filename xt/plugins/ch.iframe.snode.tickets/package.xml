@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>8100</baseid>
+    <id>ch.iframe.snode.tickets</id>
+    <version>4000</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Ticketsystem</name>
+            <description>Ticketsystem</description>
+        </de>
+        <en>
+            <name>Ticketsystem</name>
+            <description>Ticketsystem</description>
+        </en>
+    </lang>
+     <page>
+        <parentnode>100</parentnode>
+        <id>2</id>
+        <forceupdate>1</forceupdate>
+        <lang>
+            <de>
+                <title>Workflow</title>
+                <file>2.tpl</file>
+                <url>index.php?TPL=8100&amp;adminmode=1</url>
+            </de>
+            <en>
+                <title>Workflow</title>
+                <file>2.tpl</file>
+                <url>index.php?TPL=8100&amp;adminmode=1</url>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>2</parentnode>
+        <forceupdate>1</forceupdate>
+        <id>8100</id>
+        <lang>
+            <de>
+                <title>Ticketverwaltung</title>
+                <file>8100.tpl</file>
+            </de>
+            <en>
+                <title>Ticket management</title>
+                <file>8100.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <forceupdate>1</forceupdate>
+        <id>8101</id>
+        <lang>
+            <de>
+                <title>Ticket manager</title>
+                <file>8101.tpl</file>
+                <header>header_admin_empty.tpl</header>
+        		<footer>footer_admin_empty.tpl</footer>
+            </de>
+            <en>
+                <title>Ticket manager</title>
+                <file>8101.tpl</file>
+                <header>header_admin_empty.tpl</header>
+        		<footer>footer_admin_empty.tpl</footer>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <forceupdate>1</forceupdate> 
+        <id>8102</id>
+        <lang>
+            <de>
+                <title>Ticket RSS-Feed</title>
+                <file>8102.tpl</file>
+                <header>blank.tpl</header>
+		        <footer>blank.tpl</footer>
+            </de>
+            <en>
+                <title>Ticket RSS feed</title>
+                <file>8102.tpl</file>
+                <header>blank.tpl</header>
+		        <footer>blank.tpl</footer>
+            </en>
+        </lang>
+    </page>
+     <contenttype>
+        <id>8100</id>
+        <title>Tickets</title>
+        <open_url>index.php</open_url>
+        <content_table>tickets</content_table>
+        <title_field>title</title_field>
+        <icon>document_certificate.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    <contenttree>
+        <id>8100</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Tickets</title>
+            </de>
+            <en>
+                <title>Tickets</title>
+            </en>
+        </lang>
+    </contenttree>
+    <module>
+        <id>clientcenter</id>
+        <treenode>8100</treenode>
+        <main_param>style</main_param>
+        <lang>
+            <de>
+                <name>Ticket Kunden-Center</name>
+                <description>Interface für Kunden.</description>
+            </de>
+            <en>
+                <name>Ticket client center</name>
+                <description>Interface for clients.</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+     <module>
+        <id>user_add</id>
+        <treenode>8100</treenode>
+        <main_param>style</main_param>
+        <lang>
+            <de>
+                <name>Ticket hinzufügen</name>
+                <description>IFormular um ein Ticket zu erstellen. (Für Kunden).</description>
+            </de>
+            <en>
+                <name>Add tickets</name>
+                <description>Interface for clients to add new tickets.</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+         <param>
+            <id>redirect_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Auf welche Seite soll weitergeleitet werden, nachdem ein Ticket erfasst wurde?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which Page (TPL) is displayed after adding a ticket?</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+     <table>
+        <id>tickets</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.tickets}` (
+				  `id` int(11) unsigned NOT NULL auto_increment,
+				  `creation_user` int(11) default '0',
+				  `creation_date` int(11) default '0',
+				  `mod_user` int(11) default '0',
+				  `mod_date` int(11) default '0',
+				  `title` varchar(255) default NULL,
+				  `description` text,
+				  `client_id` int(11) default NULL,
+				  `date` int(11) default NULL,
+				  `priority` int(11) default NULL,
+				  `mail_report` tinyint(1) default '0',
+				  `client_check` tinyint(1) default '0',
+				  `work_time` int(11) default NULL,
+				  `supervisor` int(11) default NULL,
+				  `supervisor_check` tinyint(1) default '0',
+				  `worker` int(11) default NULL,
+				  `in_pool` tinyint(1) default '1',
+				  `checked_by_supervisor` tinyint(1) default '0',
+				  `checked_by_client` tinyint(1) default '0',
+				  `status` tinyint(1) default '0',
+				  `billable` tinyint(1) default '0',
+				  `accounted` tinyint(1) default '0',
+				   PRIMARY KEY  (`id`)
+				) TYPE=MyISAM;
+				 alter table `{TABLE.tickets}` ,add column `accounted` tinyint(1) default '0'  after `billable`;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>tickets_history</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.tickets_history}` (
+				  `id` int(11) unsigned NOT NULL auto_increment,
+				  `type` tinyint(1) default '0',
+				  `ticket_id` int(11) default '0',
+				  `start_date` int(11) default '0',
+				  `end_date` int(11) default '0',
+				  `worker` int(11) default '0',
+				  `description` text,
+				   PRIMARY KEY  (`id`)
+				) TYPE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>tickets_tmp_data</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.tickets_tmp_data}` (
+				  `user_id` int(11) unsigned NOT NULL,
+				  `serialized_data` text,
+				   PRIMARY KEY  (`user_id`)
+				) TYPE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <openfile>styles/live/ticketcenter.css</openfile>
+    <openfile>styles/live/autocomplete.css</openfile>
+    
+    <folder>images/icons/tickets/</folder>
+    <folder>tools/wz_tooltip/</folder>
+</package>

@@ -1,0 +1,35 @@
+= ch.iframe.snode.newsletter (subscribe_simple) =
+
+== Funktion ==
+Eine einfache Maske um sich in einen Newslette ein zu tragen.
+
+== Möglicher Einsatzbereich ==
+
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+category         | integer      | ID der einzutragenden Kategorie | 1
+
+== Templatevariablen ==
+*CATEGORY array Kategorieinformationen
+*SUBSCRIPTION_TRY boolen True wenn formular mit den Werten abgesendet wurde
+*SUBSCRIPTION_OK boolen True, wenn die Eintragung erfolgreich war.
+*ERROR string Fehlermeldung bei Problemen
+*SUBSCRIPTION_EMAIL string Einzutragende E-Mail-Adresse
+*SUBSCRIPTION_NAME	string Einzutragender Name
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Deise Modul ist veraltet. Verwenden Sie stattdessen ch.iframe.snode.newsletter (subscribe)
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.newsletter" module="subscribe_simple" category="1"}
+
+== Todo ==
+Dieses Modul sollte ganz entfernt werden.

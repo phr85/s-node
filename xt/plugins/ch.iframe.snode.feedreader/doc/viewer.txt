@@ -1,0 +1,34 @@
+= ch.iframe.snode.feedreader (viewer) =
+
+== Funktion ==
+Mittels des Feedreaders können externe oder interne RSS-Feeds abonniert werden und in die Seite integriert werden.
+
+== Möglicher Einsatzbereich ==
+Darstellung von News anderer Websites
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+id	             | integer      | Identifikationsnummern des anzuzeigenden Feeds. Mehrere Feeds können komma getrennt angegeben werden. | 3,22
+show             | integer      | Anzahl der anzuzeigenden Elemente | 15
+style            | string       | template für den build | default.tpl
+style            | string       | template für den build | default.tpl
+
+== Templatevariablen ==
+*FEED array Grunddaten zum Feed.
+*IMAGE  array Bilddaten zum Hauptbild des Feeds
+*ITEMS_COUNT int Anzahl Einträge
+*ITEMS array Daten zu allen Einträgen
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.feedreader" module="viewer" id="6" show="all" style="default.tpl" ncpos="1"}
+
+== Todo ==

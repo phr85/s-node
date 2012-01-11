@@ -1,0 +1,29 @@
+= ch.iframe.snode.faq (listall) =
+
+== Funktion ==
+Auflistung aller aktiven Fragen
+
+== Möglicher Einsatzbereich ==
+Anzeige der letzten Fragen
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+limit			 | integer		| Anzahl der aufzulistenden Fragen | 20
+
+== Templatevariablen ==
+*xt1400_items array Alle Daten zur Frageliste
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.faq" module="listall" style="default.tpl"}
+
+== Todo ==
+Sortierung fehlt noch.

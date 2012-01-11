@@ -1,0 +1,52 @@
+= ch.iframe.snode.navigation (tree) =
+
+== Funktion ==
+Darstellen der Navigation in Form einer Baumstuktur
+
+== Möglicher Einsatzbereich ==
+Sitemap, Navigationen etc.
+
+== Mitgelieferte Templates ==
+*admin.tpl
+*admin_level1.tpl
+*default.tpl
+*imagenav.tpl
+*linav.tpl
+*overview.tpl
+*overview_level2.tpl
+*plain.tpl
+*sidenav.tpl
+*sitemap.tpl
+*sitemap_sub.tpl
+*toc.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+overview         | int	        | Zeige nur elemente mit Übersichts-Tag | 1
+default_node     | int          | Standardnode 			 | 10000
+node             | int          | Momentan angezeigter Node | 10000
+follow           | bool         | Details der nachfolgenden Nodes anzeigen | true
+show_start_node  | bool         | Ausgangsnode auch anzeigen? | true
+start_level      | integer      | Startlevel | 2 
+depth            | int          | Wieviel Ebenen sollen dargestellt werden? | 4
+open_depth       | int          | Wieviel Ebenen sollen aufgeklappt sein? | 2
+description      | boolen       | Beschreibung auch miteinblenden? | true
+lang             | string       | Sprache der Navigation (ansonsten  wird die aktuelle Sprache verwendet) | en
+
+
+== Templatevariablen ==
+*NODEARRAY array Levelstruktur
+*LAST_ELEMENTS array letztes Element
+*DATA array Alle Daten zum Baum
+*ADMIN_TPL Administrations Template
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.navigation" module="tree" depth=2 start_level=2 node="10000" style="sidenav.tpl"}
+
+== Todo ==

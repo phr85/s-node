@@ -1,0 +1,1 @@
+{print_data array=$xt7400_random}

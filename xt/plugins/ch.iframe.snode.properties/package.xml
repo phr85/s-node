@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>7500</baseid>
+    <id>ch.iframe.snode.properties</id>
+    <version>$Rev: 4313 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Eigenschaften</name>
+            <description>Eigenschaften erstellen und bearbeiten</description>
+        </de>
+        <en>
+            <name>Properties</name>
+            <description>Manage Content Properties</description>
+        </en>
+    </lang>
+    <contenttype>
+        <id>7500</id>
+        <title>Property</title>
+        <content_table>properties_details</content_table>
+        <title_field>title</title_field>
+        <icon>gear.png</icon>
+        <id_field>property_id</id_field>
+    </contenttype>
+    <contenttype>
+        <id>7501</id>
+        <title>Property Group</title>
+        <content_table>properties_groups_details</content_table>
+        <title_field>title</title_field>
+        <icon>gears.png</icon>
+        <id_field>group_id</id_field>
+    </contenttype>
+    <page>
+        <parentnode>121</parentnode>
+        <id>7500</id>
+        <lang>
+            <de>
+                <title>Eigenschaften</title>
+                <file>7500.tpl</file>
+            </de>
+            <en>
+                <title>Properties</title>
+                <file>7500.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <table>
+        <id>properties</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.properties}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `content_type` int(11) unsigned NOT NULL default '0',
+            `position` int(11) unsigned default '1',
+            `type` tinyint(3) unsigned NOT NULL default '0',
+            `value` blob,
+            `public` int(1) NOT NULL default '1',
+            PRIMARY KEY  (`id`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>properties_details</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.properties_details}` (
+            `property_id` int(11) unsigned NOT NULL default '0',
+            `title` varchar(255) NOT NULL default 'title',
+            `lang` char(2) NOT NULL default '',
+            `description` tinytext NOT NULL,
+            `modified` int(1) NOT NULL default '0',
+            PRIMARY KEY  (`property_id`,`lang`),
+            UNIQUE KEY `property_id` (`property_id`,`lang`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>properties_group2properties</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.properties_group2properties}` (
+            `group_id` int(11) unsigned NOT NULL default '0',
+            `property_id` int(11) unsigned NOT NULL default '0',
+            PRIMARY KEY  (`group_id`,`property_id`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>properties_groups</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.properties_groups}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            PRIMARY KEY  (`id`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>properties_groups_details</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.properties_groups_details}` (
+            `group_id` int(11) unsigned NOT NULL default '0',
+            `lang` varchar(5) NOT NULL default '',
+            `title` varchar(255) default NULL,
+            `description` varchar(255) default NULL,
+            `modified` int(1) NOT NULL default '0',
+            PRIMARY KEY  (`group_id`,`lang`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>properties_perms</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.properties_perms}` (
+            `role_id` int(11) unsigned NOT NULL default '0',
+            `property_id` int(11) NOT NULL default '0',
+            PRIMARY KEY  (`role_id`,`property_id`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>properties_values</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.properties_values}` (
+            `property_id` int(11) unsigned NOT NULL default '0',
+            `content_type` int(11) unsigned NOT NULL default '0',
+            `content_id` int(11) unsigned NOT NULL default '0',
+            `content_sub_id` int(11) unsigned NOT NULL default '0',
+            `lang` char(2) NOT NULL default '',
+            `level` tinyint(3) unsigned NOT NULL default '1',
+            `label` varchar(255) NOT NULL default '',
+            `value` blob,
+            `from_pgroup` int(11) unsigned NOT NULL default '0',
+            `modified` int(1) unsigned NOT NULL default '0',
+            PRIMARY KEY  (`property_id`,`content_type`,`content_id`,`content_sub_id`,`lang`,`level`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    <file>xt/includes/classes/properties.class.php</file>
+    <file>xt/templates/default/includes/widgets/properties.tpl</file>
+    <file>xt/includes/template/ch.iframe.snode.properties.inc.php</file>
+    <changelog>
+        <rev>3840 initial release</rev>
+    </changelog>
+</package>

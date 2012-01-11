@@ -1,0 +1,1 @@
+{plugin package="ch.iframe.snode.forum" module="new_topic" style="default.tpl"}

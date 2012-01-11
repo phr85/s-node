@@ -1,0 +1,71 @@
+<?**Funktion:
+Kurze Beschreibung des Modules
+
+**Möglicher Einsatzbereich:
+Erstellen von Listen von verwandten Objekten
+
+**Mitgelieferte Templates:
+default.tpl
+
+**Parameter:
+Name        | DatenTyp     | BESCHREIBUNG           | BEISPIELDATEN
+style       | string       | template für den build | default.tpl
+source_type | integer, content type  (nur wenn categories nicht angegeben wird)
+source_id   | integer, content id    (nur wenn categories nicht angegeben wird)
+categories  | kommaseparierte werte der KategorieIds
+target_type | integer, Optionale Limitierung auf einen contenttyp
+
+**Templatevariablen:
+$xt5500_related_objects enthält alle Werte die von diesem Plugin verwendet werden.
+Array
+(
+    [3] => Array      // Kategorie ID
+        (
+            [60] => Array    // Content Type
+                (
+                    [0] => Array
+                        (
+                            [id] => 149
+                            [lang] => de
+                            [content_id] => 3
+                            [content_type] => 5500
+                            [target_content_type] => 60
+                            [target_content_id] => 10087
+                            [priority] => 0
+                            [title] => Art List
+                            [target_title] =>
+                            [description] =>
+                            [image] => 0
+                            [type] => 0
+                            [position] => 1
+                        )
+
+                )
+
+            [270] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 151
+                            [lang] => de
+                            [content_id] => 3
+                            [content_type] => 5500
+                            [target_content_type] => 270
+                            [target_content_id] => 4
+                            [priority] => 0
+                            [title] => Unternehmen
+                            [target_title] =>
+                            [description] =>
+                            [image] => 0
+                            [type] => 0
+                            [position] => 2
+                        )
+                  )
+           )
+)
+
+**Sessionvarablen:
+keine
+
+**Todo:
+Assistenten implementieren.?>

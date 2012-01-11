@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>210</baseid>
+    <id>ch.iframe.snode.header</id>
+    <version>$Rev: 1523 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Seitenheader</name>
+            <description>Seitenkoepfe Erstellen und Bearbeiten</description>
+        </de>
+        <en>
+            <name>Page headers</name>
+            <description>Manage and create Page headers</description>
+        </en>
+    </lang>
+    <page>
+        <parentnode>100</parentnode>
+        <id>140</id>
+        <lang>
+            <de>
+                <url>/index.php?TPL=123&amp;adminmode=1</url>
+                <title>Templates &amp; Styles</title>
+                <file>140.tpl</file>
+            </de>
+            <en>
+                <url>/index.php?TPL=123&amp;adminmode=1</url>
+                <title>Templates &amp; Styles</title>
+                <file>140.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>140</parentnode>
+        <id>123</id>
+        <lang>
+            <de>
+                <title>Header</title>
+                <file>123.tpl</file>
+            </de>
+            <en>
+                <title>Header</title>
+                <file>123.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

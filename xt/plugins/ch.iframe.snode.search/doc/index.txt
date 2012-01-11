@@ -1,0 +1,28 @@
+= ch.iframe.snode.search (index) =
+
+== Funktion ==
+Übersicht aller verwendeten Stichwörter auf der Seite
+
+== Möglicher Einsatzbereich ==
+Glossar, etc
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+*ENTRIES array Alle Einträge aus der Datenbank des Suchindexes
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.search" module="index"  style="default.tpl"}
+
+== Todo ==

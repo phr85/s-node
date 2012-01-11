@@ -1,0 +1,319 @@
+span.faqLeft{
+	float: left;
+	vertical-align:top;
+}
+
+span.faqError{
+	margin: 0px 0px 0px 20px;
+	color: red;
+}
+
+span.faqCaptchaError{
+	color: red;
+}
+
+input.faq{
+	float: left;
+	margin: 0px 0px 0px 0px;
+	border: 1px solid #424242;
+	padding: 2px;
+	width: 150px;
+	height: 20px;
+}
+
+textarea.faq{
+	margin: 5px 0px 10px 0px;
+	border: 1px solid #424242;
+	padding: 2px;
+	float: left;
+}
+
+input.faqSubmit{
+	float: left;
+	border: 1px inherit #424242;
+	padding: 2px;
+	width: 50px;
+	margin: 10px 0px 0px 0px;
+}
+
+div.faqInput{
+	margin: 10px 0px 0px 0px;
+	height: 24px;
+	clear: both;
+}
+
+div.faqCaptcha input#captcha{
+	border: 1px solid #424242;
+	height: 24px;
+	margin: 5px 0px 5px 0px;
+}
+
+div.faqCaptchaError input#captcha{
+	border: 1px solid red;
+}
+
+/* Display Active Categories */
+
+img.iconFolder{
+	display: block;
+	float: left;
+}
+
+p.categoryTitle{
+	float: left;
+	font-size: 15px;
+	width: 200px;
+}
+
+p.categoryDescription{
+	float: left;
+	width: 360px;
+}
+
+div.faqListItem{
+	float: left;
+	width: 654px;
+	line-height: 17px;
+	padding: 5px;
+}
+
+div.faqWrapper{
+	float: left;
+	width: 327px;
+}
+
+div.faqWrapperFlat{
+	float: right;
+	width: 586px;
+}
+
+div.folderItem{
+	width: 560px;
+	float: left;
+	margin: 10px 0px 0px 0px;
+	padding: 0px;
+}
+
+div.categoryDescription{
+	padding: 0px 0px 0px 26px;
+}
+
+a.folder{
+
+}
+
+a.folderSelected{
+	color: #7F7F7F;
+}
+
+/* Display Items in Categories */
+
+div.questionWrapper{
+	width: 654px;
+	float: left;
+	padding: 5px 5px 10px 5px;
+	margin: 0px 0px 10px 0px;
+}
+
+div.questionItemWrapper{
+	width: 586px;
+	float: right;
+}
+
+div.questionItem{
+	width: 586px;
+	float: left;
+	font-size: 15px;
+	margin: 0px 0px 10px 0px;
+}
+
+h2.faqCategory{
+	margin: 0px 0px 10px 0px;
+}
+
+div.questionItem a{
+	display: block;
+}
+
+img.questionIcon{
+	float: left;
+	margin: 0px 20px 20px 0px;
+}
+
+img.questionIconSmall{
+	float: left;
+	margin: 0px 2px 20px 0px;
+}
+
+
+/* Display single question & answers */
+
+img.questionIconSingle{
+	float: left;
+	margin: 15px 20px 20px 0px !important;
+	margin: 20px 20px 20px 0px;
+}
+
+h2.question{
+	padding: 0;
+	margin: 0;
+}
+
+p.question{
+	float: right;
+	width: 450px;
+	margin: 5px 0px;
+}
+
+p.answeredBy{
+	font-size: 13px;
+	margin: 5px 0px 0px 0px;
+}
+
+div.questionImage{
+	float: right;
+	width: 160px;
+}
+
+div.questionContent{
+	width: 400px;
+	float: left;
+}
+
+/* Folder Tree */
+ul.folderItem{
+	margin: 0px 0px 0px 0px;
+	list-style-type: square;
+	padding: 0;
+}
+
+ul.folderItem li{
+
+}
+
+ul.folderItem li.folderSelected a{
+	color: #AFAFAF;
+}
+
+div.faqContent{
+	width: 235px;
+	float: right;
+	padding: 0px 10px 0px 0px;
+}
+
+p.faqDescription{
+	float: left;
+	width: 200px;
+}
+
+div.answerText{
+	padding:
+}
+
+div.answerText{
+    background-image : url(/images/icons/big/information.png);
+    background-repeat : no-repeat;
+    background-position : top left;
+    padding: 0px 0px 0px 60px;
+    min-height: 50px;
+    height: auto !important;
+    height: 50px;
+}
+
+div.questionText{
+    background-image : url(/images/icons/big/help.png);
+    background-repeat : no-repeat;
+    background-position : top left;
+    padding: 0px 0px 0px 60px;
+    min-height: 50px;
+    height: auto !important;
+    height: 50px;
+}
+
+/* Tree Accordion */
+
+div.faqWrapperTree{
+	float: right;
+	width: 327px;
+}
+
+
+div.faqContent dl {
+	width: 100%;
+}
+
+div.faqContent dl,dd {
+	margin: 0;
+	float: left;
+}
+
+div.faqContent dt {
+	font-size: 13px;
+	margin: 0 !important;
+	margin: 0px 0px 10px 0px;
+	padding: 0;
+	width: 235px;
+}
+
+div.faqContent dt a {
+	width: 100%;
+	cursor: pointer;
+	display: block;
+}
+
+div.faqContent ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.faqContent ul li {
+	list-style: none;
+	margin: 0;
+	padding: 3px 0px 0px 0px;
+}
+
+div.faqContent ul li p.question{
+	padding: 0px 0px 0px 20px;
+	margin: 0px 0px 5px 0px;
+}
+
+/* List all questions module */
+div.faqWrapperFlatListall{
+	float: right;
+	width: 586px;
+}
+
+div.faqWrapperFlatListall dt{
+	margin: 5px 0px;
+}
+
+div.faqWrapperFlatListall dt a{
+	height: 20px;
+	font-size: 14px;
+	display: block;
+}
+
+div.faqWrapperFlatListall dt a img.iconFolder{
+	width: 20px;
+}
+
+div.faqWrapperFlatListall dd li{
+	list-style: none;
+	margin: 0;
+}
+
+div.faqWrapperFlatListall dd li p.answer_title{
+	margin: 0;
+	padding: 0;
+}
+
+div.faqWrapperFlatListall dd li p.answer_title img.iconFolder{
+	width: 20px;
+	margin: 0px 2px 0px 0px;
+}
+
+div.faqWrapperFlatListall dd li p.question{
+	margin: 0px 0px 15px 0px;
+	padding: 0px 0px 0px 25px;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="0.91">
+    <channel>
+        {if $FEED.title != ''}<title>{$FEED.title}</title>{/if}
+        {if $FEED.description != ''}<description>{$FEED.description}</description>{/if}
+        {if $FEED.link != ''}<link>{$FEED.link}</link>{/if}
+        {if $FEED.lang != ''}<language>{$FEED.lang}</language>{/if}
+        {if $FEED.copyright != ''}<copyright>{$FEED.copyright}</copyright>{/if}
+        {if $FEED.docs != ''}<docs>{$FEED.docs}</docs>{/if}
+        {if $FEED.pubDate != ''}<pubDate>{$FEED.pubDate}</pubDate>{/if}
+        {if $FEED.lastBuildDate != ''}<lastBuildDate>{$FEED.lastBuildDate}</lastBuildDate>{/if}
+        {if $FEED.managingEditor != ''}<managingEditor>{$FEED.managingEditor}</managingEditor>{/if}
+        {if $FEED.webMaster != ''}<webMaster>{$FEED.webMaster}</webMaster>{/if}
+        {if $FEED.skipDays != ''}<skipDays>{$FEED.skipDays}</skipDays>{/if}
+        {if $FEED.skipHours != ''}<skipHours>{$FEED.skipHours}</skipHours>{/if}
+        {if $IMAGE != ''}
+        <image>
+            {if $IMAGE.url != ''}<url>{$IMAGE.url}</url>{/if}
+            {if $IMAGE.title != ''}<title>{$IMAGE.title}</title>{/if}
+            {if $IMAGE.link != ''}<link>{$IMAGE.link}</link>{/if}
+            {if $IMAGE.description != ''}<description>{$IMAGE.description}</description>{/if}
+            {if $IMAGE.width != ''}<width>{$IMAGE.width}</width>{/if}
+            {if $IMAGE.height != ''}<height>{$IMAGE.height}</height>{/if}
+        </image>
+        {/if}
+        
+        {foreach from=$ITEMS item=ITEM}
+        <item>
+            {if $ITEM.title != ''}<title>{$ITEM.title}</title>{/if}
+            {if $ITEM.link != ''}<link>{$ITEM.link}</link>{/if}
+            {if $ITEM.description != ''}<description>{$ITEM.description}</description>{/if}
+        </item>
+        {/foreach}
+    </channel>
+</rss>

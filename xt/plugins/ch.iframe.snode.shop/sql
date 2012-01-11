@@ -1,0 +1,8 @@
+Rabattgruppen zu artikeln
+SELECT das.discount_id, d.id, d.value,d.give_discount_at, d.in_percent,d.for_single_article , count(d.id) as hit, det.description, det.name
+FROM xt_shop_discounts_articles as das,
+xt_shop_discounts as d
+LEFT JOIN xt_shop_discounts_details as det ON(det.id = d.id AND det.lang='de')
+WHERE das.article_id IN (37,53, 59 , 51,13)
+AND das.discount_id = d.id
+GROUP BY d.id

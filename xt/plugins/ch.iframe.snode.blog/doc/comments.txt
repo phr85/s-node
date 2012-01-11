@@ -1,0 +1,37 @@
+= ch.iframe.snode.blog (comments) =
+
+== Funktion ==
+Das Modul bietet die Möglichkeit inhalte kommentieren zu lassen.
+
+== Möglicher Einsatzbereich ==
+Blog, Kommentierung von Inhalten, etc.
+
+== Mitgelieferte Templates ==
+*default.tpl
+*nested.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+content_type     | integer      | Typ des contents | 60
+content_id       | integer      | Identifikationsnummer innerhalb des Contents | 54
+captcha          | bool         | Wenn true, wird ein Captcha eingeblendet, sofern man nicht eingeloggt ist. | true
+reverseorder     | bool         | Die auflistung der Kommentare geschieht rückwärts. (Neuste Einträge zuerst) | true
+
+
+== Templatevariablen ==
+*xt7600_comments array Alle Daten zur Kommentarliste
+
+== Sessionvarablen ==
+*user array Benutzerdetails
+
+== Hinweise ==
+Die Kommentare werden standardmässig flach dargestellt. Bei Verwendung des templates nested.tpl werden die Kommentare 
+in Form eines Baums dargestellt.
+
+== Beispiel ==
+Kommentieren einer Seite (content_type 60)
+{plugin package="ch.iframe.snode.blog" module="comments" captcha="true" style="default.tpl" content_type=60 content_id=$TPL ncpos="1"}
+
+== Todo ==

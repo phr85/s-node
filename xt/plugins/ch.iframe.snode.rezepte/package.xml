@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>5700</baseid>
+    <id>ch.iframe.snode.rezepte</id>
+    <version>$Rev: 4212 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Rezeptdatenbank</name>
+            <description>Rezepte verwalten</description>
+        </de>
+        <en>
+            <name>Recipe Catalog</name>
+            <description>Manage recipes</description>
+        </en>
+    </lang>
+
+    <contenttype>
+        <id>5700</id>
+        <title>Rezept</title>
+        <open_url></open_url>
+        <content_table></content_table>
+        <title_field></title_field>
+        <icon>package.png</icon>
+        <id_field></id_field>
+    </contenttype>
+
+    <contenttype>
+        <id>5701</id>
+        <title>Zutaten</title>
+        <open_url></open_url>
+        <content_table></content_table>
+        <title_field></title_field>
+        <icon>package.png</icon>
+        <id_field></id_field>
+    </contenttype>
+
+    <contenttype>
+        <id>5702</id>
+        <title>RezeptCategory</title>
+        <open_url></open_url>
+        <content_table>rezept_tree_nodes</content_table>
+        <title_field>title</title_field>
+        <icon>package.png</icon>
+        <id_field>node_id</id_field>
+    </contenttype>
+
+    <page>
+        <parentnode>100</parentnode>
+        <id>5700</id>
+        <lang>
+            <de>
+                <url><![CDATA[index.php?TPL=5701&amp;adminmode=1]]></url>
+                <title>Rezepte</title>
+                <file>5700.tpl</file>
+            </de>
+            <en>
+                <url><![CDATA[index.php?TPL=5701&amp;adminmode=1]]></url>
+                <title>Recipes</title>
+                <file>5700.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <page>
+        <parentnode>5700</parentnode>
+        <id>5701</id>
+        <lang>
+            <de>
+                <title>Rezepte</title>
+                <file>5701.tpl</file>
+            </de>
+            <en>
+                <title>Recipes</title>
+                <file>5701.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <page>
+        <parentnode>5700</parentnode>
+        <id>5702</id>
+        <lang>
+            <de>
+                <title>Zutaten</title>
+                <file>5702.tpl</file>
+            </de>
+            <en>
+                <title>Zutaten</title>
+                <file>5702.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <page>
+        <parentnode>5700</parentnode>
+        <id>5703</id>
+        <lang>
+            <de>
+                <title>USDA</title>
+                <file>5703.tpl</file>
+            </de>
+            <en>
+                <title>USDA</title>
+                <file>5703.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <page>
+        <parentnode>5700</parentnode>
+        <id>5704</id>
+        <lang>
+            <de>
+                <title>Neues</title>
+                <file>5704.tpl</file>
+            </de>
+            <en>
+                <title>New</title>
+                <file>5704.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <page>
+        <parentnode>111</parentnode>
+        <id>5720</id>
+        <lang>
+            <de>
+                <title>Rezept Picker</title>
+                <file>5720.tpl</file>
+            </de>
+            <en>
+                <title>Recipe Picker</title>
+                <file>5720.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <contenttree>
+        <id>5700</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Rezepte</title>
+            </de>
+            <en>
+                <title>Recipes</title>
+            </en>
+        </lang>
+    </contenttree>
+
+
+    <module>
+        <id>viewer</id>
+        <treenode>5700</treenode>
+        <main_param>id</main_param>
+        <main_content_type>5700</main_content_type>
+        <lang>
+            <de>
+                <name>Rezeptanzeige</name>
+                <description>Rezept darstellen</description>
+            </de>
+            <en>
+                <name>Recipedisplay</name>
+                <description>Display a recipe</description>
+            </en>
+        </lang>
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>ID</title>
+                    <description>Lassen sie dieses Feld leer wenn Sie nicht ein bestimmtes Rezept darstellen wollen.</description>
+                </de>
+                <en>
+                    <title>ID</title>
+                    <description>Select Recipe</description>
+                </en>
+            </lang>
+            <values>[5704][5700]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>overview_tpl</id>
+            <lang>
+                <de>
+                    <title>Überischts-Template</title>
+                    <description>Geben Sie die Template-Nummer für die Übersicht an.</description>
+                </de>
+                <en>
+                    <title>Overview template</title>
+                    <description>The template wich contains the overview.</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>list</id>
+        <treenode>5700</treenode>
+        <main_param>node_id</main_param>
+        <main_content_type>5702</main_content_type>
+        <lang>
+            <de>
+                <name>Rezeptliste</name>
+                <description>Rezepte aus einer Kategorie darstellen</description>
+            </de>
+            <en>
+                <name>Recipe list</name>
+                <description>Display Recipes of a category</description>
+            </en>
+        </lang>
+        <param>
+            <id>node_id</id>
+            <lang>
+                <de>
+                    <title>Node ID</title>
+                    <description>Wählen sie eine Kategorie aus.</description>
+                </de>
+                <en>
+                    <title>Node ID</title>
+                    <description>Select category</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>details_tpl</id>
+            <lang>
+                <de>
+                    <title>Detailseite</title>
+                    <description>Gibt an welches TPL das Rezept darstellt </description>
+                </de>
+                <en>
+                    <title>Details page</title>
+                    <description>Which page (TPL) displays the Recipe</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+        <param>
+            <id>per_page</id>
+            <lang>
+                <de>
+                    <title>Anzahl einträge pro Seite</title>
+                    <description>Gibt an wieviele Rezepte auf einer Seite dargestellt werden</description>
+                </de>
+                <en>
+                    <title>Recipes per page</title>
+                    <description>How many Recipes to display</description>
+                </en>
+            </lang>
+            <values>20</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+ <module>
+        <id>user_list</id>
+        <treenode>5700</treenode>
+        <main_param>id</main_param>
+        <main_content_type>5700</main_content_type>
+        <lang>
+            <de>
+                <name>Liste der offenen Rezepte</name>
+                <description>Liste der offenen Rezepte</description>
+            </de>
+            <en>
+                <name>open Recipes list</name>
+                <description>Display open Recipes of a user</description>
+            </en>
+        </lang>
+       
+        <param>
+            <id>editor_tpl</id>
+            <lang>
+                <de>
+                    <title>Editor TPL</title>
+                    <description>TPL welches Modul user_edit enthält </description>
+                </de>
+                <en>
+                    <title>Details page</title>
+                    <description>Which page (TPL) contains the module user_edit</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+ 
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+ <module>
+        <id>user_edit</id>
+        <treenode>5700</treenode>
+        <main_param>id</main_param>
+        <main_content_type>5700</main_content_type>
+        <lang>
+            <de>
+                <name>Live Editor für Rezepte</name>
+                <description>Live Editor für Rezepte</description>
+            </de>
+            <en>
+                <name>live recipe editor</name>
+                <description>live recipe editor</description>
+            </en>
+        </lang>
+       
+        <param>
+            <id>overview_tpl</id>
+            <lang>
+                <de>
+                    <title>Übersichts TPL</title>
+                    <description>TPL welches Modul user_list enthält </description>
+                </de>
+                <en>
+                    <title>Details page</title>
+                    <description>Which page (TPL) contains the module user_list</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+ 
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <module>
+        <id>navigator</id>
+        <treenode>5700</treenode>
+        <lang>
+            <de>
+                <name>Listen-Navigator</name>
+                <description>Blätterfunktion für die Liste</description>
+            </de>
+            <en>
+                <name>List Paginator</name>
+                <description>Navigator for the list</description>
+            </en>
+        </lang>
+        <param>
+            <id>visible_range</id>
+            <lang>
+                <de>
+                    <title>Sichtbarer Bereich</title>
+                    <description>Wie viele Knöpfe sollen dargestellt werden</description>
+                </de>
+                <en>
+                    <title>Visible range</title>
+                    <description>How many buttons you want to display</description>
+                </en>
+            </lang>
+            <values>3</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>target_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Geben sie die TPL id der Rezepteübersichtsseite an wenn Sie dieses modul ausserhalb der Rezepteübersicht verwenden.</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Type in the TPL id of the page containing the module Recipe_list.</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>tree</id>
+        <treenode>5700</treenode>
+        <lang>
+            <de>
+                <name>Kategorien Baum</name>
+                <description>Anzeigen der Kategorien</description>
+            </de>
+            <en>
+                <name>Category tree</name>
+                <description>Shows categories</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>start_node</id>
+            <lang>
+                <de>
+                    <title>Startpunkt</title>
+                    <description>Optional: Ab welchem node (als id) soll die Navigation dargestellt werden</description>
+                </de>
+                <en>
+                    <title>Start node</title>
+                    <description>optional: From wich node you want to display the tree</description>
+                </en>
+            </lang>
+            <values>1</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>details_tpl</id>
+            <lang>
+                <de>
+                    <title>Detailseite</title>
+                    <description>Gibt an welches TPL die detailieren Informationen zum node enthält (in der Regel ist dies das TPL welches das modul "category_listing enthält", dies kann auch das TPL sein das "category_tree" ,also sich selbst, enthält)</description>
+                </de>
+                <en>
+                    <title>Details page</title>
+                    <description>Which page (TPL) contains the module category_listing?</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <module>
+        <id>breadcrumb</id>
+        <treenode>5700</treenode>
+        <lang>
+            <de>
+                <name>Navigationspfad</name>
+                <description>Stellt den aktuellen Pfad der Rezeptekategorie dar</description>
+            </de>
+            <en>
+                <name>Search</name>
+                <description>Displays the Recipe category path</description>
+            </en>
+        </lang>
+        <param>
+            <id>target_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Geben sie die TPL id der Rezepteübersichtsseite an wenn Sie dieses modul ausserhalb der Rezepteübersicht verwenden.</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Type in the TPL id of the page containing the module Recipe_list.</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <table>
+        <id>rezepte</id>
+        <mysql><![CDATA[
+            CREATE TABLE `{TABLE.rezepte}` (                            
+              `id` int(11) unsigned NOT NULL auto_increment,       
+              `c_date` int(11) unsigned default NULL,              
+              `c_user` int(11) unsigned default NULL,              
+              `m_date` int(11) unsigned default NULL,              
+              `m_user` int(11) unsigned default NULL,              
+              `portions` int(11) unsigned NOT NULL default '4',    
+              `create_duration` int(11) unsigned default NULL,     
+              `rest_duration` int(11) unsigned default NULL,       
+              `kcal` int(11) unsigned default NULL,                
+              `complexity` int(11) unsigned NOT NULL default '3',  
+              `ca_price` varchar(80) default NULL,                 
+              `rating_avg` int(11) unsigned default NULL,          
+              UNIQUE KEY `id` (`id`),                              
+              KEY `id_2` (`id`)                                    
+            );
+         ]]>
+         </mysql>
+    </table>
+
+    <table>
+        <id>rezepte_details</id>
+        <mysql><![CDATA[
+             CREATE TABLE `{TABLE.rezepte_details}` (                            
+                `id` int(11) unsigned NOT NULL default '0',                  
+                `lang` varchar(5) NOT NULL default '',                       
+                `title` varchar(255) NOT NULL default '',                    
+                `subtitle` varchar(255) default NULL,                        
+                `description` text,                                          
+                `active` tinyint(1) unsigned default NULL,                   
+                `validated` tinyint(1) unsigned default '0',                 
+                `recipe_of_month` tinyint(1) unsigned NOT NULL default '0',  
+                `making` text,                                               
+                UNIQUE KEY `id` (`id`,`lang`),                               
+                KEY `id_2` (`id`)                                            
+                );
+         ]]>
+         </mysql>
+    </table>
+    <table>
+        <id>rezepte_images</id>
+        <mysql><![CDATA[
+            CREATE TABLE `{TABLE.rezepte_images}` (                           
+                `recipe_id` int(11) unsigned NOT NULL default '0',         
+                `image_id` int(11) unsigned NOT NULL default '0',          
+                `image_version` varchar(10) NOT NULL default '0',          
+                `is_main_image` tinyint(1) unsigned NOT NULL default '0',  
+                `position` int(11) NOT NULL default '0',                   
+                PRIMARY KEY  (`recipe_id`,`position`)                      
+                );
+         ]]>
+         </mysql>
+    </table>
+
+    <table>
+        <id>rezepte_ingridients</id>
+        <mysql><![CDATA[
+            CREATE TABLE `{TABLE.rezepte_ingridients}` (              
+                `id` int(11) unsigned NOT NULL auto_increment,     
+                `kcal` int(11) unsigned default NULL,              
+                `kj` int(11) unsigned default NULL,                
+                `fat` int(11) unsigned default NULL,               
+                `protein` int(11) unsigned default NULL,           
+                `carbonhydrate` int(11) unsigned default NULL,     
+                `fiber` int(11) default NULL,                      
+                `sugar` int(11) unsigned default NULL,             
+                `usda_group` int(11) unsigned default NULL,        
+                `usda_id` int(11) unsigned default NULL,           
+                `default_unit_id` int(11) unsigned default NULL,   
+                `default_ammount` float default '1',               
+                `validated` int(1) unsigned NOT NULL default '0',  
+                PRIMARY KEY  (`id`)                                
+                );
+            ]]>
+         </mysql>
+    </table>
+    
+    <table>
+        <id>rezepte_ingridients_details</id>
+        <mysql><![CDATA[
+            CREATE TABLE `{TABLE.rezepte_ingridients_details}` (  
+                `id` int(11) unsigned NOT NULL default '0',    
+                `lang` varchar(5) NOT NULL default '',         
+                `name` varchar(255) NOT NULL default '',       
+                PRIMARY KEY  (`id`,`lang`)                     
+                );
+         ]]>
+         </mysql>
+    </table>
+    <table>
+        <id>rezepte_r2ingredient</id>
+        <mysql><![CDATA[
+            CREATE TABLE `{TABLE.rezepte_r2ingredient}` (              
+                `recipe_id` int(11) unsigned NOT NULL default '0',  
+                `ingridient_id` int(11) NOT NULL default '0',       
+                `unit_id` int(11) unsigned NOT NULL default '0',    
+                `unit_ammount` float default NULL,                  
+                `position` int(11) default NULL,                    
+                PRIMARY KEY  (`recipe_id`,`ingridient_id`)          
+                );
+         ]]>
+         </mysql>
+    </table>
+    <table>
+        <id>rezepte_r2tree</id>
+        <mysql><![CDATA[
+            CREATE TABLE `{TABLE.rezepte_r2tree}` (                    
+                `node_id` int(11) unsigned NOT NULL default '0',    
+                `recipe_id` int(11) unsigned NOT NULL default '0',  
+                `position` int(11) default NULL,                    
+                PRIMARY KEY  (`recipe_id`,`node_id`)                
+                );
+         ]]>
+         </mysql>
+    </table>
+    
+    <table>
+        <id>rezepte_tree</id>
+        <mysql><![CDATA[
+            CREATE TABLE `{TABLE.rezepte_tree}` (           
+                `id` int(11) NOT NULL auto_increment,    
+                `l` int(11) NOT NULL default '0',        
+                `r` int(11) NOT NULL default '0',        
+                `pid` int(11) NOT NULL default '0',      
+                `level` int(11) NOT NULL default '0',    
+                `tree_id` int(11) unsigned default '1',  
+                PRIMARY KEY  (`id`),                     
+                KEY `l` (`l`),                           
+                KEY `r` (`r`),                           
+                KEY `level` (`level`),                   
+                KEY `pid` (`pid`)                        
+                );
+            INSERT INTO {TABLE.rezepte_tree} VALUES("1","1","2","0","1","1");
+         ]]>
+         </mysql>
+    </table>
+    
+    <table>
+        <id>rezepte_tree_nodes</id>
+        <mysql><![CDATA[
+            CREATE TABLE `{TABLE.rezepte_tree_nodes}` (                    
+                `node_id` int(11) unsigned NOT NULL default '0',        
+                `title` varchar(255) default NULL,                      
+                `subtitle` varchar(255) default NULL,                   
+                `description` text,                                     
+                `lang` char(3) NOT NULL default '',                     
+                `use_description` tinyint(3) unsigned default '0',      
+                `public` tinyint(1) NOT NULL default '1',               
+                `active` tinyint(1) unsigned NOT NULL default '1',      
+                `image` int(11) unsigned NOT NULL default '0',          
+                `image_version` int(11) unsigned NOT NULL default '0',  
+                PRIMARY KEY  (`node_id`,`lang`)                         
+                );
+
+            INSERT INTO {TABLE.rezepte_tree_nodes} VALUES("1","Root","","","de","0","1","1","0","0");
+            INSERT INTO {TABLE.rezepte_tree_nodes} VALUES("1","Root","","","en","0","1","1","0","0");
+            INSERT INTO {TABLE.rezepte_tree_nodes} VALUES("1","Root","","","fr","0","1","1","0","0");
+         ]]>
+         </mysql>
+    </table>
+
+
+    <folder>xt/plugins/ch.iframe.snode.rezepte_zutaten</folder>
+    <folder>xt/templates/default/ch.iframe.snode.rezepte_zutaten</folder>
+    <folder>scripts/autosuggest</folder>
+    <changelog>
+        <rev>3142 Installer finished</rev>
+        <rev>3600 initial release</rev>
+    </changelog>
+</package>

@@ -1,0 +1,54 @@
+/* Structure for guestbook */
+
+div.label{
+	float:left;
+	width: 200px;
+}
+
+div.input{
+	float:left;
+	width: 300px;
+}
+
+/* Guestbook */
+
+div.guestbook{
+	width: 500px;
+	float:left;
+}
+
+div.comment{
+	width: 370px;
+	background-color: #D1ECFF;
+	background-image: url(/images/default/comment.png);
+	background-repeat: no-repeat;
+	padding: 10px 0px 0px 30px;
+	background-position: top;
+}
+
+form#entry input{
+	border: 1px solid #0C233F;
+}
+
+form#entry textarea{
+	border: 1px solid #0C233F;
+	height: 120px;
+	width: 200px;
+}
+
+p.comment{
+	padding-left: 5px;
+}
+
+font.date{
+	font-size: 10px;
+	font-style: italic;
+}
+
+td.listnavigator_table_header{
+	font-size: 10px;
+}
+
+td.listnavigator_char_active{
+	font-size: 10px;
+}

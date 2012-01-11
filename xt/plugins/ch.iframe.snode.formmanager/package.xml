@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>220</baseid>
+    <id>ch.iframe.snode.formmanager</id>
+    <version>$Rev: 5961 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Formularmanager</name>
+            <description>Formulare erstellen und bearbeiten</description>
+        </de>
+        <en>
+            <name>Formmanager</name>
+            <description>Manage Forms</description>
+        </en>
+    </lang>
+
+    <requires>
+        <package>
+        <id>ch.iframe.snode.filemanager</id>
+        <version>$Rev: 5961 $</version>
+        </package>
+    </requires>
+
+    <contenttype>
+        <id>220</id>
+        <title>Form</title>
+        <open_url>/index.php</open_url>
+        <content_table>forms</content_table>
+        <title_field>title</title_field>
+        <icon>form_blue.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <contenttype>
+        <id>221</id>
+        <title>Form Element</title>
+        <open_url></open_url>
+        <content_table>forms_elements</content_table>
+        <title_field>label</title_field>
+        <icon>document.png</icon>
+        <id_field>element_id</id_field>
+    </contenttype>
+
+    <contenttype>
+        <id>222</id>
+        <title>Form Scripts</title>
+        <open_url></open_url>
+        <content_table>forms_scripts</content_table>
+        <title_field>title</title_field>
+        <icon>document.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <page>
+        <parentnode>101</parentnode>
+        <id>118</id>
+        <lang>
+            <de>
+                <title>Formulare</title>
+                <file>118.tpl</file>
+            </de>
+            <en>
+                <title>Forms</title>
+                <file>118.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>1</parentnode>
+        <id>106</id>
+        <lang>
+            <de>
+                <title>System</title>
+                <file>106.tpl</file>
+            </de>
+            <en>
+                <title>System</title>
+                <file>106.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>106</parentnode>
+        <id>635</id>
+        <lang>
+            <de>
+                <title>Formular Anzeige</title>
+                <file>635.tpl</file>
+            </de>
+            <en>
+                <title>Form Viewer</title>
+                <file>635.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>301</id>
+        <lang>
+            <de>
+                <title>Formular selektieren</title>
+                <file>301.tpl</file>
+            </de>
+            <en>
+                <title>Formpicker</title>
+                <file>301.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <contenttree>
+        <id>220</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Formular</title>
+            </de>
+            <en>
+                <title>Form</title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <module>
+        <id>viewer</id>
+        <treenode>220</treenode>
+        <treenode>1</treenode>
+        <main_param>id</main_param>
+        <main_content_type>220</main_content_type>
+        <lang>
+            <de>
+                <name>Formular</name>
+                <description>Darstellung eines Formulares</description>
+            </de>
+            <en>
+                <name>Form</name>
+                <description>Displays a form</description>
+            </en>
+        </lang>
+        <param>
+            <id>form_id</id>
+            <lang>
+                <de>
+                    <title>ID</title>
+                    <description>Wählen Sie ein Formular aus</description>
+                </de>
+                <en>
+                    <title>ID</title>
+                    <description>Select a form</description>
+                </en>
+            </lang>
+            <values>[SELECT id,title FROM {PREFIX}forms ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+     </module>
+
+    <table>
+        <id>forms</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.forms}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `title` varchar(255) default NULL,
+              `active` tinyint(1) unsigned default '0',
+              `lang` char(3) default NULL,
+              `layout` varchar(255) default NULL,
+              `description` text,
+              `identifier` varchar(255) default NULL,
+              `hide_label` tinyint(1) unsigned default '0',
+              PRIMARY KEY  (`id`)
+            );
+            ALTER TABLE `{TABLE.forms}` ADD `identifier` varbinary (255)   NULL  AFTER `description`;
+            ALTER TABLE `{TABLE.forms}` ADD `hide_label` tinyint(1) unsigned default '0'  AFTER `identifier`;
+            INSERT INTO `{TABLE.forms}` ( `id`, `title`, `active`, `lang`, `layout`, `description`, `identifier` ) values (  '99999',  NULL,  '0',  NULL,  NULL,  '',  NULL );
+            DELETE FROM `{TABLE.forms}` where `id`='99999';
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>forms_fillouts</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.forms_fillouts}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `form_id` int(11) unsigned NOT NULL default '0',
+              `session_id` varchar(40) default NULL,
+              `start_date` int(11) unsigned default NULL,
+              `submission_date` int(11) unsigned default '0',
+              `referer` varchar(255) default NULL,
+              PRIMARY KEY  (`id`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>forms_data</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.forms_data}` (
+              `fillout_id` int(11) unsigned default NULL,
+              `element_id` int(11) unsigned default NULL,
+              `element_value` text,
+              `id` int(11) unsigned NOT NULL auto_increment,
+              PRIMARY KEY  (`id`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>forms_scripts</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.forms_scripts}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `title` varchar(255) default NULL,
+              `description` varchar(255) default NULL,
+              `script` varchar(255) default NULL,
+              PRIMARY KEY  (`id`)
+            );
+            INSERT INTO `{TABLE.forms_scripts}` ( `id`, `title`, `description`, `script` ) values (  '99999',  NULL,  NULL,  NULL );
+            DELETE from `{TABLE.forms_scripts}` where `id`='99999';
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>forms_actions</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.forms_actions}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `form_id` int(11) unsigned default NULL,
+              `type` int(11) unsigned default NULL,
+              `value` varchar(255) default NULL,
+              `pos` int(11) unsigned default NULL,
+              `lang` char(3) NOT NULL default '',
+              `metadata` varchar(255) default NULL,
+              PRIMARY KEY  (`id`)
+            );
+            ALTER TABLE `{TABLE.forms_actions}` ADD `metadata` VARCHAR(255) after `lang`;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>forms_preactions</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.forms_preactions}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `form_id` int(11) unsigned default NULL,
+              `type` int(11) unsigned default NULL,
+              `value` varchar(255) default NULL,
+              `pos` int(11) unsigned default NULL,
+              `lang` char(3) NOT NULL default '',
+              PRIMARY KEY  (`id`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>forms_elements</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.forms_elements}` (
+              `element_id` int(11) unsigned NOT NULL auto_increment,
+              `element_type` int(11) unsigned default NULL,
+              `form_id` int(11) unsigned default NULL,
+              `pos` int(11) unsigned default '0',
+              `required` tinyint(1) unsigned default '0',
+              `required_msg` varchar(255) default NULL,
+              `active` tinyint(1) unsigned default '0',
+              `description` varchar(255) default NULL,
+              `datasource` int(11) unsigned default NULL,
+              `datasource_type` int(11) unsigned default '0',
+              `datasource_label_field` varchar(255) default NULL,
+              `datasource_value_field` varchar(255) default NULL,
+              `lang` char(3) default NULL,
+              `label` varchar(255) default NULL,
+              `default_value` varchar(255) default NULL,
+              `datasource_query` text,
+              `readonly` tinyint(1) unsigned NOT NULL default '0',
+              `size` int(11) unsigned default NULL,
+              `maxlength` int(11) unsigned default NULL,
+              `params` varchar(255) default NULL,
+              `scripting_identifier` varchar(255) default NULL,
+              `hide_label` int(1) default NULL,
+              PRIMARY KEY  (`element_id`)
+            );
+
+            ALTER TABLE `{TABLE.forms_elements}` ADD `scripting_identifier` VARCHAR(255);
+            ALTER TABLE `{TABLE.forms_elements}` ADD `hide_label` int(1) default NULL;
+        ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>forms_elements_rules</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.forms_elements_rules}` (
+              `form_id` int(11) unsigned NOT NULL default '0',
+              `element_id` int(11) unsigned default NULL,
+              `compare_query` varchar(255) default NULL,
+              `compare_type` int(11) unsigned default NULL,
+              `value_field` varchar(255) default NULL,
+              `value_query` text,
+              `value_type` int(11) unsigned default NULL,
+              `value` varchar(255) default NULL,
+              `title` varchar(255) NOT NULL default '',
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `lang` char(3) NOT NULL default '',
+              `error_msg` varchar(255) NOT NULL default '',
+              PRIMARY KEY  (`id`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>forms_elements_values</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.forms_elements_values}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `element_id` int(11) unsigned default NULL,
+              `label` varchar(255) default NULL,
+              `value` varchar(255) default NULL,
+              `pos` int(11) unsigned default '0',
+              PRIMARY KEY  (`id`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    <createfolder>xt/data/scripts/ch.iframe.snode.formmanager/</createfolder>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/220.php</openfile>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/221.php</openfile>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/222.php</openfile>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/223.php</openfile>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/224.php</openfile>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/225.php</openfile>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/2400.php</openfile>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/2401.php</openfile>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/2402.php</openfile>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/2410.php</openfile>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/3600.php</openfile>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/5100.php</openfile>
+    <openfile>xt/data/scripts/ch.iframe.snode.formmanager/5102.php</openfile>
+
+    <createfolder>scripts/ch.iframe.snode.formmanager/</createfolder>
+    <openfile>scripts/ch.iframe.snode.formmanager/viewer.js</openfile>
+
+    <file>captcha_image.php</file>
+    <file>images/transparent.png</file>
+    <file>xt/includes/classes/captchaxt.class.php</file>
+    <file>xt/templates/default/includes/form_elements.tpl</file>
+    <file>xt/templates/default/includes/formfields.tpl</file>
+    <file>scripts/base.js</file>
+    <file>styles/live/formmanager.css</file>
+    <folder>images/flags</folder>
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

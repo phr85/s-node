@@ -1,0 +1,1 @@
+<?php  XT::log('/home/bstaeheli/xt/xt/plugins/ch.iframe.snode.settings/admin/perms.php autocreated',__FILE__,__LINE__,XT_WARNING); ?>

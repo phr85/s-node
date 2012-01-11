@@ -1,0 +1,1 @@
+{plugin package="ch.iframe.snode.navigation" module="tree" level="1" profile="10000" profile_id="10000" style="sitemap.tpl" ncpos="1"}

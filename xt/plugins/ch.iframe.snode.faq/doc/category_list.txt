@@ -1,0 +1,29 @@
+= ch.iframe.snode.faq (category_list) =
+
+== Funktion ==
+Auflistung aller Fragen einer Kategorie
+
+== Möglicher Einsatzbereich ==
+Normaler FAQ-Bereich
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+cat_id           | integer      | Identifikationsnummer der auszulesenden Kategorie | 11
+viewer_tpl       | integer      | Templatenummer für die Ansicht der Frage (Autoval R) | 11020
+
+
+
+== Templatevariablen ==
+*xt1400_items array Alle Daten zur Frageliste
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.faq" module="category_list" style="default.tpl" cat_id=11}
+== Todo ==

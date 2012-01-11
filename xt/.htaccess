@@ -1,0 +1,4 @@
+# Deny by default, allow specific visitors
+order allow,deny
+# Error Pages
+ErrorDocument 403 /index.php?TPL=404

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rdf:RDF 
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns="http://purl.org/rss/1.0/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="{$FEED.rdf_about}">
+        {if $FEED.title != ''}<title>{$FEED.title}</title>{/if}
+        {if $FEED.description != ''}<description>{$FEED.description}</description>{/if}
+        {if $FEED.link != ''}<link>{$FEED.link}</link>{/if}
+        {if $FEED.pubDate != ''}<dc:date>{$FEED.pubDate}</dc:date>{/if}
+        {if $IMAGE != ''}<image rdf:resource="{$IMAGE.url}" />{/if}
+        <items>
+            <rdf:Seq>
+                {foreach from=$ITEMS item=ITEM}
+                <rdf:li rdf:resource="{$ITEM.link}"/>
+                {/foreach}
+            </rdf:Seq>
+        </items>
+    </channel>
+    {if $IMAGE != ''}
+    <image rdf:about="{$IMAGE.url}">
+        {if $IMAGE.title != ''}<title>{$IMAGE.title}</title>{/if}
+        {if $IMAGE.link != ''}<link>{$IMAGE.link}</link>{/if}
+        {if $IMAGE.url != ''}<url>{$IMAGE.url}</url>{/if}
+    </image>
+    {/if}
+    {foreach from=$ITEMS item=ITEM}
+    <item rdf:about="{$ITEM.url}">
+        {if $ITEM.title != ''}<title>{$ITEM.title}</title>{/if}
+        {if $ITEM.url != ''}<link>{$ITEM.url}</link>{/if}
+        {if $ITEM.description != ''}<description>{$ITEM.description}</description>{/if}
+        {if $ITEM.date != ''}<dc:date>{$ITEM.date}</dc:date>{/if}
+        {if $ITEM.creator != ''}<dc:creator>{$ITEM.creator}</dc:creator>{/if}
+    </item>
+    {/foreach}
+</rdf:RDF>

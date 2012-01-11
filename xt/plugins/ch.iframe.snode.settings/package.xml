@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>3300</baseid>
+    <id>ch.iframe.snode.settings</id>
+    <version>$Rev: 5582 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Einstellungen</name>
+            <description>Verwalten Sie Ihre Systemeinstellungen</description>
+        </de>
+        <en>
+            <name>Settings</name>
+            <description>Manage your main system settings</description>
+        </en>
+    </lang>
+    <page>
+        <parentnode>100</parentnode>
+        <id>121</id>
+        <lang>
+            <de>
+                <url>/index.php?TPL=126&amp;adminmode=1</url>
+                <title>System</title>
+                <file>121.tpl</file>
+            </de>
+            <en>
+                <url>/index.php?TPL=126&amp;adminmode=1</url>
+                <title>System</title>
+                <file>121.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>121</parentnode>
+        <id>139</id>
+        <lang>
+            <de>
+                <title>Einstellungen</title>
+                <file>139.tpl</file>
+            </de>
+            <en>
+                <title>Settings</title>
+                <file>139.tpl</file>
+            </en>
+        </lang>
+    </page>
+     <file>xt/includes/config.template.inc.php</file>
+    <changelog>
+        <rev>1680 use changes immediatly</rev>
+        <rev>1523 some minor bugs removed</rev>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

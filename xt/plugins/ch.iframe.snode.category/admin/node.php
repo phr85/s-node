@@ -1,0 +1,1 @@
+<?php  XT::log('/var/www/xtreme/public_html/xt/plugins/ch.iframe.snode.category/admin/node.php autocreated',__FILE__,__LINE__,XT_WARNING); ?>

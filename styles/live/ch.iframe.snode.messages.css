@@ -1,0 +1,128 @@
+.XTMSGcomp .selected{
+font-weight:bold;
+color:red;
+}
+.XTMSGcomp .msglist .head td{
+font-weight:bold;
+}
+.XTMSGcomp .msglist .unreaded td.subjectandtext, .XTMSGcomp .msglist .unreaded td.subjectandtext span{
+font-weight:bold;
+}
+
+.XTMSGcomp .msglist td{
+border-bottom:1px solid #CDCDCD;
+padding: 5px 2px;
+}
+.XTMSGcomp .msglist .date{
+width:105px;
+}
+
+.XTMSGcomp dl{
+width:100%;
+float:left;
+margin-bottom:5px;
+}
+
+.XTMSGcomp dt{
+clear:left;
+float:left;
+width:120px;
+}
+
+.XTMSGcomp dd{
+float:left;
+margin-bottom:5px;
+}
+
+ul.XTMSGnavigator {
+display:block;
+float:left;
+width:100%;
+margin:3px 0;
+border-bottom:1px solid #CDCDCD;
+padding:0;
+}
+
+ul.XTMSGnavigator li {
+display:block;
+float:left;
+padding:2px;
+}
+
+ul.XTMSGnavigator li a {
+width:80px;
+color:#000000;
+display:block;
+padding:3px;
+background-color:#DEDEDE;
+border:1px solid #CDCDCD;
+}
+ul.XTMSGnavigator li a:hover {
+color:#000000;
+display:block;
+padding:3px;
+background-color:#F2F2F2;
+border:1px solid #CDCDCD;
+}
+
+ul.XTMSGbuttonbar {
+display:block;
+float:left;
+width:100%;
+margin:3px 0;
+border-bottom:1px solid #CDCDCD;
+padding:0;
+clear:both;
+}
+
+ul.XTMSGbuttonbar li {
+display:block;
+float:left;
+padding:2px;
+}
+
+ul.XTMSGbuttonbar li a {
+width:130px;
+color:#000000;
+display:block;
+padding:3px;
+background-color:#DEDEDE;
+border:1px solid #CDCDCD;
+}
+ul.XTMSGbuttonbar li a:hover {
+color:#000000;
+display:block;
+padding:3px;
+background-color:#F2F2F2;
+border:1px solid #CDCDCD;
+}
+ul.XTMSGpaginator {
+display:block;
+float:left;
+width:100%;
+margin:3px 0;
+border-bottom:1px solid #CDCDCD;
+padding:0;
+clear:both;
+}
+
+ul.XTMSGpaginator li {
+display:block;
+float:left;
+padding:2px;
+}
+
+ul.XTMSGpaginator li a {
+color:#000000;
+}
+ul.XTMSGpaginator li.selected a {
+color:#990000;
+}
+
+ul.XTMSGpaginator li a:hover {
+color:#555555;
+}
+
+#XTMSGbody{
+clear:left;
+}

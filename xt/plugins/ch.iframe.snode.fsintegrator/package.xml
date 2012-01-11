@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>7200</baseid>
+    <id>ch.iframe.snode.fsintegrator</id>
+    <version>$Rev: 4815 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Dateisystem integrator</name>
+            <description>Integrieren Sie Dateien auf ihrem Dateisystem unabhängig des S-Node filemanagers</description>
+        </de>
+        <en>
+            <name>Filesystem integrator</name>
+            <description>Integrates files from the filesystem without the use of the filemanager</description>
+        </en>
+    </lang>
+    <changelog>
+        <rev>3405 initial plugin</rev>
+    </changelog>
+</package>

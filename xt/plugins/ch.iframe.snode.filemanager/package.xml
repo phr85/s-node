@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>240</baseid>
+    <id>ch.iframe.snode.filemanager</id>
+    <version>$Rev: 6391 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Dateien &amp; Bilder</name>
+            <description>Dateien und Bilder verwalten</description>
+        </de>
+        <en>
+            <name>Files &amp; Pictures</name>
+            <description>Manage Files and Pictures</description>
+        </en>
+    </lang>
+
+    <contenttype>
+        <id>240</id>
+        <title>File</title>
+        <open_url>/download.php?file_id=%id%</open_url>
+        <content_table>files_details</content_table>
+        <title_field>title</title_field>
+        <icon>disk_blue.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <contenttype>
+        <id>241</id>
+        <title>File Category</title>
+        <open_url>/index.php</open_url>
+        <content_table>files_tree_details</content_table>
+        <title_field>title</title_field>
+        <icon>folder_document.png</icon>
+        <id_field>node_id</id_field>
+    </contenttype>
+
+    <page>
+        <parentnode>100</parentnode>
+        <id>114</id>
+        <lang>
+            <de>
+                <url>index.php?TPL=120&amp;adminmode=1</url>
+                <title>Dateimanager</title>
+                <file>114.tpl</file>
+            </de>
+            <en>
+                <url>index.php?TPL=120&amp;adminmode=1</url>
+                <title>Filemanager</title>
+                <file>114.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>114</parentnode>
+        <id>120</id>
+        <lang>
+            <de>
+                <title>Dateien &amp; Bilder</title>
+                <file>120.tpl</file>
+            </de>
+            <en>
+                <title>Files &amp; Images</title>
+                <file>120.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>1</parentnode>
+        <id>106</id>
+        <lang>
+            <de>
+                <title>System</title>
+                <file>106.tpl</file>
+            </de>
+            <en>
+                <title>System</title>
+                <file>106.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>106</parentnode>
+        <id>111</id>
+        <lang>
+            <de>
+                <title>Popups</title>
+                <file>111.tpl</file>
+            </de>
+            <en>
+                <title>Popups</title>
+                <file>111.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>135</id>
+        <lang>
+            <de>
+                <title>Datei Picker</title>
+                <file>135.tpl</file>
+            </de>
+            <en>
+                <title>File Picker</title>
+                <file>135.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>556</id>
+        <lang>
+            <de>
+                <title>Filemanager Node Relations</title>
+                <file>556.tpl</file>
+            </de>
+            <en>
+                <title>Filemanager Node Relations</title>
+                <file>556.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>135</parentnode>
+        <id>136</id>
+        <lang>
+            <de>
+                <title>Datei Picker (Baum)</title>
+                <file>136.tpl</file>
+            </de>
+            <en>
+                <title>File Picker (Tree)</title>
+                <file>136.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>135</parentnode>
+        <id>241</id>
+        <lang>
+            <de>
+                <title>Verzeichnis Picker (Baum)</title>
+                <file>241.tpl</file>
+            </de>
+            <en>
+                <title>Folder Picker (Tree)</title>
+                <file>241.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>135</parentnode>
+        <id>137</id>
+        <lang>
+            <de>
+                <title>Datei Picker (Anzeige)</title>
+                <file>137.tpl</file>
+            </de>
+            <en>
+                <title>File Picker (Display)</title>
+                <file>137.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>233</id>
+        <lang>
+            <de>
+                <title>Dateimanager Kategorien Picker</title>
+                <file>233.tpl</file>
+            </de>
+            <en>
+                <title>Filemanager Category Picker</title>
+                <file>233.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>233</parentnode>
+        <id>234</id>
+        <lang>
+            <de>
+                <title>Dateimanager Kategorie Picker (Baum)</title>
+                <file>234.tpl</file>
+            </de>
+            <en>
+                <title>Filemanger Category Picker (Tree)</title>
+                <file>234.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>233</parentnode>
+        <id>235</id>
+        <lang>
+            <de>
+                <title>Dateimanager Kategorie Picker (Anzeige)</title>
+                <file>235.tpl</file>
+            </de>
+            <en>
+                <title>Filemanger Category Picker (Display)</title>
+                <file>235.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>597</id>
+        <lang>
+            <de>
+                <title>Bild Picker</title>
+                <file>597.tpl</file>
+            </de>
+            <en>
+                <title>Image Picker</title>
+                <file>597.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>598</id>
+        <lang>
+            <de>
+                <title>Bildkategorie Picker</title>
+                <file>598.tpl</file>
+            </de>
+            <en>
+                <title>Imagecategory Picker</title>
+                <file>598.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>160</id>
+        <lang>
+            <de>
+                <public>1</public>
+                <visible>0</visible>
+                <title>Bild Betrachter</title>
+                <file>160.tpl</file>
+            </de>
+            <en>
+                <public>1</public>
+                <visible>0</visible>
+                <title>Image Viewer</title>
+                <file>160.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <contenttree>
+        <id>120</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Dateimanager</title>
+            </de>
+            <en>
+                <title>Filemanager</title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <module>
+        <id>downloadcenter</id>
+        <treenode>120</treenode>
+        <lang>
+            <de>
+                <name>Downloadcenter</name>
+                <description>Listen eines Ordners um files runterladen zu können</description>
+            </de>
+            <en>
+                <name>Downloadcenter</name>
+                <description>Lists contents of a folder to download</description>
+            </en>
+        </lang>
+        <param>
+            <id>folder</id>
+            <lang>
+                <de>
+                    <title>Ordner</title>
+                    <description>Wählen Sie einen Ordner aus</description>
+                </de>
+                <en>
+                    <title>Folder</title>
+                    <description>Select a folder</description>
+                </en>
+            </lang>
+            <values>[SELECT node_id,title FROM {PREFIX}files_tree_details ORDER BY title ASC][node_id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+        <param>
+            <id>target</id>
+            <lang>
+                <de>
+                    <title>Zielfenster</title>
+                    <description>Geben Sie an, welches Ziel der Link haben soll.</description>
+                </de>
+                <en>
+                    <title>Targetwindow</title>
+                    <description>Select a target window.</description>
+                </en>
+            </lang>
+            <values>_self,_blank,_parent,_top</values>
+            <valuetype>normal</valuetype>
+        </param>
+         <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+     </module>
+
+     <module>
+        <id>impressions</id>
+        <treenode>120</treenode>
+        <treenode>1</treenode>
+        <lang>
+            <de>
+                <name>Impressionen (Bilder)</name>
+                <description>Bildimpressionen aus bestimmten Verzeichnissen oder Kategorien</description>
+            </de>
+            <en>
+                <name>Impressions (Images)</name>
+                <description>Image impressions from different categories or folders</description>
+            </en>
+        </lang>
+        <param>
+            <id>category</id>
+            <lang>
+                <de>
+                    <title>Kategorien / Verzeichnisse</title>
+                    <description>Wählen Sie eine Kategorie aus welcher die Bilder geholt werden sollen aus</description>
+                </de>
+                <en>
+                    <title>Categories / Folders</title>
+                    <description>Select a folder</description>
+                </en>
+            </lang>
+            <values>[SELECT node_id,title FROM {PREFIX}files_tree_details ORDER BY title ASC][node_id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+        <param>
+            <id>count</id>
+            <lang>
+                <de>
+                    <title>Anzahl gleichzeitig angezeigter Bilder</title>
+                    <description>Geben Sie eine Anzahl ein, welche angezeigt werden soll (Standard: 1)</description>
+                </de>
+                <en>
+                    <title>Count of simultanous shown images</title>
+                    <description>Type in an image count, that should be shown</description>
+                </en>
+            </lang>
+            <values>1</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>image_version</id>
+            <lang>
+                <de>
+                    <title>Grösse des Bildes (Empfohlen: Default)</title>
+                    <description>Wählen Sie eine Bildgrösse aus</description>
+                </de>
+                <en>
+                    <title>Size of the image</title>
+                    <description>Please choose an image size</description>
+                </en>
+            </lang>
+            <values>ch.iframe.snode.filemanager => imageversions</values>
+            <valuetype>configarray</valuetype>
+        </param>
+
+        <param>
+            <id>recursive</id>
+            <lang>
+                <de>
+                    <title>Rekursiv</title>
+                    <description>Bei true werden Unterordner mit einbezogen</description>
+                </de>
+                <en>
+                    <title>Rekursiv</title>
+                    <description>Bei true werden Unterordner mit einbezogen</description>
+                </en>
+            </lang>
+             <values>false,true</values>
+            <valuetype>normal</valuetype>
+     </param>
+
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <module>
+        <id>movie</id>
+        <treenode>1</treenode>
+        <treenode>120</treenode>
+        <main_param>id</main_param>
+        <main_content_type>240</main_content_type>
+        <lang>
+            <de>
+                <name>Movieplayer</name>
+                <description>Darstellung eines Films auf Ihrer Seite</description>
+            </de>
+            <en>
+                <name>Movieplayer</name>
+                <description>Displays a movie on your site</description>
+            </en>
+        </lang>
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>ID</title>
+                    <description>Wählen Sie einen Film aus</description>
+                </de>
+                <en>
+                    <title>ID</title>
+                    <description>Select a film</description>
+                </en>
+            </lang>
+            <values>[135][240]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>width</id>
+            <lang>
+                <de>
+                    <title>Breite</title>
+                    <description>Welche Breite soll das Videofenster haben?</description>
+                </de>
+                <en>
+                    <title>Width</title>
+                    <description>How many pixels in width should the video player have?</description>
+                </en>
+            </lang>
+            <values>425</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>height</id>
+            <lang>
+                <de>
+                    <title>Höhe</title>
+                    <description>Welche Höhe soll das Videofenster haben?</description>
+                </de>
+                <en>
+                    <title>Height</title>
+                    <description>How many pixels in height should the video player have?</description>
+                </en>
+            </lang>
+            <values>355</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>autoplay</id>
+            <lang>
+                <de>
+                    <title>Auto Play</title>
+                    <description>Soll der Player automatisch mit dem abspielen beginnen nach dem Laden der Seite? (1 = Ja, 0 = Nein)</description>
+                </de>
+                <en>
+                    <title>Auto Play</title>
+                    <description>Should the movie be Auto-Played after loading the page? (1 = Yes, 0 = No)</description>
+                </en>
+            </lang>
+            <values>1,0</values>
+            <valuetype>normal</valuetype>
+        </param>
+</module>
+
+
+  <module>
+        <id>tree</id>
+        <treenode>120</treenode>
+        <main_param>startnode</main_param>
+        <main_content_type>241</main_content_type>
+        <lang>
+            <de>
+                <name>Navigationsbaum</name>
+                <description>Anzeigen der Ordner</description>
+            </de>
+            <en>
+                <name>Navigationsbaum</name>
+                <description>Anzeigen der Ordner</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>startnode</id>
+            <lang>
+                <de>
+                    <title>Startpunkt</title>
+                    <description>Optional: Ab welchem node (als id) soll die Navigation dargestellt werden</description>
+                </de>
+                <en>
+                    <title>Start node</title>
+                    <description>optional: From wich node you want to display the tree</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+        <param>
+            <id>details_tpl</id>
+            <lang>
+                <de>
+                    <title>Detailseite</title>
+                    <description>Gibt an welches TPL die detailieren Informationen zum node enthält (in der Regel ist dies das TPL welches das modul "category_listing enth�lt", dies kann auch das TPL sein das "category_tree" ,also sich selbst, enth�lt)</description>
+                </de>
+                <en>
+                    <title>Details page</title>
+                    <description>Which page (TPL) contains the module category_listing?</description>
+                </en>
+            </lang>
+            <values>$TPL</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>lang</id>
+            <lang>
+                <de>
+                    <title>Sprache</title>
+                    <description>Optional: Welche Sprachversion vom Baum soll verwendet werden (Default: aktuelle Sprache)</description>
+                </de>
+                <en>
+                    <title>Language</title>
+                    <description>optional: which language of the tree you want have to display (default: actual system language)</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+          <param>
+            <id>start_level</id>
+            <lang>
+                <de>
+                    <title>Ebene</title>
+                    <description>Ab welcher Ebene sollen die Elemente dargestellt werden?</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>From which level you want to display the elements?</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+         <param>
+            <id>depth</id>
+            <lang>
+                <de>
+                    <title>Maximale Tiefe</title>
+                    <description>Wieviele ebenen darf die Navigation in die Tiefe gehen?</description>
+                </de>
+                <en>
+                    <title>Maximale Tiefe</title>
+                    <description>Wieviele ebenen darf die Navigation in die Tiefe gehen?</description>
+               </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+
+        <param>
+            <id>open_depth</id>
+            <lang>
+                <de>
+                    <title>Offene ebenen</title>
+                    <description>Wieviele ebenen sollen offen sein?</description>
+                </de>
+                <en>
+                    <title>Offene ebenen</title>
+                    <description>Wieviele ebenen sollen offen sein?</description>
+               </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>follow</id>
+            <lang>
+                <de>
+                    <title>Pfad verfolgen</title>
+                    <description>Folgt dem Pfad (node ist immer wie TPL) True gibt den startnode auch mit.</description>
+                </de>
+                <en>
+                    <title>Pfad verfolgen</title>
+                    <description>Folgt dem Pfad (node ist immer wie TPL)</description>
+                </en>
+            </lang>
+             <values>false,true</values>
+            <valuetype>normal</valuetype>
+     </param>
+     <param>
+            <id>show_start_node</id>
+            <lang>
+                <de>
+                    <title>Startnode darstellen</title>
+                    <description>Gibt den node im Datenset mit</description>
+                </de>
+                <en>
+                    <title>Startnode darstellen</title>
+                    <description>Gibt den node im Datenset mit</description>
+                </en>
+            </lang>
+            <values>false,true</values>
+            <valuetype>normal</valuetype>
+        </param>
+    </module>
+
+
+
+
+     <module>
+        <id>downloadlist</id>
+        <treenode>120</treenode>
+        <lang>
+            <de>
+                <name>Downloadlist</name>
+                <description>Eine Liste von Dateien zum herunterladen</description>
+            </de>
+            <en>
+                <name>Downloadlist</name>
+                <description>A list of downloads</description>
+            </en>
+        </lang>
+        <param>
+            <id>node</id>
+            <lang>
+                <de>
+                    <title>Kategorie</title>
+                    <description>Wählen Sie eine Kategorie aus</description>
+                </de>
+                <en>
+                    <title>Category</title>
+                    <description>Select a category</description>
+                </en>
+            </lang>
+            <values>[233][240]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>count</id>
+            <lang>
+                <de>
+                    <title>Anzahl</title>
+                    <description>Anzahl Dateien, die angezeigt werden sollen</description>
+                </de>
+                <en>
+                    <title>Count</title>
+                    <description>Cunt of entries to show</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>image_version</id>
+            <lang>
+                <de>
+                    <title>Grösse des Bildes (Empfohlen: Default)</title>
+                    <description>Wählen Sie eine Bildgrösse aus</description>
+                </de>
+                <en>
+                    <title>Size of the image</title>
+                    <description>Please choose an image size</description>
+                </en>
+            </lang>
+            <values>ch.iframe.snode.filemanager => imageversions</values>
+            <valuetype>configarray</valuetype>
+        </param>
+        <param>
+            <id>order</id>
+            <lang>
+                <de>
+                    <title>Sortierung</title>
+                    <description>Wonach soll die Liste sortiert werden?</description>
+                </de>
+                <en>
+                    <title>Ordering</title>
+                    <description>Wonach soll die Liste sortiert werden?</description>
+                </en>
+            </lang>
+            <values>det.title,f.filesize,f.upload_date,f.manual_date,f.filename,nodes.node_id,f.manual_date</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>orderdir</id>
+            <lang>
+                <de>
+                    <title>Sortierung auf/absteigend</title>
+                    <description>Soll die Sortierung von A-Z sein (1) oder von Z-A (-1)?</description>
+                </de>
+                <en>
+                    <title>Orderingdirection</title>
+                    <description>Should the order be from A-Z sein (1) or from Z-A (-1)?</description>
+                </en>
+            </lang>
+            <values>1,-1</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>ordername</id>
+            <lang>
+                <de>
+                    <title>Name fuer eine eindeutige Sortierung</title>
+                    <description>Falls nicht die globale Sortierung der Liste gilten soll geben Sie einen Namen ein</description>
+                </de>
+                <en>
+                    <title>Name fuer eine eindeutige Sortierung</title>
+                    <description>Falls nicht die globale Sortierung der Liste gilten soll geben Sie einen Namen ein</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <table>
+        <id>files</id>
+        <mysql>
+           CREATE TABLE `{TABLE.files}` (
+          `id` int(11) unsigned NOT NULL auto_increment,
+          `filesize` int(11) unsigned default NULL,
+          `upload_date` int(11) unsigned NOT NULL default '0',
+          `upload_user` int(11) unsigned NOT NULL default '0',
+          `type` int(11) unsigned default '0',
+          `width` int(11) unsigned default NULL,
+          `height` int(11) unsigned default NULL,
+          `public` tinyint(1) unsigned default '0',
+          `filename` varchar(255) default NULL,
+          `count_downloads` tinyint(1) default NULL,
+          `downloads` int(11) default NULL,
+          `image` int(11) default NULL,
+          `image_version` tinyint(2) default NULL,
+          `md5sum` varchar(32) default NULL,
+          `manual_date` int(11) unsigned NOT NULL default '0',
+          `valid_from` int(11) unsigned NOT NULL default '0',
+          `valid_date` int(11) unsigned NOT NULL default '0',
+          PRIMARY KEY  (`id`)
+        );
+        ALTER TABLE `{TABLE.files}` ADD `md5sum` varchar(32);
+        ALTER TABLE `{TABLE.files}` ADD column `manual_date` int (11)  NULL  after `md5sum`;
+        ALTER TABLE `{TABLE.files}` ADD column `valid_date` int (11)  NOT NULL default '0' after `manual_date`;
+        ALTER TABLE `{TABLE.files}` ADD column `valid_from` int (11)  NOT NULL default '0' after `manual_date`;
+        </mysql>
+    </table>
+    <table>
+        <id>files_details</id>
+        <mysql>
+            CREATE TABLE `{TABLE.files_details}` (
+            `id` int(11) unsigned NOT NULL default '0',
+            `lang` varchar(5) NOT NULL default '',
+            `title` varchar(255) default NULL,
+            `description` varchar(255) default NULL,
+            `keywords` varchar(255) default NULL,
+            PRIMARY KEY  (`id`,`lang`)
+            );
+            alter table `{TABLE.files_details}` ,change `nav_id` `id` int (11)   NOT NULL AUTO_INCREMENT ;
+
+        </mysql>
+    </table>
+    <table>
+        <id>files_rel</id>
+        <mysql>
+            CREATE TABLE `{TABLE.files_rel}` (
+              `node_id` int(11) unsigned NOT NULL default '0',
+              `file_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`node_id`,`file_id`),
+              UNIQUE KEY `main_index` (`node_id`,`file_id`),
+              UNIQUE KEY `files` (`file_id`),
+              KEY `nodes` (`node_id`)
+            );
+            ALTER TABLE `{TABLE.files_rel}` ADD UNIQUE KEY `files` (`file_id`);
+            ALTER TABLE `{TABLE.files_rel}` ADD KEY `nodes` (`node_id`);
+        </mysql>
+    </table>
+    <table>
+        <id>files_tree</id>
+        <mysql>
+            CREATE TABLE `{TABLE.files_tree}` (
+              `id` int(11) NOT NULL auto_increment,
+              `l` int(11) NOT NULL default '0',
+              `r` int(11) NOT NULL default '0',
+              `pid` int(11) NOT NULL default '0',
+              `level` int(11) NOT NULL default '0',
+              `tree_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`id`),
+              KEY `l` (`l`),
+              KEY `r` (`r`),
+              KEY `level` (`level`),
+              KEY `pid` (`pid`)
+            );
+        </mysql>
+    </table>
+    <table>
+        <id>files_versions</id>
+        <mysql>
+            CREATE TABLE `{TABLE.files_versions}` (
+              `file_id` int(11) unsigned default NULL,
+              `version` int(11) unsigned default NULL,
+              `width` int(11) unsigned default NULL,
+              `height` int(11) unsigned default NULL,
+              `filesize` int(11) unsigned default NULL,
+              `type` tinyint(3) unsigned default NULL
+            );
+
+        </mysql>
+    </table>
+    <table>
+        <id>files_tree_details</id>
+        <mysql>
+            CREATE TABLE `{TABLE.files_tree_details}` (
+              `node_id` int(11) NOT NULL auto_increment,
+              `lang` char(3) NOT NULL default '',
+              `creation_date` int(11) NOT NULL default '0',
+              `creation_user` int(11) NOT NULL default '0',
+              `mod_date` int(11) NOT NULL default '0',
+              `mod_user` int(11) NOT NULL default '0',
+              `description` varchar(255) NOT NULL default '',
+              `title` varchar(255) NOT NULL default '',
+              `active` tinyint(4) NOT NULL default '0',
+              `download_count` int(11) unsigned NOT NULL default '0',
+              `md5` varchar(32) NOT NULL default '',
+              `isFolder` tinyint(1) unsigned NOT NULL default '1',
+              `public` tinyint(1) unsigned default '0',
+              PRIMARY KEY  (`node_id`,`lang`)
+            );
+
+            ALTER TABLE `{TABLE.files_tree_details}` ADD `image` int(11);
+            ALTER TABLE `{TABLE.files_tree_details}` ADD `image_version` int(11);
+
+        </mysql>
+    </table>
+
+    <table>
+        <id>files_revision</id>
+        <mysql>
+            CREATE TABLE `{TABLE.files_revision}` (
+              `file_id` int(11) unsigned NOT NULL default '0',
+              `revision` int(11) unsigned NOT NULL default '0',
+              `mod_user` int(11) unsigned default NULL,
+              `mod_date` int(11) unsigned default NULL,
+              `comment` mediumtext,
+              `details` blob,
+              `filename` varchar(255) NOT NULL,
+              `filetitle` varchar(255) NOT NULL,
+              PRIMARY KEY  (`file_id`,`revision`)
+            );
+        </mysql>
+    </table>
+
+    <openfile>download.php</openfile>
+    <openfile>xt/includes/template/ch.iframe.snode.filemanager.inc.php</openfile>
+
+    <file>scripts/base.js</file>
+    <file>styles/live/downloadlist.css</file>
+    <file>styles/live/downloadcenter.css</file>
+    <file>xt/includes/classes/file.class.php</file>
+    <file>xt/includes/classes/fileindexer.class.php</file>
+    <file>xt/includes/classes/image.class.php</file>
+    <file>xt/plugins/ch.iframe.snode.securitycenter/includes/actions/register.ch.iframe.snode.filemanager.postaction.php</file>
+    <openfile>videodownload.php</openfile>
+
+    <folder>mediaplayer</folder>
+    <folder>video</folder>
+    <folder>xt/includes/classes/image</folder>
+    <folder>images/admin/tipps/ch.iframe.snode.filemanager</folder>
+
+    <excludefile>xt/plugins/ch.iframe.snode.filemanager/includes/actions/deleteFile.ch.iframe.snode.gallery.deleteFileFromGallery.preaction.php</excludefile>
+</package>

@@ -1,0 +1,40 @@
+<?php
+
+$plugin_messages['de'] = array(
+    "Size" => "Grösse",
+    "Wizard" => "Assistent",
+    "Package Installer" => "Paket Installer",
+    "What do you want to do?" => "Was m&ouml;chten Sie tun?",
+    "<b>Reinstall</b> a package from repository" => "Ein bereits installiertes Paket aus dem Server-Repository <b>erneut installieren</b>",
+    "<b>Upload</b> and install a package" => "Ein Paket uploaden und <b>installieren</b>",
+    "Upload from local source" => "Upload eines <b>.xtp</b> Paketes aus lokalem Verzeichniss",
+    "Upload sample data from local source" => "Upload eines <b>.xtsd</b> Paketes aus lokalem Verzeichniss",
+    "Upload update from local source" => "Upload eines <b>.xtupdate</b> Paketes aus lokalem Verzeichniss",
+    "Upload Package" => "Paket Uploaden",
+    "Update Package" => "Paket Update einspielen",
+    "<b>Update</b> an existing package" => "Ein bestehendes Paket <b>Updaten</b>",
+    "intro_text" => "Hier können neue Module in ein bestehendes S-Node System integriert werden. S-Node zeigt die bereits verfügbaren Plugins an, die zur Installation bereit stehen. Neue Plugins können jederzeit auf S-Node.com heruntergeladen und hinzugefügt werden.",
+    "Installed Packages" => "Installierte Pakete",
+    "ID" => "ID",
+    "Name" => "Name",
+    "version" => "Version",
+    "Provider" => "Provider",
+    "<b>Upload</b> and install a sample data package" => "<b>Beispieldaten</b> uploaden und installieren",
+    "<b>Upload</b> and install a new theme" => "<b>Theme (Designset)</b> uploaden und installieren",
+    "<b>Upload</b> and install a content package" => "<b>Inhalt</b> uploaden und installieren",
+    "Upload Sample Data package" => "Beispieldatenpaket heraufladen",
+    "overwrite_config" => "Konfigurationsdatei &uuml;berschreiben",
+    "overwrite_translations" => "&Uuml;bersetzungen &uuml;berschreiben",
+    "Upload a theme" => "Theme (Designset) einspielen",
+    "Upload a theme from local source" => "Upload eines <b>.xtt</b> Paketes aus lokalem Verzeichniss",
+    "Package" => "Paket",
+    "Action" => "Aktion",
+    "Install" => "Installieren",
+    "Online installation / update" => "Online Installation / Update",
+    "Are you sure to install this package?" => "Wollen Sie dieses Paket wirklich installieren?",
+    "grün = installiert, rot = noch nicht installiert" => "grün = installiert, rot = noch nicht installiert",
+    "Developer mode" => "Entwickler-Modus (Nur für Software-Hersteller)",
+
+);
+
+?>

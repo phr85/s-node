@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>1700</baseid>
+    <id>ch.iframe.snode.jobcenter</id>
+    <version>$Rev: 6368 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Job Center</name>
+            <description>Verwalten der Jobangebote</description>
+        </de>
+        <en>
+            <name>Job Center</name>
+            <description>Manage job offerings</description>
+        </en>
+    </lang>
+    <page>
+        <parentnode>101</parentnode>
+        <id>1700</id>
+        <lang>
+            <de>
+                <title>Jobs</title>
+                <file>1700.tpl</file>
+            </de>
+            <en>
+                <title>Jobs</title>
+                <file>1700.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <contenttype>
+        <id>1700</id>
+        <title>Jobs</title>
+        <open_url></open_url>
+        <content_table>jobs</content_table>
+        <title_field>title</title_field>
+        <icon>user.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    <table>
+        <id>jobs</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.jobs}` (
+                    `id` int(11) NOT NULL auto_increment,
+                    `job_node` int(11) unsigned NOT NULL default '0',
+                    `creation_date` int(11) unsigned NOT NULL,
+                    `creation_user` int(11) unsigned NOT NULL,
+                    `mod_date` int(11) unsigned NOT NULL,
+                    `mod_user` int(11) unsigned NOT NULL,
+                    `contact_id` int(11) unsigned NOT NULL,
+                    `location_id` int(11) unsigned NOT NULL,
+                    `job_id` varchar(100) NOT NULL default '',
+                    `job_percentage_from` tinyint(3) unsigned NOT NULL,
+                    `job_percentage_to` tinyint(3) unsigned NOT NULL default '100',
+                    `job_start_at` int(11) unsigned NOT NULL,
+                    `job_end_at` int(11) unsigned NOT NULL,
+                    `application_up` int(11) unsigned NOT NULL,
+                    `application_schematic` varchar(255) NOT NULL default '',
+                    `application_template` varchar(255) NOT NULL default '',
+                    PRIMARY KEY (`id`)
+                ) ENGINE=MyISAM
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>jobs_detail</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.jobs_detail}` (
+                    `id` int(11) unsigned NOT NULL,
+                    `creation_date` int(11) unsigned NOT NULL,
+                    `creation_user` int(11) unsigned NOT NULL,
+                    `mod_date` int(11) unsigned NOT NULL,
+                    `mod_user` int(11) unsigned NOT NULL,
+                    `lang` char(2) NOT NULL default '',
+                    `active` tinyint(1) NOT NULL default '0',
+                    `title` varchar(255) NOT NULL default '',
+                    `subtitle` varchar(255) NOT NULL default '',
+                    `introduction` text,
+                    `maintext` text,
+                    PRIMARY KEY (`id`,`lang`)
+                ) ENGINE=MyISAM
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>jobs_applications</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.jobs_applications}` (
+                    `id` int(11) unsigned NOT NULL auto_increment,
+                    `application_node` int(11) unsigned NOT NULL default '0',
+                    `job_id` int(11) unsigned NOT NULL default '0',
+                    `creation_date` int(11) unsigned NOT NULL default '0',
+                    `creation_user` int(11) unsigned NOT NULL default '0',
+                    `modification_date` int(11) unsigned NOT NULL default '0',
+                    `modification_user` int(11) unsigned NOT NULL default '0',
+                    PRIMARY KEY (`id`),
+                    UNIQUE KEY `job_id` (`id`,`job_id`)
+                ) ENGINE=MyISAM
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>jobs_applications_values</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.jobs_applications_values}` (
+                    `id` int(11) NOT NULL auto_increment,
+                    `application_id` int(11) unsigned NOT NULL default '0',
+                    `key` varchar(255) NOT NULL default '',
+                    `value` text,
+                    PRIMARY KEY (`id`)
+                ) ENGINE=MyISAM
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>files_tree</id>
+        <mysql>
+            <![CDATA[
+                INSERT INTO `{TABLE.files_tree}` (`id`,`l`,`r`,`pid`,`level`,`tree_id`) VALUES (5,1,2,0,1,5);
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>files_tree_details</id>
+        <mysql>
+            <![CDATA[
+                INSERT INTO `{TABLE.files_tree_details}` (`node_id`,`lang`,`title`,`active`,`isFolder`,`public`) VALUES (5,'de','Jobs',1,1,0);
+                INSERT INTO `{TABLE.files_tree_details}` (`node_id`,`lang`,`title`,`active`,`isFolder`,`public`) VALUES (5,'en','Jobs',1,1,0);
+            ]]>
+        </mysql>
+    </table>
+    <openfile>styles/live/ch.iframe.snode.jobcenter.css</openfile>
+    <folder>scripts/ch.iframe.snode.jobcenter</folder>
+    <changelog>
+        <rev>0 initial release</rev>
+    </changelog>
+</package>

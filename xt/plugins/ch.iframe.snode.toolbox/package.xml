@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>7300</baseid>
+    <id>ch.iframe.snode.toolbox</id>
+    <version>$Rev: 4423 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Toolbox</name>
+            <description>Die Toolbox erlaubt es Ihnen den Inhalt direkt in der Live-Ansicht an zu passen.</description>
+        </de>
+        <en>
+            <name>Toolbox</name>
+            <description>The toolbox allows you to manage content direclty in the live view.</description>
+        </en>
+    </lang>
+    <folder>images/icons/</folder>
+    <file>scripts/base.js</file>
+    <file>styles/live/toolbox.css</file>
+    <file>styles/live/liveadmin.css</file>
+    <file>images/admin/button.gif</file>
+    <file>images/admin/button_over.gif</file>
+    <file>images/admin/end.gif</file>
+    <file>images/admin/live_edit.gif</file>
+    <file>images/admin/live_edit_over.gif</file>
+    <file>images/admin/toolbox_logo.gif</file>
+    <file>images/admin/toolbox_gradient.gif</file>
+    <file>images/admin/close.gif</file>
+    <file>xt/templates/includes/header/header.tpl</file>
+    <changelog>
+        <rev>3405 initial plugin</rev>
+        <rev>4421 Artikel direkt hinzufügen</rev>
+    </changelog>
+    <requires>
+        <package>
+        <id>ch.iframe.snode.core</id>
+        <version>$Rev: 4421$</version>
+        </package>
+        <package>
+        <id>ch.iframe.snode.article</id>
+        <version>$Rev: 4421$</version>
+        </package>
+        <package>
+        <id>ch.iframe.snode.navigation</id>
+        <version>$Rev: 4421$</version>
+        </package>
+    </requires>
+</package>

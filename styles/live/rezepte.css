@@ -1,0 +1,167 @@
+div.rlist{
+ border-bottom: 1px solid #444444; 
+ padding:5px;
+}
+
+div.rlist_nodesubtitle{
+ font-size:14px;
+ font-style:italic;
+ margin-bottom:10px;
+}
+
+div.rlist_nodedescription{
+ font-size:12px;
+}
+
+a.rlist_pages{
+ display:.block;
+ padding:1px 5px;
+ float:left;
+}
+
+a.rlist_pages:hover{
+ display:.block;
+ padding:1px 5px;
+ float:left;
+ background-color:#CDCDCD;
+}
+
+a.rlist_pages_active{
+ display:.block;
+ padding:1px 5px;
+ float:left;
+ background-color:#DEDEDE;
+}
+
+div.rlist_image{
+float:left;
+padding:0px 10px 5px 0px;
+}
+
+div.rviewer{
+position:relative;
+}
+
+div.rlist_rtitle{
+ font-weight:bold;
+ font-size:13px;
+}
+div.rlist_rsubtitle{
+ font-weight:bold;
+}
+
+div.rviewr_imagebox{
+ float:left;
+ padding: 0px 10px 5px 0px;
+}
+
+div.rimages{
+margin-bottom: 10px;
+}
+
+div.rviewer_title{
+font-size: 13px;
+font-weight: bold;
+}
+
+div.rviewer_subtitle{
+font-weight: bold;
+}
+
+div.rviewer_making{
+float:left;
+width: 450px;
+}
+
+div.rviewer_detailbox{
+position:absolute;
+right:0px;
+top:0px;
+border: 1px solid #CDCDCD;
+padding:5px 10px;
+}
+
+div.rviewer_ingridient_box{
+ float:left;
+ margin-bottom: 20px;
+ width: 250px;
+}
+
+div.rviewer_ingridient{
+padding-left:5px;
+}
+
+div.rviewer_ingridient_separator{
+font-weight:bold;
+border-bottom: 1px solid black;
+}
+
+div.rviewer_calculated{
+color: red;
+float:right;
+width:50px;
+border-left:1px solid #CDCDCD;
+padding-left:5px;
+}
+
+input.portionfield{
+width: 50px;
+border: 1px solid black;
+}
+
+input.portionsubmit{
+border: 1px solid black;
+}
+
+TD.create_left{
+border-bottom: 1px solid #CDCDCD;
+vertical-align:top;
+padding:5px;
+}
+
+TD.create_right{
+border-bottom: 1px solid #CDCDCD;
+vertical-align:top;
+padding:5px;
+}
+
+div.user_edit_box{
+background-image:url(/images/default/boxshadow.gif);
+background-repeat:repeat-x;
+border:1px solid #CDCDCD;
+padding: 5px;
+}
+
+div.user_edit{
+clear:both;
+}
+
+div.user_edit > div{
+float:left;
+}
+div.user_edit_title{
+font-weight:bold;
+}
+
+div.user_edit_title > div{
+float:left;
+}
+
+.c_px{
+width:100px;
+}
+
+.ivx_px{
+width:40px;
+}
+.xx_px{
+width:20px;
+}
+
+.mm_px{
+width:200px;
+}
+
+.highlight{
+background-color:#FEA234;
+}

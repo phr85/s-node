@@ -1,0 +1,40 @@
+= ch.iframe.snode.search (simple) =
+
+== Funktion ==
+
+
+== Möglicher Einsatzbereich ==
+
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+profile          | string       | Profilname | global
+results          | integer      | Resultate pro seite | 15
+similar          | boolen       | Soundexunterstützung einschalten (http://de.wikipedia.org/wiki/Soundex)| false
+lang             | string       | Sprache in der gesucht werden soll | fr
+content_type     | integer      | Inhaltstyp | 60 (Nur in der Navigation suchen)
+
+
+== Templatevariablen ==
+*SIMILAR boolen Soundexunterstützung einschalten
+*SEARCHTERM string Suchbegriff
+*RESULTS array Alle gefundenen Suchergebnisse
+*TOTAL integer Anzahl gefundener Einträge
+*PAGES integer Anzahl seiten
+*AKTUALPAGE integer Aktuelle Seite
+*CONTENT_TYPES array Gefundene Content types
+*ELAPSED_TIME float	Zeit, die für die Such verwendet wurde
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.search" module="simple" style="default.tpl"}
+
+== Todo ==

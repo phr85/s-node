@@ -1,0 +1,39 @@
+= ch.iframe.snode.gallery (picker) =
+
+== Funktion ==
+Auswählen einer Gallerie
+
+== Möglicher Einsatzbereich ==
+Administrationsbereich
+
+== Mitgelieferte Templates ==
+*overview.tpl
+
+
+== Parameter ==
+keine
+
+
+== Templatevariablen ==
+*FROM string Zielformular
+*FIELD string Zielfeld im Zielformular
+*TITLEFIELD string Titelfeld im Zielformular
+*OPEN int Momentant geöffneter Node
+*LANGS array Systemsprachen
+*ACTIVE_LANG string Momentan verwendete Sprache
+
+== Sessionvarablen ==
+*open int Momentant geöffneter Node
+*ctrl_add int Einfügemodus eingeschaltet wenn 1
+*ctrl_add int Einfügemodus eingeschaltet wenn 1
+*ctrl_cut int Ausschneidemodus eingeschaltet wenn 1
+*ctrl_copy int Kopiermodus eingeschaltet wenn 1
+*form string Zielformular
+*field string Zielfeld im Zielformular
+*titlefield string Titelfeld im Zielformular
+
+== Hinweise ==
+
+== Beispiel ==
+
+== Todo ==

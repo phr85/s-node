@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>3800</baseid>
+    <id>ch.iframe.snode.thememanager</id>
+    <version>$Rev: 1523 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Theme Verwaltung</name>
+            <description>Themes verwalten</description>
+        </de>
+        <en>
+            <name>Theme Manager</name>
+            <description>Manage themes</description>
+        </en>
+    </lang>
+    
+    <page>
+        <parentnode>100</parentnode>
+        <id>140</id>
+        <forceupdate>1</forceupdate>
+        <lang>
+            <de>
+                <url>/index.php?TPL=180&amp;adminmode=1</url>
+                <title>Templates &amp; Styles</title>
+                <file>140.tpl</file>
+            </de>
+            <en>
+                <url>/index.php?TPL=180&amp;adminmode=1</url>
+                <title>Templates &amp; Styles</title>
+                <file>140.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>140</parentnode>
+        <id>180</id>
+        <lang>
+            <de>
+                <title>Theme Verwaltung</title>
+                <file>180.tpl</file>
+            </de>
+            <en>
+                <title>Theme Manager</title>
+                <file>180.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

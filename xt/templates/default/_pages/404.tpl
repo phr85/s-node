@@ -1,0 +1,1 @@
+{plugin package="ch.iframe.snode.errorpages" module="404"}

@@ -1,0 +1,30 @@
+= ch.iframe.snode.googlemaps (directions) =
+
+== Funktion ==
+Stellt einen Routenplaner zur Verfügung
+
+== Möglicher Einsatzbereich ==
+Eine Firma will dem Webseitenbesucher die Möglichkeit bieten, die Route zum Standort XYZ direkt auf der Firmenseite zu berechnen.
+
+== Mitgelieferte Templates ==
+default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+id		         | integer      | Identifikationsnummer der zu berechnenden Adresse (Autoval R) | 25
+viewertpl        | integer      | Templateseitennummer der Kartenansicht | 10123
+
+== Templatevariablen ==
+*xt9100_directions array Sämtliche Daten zur Kartenliste
+
+== Sessionvarablen ==
+
+== Hinweise ==
+-
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.googlemaps" module="directions" style="default.tpl" viewertpl=10123 ncpos="1"}
+
+== Todo ==

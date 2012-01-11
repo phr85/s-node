@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>60</baseid>
+    <id>ch.iframe.snode.navigation</id>
+    <version>$Rev: 5956 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Navigation und Inhalte</name>
+            <description>Seitenelemente Erstellen und Bearbeiten</description>
+        </de>
+        <en>
+            <name>Navigation and contents</name>
+            <description>Manage Pages</description>
+        </en>
+    </lang>
+
+    <page>
+        <parentnode>1</parentnode>
+        <id>106</id>
+        <lang>
+            <de>
+                <title>System</title>
+                <file>106.tpl</file>
+            </de>
+            <en>
+                <title>System</title>
+                <file>106.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>106</parentnode>
+        <id>111</id>
+        <lang>
+            <de>
+                <title>Popups</title>
+                <file>111.tpl</file>
+            </de>
+            <en>
+                <title>Popups</title>
+                <file>111.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>131</id>
+        <lang>
+            <de>
+                <title>Seiten Picker</title>
+                <file>131.tpl</file>
+            </de>
+            <en>
+                <title>Page Picker</title>
+                <file>131.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>131</parentnode>
+        <id>132</id>
+        <lang>
+            <de>
+                <title>Seiten Picker (Baum)</title>
+                <file>132.tpl</file>
+            </de>
+            <en>
+                <title>Page Picker (Tree)</title>
+                <file>132.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <contenttype>
+        <id>60</id>
+        <title>Page</title>
+        <open_url>/index.php?TPL=%id%</open_url>
+        <content_table>navigation_details</content_table>
+        <title_field>title</title_field>
+        <icon>window_sidebar.png</icon>
+        <id_field>node_id</id_field>
+    </contenttype>
+
+
+    <contenttree>
+        <id>2</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Navigation</title>
+            </de>
+            <en>
+                <title>Navigation</title>
+            </en>
+        </lang>
+    </contenttree>
+
+
+    <module>
+        <id>breadcrumb</id>
+        <treenode>2</treenode>
+        <lang>
+            <de>
+                <name>Brotkruemelchen</name>
+                <description>Pfad Navigation</description>
+            </de>
+            <en>
+                <name>Breadcrumb</name>
+                <description>Breadcrumb navigation</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <module>
+        <id>tree</id>
+        <treenode>2</treenode>
+        <lang>
+            <de>
+                <name>Navigation</name>
+                <description>Seitennavigation</description>
+            </de>
+            <en>
+                <name>Navigation</name>
+                <description>Site navigation</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+        <param>
+            <id>node</id>
+            <lang>
+                <de>
+                    <title>Ast anhand ID</title>
+                    <description>Ab welcherm Ast soll die Navigation dargestellt werden</description>
+                </de>
+                <en>
+                    <title>Tree with id</title>
+                    <description>From which node would you display the navigation</description>
+                </en>
+            </lang>
+            <values>10000</values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+        <param>
+            <id>start_level</id>
+            <lang>
+                <de>
+                    <title>Ebene</title>
+                    <description>Ab welcher Ebene sollen die Elemente dargestellt werden?</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>From which level you want to display the elements?</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+         <param>
+            <id>depth</id>
+            <lang>
+                <de>
+                    <title>Maximale Tiefe</title>
+                    <description>Wieviele ebenen darf die Navigation in die Tiefe gehen?</description>
+                </de>
+                <en>
+                    <title>Maximale Tiefe</title>
+                    <description>Wieviele ebenen darf die Navigation in die Tiefe gehen?</description>
+               </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+
+        <param>
+            <id>open_depth</id>
+            <lang>
+                <de>
+                    <title>Offene ebenen</title>
+                    <description>Wieviele ebenen sollen offen sein?</description>
+                </de>
+                <en>
+                    <title>Offene ebenen</title>
+                    <description>Wieviele ebenen sollen offen sein?</description>
+               </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>follow</id>
+            <lang>
+                <de>
+                    <title>Pfad verfolgen</title>
+                    <description>Folgt dem Pfad (node ist immer wie TPL) True gibt den startnode auch mit.</description>
+                </de>
+                <en>
+                    <title>Pfad verfolgen</title>
+                    <description>Folgt dem Pfad (node ist immer wie TPL)</description>
+                </en>
+            </lang>
+             <values>false,true</values>
+            <valuetype>normal</valuetype>
+        </param>
+
+     <param>
+            <id>show_start_node</id>
+            <lang>
+                <de>
+                    <title>Startnode darstellen</title>
+                    <description>Gibt den startnode im Datenset mit</description>
+                </de>
+                <en>
+                    <title>Startnode darstellen</title>
+                    <description>Gibt den startnode im Datenset mit</description>
+                </en>
+            </lang>
+             <values>false,true</values>
+            <valuetype>normal</valuetype>
+        </param>
+
+        <param>
+            <id>overview</id>
+            <lang>
+                <de>
+                    <title>overview</title>
+                    <description><![CDATA[Zeigt nur Seiten an die in der Administration das Flag show_in_overwiev gesetzt haben<br />
+1 = Alle Elemente die das show in overview flag gestzt haben<br />
+2 = Alle Elemente die Visible und Overview gesetzt haben<br />
+3 = Alle Elemente die nicht Visible und Overview gesetzt haben<br />
+4 = Alle Elemente die Visible oder Overview gesetzt haben<br />
+5 = Alle Elemente die nicht Visible sind und nicht in der Overiew dargestellt werden]]>
+</description>
+                </de>
+                <en>
+                    <title>overview</title>
+                    <description><![CDATA[Zeigt nur Seiten an die in der Administration das Flag show_in_overwiev gesetzt haben<br />
+1 = Alle Elemente die das show in overview flag gestzt haben<br />
+2 = Alle Elemente die Visible und Overview gesetzt haben<br />
+3 = Alle Elemente die nicht Visible und Overview gesetzt haben<br />
+4 = Alle Elemente die Visible oder Overview gesetzt haben<br />
+5 = Alle Elemente die nicht Visible sind und nicht in der Overiew dargestellt werden]]>
+</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+     </module>
+
+     <table>
+        <id>navigation</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.navigation}` (
+                `id` int(11) NOT NULL auto_increment,
+                `l` int(11) NOT NULL default '0',
+                `r` int(11) NOT NULL default '0',
+                `pid` int(11) NOT NULL default '0',
+                `level` int(11) NOT NULL default '0',
+                `title` varchar(255) NOT NULL default '',
+                `isProfile` int(1) NOT NULL default '0',
+                `tree_id` int(11) unsigned NOT NULL default '1',
+                `active` tinyint(1) unsigned default '0',
+                PRIMARY KEY  (`id`),
+                KEY `l` (`l`),
+                KEY `r` (`r`),
+                KEY `pid` (`pid`),
+                KEY `level` (`level`)
+                );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>navigation_contents</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.navigation_contents}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `node_id` int(11) unsigned NOT NULL default '0',
+              `package` int(11) unsigned NOT NULL default '0',
+              `module` varchar(50) NOT NULL default '0',
+              `position` int(11) unsigned NOT NULL default '0',
+              `params` varchar(255) default NULL,
+              `active` int(1) unsigned NOT NULL default '1',
+              PRIMARY KEY  (`id`)
+            );
+            ALTER TABLE `{TABLE.navigation_contents}` ADD `main_value` VARCHAR(255) ;
+            ALTER TABLE `{TABLE.navigation_contents}` ADD `lang` CHAR(3) ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>navigation_details</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.navigation_details}` (
+                  `node_id` int(11) NOT NULL auto_increment,
+                  `lang` char(3) NOT NULL default '',
+                  `creation_date` int(11) NOT NULL default '0',
+                  `creation_user` int(11) NOT NULL default '0',
+                  `mod_date` int(11) NOT NULL default '0',
+                  `mod_user` int(11) NOT NULL default '0',
+                  `description` varchar(255) NOT NULL default '',
+                  `title` varchar(255) NOT NULL default '',
+                  `tpl_file` varchar(40) NOT NULL default '',
+                  `ext_link` varchar(255) NOT NULL default '',
+                  `target` varchar(20) NOT NULL default '',
+                  `active` tinyint(4) NOT NULL default '0',
+                  `live` tinyint(1) unsigned default '0',
+                  `public` tinyint(1) default '0',
+                  `cache` int(11) unsigned default '0',
+                  `keywords` tinytext,
+                  `copyright` varchar(255) default NULL,
+                  `author` varchar(255) default NULL,
+                  `revisit_after` varchar(255) default NULL,
+                  `halflife` int(11) unsigned default '0',
+                  `visitorexcept` int(11) unsigned default '0',
+                  `visitorexcept_mode` tinyint(1) unsigned default '0',
+                  `article_id` int(11) unsigned default '0',
+                  `charset` varchar(255) default NULL,
+                  `c_lang` varchar(10) default NULL,
+                  `article_layout` varchar(255) default NULL,
+                  `visible` tinyint(1) unsigned default '1',
+                  `image` int(11) unsigned default NULL,
+                  `image_version` int(11) unsigned default NULL,
+                  `show_in_overview` tinyint(1) unsigned default '1',
+                  `header` varchar(255) default NULL,
+                  `footer` varchar(255) default NULL,
+                  `css` varchar(255) default NULL,
+                  `nav_image` int(11) unsigned default NULL,
+                  `nav_image_rollover` int(11) unsigned default NULL,
+                  `nav_image_active` int(11) unsigned default NULL,
+                  `nav_image_active_rollover` int(11) unsigned default NULL,
+                  `nav_image_version` tinyint(3) default '1',
+                  `nav_image_rollover_version` tinyint(3) unsigned default '1',
+                  `nav_image_active_version` tinyint(3) unsigned default '1',
+                  `nav_image_active_rollover_version` tinyint(3) unsigned default '1',
+                  `nav_image_generated_enabled` tinyint(1) unsigned default '0',
+                  `nav_image_active_generated_enabled` tinyint(1) unsigned default '0',
+                  `nav_image_rollover_generated_enabled` tinyint(1) unsigned default '0',
+                  `nav_image_active_rollover_generated_enabled` tinyint(1) unsigned default '0',
+                  `nav_image_generated_params` varchar(255) default NULL,
+                  `nav_image_active_generated_params` varchar(255) default NULL,
+                  `nav_image_rollover_generated_params` varchar(255) default NULL,
+                  `nav_image_active_rollover_generated_params` varchar(255) default NULL,
+                  PRIMARY KEY  (`node_id`,`lang`)
+                );
+
+                ALTER TABLE `{TABLE.navigation_details}` ADD `based_on_tpl` INT(11);
+                ALTER TABLE `{TABLE.navigation_details}` ADD `rewrite_name` varchar(255);
+                ALTER TABLE `{TABLE.navigation_details}` ADD `blank` INT(1) default 0 after `ext_link`;
+                ALTER TABLE `{TABLE.navigation_details}` add column `pagetitle` varchar (255)   NULL  after `title`;
+                ALTER TABLE `{TABLE.navigation_details}` add column `revisit_after` varchar(255) default NULL after `author`;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>navigation_templates</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.navigation_templates}` (
+                  `id` int(11) NOT NULL auto_increment,
+                  `tpl_id` int(11) NOT NULL default '0',
+                  PRIMARY KEY  (`id`)
+                ) ENGINE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <folder>images/admin/tipps/ch.iframe.snode.navigation</folder>
+    <folder>scripts/ch.iframe.snode.navigation</folder>
+    <file>scripts/jquery-plugins/jquery.droppy.js</file>
+    <file>styles/live/jquery.droppy.css</file>
+    <changelog>
+        <rev>2096 navigation templates table</rev>
+        <rev>1521 changelog added</rev>
+    </changelog>
+    <requires>
+        <package>
+        <id>ch.iframe.snode.core</id>
+        <version>$Rev: 4421$</version>
+        </package>
+    </requires>
+</package>

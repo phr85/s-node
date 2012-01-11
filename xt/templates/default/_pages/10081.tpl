@@ -1,0 +1,1 @@
+{plugin package="ch.iframe.snode.articles" module="viewer" id="32" slave="" style="default.tpl" ncpos="1"}

@@ -1,0 +1,1 @@
+<?php  XT::log('C:\www\xtt\public_html/../plugins/ch.iframe.snode.installer/admin/s1_install.php autocreated',__FILE__,__LINE__,XT_WARNING); ?>

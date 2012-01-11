@@ -1,0 +1,38 @@
+Trackbackwidget
+===============
+Das Trackbackwidget stellt ein Interface zur Verfügung, mit dem Trackbacks gesendet werden können.
+
+Bsp für ch.iframe.snode.articles/admin/edit.tpl
+
+{include 
+	file="includes/widgets/trackback.tpl" 
+	url="http://`$smarty.server.SERVER_NAME``$smarty.server.PHP_SELF`?TPL=113&x`$BASEID`_id=`$ARTICLE.id`" 
+	title="`$ARTICLE.title`" 
+	excerpt="`$ARTICLE.introduction`"
+}
+
+Parameter
+----------
+Diese Parameter dienen hierbei nur als Vorgabe und können vor dem Senden des Trackbacks noch angepasst werden.
+
+file		:	Ort an dem sich das Widgettemplate befindet.
+
+url			:	URL des Artikels, der extern publiziert werden soll. Zu beachten ist, dass vielfach content nicht eindeutig zugewiesen werden kann.
+				So kann ein Artikel an verschiedenen Orten in der Seite auftauchen. Hier wird mittels ch.iframe.snode.articles/locationfinder (TPL 113)
+				gearbeitet um den Artikel zu verlinken.
+
+title		:	Der Titel der beim Zielsystem erscheinen soll.
+
+excerpt		:	Der  Abriss, der zum Zielsystem gesendet werden soll.
+
+GUI:
+----
+Trackbacks hinzufügen	: Hier werden mit Leerzeichen getrennt alle URL der zu sendenden Trackbacks eingetragen.
+
+Trackback Titel			: Titel der beim Zielblog erscheinen soll.
+
+Trackback Abriss		: Abriss der beim Zielblog erscheinen soll.
+
+Adresse des lokalen Artikels: Diese Adresse wird beim Zielblog eingeblendet und referenziert somit auf den lokalen Artikel.
+
+Bereits gesendete Trackbacks: Liste aller bereits gesendeten Trackbacks.

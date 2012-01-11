@@ -1,0 +1,36 @@
+= ch.iframe.snode.filemanager (downloadcenter) =
+
+== Funktion ==
+Das Downloadcenter stellt einen Teil der Dateistruktur zum download bereit.
+
+== Möglicher Einsatzbereich ==
+Öffentlich oder geschlossene Downloadbereiche
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+folder           | integer      | Identifikation des Startordners | 23
+target           | string       | Zielangabe für den Downloadlink | _blank
+open             | string / integer  | Identifikationsnummer des Ordners, der standardmässig offen sein soll. Wird "all" angegeben sind alle offen. | 2
+show_root_files  | boolen       | Sollen die Dateien im Startordner auch angezeigt werden? Ansonsten werden nur die darin befindlichen Ordner dargestellt | 1
+
+== Templatevariablen ==
+*FILES array Daten aller Datein
+*ROOTFILES array Daten aller Dateien, die sich im Startordner befinden.
+*TARGET string Zielangabe für den Downloadlink (siehe Parameter).
+*CATEGORIES array Kategorien
+*FOLDER array Ordner
+
+== Sessionvarablen ==
+keine
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.filemanager" module="downloadcenter" folder=22 style="default.tpl" target="_blank" open="all" show_root_files=1 ncpos="1"}
+
+== Todo ==

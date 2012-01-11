@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>7600</baseid>
+    <id>ch.iframe.snode.blog</id>
+    <version>$Rev: 5879 $</version>
+    <permissions>false</permissions>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Kommentare</name>
+            <description>Inhalte können mit Hilfe der Kommentare kommentiert werden.</description>
+        </de>
+        <en>
+            <name>Comments</name>
+            <description>With comments you are be able to comment various content.</description>
+        </en>
+    </lang>
+	<contenttype>
+        <id>7600</id>
+        <title>Comment</title>
+        <open_url></open_url>
+        <content_table>comments</content_table>
+        <title_field>title</title_field>
+        <icon>text.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <contenttree>
+        <id>4</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>System</title>
+            </de>
+            <en>
+                <title>System</title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <contenttree>
+        <id>7600</id>
+        <parentnode>4</parentnode>
+        <lang>
+            <de>
+                <title>Kommentar</title>
+                <description>...</description>
+            </de>
+            <en>
+                <title>Comment</title>
+                <description>...</description>
+            </en>
+        </lang>
+    </contenttree>
+    <module>
+        <id>comments</id>
+        <treenode>7600</treenode>
+        <lang>
+            <de>
+                <name>Kommentare</name>
+                <description>Kommentare schreiben</description>
+            </de>
+            <en>
+                <name>Comments</name>
+                <description>Write comments</description>
+            </en>
+        </lang>
+        <param>
+            <id>content_type</id>
+            <lang>
+                <de>
+                    <title>Objekttyp</title>
+                    <description>Wählen Sie einen Objekttypen aus</description>
+                </de>
+                <en>
+                    <title>Content Type</title>
+                    <description>Select a content type</description>
+                </en>
+            </lang>
+            <values>[SELECT id,title FROM {PREFIX}content_types ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+        <param>
+            <id>content_id</id>
+            <lang>
+                <de>
+                    <title>Objekt ID</title>
+                    <description>Geben sie die ID eines Objektes an wenn Sie explizit ein bestimmtes Objekt kommentieren wollen. Ansonsten wird s-node automatisch eine ID ermitteln.</description>
+                </de>
+                <en>
+                    <title>Content ID</title>
+                    <description>Use this ID.</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>captcha</id>
+            <lang>
+                <de>
+                    <title>captcha</title>
+                    <description>captcha verwenden?</description>
+                </de>
+                <en>
+                    <title>captcha</title>
+                    <description>use captcha?</description>
+                </en>
+            </lang>
+            <values>true,false</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>reverseorder</id>
+            <lang>
+                <de>
+                    <title>Sortierung umkehren</title>
+                    <description>Umgekehrte Sortierung anwenden? Dies macht nur bei einer Flachen Darstellung sinn</description>
+                </de>
+                <en>
+                    <title>reverse sort order</title>
+                    <description>use reversed sort order? This is only usefull in flat mode.</description>
+                </en>
+            </lang>
+            <values>false,true</values>
+            <valuetype>normal</valuetype>
+        </param>
+     </module>
+
+     <page>
+        <parentnode>101</parentnode>
+        <id>7600</id>
+        <lang>
+            <de>
+                <title>Kommentare</title>
+                <file>7600.tpl</file>
+            </de>
+            <en>
+                <title>Comments</title>
+                <file>7600.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+     <table>
+        <id>comments</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.comments}` (
+                    `id` int(11) NOT NULL auto_increment,
+                    `content_type` int(11) NOT NULL default '0',
+                    `content_id` int(11) NOT NULL default '0',
+                    `tree_id` int(11) NOT NULL default '0',
+                    `l` int(11) NOT NULL default '0',
+                    `r` int(11) NOT NULL default '0',
+                    `pid` int(11) NOT NULL default '0',
+                    `level` int(11) NOT NULL default '0',
+                    `c_date` int(11) NOT NULL default '0',
+                    `ip_long` int(11) NOT NULL default '0',
+                    `active` tinyint(1) NOT NULL default '0',
+                    `title` varchar(255) NOT NULL default '',
+                    `user_id` int(11) NOT NULL default '0',
+                    `name` varchar(255) NOT NULL default '',
+                    `email` varchar(255) NOT NULL default '',
+                    `comment` text,
+                    `website` varchar(255) default NULL,
+                  PRIMARY KEY (`id`)
+                );
+            ]]>
+        </mysql>
+    </table>
+
+    <table>
+        <id>comments_trackback_outgoing</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.comments_trackback_outgoing}` (
+                    `id` int(11) NOT NULL auto_increment,
+				  	`target_url` varchar(255) default NULL,
+				 	`source_url` varchar(255) default NULL,
+				  	`date` int(11) default NULL,
+                  PRIMARY KEY (`id`)
+                );
+            ]]>
+        </mysql>
+    </table>
+
+    <table>
+        <id>comments_trackback_incomming</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.comments_trackback_incomming}` (
+                     `id` int(11) NOT NULL auto_increment,
+                    `active` tinyint(1) NOT NULL default '0',
+                    `ip_long` int(11) NOT NULL default '0',
+                    `status` int(1) NOT NULL default '0',
+				  	`content_id` int(11) NOT NULL default '0',
+				  	`content_type` int(11) NOT NULL default '0',
+				 	`source_url` varchar(255) default NULL,
+				 	`title` varchar(255) default NULL,
+				 	`excerpt` text,
+				 	`blog_name` varchar(255) default NULL,
+				 	`charset` varchar(255) default NULL,
+				  	`date` int(11) default NULL,
+                  PRIMARY KEY (`id`)
+                );
+            ]]>
+        </mysql>
+    </table>
+    <openfile>xt/templates/default/includes/widgets/trackback.tpl</openfile>
+    <file>xt/templates/default/includes/widgets/captcha.tpl</file>
+    <file>xt/includes/template/ch.iframe.snode.blog.inc.php</file>
+    <openfile>xt/templates/default/ch.iframe.snode.article/viewer/blogstyle.tpl</openfile>
+	<openfile>trackback.php</openfile>
+</package>

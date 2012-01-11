@@ -1,0 +1,1 @@
+{subplugin package="ch.iframe.snode.usermanager" module="loginbox"}

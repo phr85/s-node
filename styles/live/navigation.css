@@ -1,0 +1,46 @@
+/* Topnav */
+a.nav {
+    text-decoration: none;
+    color: #356AA0;
+    border: 0;
+    padding: 3px;
+}
+
+a.nav:hover {
+    text-decoration : none;
+    color : #36393d;
+    background-color : #F1F1F1;
+    border : 0;
+    padding : 3px;
+}
+
+/* sidenav */
+a.sidenav {
+    display: block;
+    padding: 5px 3px 5px 10px;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+a.sidenav:hover {
+    background-color : #F1F1F1;
+}
+
+/*
+Image Nav definitions
+Image and text will be floated left.
+Adjust margin and padding dependent on how you want the text to appear.
+*/
+
+/* image navigation */
+a.nav span.link_text{
+    height: 20px;
+    display: block;
+    float: left;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+a.nav span.link_image{
+    display: block;
+    float: left;
+}

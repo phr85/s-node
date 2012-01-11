@@ -1,0 +1,30 @@
+**Funktion:
+Kommentarfunktion an beliebigen inhalt hinzufügen
+
+**Möglicher Einsatzbereich:
+Artikel oder Texte kommentieren
+
+**Mitgelieferte Templates:
+default.tpl     Flache Liste mit Kommentaren und Eingabefeld dazu
+nested.tpl      Verschachtelte Liste mit Kommentaren und Eingabefeld dazu
+
+**Parameter:
+Name            | DatenTyp     | BESCHREIBUNG               | BEISPIELDATEN          | DEFAULTWERTE
+style           | string       | template für den build     | default.tpl
+keepassignment  | boolean      | Assigned values behalten   | i.e. =true oder =false | default ist false
+captcha         | boolean      | Captcha darstellen         | i.e. =true oder =false | default vom assistent ist true, ohne angabe ist es false
+reverseorder    | boolean      | Umgekehrte sortierung      | i.e. =true oder =false | default ist false
+content_type    | int          | Content Typ binding
+content_id      | int          | Content ID für den Kommentar, wenn nicht angegeben wird das
+                                 erste element von $GLOBALS['relations'][content_type] verwendet. (package artikles bspw. füllt diesen array)
+                                 Wenn auch dann kein Resultat kommt, wird nichts dargestellt.
+
+
+**Templatevariablen:
+$xt.7600.viewer enthält alle Werte die von diesem Plugin geliefert werden.
+
+**Sessionvarablen:
+keine
+
+**Hinweise:
+$xt.7600.comments wird nach dem build des Templates gelöscht.

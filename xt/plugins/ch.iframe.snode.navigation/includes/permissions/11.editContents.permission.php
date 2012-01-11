@@ -1,0 +1,27 @@
+<?php
+$GLOBALS['plugin']->addPermission("Edit contents", array(
+"moveUpContent", 
+"moveDownContent", 
+"addContent", 
+"addContentSimple",
+"insertContentSimple",
+"deleteContent", 
+"editContent",
+"saveContent",
+"saveAddContent",
+"saveAndExitContent",
+"saveAndExitAddContent",
+"addContentParam",
+"saveAndExitContentSimple",
+"deactivateContent",
+"cancelContent",
+"saveTemplateContent",
+"activateContent",
+"saveContentSimple",
+"saveNode",
+"addFirstNode",
+"goToNextStep",
+"applyTemplate",
+"editContentSimple"
+));
+?>

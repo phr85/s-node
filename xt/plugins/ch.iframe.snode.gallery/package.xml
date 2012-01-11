@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>4100</baseid>
+    <id>ch.iframe.snode.gallery</id>
+    <version>$Rev: 6448 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Bildergalerien</name>
+            <description>Erstellen und bearbeiten von Bildergalerien</description>
+        </de>
+        <en>
+            <name>Image Galleries</name>
+            <description>Manage and create Galleries</description>
+        </en>
+    </lang>
+	<contenttype>
+        <id>4100</id>
+        <title>Gallery</title>
+        <open_url></open_url>
+        <content_table>galleries_details</content_table>
+        <title_field>title</title_field>
+        <icon>photo_small.png</icon>
+        <id_field>node_id</id_field>
+    </contenttype>
+    <page>
+        <parentnode>100</parentnode>
+        <id>114</id>
+        <lang>
+            <de>
+                <url>index.php?TPL=120&amp;adminmode=1</url>
+                <title>Dateien &amp; Bilder</title>
+                <file>114.tpl</file>
+            </de>
+            <en>
+                <url>index.php?TPL=120&amp;adminmode=1</url>
+                <title>Files &amp; Images</title>
+                <file>114.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>114</parentnode>
+        <id>200</id>
+        <lang>
+            <de>
+                <title>Bildergalerien</title>
+                <file>200.tpl</file>
+            </de>
+            <en>
+                <title>Image Galleries</title>
+                <file>200.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>201</id>
+        <lang>
+            <de>
+                <title>Gallery selektieren</title>
+                <file>201.tpl</file>
+            </de>
+            <en>
+                <title>Gallerypicker</title>
+                <file>201.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <contenttype>
+        <id>4100</id>
+        <title>Gallery</title>
+        <open_url>/index.php</open_url>
+        <content_table>galleries_details</content_table>
+        <title_field>title</title_field>
+        <icon></icon>
+        <id_field>node_id</id_field>
+    </contenttype>
+
+    <contenttree>
+        <id>4100</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Bildergalerie</title>
+            </de>
+            <en>
+                <title>Image Gallery</title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <module>
+        <id>viewer</id>
+        <treenode>1</treenode>
+        <treenode>4100</treenode>
+        <main_param>id</main_param>
+        <main_content_type>4100</main_content_type>
+        <lang>
+            <de>
+                <name>Bildergalerie</name>
+                <description>Anzeigen einer Bildergalerie mit Detailansicht</description>
+            </de>
+            <en>
+                <name>Image Gallery</name>
+                <description>Display of an Image Gallery with detailed view</description>
+            </en>
+        </lang>
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>Bildergalerie</title>
+                    <description>Wählen Sie eine Bildergalerie aus</description>
+                </de>
+                <en>
+                    <title>Image Gallery</title>
+                    <description>Select an Image Gallery</description>
+                </en>
+            </lang>
+            <values>[201][4100]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>image_version</id>
+            <lang>
+                <de>
+                    <title>Grösse der Bildminiaturen (Empfohlen: Default)</title>
+                    <description>Wählen Sie eine Bildgrösse aus</description>
+                </de>
+                <en>
+                    <title>Size of the image thumbnails</title>
+                    <description>Please choose an image size</description>
+                </en>
+            </lang>
+            <values>ch.iframe.snode.filemanager => imageversions</values>
+            <valuetype>configarray</valuetype>
+        </param>
+        <param>
+            <id>per_page</id>
+            <lang>
+                <de>
+                    <title>Anzahl Bilder pro Seite</title>
+                    <description>Wieviele Bilder möchten Sie pro Seite anzeigen</description>
+                </de>
+                <en>
+                    <title>Image count per page</title>
+                    <description>How many images should be displayed per page</description>
+                </en>
+            </lang>
+            <values>12</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>per_line</id>
+            <lang>
+                <de>
+                    <title>Anzahl Bilder pro Zeile innerhalb einer Seite</title>
+                    <description>Wieviele Bilder möchten Sie pro Zeile anzeigen</description>
+                </de>
+                <en>
+                    <title>Image count per page</title>
+                    <description>How many images should be displayed per line</description>
+                </en>
+            </lang>
+            <values>4</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>show_titles</id>
+            <lang>
+                <de>
+                    <title>Titel pro Bild anzeigen?</title>
+                    <description>Möchten Sie den Titel der einzelnen Bilder anzeigen? (1 = Ja, 0 = Nein)</description>
+                </de>
+                <en>
+                    <title>Display title?</title>
+                    <description>Would you like to display the title of each image? (1 = Yes, 0 = No)</description>
+                </en>
+            </lang>
+            <values>1,0</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>show_views</id>
+            <lang>
+                <de>
+                    <title>Anzahl Views (Aufrufe) pro Bild anzeigen?</title>
+                    <description>Möchten Sie die Anzahl Views (Aufrufe) der einzelnen Bilder anzeigen? (1 = Ja, 0 = Nein)</description>
+                </de>
+                <en>
+                    <title>Display views count per image?</title>
+                    <description>Would you like to display the views count of each image? (1 = Yes, 0 = No)</description>
+                </en>
+            </lang>
+            <values>1,0</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>sort</id>
+            <lang>
+                <de>
+                    <title>Sortierung</title>
+                    <description>Wonach sollen die Bilder sortiert werden?</description>
+                </de>
+                <en>
+                    <title>Ordering</title>
+                    <description>Wonach sollen die Bilder sortiert werden?</description>
+                </en>
+            </lang>
+            <values>rel.title,rel.description,fdet.title,fdet,description,f.upload_date,f.manual_date</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>sortby</id>
+            <lang>
+                <de>
+                    <title>Sortierungsreihenfolge</title>
+                    <description>A-Z (1), Z-A (-1)</description>
+                </de>
+                <en>
+                    <title>Orderingdir</title>
+                    <description>A-Z (1), Z-A (-1)</description>
+                </en>
+            </lang>
+            <values>1,-1</values>
+            <valuetype>normal</valuetype>
+        </param>
+     </module>
+     <module>
+        <id>thickbox</id>
+        <treenode>1</treenode>
+        <treenode>4100</treenode>
+        <main_param>id</main_param>
+        <main_content_type>4100</main_content_type>
+        <lang>
+            <de>
+                <name>Bildergalerie Thickbox</name>
+                <description>Anzeigen einer Bildergalerie mit Detailansicht</description>
+            </de>
+            <en>
+                <name>Image Gallery Thickbox</name>
+                <description>Display of an Image Gallery with detailed view</description>
+            </en>
+        </lang>
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>Bildergalerie</title>
+                    <description>Wählen Sie eine Bildergalerie aus</description>
+                </de>
+                <en>
+                    <title>Image Gallery</title>
+                    <description>Select an Image Gallery</description>
+                </en>
+            </lang>
+            <values>[201][4100]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>image_version</id>
+            <lang>
+                <de>
+                    <title>Grösse der Bildminiaturen (Empfohlen: Default)</title>
+                    <description>Wählen Sie eine Bildgrösse aus</description>
+                </de>
+                <en>
+                    <title>Size of the image thumbnails</title>
+                    <description>Please choose an image size</description>
+                </en>
+            </lang>
+            <values>ch.iframe.snode.filemanager => imageversions</values>
+            <valuetype>configarray</valuetype>
+        </param>
+        <param>
+            <id>recursive</id>
+            <lang>
+                <de>
+                    <title>Rekursiv</title>
+                    <description>Möchten Sie untergeordnete Gallerien miteinbeziehen</description>
+                </de>
+                <en>
+                     <title>Rekursiv</title>
+                    <description>Möchten Sie untergeordnete Gallerien miteinbeziehen</description>
+                </en>
+            </lang>
+            <values>false,true</values>
+            <valuetype>normal</valuetype>
+        </param>
+     </module>
+
+     <module>
+        <id>top_images</id>
+        <treenode>4100</treenode>
+        <lang>
+            <de>
+                <name>Top Bilder</name>
+                <description>Anzeigen der am meisten angesehenen Bilder</description>
+            </de>
+            <en>
+                <name>Top images</name>
+                <description>Display of the most viewed images</description>
+            </en>
+        </lang>
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>Aus welcher Bildergalerie oder Kategorie?</title>
+                    <description>Wählen Sie eine Bildergalerie oder Kategorie aus. Keine auswählen für alle Galerien.</description>
+                </de>
+                <en>
+                    <title>From which image gallery or category</title>
+                    <description>Select an Image Gallery - Choose none for all</description>
+                </en>
+            </lang>
+            <values>[201][4100]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>count</id>
+            <lang>
+                <de>
+                    <title>Anzahl Bilder</title>
+                    <description>Wieviele Top Bilder sollen angezeigt werden?</description>
+                </de>
+                <en>
+                    <title>Image count</title>
+                    <description>How many top image should be displayed</description>
+                </en>
+            </lang>
+            <values>5</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>gallery_tpl</id>
+            <lang>
+                <de>
+                    <title>TPL id des Betrachters</title>
+                    <description>Welches TPL enthält das modul gallery viewer ohne spezifizierte Gallerie</description>
+                </de>
+                <en>
+                    <title>TPL of the viewer</title>
+                    <description>Which TPL contains the module gallery/viewer without specified gallery</description>
+                </en>
+            </lang>
+            <values>5</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden (ohne Bilder) oder with_images.tpl (mit Bilder) oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>list</id>
+        <treenode>4100</treenode>
+        <lang>
+            <de>
+                <name>Bildergalerien (Liste)</name>
+                <description>Anzeigen der Bildergalerien einer bestimmten Kategorie</description>
+            </de>
+            <en>
+                <name>Image Galleries (List)</name>
+                <description>Display of the galleries of a given category</description>
+            </en>
+        </lang>
+
+        <param>
+            <id>category</id>
+            <lang>
+                <de>
+                    <title>Aus welcher Kategorie?</title>
+                    <description>Wählen Sie eine Bildergalerie oder Kategorie aus. Keine auswählen für alle Galerien.</description>
+                </de>
+                <en>
+                    <title>From which category</title>
+                    <description>Select an Image Gallery - Choose none for all</description>
+                </en>
+            </lang>
+            <values>[201][4100]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>gallery_tpl</id>
+            <lang>
+                <de>
+                    <title>Betrachter Page</title>
+                    <description>Wählen Sie die Seite aus die den Betrachter enthült.</description>
+                </de>
+                <en>
+                    <title>Viewer</title>
+                    <description>Select the page which contains a Gallery viewer</description>
+                </en>
+            </lang>
+            <values>[131][60]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>title</id>
+            <lang>
+                <de>
+                    <title>Titel</title>
+                    <description>Geben sie den Titel der Galerie ein (optional)</description>
+                </de>
+                <en>
+                    <title>Title</title>
+                    <description>Type in an optional title</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+         <param>
+            <id>limit</id>
+            <lang>
+                <de>
+                    <title>Anzahl beschränken</title>
+                    <description>Wieviele Einträge sollen dargestellt werden?</description>
+                </de>
+                <en>
+                    <title>Limit displayed elements</title>
+                    <description>How many entries you want to be displayed in the list?</description>
+                </en>
+            </lang>
+            <values>15</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>order</id>
+            <lang>
+                <de>
+                    <title>Sortierung</title>
+                    <description>Wonach soll die Liste sortiert werden?</description>
+                </de>
+                <en>
+                    <title>Ordering</title>
+                    <description>Wonach soll die Liste sortiert werden?</description>
+                </en>
+            </lang>
+            <values>title asc,title desc,creation_date desc,creation_date asc, mod_date desc, mod_date asc,node_id asc,node_id desc</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden (ohne Bilder) oder with_images.tpl (mit Bilder) oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+
+    <table>
+        <id>galleries</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE IF NOT EXISTS `{TABLE.galleries}` (
+                  `id` int(11) NOT NULL auto_increment,
+                  `l` int(11) NOT NULL default '0',
+                  `r` int(11) NOT NULL default '0',
+                  `pid` int(11) NOT NULL default '0',
+                  `level` int(11) NOT NULL default '0',
+                  `tree_id` int(11) unsigned NOT NULL default '0',
+                  PRIMARY KEY  (`id`),
+                  KEY `l` (`l`),
+                  KEY `r` (`r`),
+                  KEY `level` (`level`),
+                  KEY `pid` (`pid`)
+                ) ENGINE=MyISAM;
+
+                INSERT INTO `{TABLE.galleries}` (id,l,r,pid,level,tree_id) VALUES (1,1,2,0,1,1);
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>galleries_details</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE IF NOT EXISTS `{TABLE.galleries_details}` (
+                  `node_id` int(11) NOT NULL auto_increment,
+                  `lang` char(3) NOT NULL default '',
+                  `creation_date` int(11) NOT NULL default '0',
+                  `creation_user` int(11) NOT NULL default '0',
+                  `mod_date` int(11) NOT NULL default '0',
+                  `mod_user` int(11) NOT NULL default '0',
+                  `description` text,
+                  `title` varchar(255) NOT NULL default '',
+                  `active` tinyint(4) NOT NULL default '0',
+                  `public` tinyint(1) unsigned default '0',
+                  `image` int(11) NOT NULL default '0',
+                  `image_version` int(11) NOT NULL default '0',
+                  PRIMARY KEY  (`node_id`,`lang`)
+                )ENGINE=MyISAM ;
+                alter table `{TABLE.galleries_details}` ,change `description` `description` text   NULL;
+                INSERT INTO `{TABLE.galleries_details}` (node_id,lang,title,active,public) VALUES (1,'de','Root',1,1);
+
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>galleries_rel</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE IF NOT EXISTS `{TABLE.galleries_rel}` (
+                  `gallery_id` int(11) NOT NULL,
+                  `file_id` int(11) NOT NULL,
+                  `source_folder_id` int(11) NOT NULL,
+                  `lang` char(3) NOT NULL default '',
+                  `title` varchar(255) NOT NULL default '',
+                  `description` varchar(255) NOT NULL default '',
+                  `views` int(11) NOT NULL,
+                  `active` tinyint(1) NOT NULL default '1',
+                  `public` tinyint(1) NOT NULL default '1',
+                  `comments_count` int(11) NOT NULL,
+                  `pos` int(11) NOT NULL,
+                  PRIMARY KEY (`gallery_id`,`file_id`,`lang`)
+                ) ENGINE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>galleries_folder_rel</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE IF NOT EXISTS `{TABLE.galleries_folder_rel}` (
+                  `gallery_id` int(11) NOT NULL,
+                  `folder_id` int(11) NOT NULL,
+                  `lang` char(3) NOT NULL default '',
+                  `full` tinyint(1) NOT NULL,
+                  PRIMARY KEY (`gallery_id`,`folder_id`,`lang`)
+                ) ENGINE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <file>xt/includes/classes/gallery.class.php</file>
+    <folder>scripts/jquery-plugins</folder>
+    <folder>scripts/ch.iframe.snode.gallery</folder>
+    <folder>styles/live/ch.iframe.snode.gallery</folder>
+    <folder>images/ch.iframe.snode.gallery</folder>
+    <file>xt/includes/template/ch.iframe.snode.gallery.inc.php</file>
+    <file>xt/plugins/ch.iframe.snode.filemanager/includes/actions/deleteFile.ch.iframe.snode.gallery.deleteFileFromGallery.preaction.php</file>
+</package>

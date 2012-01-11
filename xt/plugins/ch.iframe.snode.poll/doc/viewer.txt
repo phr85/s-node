@@ -1,0 +1,32 @@
+= ch.iframe.snode.poll (viewer) =
+
+== Funktion ==
+Darstellung und Abstimmung einer Umfrage
+
+== Möglicher Einsatzbereich ==
+Umfrage
+
+== Mitgelieferte Templates ==
+*question_default.tpl
+*result_default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+id               | integer      | Identifikationsnummer der Umfrage (Autoval R)| 23
+listtpl          | integer      | Templateseitennummer der Umfrageliste | 23
+
+== Templatevariablen ==
+*xt8000_viewer array Sämtliche Daten zur Umfrage
+
+== Sessionvarablen ==
+
+== Hinweise ==
+'question_' . $style ist das Template für die Anzeige der Abstimmung.
+'result_' . $style ist das Template für die Anzeige der Resultate.
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.poll" module="viewer" littpl=10545 style="default.tpl"}
+
+== Todo ==

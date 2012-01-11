@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>4000</baseid>
+    <id>ch.iframe.snode.newsmanager</id>
+    <version>$Rev: 2069 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Newsmanager</name>
+            <description>News erstellen und bearbeiten</description>
+        </de>
+        <en>
+            <name>Newsmanager</name>
+            <description>Manage News</description>
+        </en>
+    </lang>
+    
+    <contenttype>
+        <id>4000</id>
+        <title>Newsmanager</title>
+        <open_url>/index.php?TPL=194&amp;x4000_id=%id%</open_url>
+        <content_table>newsmanager</content_table>
+        <title_field>title</title_field>
+        <icon>document.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    
+    <page>
+        <parentnode>101</parentnode>
+        <id>190</id>
+        <lang>
+            <de>
+                <title>News</title>
+                <file>190.tpl</file>
+            </de>
+            <en>
+                <title>News</title>
+                <file>190.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>1</parentnode>
+        <id>106</id>
+        <lang>
+            <de>
+                <title>System</title>
+                <file>106.tpl</file>
+            </de>
+            <en>
+                <title>System</title>
+                <file>106.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>106</parentnode>
+        <id>111</id>
+        <lang>
+            <de>
+                <title>Popups</title>
+                <file>111.tpl</file>
+            </de>
+            <en>
+                <title>Popups</title>
+                <file>111.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>191</id>
+        <lang>
+            <de>
+                <title>News Picker</title>
+                <file>191.tpl</file>
+            </de>
+            <en>
+                <title>News Picker</title>
+                <file>191.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>191</parentnode>
+        <id>192</id>
+        <lang>
+            <de>
+                <title>News Picker (Baum)</title>
+                <file>192.tpl</file>
+            </de>
+            <en>
+                <title>News Picker (Tree)</title>
+                <file>192.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>191</parentnode>
+        <id>193</id>
+        <lang>
+            <de>
+                <title>News Picker (Anzeige)</title>
+                <file>193.tpl</file>
+            </de>
+            <en>
+                <title>News Picker (Display)</title>
+                <file>193.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    
+     <page>
+        <parentnode>111</parentnode>
+        <id>195</id>
+        <lang>
+            <de>
+                <title>News Kategorien Picker</title>
+                <file>195.tpl</file>
+            </de>
+            <en>
+                <title>News Category Picker</title>
+                <file>195.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>195</parentnode>
+        <id>196</id>
+        <lang>
+            <de>
+                <title>News Kategorie Picker (Baum)</title>
+                <file>196.tpl</file>
+            </de>
+            <en>
+                <title>News Category Picker (Tree)</title>
+                <file>196.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>195</parentnode>
+        <id>197</id>
+        <lang>
+            <de>
+                <title>News Kategorie Picker (Anzeige)</title>
+                <file>197.tpl</file>
+            </de>
+            <en>
+                <title>News Category Picker (Display)</title>
+                <file>197.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    
+    <page>
+        <parentnode>112</parentnode>
+        <id>194</id>
+        <lang>
+            <de>
+                <title>News Betrachter</title>
+                <file>194.tpl</file>
+                <public>1</public>
+                <visible>0</visible>
+            </de>
+            <en>
+                <title>News Viewer</title>
+                <file>194.tpl</file>
+                <public>1</public>
+                <visible>0</visible>
+            </en>
+        </lang>
+    </page>
+    
+    <requires>
+        <package>
+        <id>ch.iframe.snode.filemanager</id>
+        <version>1000</version>
+        </package>
+    </requires>
+    
+    
+   <contenttree>
+        <id>4000</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>News</title>
+            </de>
+            <en>
+                <title>News</title>
+            </en>
+        </lang>
+    </contenttree>
+    
+    <module>
+        <id>list</id>
+        <treenode>4000</treenode>
+       <lang>
+            <de>
+                <name>News (Liste)</name>
+                <description>Liste der Nachrichten</description>
+            </de>
+            <en>
+                <name>News (List)</name>
+                <description>List</description>
+            </en>
+        </lang>
+        <param>
+            <id>count</id>
+            <lang>
+                <de>
+                    <title>Anzahl</title>
+                    <description>Wieviele Nachrichtenelemente sollen dargestellt werden?</description>
+                </de>
+                <en>
+                    <title>Count</title>
+                    <description>How many entries you want to be displayed in the list?</description>
+                </en>
+            </lang>
+            <values>5</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>target_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Welches ist die Seite welche die volle News darstellen soll?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which is the Page (TPL) for displaying the news</description>
+                </en>
+            </lang>
+            <values>194</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>categories</id>
+            <lang>
+                <de>
+                    <title>Kategorien</title>
+                    <description>Aus welcher Kategorie wollen sie Nachrichten darstellen? 
+                    Wenn Nachrichten aus allen Kategorien dargestellt werden sollen lassen sie dieses Feld leer</description>
+                </de>
+                <en>
+                    <title>Categories</title>
+                    <description>From which categories you want to display news?
+                    Leave this field empty if you want to display the news from all categories.</description>
+                </en>
+            </lang>
+            <values>[195][4000]</values>
+            <valuetype>popup</valuetype>
+
+        </param>
+        <param>
+            <id>mode</id>
+            <lang>
+                <de>
+                    <title>Modus</title>
+                    <description>Wählen Sie den Darstellungsmodus (small = nur Titel und Datum; normal = Titel, Datum und Einleitung)</description>
+                </de>
+                <en>
+                    <title>Mode</title>
+                    <description>Select the display mode</description>
+                </en>
+            </lang>
+            <values>small,normal</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>link2details</id>
+            <lang>
+                <de>
+                    <title>Verlinkung</title>
+                    <description>Sollen die Nachrichten auf die Darstellungsseite verlinkt werden?</description>
+                </de>
+                <en>
+                    <title>Linking</title>
+                    <description>Do you want to link the news entries to the detail page?</description>
+                </en>
+            </lang>
+            <values>yes,no</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+
+    
+    <module>
+        <id>viewer</id>
+        <treenode>4000</treenode>
+        <treenode>1</treenode>
+        <lang>
+            <de>
+                <name>News (Eintrag)</name>
+                <description>Darstellung eines Newss</description>
+            </de>
+            <en>
+                <name>News (Entry)</name>
+                <description>Displays an News</description>
+            </en>
+        </lang>
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>ID</title>
+                    <description>Wählen Sie einen Nachricht aus</description>
+                </de>
+                <en>
+                    <title>ID</title>
+                    <description>Select a news entry</description>
+                </en>
+            </lang>
+            <values>[191][4000]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+     </module>
+    <table>
+        <id>newsmanager</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.newsmanager}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `active` tinyint(1) unsigned NOT NULL default '0',
+              `title` varchar(255) default NULL,
+              `subtitle` varchar(255) default NULL,
+              `autor` varchar(40) default NULL,
+              `introduction` text,
+              `maintext` text,
+              `time_active` tinyint(3) unsigned NOT NULL default '0',
+              `time_start` int(11) unsigned default NULL,
+              `time_end` int(11) unsigned default NULL,
+              `time_r_active` tinyint(3) unsigned NOT NULL default '0',
+              `time_r_monthdays` int(11) unsigned default NULL,
+              `time_r_weekdays` int(11) unsigned default NULL,
+              `time_r_months` int(11) unsigned default NULL,
+              `time_r_start` int(11) unsigned default NULL,
+              `time_r_end` int(11) unsigned default NULL,
+              `creation_date` int(11) unsigned NOT NULL default '0',
+              `creation_user` int(11) unsigned NOT NULL default '0',
+              `mod_date` int(11) unsigned NOT NULL default '0',
+              `mod_user` int(11) unsigned NOT NULL default '0',
+              `image` int(11) unsigned default NULL,
+              `image_version` varchar(11) default NULL,
+              `image_link` varchar(255) default NULL,
+              `image_link_target` varchar(20) default NULL,
+              `image_zoom` tinyint(1) unsigned default '0',
+              `locked` tinyint(1) unsigned default '0',
+              `locked_user` int(11) unsigned default NULL,
+              `locked_date` int(11) unsigned default NULL,
+              `rid` int(11) unsigned default NULL,
+              `lang` char(3) NOT NULL default '',
+              PRIMARY KEY  (`id`,`lang`)
+            ) TYPE=MyISAM;
+            
+            ALTER TABLE `{TABLE.newsmanager}` ,add column `exclude_from_feed` int (1) UNSIGNED  DEFAULT '0' NOT NULL  after `lang`;
+                ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>newsmanager_tree_rel</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.newsmanager_tree_rel}` (
+              `node_id` int(11) unsigned NOT NULL default '0',
+              `News_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`node_id`,`News_id`)
+            ) TYPE=MyISAM;
+        ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>newsmanager_tree</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.newsmanager_tree}` (
+              `id` int(11) NOT NULL auto_increment,
+              `l` int(11) NOT NULL default '0',
+              `r` int(11) NOT NULL default '0',
+              `pid` int(11) NOT NULL default '0',
+              `level` int(11) NOT NULL default '0',
+              `tree_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`id`),
+              KEY `l` (`l`),
+              KEY `r` (`r`),
+              KEY `level` (`level`),
+              KEY `pid` (`pid`)
+            ) TYPE=MyISAM;
+        ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>newsmanager_tree_details</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.newsmanager_tree_details}` (
+              `node_id` int(11) NOT NULL auto_increment,
+              `lang` char(3) NOT NULL default '',
+              `creation_date` int(11) NOT NULL default '0',
+              `creation_user` int(11) NOT NULL default '0',
+              `mod_date` int(11) NOT NULL default '0',
+              `mod_user` int(11) NOT NULL default '0',
+              `description` varchar(255) NOT NULL default '',
+              `title` varchar(255) NOT NULL default '',
+              `active` tinyint(4) NOT NULL default '0',
+              `download_count` int(11) unsigned NOT NULL default '0',
+              `md5` varchar(32) NOT NULL default '',
+              `isFolder` tinyint(1) unsigned NOT NULL default '1',
+              `public` tinyint(1) unsigned default '0',
+              PRIMARY KEY  (`node_id`,`lang`)
+            ) TYPE=MyISAM;
+            ALTER TABLE `{TABLE.newsmanager_tree_details}` ,add column `feed` int (1) UNSIGNED  DEFAULT '0' NOT NULL  after `public`;
+            
+
+        ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>newsmanager_chapters</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.newsmanager_chapters}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `active` tinyint(1) unsigned NOT NULL default '0',
+              `title` varchar(255) default NULL,
+              `subtitle` varchar(255) default NULL,
+              `maintext` text,
+              `level` tinyint(3) unsigned NOT NULL default '1',
+              `image` int(11) unsigned default NULL,
+              `image_version` varchar(11) default NULL,
+              `image_link` varchar(255) default NULL,
+              `image_link_target` varchar(20) default NULL,
+              `image_zoom` tinyint(1) unsigned default '0',
+              `rid` int(11) unsigned default NULL,
+              `lang` char(3) NOT NULL default '',
+              `layout` varchar(255) default NULL,
+              PRIMARY KEY  (`id`,`level`,`lang`)
+            ) TYPE=MyISAM;
+            
+        ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>newsmanager_v</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.newsmanager_v}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `active` tinyint(1) unsigned NOT NULL default '0',
+              `title` varchar(255) default NULL,
+              `subtitle` varchar(255) default NULL,
+              `autor` varchar(40) default NULL,
+              `introduction` text,
+              `maintext` text,
+              `time_active` tinyint(3) unsigned NOT NULL default '0',
+              `time_start` int(11) unsigned default NULL,
+              `time_end` int(11) unsigned default NULL,
+              `time_r_active` tinyint(3) unsigned NOT NULL default '0',
+              `time_r_monthdays` int(11) unsigned default NULL,
+              `time_r_weekdays` int(11) unsigned default NULL,
+              `time_r_months` int(11) unsigned default NULL,
+              `time_r_start` int(11) unsigned default NULL,
+              `time_r_end` int(11) unsigned default NULL,
+              `creation_date` int(11) unsigned NOT NULL default '0',
+              `creation_user` int(11) unsigned NOT NULL default '0',
+              `mod_date` int(11) unsigned NOT NULL default '0',
+              `mod_user` int(11) unsigned NOT NULL default '0',
+              `image` int(11) unsigned default NULL,
+              `image_version` varchar(11) default NULL,
+              `image_link` varchar(255) default NULL,
+              `image_link_target` varchar(20) default NULL,
+              `image_zoom` tinyint(1) unsigned default '0',
+              `locked` tinyint(1) unsigned default '0',
+              `locked_user` int(11) unsigned default NULL,
+              `locked_date` int(11) unsigned default NULL,
+              `rid` int(11) unsigned NOT NULL auto_increment,
+              `published` tinyint(1) unsigned NOT NULL default '0',
+              `latest` tinyint(1) unsigned NOT NULL default '0',
+              `lang` char(3) NOT NULL default '',
+              PRIMARY KEY  (`id`,`rid`,`lang`)
+            ) TYPE=MyISAM;
+            ALTER TABLE `{TABLE.newsmanager_v}` ,add column `exclude_from_feed` int (1) UNSIGNED  DEFAULT '0' NOT NULL  after `lang`;
+        ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>newsmanager_chapters_v</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.newsmanager_chapters_v}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `active` tinyint(1) unsigned NOT NULL default '0',
+              `title` varchar(255) default NULL,
+              `subtitle` varchar(255) default NULL,
+              `maintext` text,
+              `level` tinyint(3) unsigned NOT NULL default '1',
+              `image` int(11) unsigned default NULL,
+              `image_version` varchar(11) default NULL,
+              `image_link` varchar(255) default NULL,
+              `image_link_target` varchar(20) default NULL,
+              `image_zoom` tinyint(1) unsigned default '0',
+              `rid` int(11) unsigned NOT NULL default '0',
+              `published` tinyint(1) unsigned NOT NULL default '0',
+              `lang` char(3) NOT NULL default '',
+              `layout` varchar(255) default NULL,
+              PRIMARY KEY  (`id`,`level`,`rid`,`lang`)
+            ) TYPE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <changelog>
+        <rev>1610 demodata removed</rev>
+        <rev>1538 delete image and chapter_image fixed</rev>
+        <rev>1521 default content added</rev>
+        <rev>1405 Package created</rev>
+    </changelog>
+</package>

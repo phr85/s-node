@@ -1,0 +1,89 @@
+/* Poll  CSS */
+
+div.listWrapper{
+	float: left;
+	width: 654px;
+	height: 17px;
+	line-height: 17px;
+	border: 1px solid #6F6F6F;
+	padding: 5px;
+	margin: 0px 0px 10px 0px;
+	background-color: #F5F5F5;
+}
+
+div.pollWrapper{
+
+}
+
+div.pollWrapper form div.input{
+}
+
+h3.pollTitle{
+	float: left;
+	width: 100%;
+}
+
+h3.pollTitle a{
+	display: block;
+}
+
+div.pollContent{
+	width: 671px;
+	padding: 6px 3px 3px 3px;
+}
+
+img.pollImg{
+	float: right;
+}
+
+
+/* Results */
+
+p.error{
+	background-color: #FF7F7F;
+	border: 1px solid #6F6F6F;
+	padding: 5px;
+	width: 674px;
+	margin: 5px 0px;
+}
+
+p.description{
+	margin: 5px 0px;
+}
+
+div.resultwrapper{
+	width: 674px;
+}
+
+div.single_resultwrapper{
+	margin: 10px 0px;
+}
+
+div.bar_wrapper{
+	width: 674px;
+	border: 1px solid #6F6F6F;
+	padding: 2px;
+	margin: 4px 0px 0px 0px;
+}
+
+div.bar_wrapper_inner{
+	background-color: #60ACDA;
+}
+
+span.answer_title{
+	font-weight: bold;
+	font-size: 14px;	
+	float: left;
+}
+
+span.number_of_votes{
+	float: right;
+}
+
+form.poll{
+	margin: 20px 0px 10px 0px;
+}
+
+p.description{
+	margin: 10px 0px;
+}

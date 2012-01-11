@@ -1,0 +1,31 @@
+= ch.iframe.snode.gallery (list) =
+
+== Funktion ==
+Eine Liste aller Gallerien
+
+== Möglicher Einsatzbereich ==
+Übersicht aller Gallerien
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+category		 | int			| Ausgangskategorie 	 | 5
+gallery_tpl		 | int   		| Templatenummer des Gallerietemplate | 10211
+order			 | string 		| Sortierung der Liste 	 | a.l ASC
+limit			 | int			| Anzahl der Einträge 	 | 10
+
+== Templatevariablen ==
+*DATA array Alle Daten zur Liste
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.gallery" module="list" category="2" limit="20" style="default.tpl"}
+
+== Todo ==

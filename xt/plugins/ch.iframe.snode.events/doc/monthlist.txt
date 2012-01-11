@@ -1,0 +1,37 @@
+= ch.iframe.snode.events (monthlist) =
+
+== Funktion ==
+Auflistung von Events
+
+== Möglicher Einsatzbereich ==
+Eventlisten
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+now              | integer      | Unixtimestamp welcher die Gegenwart repräsentiert (ohne diesen Parameter wird time() verwendet)| 110550
+display_old      | boolen       | Stellt abgelaufen oder laufende Events dar wenn true | true
+category_id      | integer      | Idenfikationsnummer der Event-Kategorie die dargestellt werden soll (autoval R) | 21
+
+
+== Templatevariablen ==
+*EVENTS array Daten aller Events
+
+== Sessionvarablen ==
+*filter_country string Land, auf unset setzen um den filter zu entfernen, auf iso codes setzen i.e. "CH" um nur schweizer events zu bekommen
+*filter_region string Region,  auf unset setzen um den filter zu entfernen, functioniert nur wenn country nicht unset ist, auf ids wie sie in der tabelle xt_countries_regions verwendet werden
+*category_id integer Kateorie
+
+== Hinweise ==
+Events werden anhand des startdatums gefiltert und angezeigt.
+
+filter_date_from und filter_date_to lassen sich kombinieren um einen zeitbereich einzugrenzen
+
+== Beispiel ==
+
+
+== Todo ==

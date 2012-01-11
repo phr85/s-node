@@ -1,0 +1,3 @@
+<?php
+XT::setAdminModule("sfa");
+?>

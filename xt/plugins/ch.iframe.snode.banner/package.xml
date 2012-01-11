@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>1100</baseid>
+    <id>ch.iframe.snode.banner</id>
+    <version>$Rev: 5957 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Bannerverwaltung</name>
+            <description>Banner verwalten</description>
+        </de>
+        <en>
+            <name>Bannermanagement</name>
+            <description>Manage Banners</description>
+        </en>
+    </lang>
+
+    
+    <contenttype>
+        <id>1100</id>
+        <title>Banner</title>
+        <open_url>/index.php?TPL=138&amp;x1100&amp;x{$BASEID}_banner_id={$BANNER.id}</open_url>
+        <content_table>banner</content_table>
+        <title_field>title</title_field>
+        <icon>document.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    
+    <requires>
+        <package>
+        <id>ch.iframe.snode.filemanager</id>
+        <version>$Rev: 5957 $</version>
+        </package>
+    </requires>
+
+    <page>
+        <parentnode>101</parentnode>
+        <id>129</id>
+        <lang>
+            <de>
+                <title>Bannerverwaltung</title>
+                <file>129.tpl</file>
+            </de>
+            <en>
+                <title>Bannermanagement</title>
+                <file>129.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>106</parentnode>
+        <id>302</id>
+        <lang>
+            <de>
+                <title>Banner extern</title>
+                <file>302.tpl</file>
+                <live>1</live>
+                <public>1</public>
+            </de>
+            <en>
+                <title>Banner extern</title>
+                <file>302.tpl</file>
+                <live>1</live>
+                <public>1</public>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>1</parentnode>
+        <id>106</id>
+        <lang>
+            <de>
+                <title>System</title>
+                <file>106.tpl</file>
+            </de>
+            <en>
+                <title>System</title>
+                <file>106.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>106</parentnode>
+        <id>112</id>
+        <lang>
+            <de>
+                <title>Module</title>
+                <file>112.tpl</file>
+            </de>
+            <en>
+                <title>Modules</title>
+                <file>112.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>112</parentnode>
+        <id>138</id>
+        <lang>
+            <de>
+                <public>1</public>
+                <visible>0</visible>
+                <title>Banner Umleitung</title>
+                <file>138.tpl</file>
+            </de>
+            <en>
+                <public>1</public>
+                <visible>0</visible>
+                <title>Banner Referer</title>
+                <file>138.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <contenttree>
+        <id>5</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Bannerwerbung</title>
+            </de>
+            <en>
+                <title>Affiliates</title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <contenttree>
+        <id>7</id>
+        <parentnode>5</parentnode>
+        <lang>
+            <de>
+                <title>Banner</title>
+                <description>Module fuer Banner</description>
+            </de>
+            <en>
+                <title>Banner</title>
+                <description>Modules for banners</description>
+            </en>
+        </lang>
+    </contenttree>
+    
+    <module>
+        <id>viewer</id>
+        <treenode>7</treenode>
+        <treenode>1</treenode>
+        <lang>
+            <de>
+                <name>Bannerwerbung</name>
+                <description>Banner darstellen</description>
+            </de>
+            <en>
+                <name>Banner Ad</name>
+                <description>Display a Banner</description>
+            </en>
+        </lang>
+        <param>
+            <id>zone</id>
+            <lang>
+                <de>
+                    <title>Zone</title>
+                    <description>Wählen sie eine Zone aus.</description>
+                </de>
+                <en>
+                    <title>Zone</title>
+                    <description>Select Zone</description>
+                </en>
+            </lang>
+            <values>[SELECT id,title FROM {PREFIX}banner_zones ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+        <param>
+            <id>version</id>
+            <lang>
+                <de>
+                    <title>Version</title>
+                    <description>Bitte wählen sie die zu verwendende Bildversion aus den Vorhandenen Bildversionen (Filemanager) aus.
+Falls sie weitere Versionen benötigen, registrieren sie diese im configfile vom Bildmanager.</description>
+                </de>
+                <en>
+                    <title>Version</title>
+                    <description>Please select the image version which you want to display.
+                    If the version you require doesnt exist, you can register it in the configfile of the filemanager(ch.iframe.snode.filemanager).</description>
+                </en>
+            </lang>
+            <values>ch.iframe.snode.filemanager => imageversions</values>
+            <valuetype>configarray</valuetype>
+        </param>
+        <param>
+            <id>allbanner</id>
+            <lang>
+                <de>
+                    <title>Alle Banner der Zone auflisten</title>
+                    <description>Sollen alle Banner der Zone auf einmal dargestellt werden?</description>
+                </de>
+                <en>
+                    <title>List all banners of a zone at once</title>
+                    <description>Do you want display all banners of a zone at once?</description>
+                </en>
+            </lang>
+            <values>yes,no</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    
+    <table>
+        <id>banner</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.banner}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `customer_id` int(11) unsigned default NULL,
+            `title` varchar(255) default NULL,
+            `image` int(11) unsigned default NULL,
+            `image_version` varchar(10) default NULL,
+            `active` tinyint(1) unsigned default '0',
+            `description` varchar(255) default NULL,
+            `link` varchar(255) default NULL,
+            `code` text,
+            `creation_date` int(11) unsigned default NULL,
+            `creation_user` int(11) unsigned default NULL,
+            `mod_date` int(11) unsigned default NULL,
+            `mod_user` int(11) unsigned default NULL,
+            `target` varchar(255) default '_blank',
+            `priority` tinyint(3) unsigned default '1',
+            `type` tinyint(2) default '1',
+            `link_type` tinyint(1) unsigned default '0',
+            `width` int(11) unsigned default NULL,
+            `height` int(11) unsigned default NULL,
+            PRIMARY KEY  (`id`)
+            )ENGINE=MyISAM ;
+            alter table `{TABLE.banner}` add column `display_time_type` int (1) UNSIGNED  DEFAULT '0' NOT NULL  after `link_type`;
+            alter table `{TABLE.banner}` add column `display_time_start` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `display_time_type`;
+            alter table `{TABLE.banner}` add column `display_time_end` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `display_time_start`;
+            alter table `{TABLE.banner}` add column `width` int(5) unsigned default NULL after `link_type`;
+            alter table `{TABLE.banner}` add column `height` int(5) unsigned default NULL after `width`;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>banner_clicks</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.banner_clicks}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `zone_id` int(11) unsigned default NULL,
+            `session_id` varchar(40) default NULL,
+            `call_date` int(11) unsigned default NULL,
+            `referer` varchar(255) default NULL,
+            PRIMARY KEY  (`id`)
+            )ENGINE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>banner_views</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.banner_views}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `zone_id` int(11) unsigned default NULL,
+            `session_id` varchar(40) default NULL,
+            `call_date` int(11) unsigned default NULL,
+            `referer` varchar(255) default NULL,
+            PRIMARY KEY  (`id`)
+            )ENGINE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>banner_zones</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.banner_zones}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `title` varchar(255) default NULL,
+            `width` int(11) unsigned default NULL,
+            `height` int(11) unsigned default NULL,
+            `creation_date` int(11) unsigned default NULL,
+            `creation_user` int(11) unsigned default NULL,
+            `mod_date` int(11) unsigned default NULL,
+            `mod_user` int(11) unsigned default NULL,
+            `description` varchar(255) default NULL,
+            `type` tinyint(3) default NULL,
+            PRIMARY KEY  (`id`)
+            )ENGINE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>banner_zones_rel</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.banner_zones_rel}` (
+            `zone_id` int(11) unsigned default NULL,
+            `banner_id` int(11) unsigned default NULL,
+            `views` int(11) unsigned default '0',
+            `clicks` int(11) unsigned default '0',
+            `active` tinyint(1) default '1'
+            )ENGINE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <folder>images/admin/tipps/ch.iframe.snode.banner</folder>
+    <openfile>styles/live/jquery.cycle.css</openfile>
+    <openfile>scripts/ch.iframe.snode.banner/activate.cycle.js</openfile>
+    <openfile>scripts/jquery-plugins/jquery.cycle.js</openfile>
+<changelog>
+    <rev>1521 edit buttons in live modules removed</rev>
+    <rev>1246 Adding banner code works now</rev>
+</changelog>
+</package>

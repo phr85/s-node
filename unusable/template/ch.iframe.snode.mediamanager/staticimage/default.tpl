@@ -1,0 +1,1 @@
+<img src="{$PIC_PATH}" alt="{$PIC_ALT}" title="{$PIC_ALT}">

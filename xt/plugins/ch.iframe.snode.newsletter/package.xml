@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>5300</baseid>
+    <id>ch.iframe.snode.newsletter</id>
+    <version>$Rev: 6444 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Newsletter</name>
+            <description>E-Mails an Abonomenten senden</description>
+        </de>
+        <en>
+            <name>Newsletter</name>
+            <description>Send E-Mails to newsletter users</description>
+        </en>
+    </lang>
+    <page>
+        <parentnode>100</parentnode>
+        <id>171</id>
+        <lang>
+            <de>
+                <url>/index.php?TPL=171&amp;adminmode=1</url>
+                <title>Newsletter</title>
+                <file>171.tpl</file>
+            </de>
+            <en>
+                <url>/index.php?TPL=171&amp;adminmode=1</url>
+                <title>Newsletter</title>
+                <file>171.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>106</parentnode>
+        <id>172</id>
+        <forceupdate>1</forceupdate>
+        <lang>
+            <de>
+                <title>Newsletter anzeigen</title>
+                <file>172.tpl</file>
+                <public>1</public>
+                <visible>0</visible>
+                <header>header.tpl</header>
+                <footer>footer.tpl</footer>
+            </de>
+            <en>
+                <title>Newsletter viewer</title>
+                <file>172.tpl</file>
+                <public>1</public>
+                <visible>0</visible>
+                <header>header.tpl</header>
+                <footer>footer.tpl</footer>
+            </en>
+        </lang>
+    </page>
+
+    <page>
+        <parentnode>106</parentnode>
+        <id>173</id>
+        <forceupdate>1</forceupdate>
+        <lang>
+            <de>
+                <title>Newsletter senden</title>
+                <file>173.tpl</file>
+                <public>1</public>
+                <visible>0</visible>
+                <header>header.tpl</header>
+                <footer>footer.tpl</footer>
+            </de>
+            <en>
+                <title>Send newsletter</title>
+                <file>173.tpl</file>
+                <public>1</public>
+                <visible>0</visible>
+                <header>blank.tpl</header>
+                <footer>blank.tpl</footer>
+            </en>
+        </lang>
+    </page>
+
+     <contenttree>
+        <id>5300</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Newsletter</title>
+            </de>
+            <en>
+                <title>Newsletter</title>
+            </en>
+        </lang>
+    </contenttree>
+    <module>
+        <id>subscribe_simple</id>
+        <treenode>5300</treenode>
+        <main_param>category</main_param>
+        <lang>
+            <de>
+                <name>Einfache Anmeldung</name>
+                <description>Benutzer können sich für den Newsletter anmelden</description>
+            </de>
+            <en>
+                <name>Subscription simple</name>
+                <description>Users can subscribe a newsletter</description>
+            </en>
+        </lang>
+        <param>
+            <id>category</id>
+            <lang>
+                <de>
+                <title>Kategorie</title>
+                <description>Wählen sie eine Kategorie aus fuer die man sich anmelden kann. Lassen Sie dieses Feld leer um sich fuer alle Newsletter zu registrieren</description>
+                </de>
+                <en>
+                    <title>Category</title>
+                    <description>Wählen sie eine Kategorie aus fuer die man sich anmelden kann. Lassen Sie dieses Feld leer um sich fuer alle Newsletter zu registrieren</description>
+                </en>
+            </lang>
+            <values>[SELECT id,title FROM {PREFIX}newsletter_categories ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>subscribe</id>
+        <treenode>5300</treenode>
+        <main_param>style</main_param>
+        <lang>
+            <de>
+                <name>Katgorienauswahl Anmeldung</name>
+                <description>Benutzer können sich für den Newsletter anmelden</description>
+            </de>
+            <en>
+                <name>Subscription with categories</name>
+                <description>Users can subscribe a newsletter</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>list</id>
+        <treenode>5300</treenode>
+        <main_param>style</main_param>
+        <lang>
+            <de>
+                <name>Newsletter liste</name>
+                <description>Eine Liste aller gesendeten Newsletter.</description>
+            </de>
+            <en>
+                <name>Newsletter list</name>
+                <description>List of all sent newsletters.</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>categories</id>
+            <lang>
+                <de>
+                    <title>Kategorien</title>
+                    <description>Geben alle Kategorien an, die in Ihrer Liste berücksichtig werden sollen. Die Ketegorienummern müssen mit Kommas separiert werden.Bei 0 oder leerem Wert werden alle Kategorien genommen. </description>
+                </de>
+                <en>
+                    <title>Categories</title>
+                    <description>Set all categories which you are used in the list. Seperate the categorie numbers with commas.0 or empty takes all categories.</description>
+                </en>
+            </lang>
+            <values>0</values>
+            <valuetype>userinput</valuetype>
+        </param>
+         <param>
+            <id>target_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Welches ist die Seite welche den vollen Newsletter darstellen soll?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which is the Page (TPL) for displaying the newsletter</description>
+                </en>
+            </lang>
+            <values>172</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+
+    <table>
+        <id>newsletter</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.newsletter}` (
+                 `id` int(11) NOT NULL auto_increment,
+                 `title` varchar(255) NOT NULL default '',
+                 `description` text NOT NULL DEFAULT '',
+                 `status` tinyint(1) NOT NULL default '0',
+                 `sender_name` varchar(255) NOT NULL default '',
+                 `sender_email` varchar(255) NOT NULL default '',
+                 `type` tinyint(1) NOT NULL default '0',
+                 `creation_date` int(11) NOT NULL default '0',
+                 `creation_user` int(11) NOT NULL default '0',
+                 `mod_date` int(11) NOT NULL default '0',
+                 `mod_user` int(11) NOT NULL default '0',
+                 `sent_date` int(11) NOT NULL default '0',
+                 `content_html` text NOT NULL,
+                 `content_plain` text NOT NULL,
+                 `header` text,
+                 `header_plain` text,
+                 `footer` text,
+                 `footer_plain` text,
+                 `comment` text,
+                 `template` varchar(100) default NULL,
+                 `image` int(11) default '0',
+                 `image_version` varchar(11) default '0',
+                 `lang` varchar(100) default NULL,
+                 PRIMARY KEY  (`id`)
+               ) ;
+               alter table `{TABLE.newsletter}` add column `image` int(11) default '0'  after `template`;
+               alter table `{TABLE.newsletter}` add column `image_version` varchar(11) default '0' after `image`;
+               alter table `{TABLE.newsletter}` add column `lang` varchar(100)  NULL  after `image_version`;
+               ALTER TABLE `{TABLE.newsletter}` CHANGE `description` `description` text NOT NULL DEFAULT ""
+
+            ]]>
+        </mysql>
+    </table>
+
+    <table>
+        <id>newsletter_unsubscribed</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.newsletter_unsubscribed}` (
+                 `subscription_id` int(11) unsigned NOT NULL default '0',
+                 `date` int(11) NOT NULL default '0',
+                 `category_id` int(11) unsigned NOT NULL default '0',
+                 UNIQUE KEY `category_id` (`subscription_id`,`category_id`)
+               ) ;
+            ]]>
+        </mysql>
+    </table>
+
+    <table>
+        <id>newsletter_categories</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.newsletter_categories}` (
+                  `id` int(11) NOT NULL auto_increment,
+                  `title` varchar(255) NOT NULL default '',
+                  `description` varchar(255) NOT NULL default '',
+                  `subscriber_count` int(11) NOT NULL default '0',
+                  `creation_date` int(11) NOT NULL default '0',
+                  `creation_user` int(11) NOT NULL default '0',
+                  `mod_date` int(11) NOT NULL default '0',
+                  `mod_user` int(11) NOT NULL default '0',
+                  PRIMARY KEY  (`id`)
+                );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>newsletter_subscriptions</id>
+        <mysql>
+            <![CDATA[
+               CREATE TABLE `{TABLE.newsletter_subscriptions}` (
+                `id` int(11) NOT NULL auto_increment,
+                `user_id` int(11) NOT NULL default '0',
+                `name` varchar(255) default '',
+                `email` varchar(255) NOT NULL default '',
+                `creation_date` int(11) NOT NULL default '0',
+                `creation_user` int(11) NOT NULL default '0',
+                `lang` varchar(100) default NULL,
+                `title` varchar(255) default NULL,
+                `anrede` varchar(50) default NULL,
+                `company` varchar(100) default NULL,
+                `firstname` varchar(100) default NULL,
+                `lastname` varchar(100) default NULL,
+                `mobile` varchar(255) default NULL,
+                PRIMARY KEY  (`id`)
+                ) ;
+                alter table `{TABLE.newsletter_subscriptions}` add column `lang` varchar(100)  NULL  after `creation_user`;
+                alter table `{TABLE.newsletter_subscriptions}` add column `title` varchar(255) default NULL after `lang`;
+                alter table `{TABLE.newsletter_subscriptions}` add column `anrede` varchar(50)  NULL  after `lang`;
+                alter table `{TABLE.newsletter_subscriptions}` add column `company` varchar(100)  NULL  after `anrede`;
+                alter table `{TABLE.newsletter_subscriptions}` add column `firstname` varchar(100)  NULL  after `company`;
+                alter table `{TABLE.newsletter_subscriptions}` add column `lastname` varchar(100)  NULL  after `firstname`;
+                alter table `{TABLE.newsletter_subscriptions}` add column `mobile` varchar(255)  NULL  after `lastname`;
+
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>newsletter_chapters</id>
+        <mysql>
+          <![CDATA[
+             CREATE TABLE `{TABLE.newsletter_chapters}` (
+            `id` int(11) unsigned NOT NULL default '0',
+            `title` varchar(255) default NULL,
+            `subtitle` varchar(255) default NULL,
+            `link` varchar (255) default NULL,
+            `maintext` text,
+            `level` tinyint(3) unsigned NOT NULL default '1',
+            `image` int(11) unsigned default NULL,
+            `image_version` varchar(11) default NULL,
+            PRIMARY KEY  (`id`,`level`)
+            );
+            alter table `{TABLE.newsletter_chapters}` add column `subtitle` varchar (255) default NULL  after `title`;
+            alter table `{TABLE.newsletter_chapters}` add column `link` varchar (255) default NULL  after `subtitle`;
+          ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>newsletter_newsl2cat</id>
+        <mysql>
+            <![CDATA[
+               CREATE TABLE `{TABLE.newsletter_newsl2cat}` (
+                `category_id` int(11) unsigned NOT NULL default '0',
+                `newsletter_id` int(11) unsigned NOT NULL default '0',
+                UNIQUE KEY `category_id` (`category_id`,`newsletter_id`)
+                ) ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>newsletter_subscr2cat</id>
+        <mysql>
+            <![CDATA[
+               CREATE TABLE `{TABLE.newsletter_subscr2cat}` (
+                `category_id` int(11) unsigned NOT NULL default '0',
+                `subscription_id` int(11) unsigned NOT NULL default '0',
+                `type` int(1) unsigned default '0',
+                UNIQUE KEY `category_id` (`category_id`,`subscription_id`,`type`)
+                );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>newsletter_queue</id>
+        <mysql>
+            <![CDATA[
+               CREATE TABLE `{TABLE.newsletter_queue}` (
+                `newsletter_id` int(11) unsigned NOT NULL default '0',
+                `user_id` int(11) unsigned NOT NULL default '0',
+                `category_id` int(11) unsigned NOT NULL default '0',
+                `errors` int(1) unsigned NOT NULL default '0',
+                UNIQUE KEY `newsletter_id` (`newsletter_id`,`user_id`)
+                );
+                alter table `{TABLE.newsletter_queue}` add column `category_id` int(11) unsigned NOT NULL default '0' after `user_id`;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>newsletter_sent</id>
+        <mysql>
+            <![CDATA[
+               CREATE TABLE `{TABLE.newsletter_sent}` (
+                `newsletter_id` int(11) unsigned NOT NULL default '0',
+                `user_id` int(11) unsigned NOT NULL default '0',
+                `category_id` int(11) unsigned NOT NULL default '0',
+                `date` int(11) unsigned NOT NULL default '0'
+                );
+                alter table `{TABLE.newsletter_sent}` add column `category_id` int(11) unsigned NOT NULL default '0' after `user_id`;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>newsletter_views</id>
+        <mysql>
+            <![CDATA[
+               CREATE TABLE `{TABLE.newsletter_views}` (
+                `newsletter_id` int(11) unsigned NOT NULL default '0',
+                `user_id` int(11) unsigned NOT NULL default '0',
+                `date` int(11) unsigned NOT NULL default '0'
+                );
+            ]]>
+        </mysql>
+    </table>
+    <folder>images/icons</folder>
+    <file>xt/includes/classes/newsletter.class.php</file>
+    <openfile>xt/includes/classes/csv.class.php</openfile>
+    <openfile>newsletter_views.php</openfile>
+</package>

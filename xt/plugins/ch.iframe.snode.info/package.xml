@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>10</baseid>
+    <id>ch.iframe.snode.core_info</id>
+    <version>$Rev: 4084 $</version>
+    <permissions>false</permissions>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>PHP_info</name>
+            <description>PHP_info darstellen</description>
+        </de>
+        <en>
+            <name>PHP_info</name>
+            <description>view PHP_info</description>
+        </en>
+    </lang>
+
+    <page>
+        <parentnode>121</parentnode>
+        <id>125</id>
+        <lang>
+            <de>
+                <title>Serverinformationen</title>
+                <file>125.tpl</file>
+            </de>
+            <en>
+                <title>Server details</title>
+                <file>125.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

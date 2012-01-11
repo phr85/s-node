@@ -1,0 +1,131 @@
+/* Basic code - don't modify */
+ 
+#nav {
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 99;
+}
+
+#nav li {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    position: relative;
+}
+
+#nav a {
+    display: block;
+}
+
+#nav ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* IE6 "fix" */
+* html #nav ul {
+    line-height: 0;
+}
+
+/* IE6/7 fix */
+#nav ul a {
+    zoom: 1;
+}
+
+#nav ul li {
+    float: none;
+}
+
+#nav ul ul {
+    top: 0;
+}
+    
+/* Essentials - configure this */
+
+
+#nav ul {
+    width: auto !important;
+    width: 130px;
+    min-width: 130px;
+}
+
+#nav ul ul {
+    width: auto !important;
+    width: 130px;
+    min-width: 130px;
+}
+
+
+/* Everything else is theming */
+ 
+#nav {
+    height: 18px;
+}
+
+#nav *:hover {
+    background-color: none;
+}
+
+#nav a {
+    border-right: 1px solid black;
+    padding-right: 5px;
+    margin-right: 5px;
+    color: black;
+    font-size: 12px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+#nav a.droppynavitw {
+    color: gray;
+}
+
+#nav a.droppynavitw:hover {
+    color: black;
+}
+
+
+#nav a:hover {
+    color: gray;
+}
+
+#nav a.droppynavlast {
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+}
+
+#nav li.hover a {
+}
+
+#nav ul {
+    top: 20px;
+    background-color: white;
+}
+
+#nav ul li {
+    color: black;
+}
+
+#nav ul li a {
+    padding: 5px 10px;
+    margin: -1px 0;
+}
+
+#nav ul a.hover {
+
+}
+
+#nav ul a {
+    color: black;
+    border: none;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}

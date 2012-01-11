@@ -1,0 +1,118 @@
+/* Filter */
+
+div#jobfilterwrapper {
+    clear: both;
+    float: left;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+div.jobfilterelementwrapper {
+    float: left;
+    width: 50%;
+}
+
+/* EOF Filter */
+
+
+/* Bewerbung */
+
+div#application_form {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+div#application_form input,
+div#application_form select,
+div#application_form textarea {
+    margin: 0;
+    padding: 2px 4px;
+    background-color: #DEDEDE;
+    border: 1px solid #A0AEC0;
+}
+
+div#application_form input[type="radio"] {
+    margin: 4px 0;
+}
+
+div#application_form input[type="file"] {
+    margin-right: 10px;
+}
+
+div#application_form select {
+    width: auto !important;
+    width: 160px;
+    min-width: 160px;
+}
+
+div.application_form_element_group {
+    clear: both;
+    float: left;
+    width: 100%;
+    height: auto !important;
+    height: 15px;
+    min-height: 15px;
+    padding-bottom: 6px;
+}
+
+div.application_form_element_description {
+    clear: both;
+    float: left;
+    width: auto !important;
+    width: 150px;
+    min-width: 150px;
+    height: auto !important;
+    height: 15px;
+    min-height: 15px;
+    padding-right: 20px;
+}
+
+div.application_form_element_field {
+    float: left;
+}
+
+div.application_form_seperator {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px 0 5px;
+    font-weight: bold;
+    border-bottom: 1px solid;
+}
+
+div#application_form .application_captcha_image {
+    margin: 0;
+    padding: 0 0 6px 0;
+}
+
+div#application_form .application_required {
+    color: #FF0000;
+}
+
+div#application_form .application_error {
+    border: 1px solid #BC8482;
+    background-color: #DDB2B0;
+}
+
+div#application_form .application_success {
+    color: green;
+}
+
+div#application_form .application_delete_file {
+    margin: 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+    background-color: transparent;
+    background-image: url(/images/icons/delete.png);
+    border: 1px solid transparent;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+/*EOF Bewerbung */

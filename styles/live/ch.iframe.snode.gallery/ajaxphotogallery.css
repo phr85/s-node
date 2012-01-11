@@ -1,0 +1,99 @@
+#ajaxphotogalleryoverallwrapper {
+    padding: 10px 0;
+}
+
+#ajaxphotogallerydescription {
+    padding: 0 0 10px 0;
+}
+
+#ajaxphotogallery {
+    position: relative;
+    margin: 0;
+    background: #D4D7DE url(/images/ch.iframe.snode.gallery/ajaxphotogallery/background.png) center top repeat-x;
+}
+
+#ajaxphotogalleryimage {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: #FFF url(/images/ch.iframe.snode.gallery/ajaxphotogallery/loading.gif) center center no-repeat;
+}
+
+#ajaxphotogalleryimage img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#ajaxphotogallerythumbwrapper {
+    margin: 0;
+    padding: 0;
+}
+
+#ajaxphotogallerythumbarea {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#ajaxphotogallerythumbs {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#ajaxphotogallerythumbs li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.ajaxphotogalleryimgnav {
+    position: absolute;
+    width: 42px;
+    z-index: 100;
+    outline: none;
+    cursor: pointer;
+}
+
+#ajaxphotogalleryprevimg {
+    left: 0;
+    background: url(/images/ch.iframe.snode.gallery/ajaxphotogallery/prev.png) center center no-repeat;
+}
+
+#ajaxphotogalleryprevimg:hover {
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+
+#ajaxphotogallerynextimg {
+    right: 0;
+    background: url(/images/ch.iframe.snode.gallery/ajaxphotogallery/next.png) center center no-repeat;
+}
+
+#ajaxphotogallerynextimg:hover {
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+
+.ajaxphotogalleryimgnavbottom {
+    position: absolute;
+    width: 42px;
+    z-index: 100;
+    outline: none;
+}
+
+#ajaxphotogalleryprevimgbottom {
+    left: 0;
+    background: url(/images/ch.iframe.snode.gallery/ajaxphotogallery/prev.png) center center no-repeat;
+}
+
+#ajaxphotogallerynextimgbottom {
+    right: 0;
+    background: url(/images/ch.iframe.snode.gallery/ajaxphotogallery/next.png) center center no-repeat;
+}

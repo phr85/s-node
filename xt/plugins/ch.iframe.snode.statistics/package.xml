@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>2600</baseid>
+    <id>ch.iframe.snode.statistics</id>
+    <version>1233</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Statistiken</name>
+            <description>Statistiken einsehen</description>
+        </de>
+        <en>
+            <name>Statistics</name>
+            <description>View Statistics</description>
+        </en>
+    </lang>
+
+    <page>
+        <parentnode>100</parentnode>
+        <id>154</id>
+        <lang>
+            <de>
+                <url>/index.php?TPL=155&amp;adminmode=1</url>
+                <title>Statistiken</title>
+                <file>154.tpl</file>
+            </de>
+            <en>
+                <url>/index.php?TPL=155&amp;adminmode=1</url>
+                <title>Statistiken</title>
+                <file>154.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>154</parentnode>
+        <id>155</id>
+        <lang>
+            <de>
+                <title>Statistiken</title>
+                <file>155.tpl</file>
+            </de>
+            <en>
+                <title>Statistics</title>
+                <file>155.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <table>
+        <id>statistics_agents_months</id>
+        <mysql>
+            CREATE TABLE `{TABLE.statistics_agents_months}` (
+              `year` int(4) unsigned default '0',
+              `month` tinyint(2) unsigned default '0',
+              `agent` varchar(255) default NULL,
+              `views` int(11) unsigned default NULL,
+              `agent_type` varchar(255) default NULL
+            )ENGINE=MyISAM ;
+        </mysql>
+    </table>
+    <table>
+        <id>statistics_days</id>
+        <mysql>
+            CREATE TABLE `{TABLE.statistics_days}` (
+              `year` int(4) unsigned NOT NULL default '0',
+              `month` tinyint(2) unsigned NOT NULL default '0',
+              `views` int(11) unsigned default '0',
+              `visitors` int(11) unsigned default NULL,
+              `unique_visitors` int(11) unsigned default NULL,
+              `day` int(3) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`year`,`month`,`day`)
+            )ENGINE=MyISAM ;
+        </mysql>
+    </table>
+    <table>
+        <id>statistics_hosts_months</id>
+        <mysql>
+            CREATE TABLE `{TABLE.statistics_hosts_months}` (
+              `month` tinyint(2) unsigned NOT NULL default '0',
+              `host` varchar(255) NOT NULL default '',
+              `views` int(11) unsigned default '0',
+              `last_access` int(11) unsigned default NULL,
+              `year` int(4) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`host`,`month`,`year`)
+            )ENGINE=MyISAM ;
+        </mysql>
+    </table>
+    <table>
+        <id>statistics_months</id>
+        <mysql>
+            CREATE TABLE `{TABLE.statistics_months}` (
+              `year` int(4) unsigned NOT NULL default '0',
+              `month` tinyint(2) unsigned NOT NULL default '0',
+              `views` int(11) unsigned default '0',
+              `visitors` int(11) unsigned default NULL,
+              `unique_visitors` int(11) unsigned default NULL,
+              PRIMARY KEY  (`year`,`month`)
+            )ENGINE=MyISAM ;
+        </mysql>
+    </table>
+    <table>
+        <id>statistics_referer_months</id>
+        <mysql>
+            CREATE TABLE `{TABLE.statistics_referer_months}` (
+              `year` int(4) unsigned NOT NULL default '0',
+              `month` tinyint(2) unsigned NOT NULL default '0',
+              `referer` varchar(255) NOT NULL default '0',
+              `views` int(11) unsigned default '0',
+              `visitors` int(11) unsigned NOT NULL default '0',
+              `unique_visitors` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`year`,`month`,`referer`)
+            )ENGINE=MyISAM ;
+        </mysql>
+    </table>
+    <table>
+        <id>statistics_views_months</id>
+        <mysql>
+            CREATE TABLE `{TABLE.statistics_views_months}` (
+              `year` int(4) unsigned NOT NULL default '0',
+              `month` tinyint(2) unsigned NOT NULL default '0',
+              `url` varchar(255) NOT NULL default '0',
+              `tpl` int(11) default '0',
+              `views` int(11) unsigned default '0',
+              `visitors` int(11) unsigned default '0',
+              `unique_visitors` int(11) unsigned default '0',
+              PRIMARY KEY  (`year`,`month`,`url`)
+            )ENGINE=MyISAM ;
+        </mysql>
+    </table>
+    <table>
+        <id>statistics_years</id>
+        <mysql>
+            CREATE TABLE `{TABLE.statistics_years}` (
+              `year` int(4) unsigned NOT NULL default '0',
+              `views` int(11) unsigned default NULL,
+              `visitors` int(11) unsigned default NULL,
+              `unique_visitors` int(11) unsigned default NULL,
+              PRIMARY KEY  (`year`)
+            )ENGINE=MyISAM ;
+        </mysql>
+    </table>
+    
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

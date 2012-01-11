@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+    <baseid>2400</baseid>
+    <id>ch.iframe.snode.shop</id>
+    <version>$Rev: 5128 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Shop</name>
+            <description>Shop extension zu Katalog</description>
+        </de>
+        <en>
+            <name>shop</name>
+            <description>Shop extension to catalog</description>
+        </en>
+    </lang>
+    <requires>
+        <package>
+        <id>ch.iframe.snode.catalog</id>
+        <version>1246</version>
+        </package>
+    </requires>
+    <page>
+        <parentnode>100</parentnode>
+        <id>142</id>
+        <lang>
+            <de>
+                <url>index.php?TPL=143&amp;adminmode=1</url>
+                <title>Shop</title>
+                <file>142.tpl</file>
+            </de>
+            <en>
+                <url>index.php?TPL=143&amp;adminmode=1</url>
+                <title>Shop</title>
+                <file>142.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>142</parentnode>
+        <id>145</id>
+        <lang>
+            <de>
+                <title>Shop Einstellungen</title>
+                <file>145.tpl</file>
+            </de>
+            <en>
+                <title>Shop Settings</title>
+                <file>145.tpl</file>
+            </en>
+        </lang>
+
+    </page>
+        <page>
+        <parentnode>142</parentnode>
+        <id>145</id>
+        <lang>
+            <de>
+                <title>Rabatte</title>
+                <file>145.tpl</file>
+            </de>
+            <en>
+                <title>Discounts</title>
+                <file>145.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+
+    <page>
+        <parentnode>142</parentnode>
+        <id>146</id>
+        <lang>
+            <de>
+                <title>Shop Bestellungen</title>
+                <file>146.tpl</file>
+            </de>
+            <en>
+                <title>Shop Orders</title>
+                <file>146.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>148</id>
+        <lang>
+            <de>
+                <title>Produktdisplay Picker</title>
+                <file>148.tpl</file>
+            </de>
+            <en>
+                <title>Produktdisplay Picker</title>
+                <file>148.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>1</parentnode>
+        <id>161</id>
+        <lang>
+            <de>
+                <title>Beispielimplementierungen</title>
+                <file>161.tpl</file>
+            </de>
+            <en>
+                <title>Sample Implementations</title>
+                <file>161.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>161</parentnode>
+        <id>162</id>
+        <lang>
+            <de>
+                <title>Shop: Bestellprozess</title>
+                <file>162.tpl</file>
+            </de>
+            <en>
+                <title>Shop: Orderprocess</title>
+                <file>162.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>161</parentnode>
+        <id>163</id>
+        <lang>
+            <de>
+                <title>Shop: Adressdaten</title>
+                <file>163.tpl</file>
+            </de>
+            <en>
+                <title>Shop: Addressdata</title>
+                <file>163.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>161</parentnode>
+        <id>164</id>
+        <lang>
+            <de>
+                <title>Shop: Bestellung Überprüfen</title>
+                <file>164.tpl</file>
+            </de>
+            <en>
+                <title>Shop: Check Order</title>
+                <file>164.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>161</parentnode>
+        <id>165</id>
+        <lang>
+            <de>
+                <title>Shop: Bestellung Abschliessen</title>
+                <file>165.tpl</file>
+            </de>
+            <en>
+                <title>Shop: Send Order</title>
+                <file>165.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>161</parentnode>
+        <id>166</id>
+        <lang>
+            <de>
+                <title>Shop: Registrierung</title>
+                <file>166.tpl</file>
+            </de>
+            <en>
+                <title>Shop: Registration</title>
+                <file>166.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>161</parentnode>
+        <id>167</id>
+        <lang>
+            <de>
+                <title>Shop: Anmeldung</title>
+                <file>167.tpl</file>
+            </de>
+            <en>
+                <title>Shop: Login</title>
+                <file>167.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>161</parentnode>
+        <id>168</id>
+        <lang>
+            <de>
+                <title>Shop: Mein Account</title>
+                <file>168.tpl</file>
+            </de>
+            <en>
+                <title>Shop: my account</title>
+                <file>168.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>161</parentnode>
+        <id>169</id>
+        <lang>
+            <de>
+                <title>Shop: Direktbestellung</title>
+                <file>169.tpl</file>
+            </de>
+            <en>
+                <title>Shop: Directorder</title>
+                <file>169.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <contenttree>
+        <id>1200</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Katalog</title>
+            </de>
+            <en>
+                <title>Catalog</title>
+            </en>
+        </lang>
+    </contenttree>
+    <contenttree>
+        <id>1201</id>
+        <parentnode>1200</parentnode>
+        <lang>
+            <de>
+                <title>Shop extensions</title>
+            </de>
+            <en>
+                <title>Shop Extensions</title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <module>
+        <id>directbuy</id>
+        <treenode>1201</treenode>
+        <treenode>1200</treenode>
+        <treenode>1</treenode>
+
+        <lang>
+            <de>
+                <name>Direktkauf</name>
+                <description>Produkt aus dem Katalog zum Direktkauf darstellen</description>
+            </de>
+            <en>
+                <name>Directbuy</name>
+                <description>Display a product with buy now button</description>
+            </en>
+        </lang>
+        <param>
+            <id>product_id</id>
+            <lang>
+                <de>
+                    <title>ID</title>
+                    <description>Wählen sie ein Produkt aus.</description>
+                </de>
+                <en>
+                    <title>ID</title>
+                    <description>Select Product</description>
+                </en>
+            </lang>
+            <values>[148][1200]</values>
+            <valuetype>popup</valuetype>
+        </param>
+
+
+        <param>
+        <id>show_headings</id>
+        <lang>
+            <de>
+                <title>Kopfzeile darstellen</title>
+                <description>Soll die Kopfzeile dargestellt werden</description>
+            </de>
+            <en>
+                <title>show headings</title>
+                <description>Do you want to display the headings</description>
+            </en>
+        </lang>
+        <values>yes,no</values>
+        <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>field_id</id>
+            <lang>
+                <de>
+                    <title>Weitere Informationen</title>
+                    <description>Wählen Sie ein Eigenschaften Feld aus dessen Inhalt zusätzlich dargestellt werden soll</description>
+                </de>
+                <en>
+                    <title>Additional Informations</title>
+                    <description>Select a property field you want to display</description>
+                </en>
+            </lang>
+            <values>[SELECT id,fieldname FROM {PREFIX}catalog_articles_fieldnames WHERE lang =\'{LANG}\' ORDER BY fieldname ASC][id][fieldname]</values>
+            <valuetype>sql</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>loginbox</id>
+        <treenode>1201</treenode>
+
+        <lang>
+            <de>
+                <name>Login box</name>
+                <description>Login box</description>
+            </de>
+            <en>
+                <name>loginbox</name>
+                <description>Display a loginbox</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>orderprocess</id>
+        <treenode>1201</treenode>
+        <lang>
+            <de>
+                <name>orderprocess</name>
+                <description>orderprocess</description>
+            </de>
+            <en>
+                <name>orderprocess</name>
+                <description>orderprocess</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>checkorder</id>
+        <treenode>1201</treenode>
+        <lang>
+            <de>
+                <name>checkorder</name>
+                <description>checkorder</description>
+            </de>
+            <en>
+                <name>checkorder</name>
+                <description>checkorder</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>addressdata</id>
+        <treenode>1201</treenode>
+        <lang>
+            <de>
+                <name>addressdata</name>
+                <description>addressdata</description>
+            </de>
+            <en>
+                <name>addressdata</name>
+                <description>addressdata</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>sidebasket</id>
+        <treenode>1201</treenode>
+        <lang>
+            <de>
+                <name>Kleiner Warenkorb</name>
+                <description>kleine Warenkorb box</description>
+            </de>
+            <en>
+                <name>Sidebasket</name>
+                <description>Display a small basket box</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <module>
+        <id>desktop</id>
+        <treenode>1201</treenode>
+        <lang>
+            <de>
+                <name>desktop</name>
+                <description>desktop</description>
+            </de>
+            <en>
+                <name>desktop</name>
+                <description>desktop</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+    <table>
+        <id>shop_articles</id>
+        <mysql>
+            CREATE TABLE `{TABLE.shop_articles}` (
+              `article_id` int(11) unsigned NOT NULL default '0',
+              `price` float(11,3) default NULL,
+              `gift` int(1) NOT NULL default '0',
+              `product_of_month` int(1) unsigned NOT NULL default '0',
+              `taxes` int(10) unsigned NOT NULL default '0',
+              `buyable` int(1) unsigned NOT NULL default '1',
+              UNIQUE KEY `id` (`article_id`),
+              KEY `id_2` (`article_id`)
+            );
+        </mysql>
+    </table>
+
+    <table>
+        <id>shop_discounts</id>
+        <mysql>
+            CREATE TABLE `{TABLE.shop_discounts}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `value` decimal(10,3) default NULL,
+              `give_discount_at` int(4) unsigned NOT NULL default '5',
+              `in_percent` tinyint(3) unsigned default '1',
+              `for_single_article` tinyint(3) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`id`),
+              UNIQUE KEY `id` (`id`),
+              KEY `id_2` (`id`)
+            );
+        </mysql>
+    </table>
+
+    <table>
+        <id>shop_discounts_articles</id>
+        <mysql>
+            CREATE TABLE `{TABLE.shop_discounts_articles}` (
+              `discount_id` int(11) unsigned NOT NULL default '0',
+              `article_id` int(11) unsigned NOT NULL default '0',
+              `position` int(11) default NULL,
+              PRIMARY KEY  (`article_id`,`discount_id`)
+            );
+        </mysql>
+    </table>
+    <table>
+        <id>shop_discounts_details</id>
+        <mysql>
+            CREATE TABLE `{TABLE.shop_discounts_details}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `lang` varchar(5) NOT NULL default '',
+              `description` varchar(255) NOT NULL default '',
+              `name` varchar(100) NOT NULL default '',
+              PRIMARY KEY  (`id`,`lang`)
+            );
+        </mysql>
+    </table>
+    <table>
+        <id>shop_orders</id>
+        <mysql>
+            CREATE TABLE `{TABLE.shop_orders}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `session_id` varchar(40) default NULL,
+              `user_id` int(11) unsigned default NULL,
+              `creation_date` int(11) unsigned default NULL,
+              `transport` float(10,3) NOT NULL default '0.000',
+              `discount` float(10,3) NOT NULL default '0.000',
+              `totalprice` float(10,3) NOT NULL default '0.000',
+              `endprice` float(10,3) NOT NULL default '0.000',
+              `taxes` float(10,3) NOT NULL default '0.000',
+              `gifts` int(11) unsigned NOT NULL default '0',
+              `products` int(11) unsigned NOT NULL default '0',
+              `products_count` int(11) unsigned NOT NULL default '0',
+              `status` tinyint(3) unsigned default '0',
+              `order_no` varchar(40) default NULL,
+              `shipping_addr` int(11) NOT NULL default '0',
+              `billing_addr` int(11) NOT NULL default '0',
+              PRIMARY KEY  (`id`)
+            );
+               alter table `{TABLE.shop_orders}` ,add column `shipping_addr` int(11) NOT NULL default '0'  after `order_no`;
+               alter table `{TABLE.shop_orders}` ,add column `billing_addr` int(11) NOT NULL default '0'  after `shipping_addr`;
+        </mysql>
+    </table>
+
+    <table>
+        <id>shop_orders_details</id>
+        <mysql>
+            CREATE TABLE `{TABLE.shop_orders_details}` (
+              `order_id` int(11) unsigned default NULL,
+              `product_id` int(11) unsigned default NULL,
+              `price` float(10,3) default NULL,
+              `quantity` int(11) unsigned default NULL
+            );
+        </mysql>
+    </table>
+
+    <table>
+        <id>shop_taxes</id>
+        <mysql>
+            CREATE TABLE `{TABLE.shop_taxes}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `value` decimal(4,3) default NULL,
+              PRIMARY KEY  (`id`),
+              UNIQUE KEY `id` (`id`),
+              KEY `id_2` (`id`)
+            );
+        </mysql>
+    </table>
+
+    <table>
+        <id>shop_taxes_details</id>
+        <mysql>
+            CREATE TABLE `{TABLE.shop_taxes_details}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `lang` varchar(5) NOT NULL default '',
+              `description` varchar(100) NOT NULL default '',
+              PRIMARY KEY  (`id`,`lang`)
+            );
+        </mysql>
+    </table>
+
+    <table>
+        <id>shop_articles_staffelpreise</id>
+        <mysql>
+            CREATE TABLE `{TABLE.shop_articles_staffelpreise}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `article_id` int(11) unsigned NOT NULL default '0',
+            `price` float(11,3) NOT NULL default '0.000',
+            `pcs` int(11) unsigned NOT NULL default '0',
+            PRIMARY KEY  (`id`),
+            UNIQUE KEY `index` (`article_id`,`pcs`)
+            );
+        </mysql>
+    </table>
+
+
+
+      <table>
+        <id>shop_promo</id>
+        <mysql>
+            CREATE TABLE `{TABLE.shop_promo}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `kummulierbar` int(1) default NULL,
+            `give_discount_at` int(4) unsigned NOT NULL default '5',
+            PRIMARY KEY  (`id`),
+            UNIQUE KEY `id` (`id`),
+            KEY `id_2` (`id`)
+            );
+        </mysql>
+    </table>
+
+      <table>
+        <id>shop_promo_articles</id>
+        <mysql>
+            CREATE TABLE `{TABLE.shop_promo_articles}` (
+            `discount_id` int(11) unsigned NOT NULL default '0',
+            `article_id` int(11) unsigned NOT NULL default '0',
+            `position` int(11) default NULL,
+            PRIMARY KEY  (`article_id`,`discount_id`)
+            );
+        </mysql>
+    </table>
+    <table>
+        <id>shop_promo_details</id>
+        <mysql>
+            CREATE TABLE `{TABLE.shop_promo_details}` (
+            `id` int(11) unsigned NOT NULL default '0',
+            `lang` varchar(5) NOT NULL default '',
+            `description` varchar(255) NOT NULL default '',
+            `name` varchar(100) NOT NULL default '',
+            PRIMARY KEY  (`id`,`lang`)
+            );
+        </mysql>
+    </table>
+    <table>
+        <id>shop_promo_gifts</id>
+        <mysql>
+            CREATE TABLE `{TABLE.shop_promo_gifts}` (
+            `discount_id` int(11) unsigned NOT NULL default '0',
+            `article_id` int(11) unsigned NOT NULL default '0',
+            `position` int(11) default NULL,
+            PRIMARY KEY  (`article_id`,`discount_id`)
+            );
+        </mysql>
+    </table>
+
+
+
+
+
+    <folder>xt/plugins/ch.iframe.snode.shop_orders</folder>
+    <folder>xt/templates/default/ch.iframe.snode.shop_orders</folder>
+    <file>xt/plugins/ch.iframe.snode.catalog/includes/actions/deleteArticle.ch.iframe.snode.shop.catalog.preaction.php</file>
+    <file>xt/plugins/ch.iframe.snode.catalog/includes/actions/saveArticle.ch.iframe.snode.shop.catalog.preaction.php</file>
+    <file>xt/plugins/ch.iframe.snode.catalog/includes/actions/setGift1.ch.iframe.snode.shop.catalog.action.php</file>
+    <file>xt/plugins/ch.iframe.snode.catalog/includes/actions/setGift2.ch.iframe.snode.shop.catalog.action.php</file>
+    <file>xt/plugins/ch.iframe.snode.catalog/includes/actions/setProductOfTheMonth.ch.iframe.snode.shop.catalog.action.php</file>
+    <file>xt/plugins/ch.iframe.snode.catalog/includes/actions/unsetGift.ch.iframe.snode.shop.catalog.action.php</file>
+    <file>xt/plugins/ch.iframe.snode.catalog/includes/extensions/articlebasics.ch.iframe.snode.shop.ea.extension.php</file>
+    <file>xt/plugins/ch.iframe.snode.catalog/includes/extensions/la_ext_options.ch.iframe.snode.shop.la.extension.php</file>
+
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

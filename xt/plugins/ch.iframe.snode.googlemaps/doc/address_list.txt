@@ -1,0 +1,30 @@
+= ch.iframe.snode.googlemaps (address_list) =
+
+== Funktion ==
+Stellt eine Liste aller Adressen die einer Karte zugeteilt wurden zur Verfügung
+
+== Möglicher Einsatzbereich ==
+Eine Firma will dem Benutzer direkt die Möglichkeit bieten die Route zu einer Adresse direkt zu berechnen ohne erst auf die Karte gehen zu müssen
+
+== Mitgelieferte Templates ==
+default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+id		         | integer      | Identifikationsnummer der zu berechnenden Adresse (Autoval R) | 25
+directiontpl     | integer      | Templateseitennummer des Directions Modul (Autoval P)| 10065
+
+== Templatevariablen ==
+*xt9100_address_list array Sämtliche Daten zur Adressliste
+
+== Sessionvarablen ==
+
+== Hinweise ==
+-
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.googlemaps" module="address_list" style="default.tpl" directiontpl=10124}
+
+== Todo ==

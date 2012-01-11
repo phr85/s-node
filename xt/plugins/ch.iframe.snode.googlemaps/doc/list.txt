@@ -1,0 +1,30 @@
+= ch.iframe.snode.googlemaps (list) =
+
+== Funktion ==
+Stellt alle aktiven Karten dar
+
+== Möglicher Einsatzbereich ==
+Firma will Standorte in Kontinente einteilen (füllt jeden Kontinent als einzelne Karte ab)
+
+== Mitgelieferte Templates ==
+default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+viewertpl        | integer      | Templateseitennummer der Kartenansicht | 10123
+limit	         | integer      | Wie viele Karten sollen maximal angezeigt werden? | 10123
+
+== Templatevariablen ==
+*xt9100_list array Sämtliche Daten zur Kartenliste
+
+== Sessionvarablen ==
+
+== Hinweise ==
+-
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.googlemaps" module="list" limit=20 style="default.tpl" viewertpl=10123}
+
+== Todo ==

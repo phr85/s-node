@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>270</baseid>
+    <id>ch.iframe.snode.articles</id>
+    <version>$Rev: 6143 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Artikel</name>
+            <description>Artikel erstellen und bearbeiten</description>
+        </de>
+        <en>
+            <name>Articles</name>
+            <description>Manage Articles</description>
+        </en>
+    </lang>
+
+    <contenttype>
+        <id>270</id>
+        <title>Article</title>
+        <open_url>/index.php?TPL=113&amp;x270_id=%id%&amp;x270_listsearch=1</open_url>
+        <content_table>articles</content_table>
+        <title_field>title</title_field>
+        <icon>ch.iframe.snode.articles/img_left.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    <contenttype>
+        <id>271</id>
+        <title>Article Category</title>
+        <open_url>/index.php</open_url>
+        <content_table>articles_tree_details</content_table>
+        <title_field>title</title_field>
+        <icon>folder_information.png</icon>
+        <id_field>node_id</id_field>
+    </contenttype>
+
+    <page>
+        <parentnode>101</parentnode>
+        <id>119</id>
+        <lang>
+            <de>
+                <title>Artikel</title>
+                <file>119.tpl</file>
+            </de>
+            <en>
+                <title>Artikel</title>
+                <file>119.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>1</parentnode>
+        <id>106</id>
+        <lang>
+            <de>
+                <title>System</title>
+                <file>106.tpl</file>
+            </de>
+            <en>
+                <title>System</title>
+                <file>106.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>106</parentnode>
+        <id>111</id>
+        <lang>
+            <de>
+                <title>Popups</title>
+                <file>111.tpl</file>
+            </de>
+            <en>
+                <title>Popups</title>
+                <file>111.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>130</id>
+        <lang>
+            <de>
+                <title>Artikel Picker</title>
+                <file>130.tpl</file>
+            </de>
+            <en>
+                <title>Article Picker</title>
+                <file>130.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>130</parentnode>
+        <id>134</id>
+        <lang>
+            <de>
+                <title>Artikel Picker (Baum)</title>
+                <file>134.tpl</file>
+            </de>
+            <en>
+                <title>Article Picker (Tree)</title>
+                <file>134.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>130</parentnode>
+        <id>133</id>
+        <lang>
+            <de>
+                <title>Artikel Picker (Anzeige)</title>
+                <file>133.tpl</file>
+            </de>
+            <en>
+                <title>Article Picker (Display)</title>
+                <file>133.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <page>
+        <parentnode>111</parentnode>
+        <id>230</id>
+        <lang>
+            <de>
+                <title>Artikel Kategorien Picker</title>
+                <file>230.tpl</file>
+            </de>
+            <en>
+                <title>Article Category Picker</title>
+                <file>230.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>230</parentnode>
+        <id>231</id>
+        <lang>
+            <de>
+                <title>Artikel Kategorie Picker (Baum)</title>
+                <file>231.tpl</file>
+            </de>
+            <en>
+                <title>Article Category Picker (Tree)</title>
+                <file>231.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>230</parentnode>
+        <id>232</id>
+        <lang>
+            <de>
+                <title>Artikel Kategorie Picker (Anzeige)</title>
+                <file>232.tpl</file>
+            </de>
+            <en>
+                <title>Article Category Picker (Display)</title>
+                <file>232.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>237</id>
+        <lang>
+            <de>
+                <title>Artikel erstellen (Blogstyle)</title>
+                <file>237.tpl</file>
+            </de>
+            <en>
+                <title>Create artikel (Blogstyle)</title>
+                <file>237.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>111</parentnode>
+        <id>305</id>
+        <lang>
+            <de>
+                <title>Artikel Datum</title>
+                <file>305.tpl</file>
+            </de>
+            <en>
+                <title>Article date Picker</title>
+                <file>305.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <page>
+        <parentnode>106</parentnode>
+        <id>113</id>
+        <lang>
+            <de>
+                <title>Artikel Anzeige</title>
+                <file>113.tpl</file>
+                <public>1</public>
+                <visible>0</visible>
+            </de>
+            <en>
+                <title>Article Viewer</title>
+                <file>113.tpl</file>
+                <public>1</public>
+                <visible>0</visible>
+            </en>
+        </lang>
+    </page>
+
+    <requires>
+        <package>
+        <id>ch.iframe.snode.filemanager</id>
+        <version>4214</version>
+        </package>
+        <package>
+        <id>ch.iframe.snode.core</id>
+        <version>$Rev: 4421$</version>
+        </package>
+    </requires>
+
+    <contenttree>
+        <id>270</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Artikel</title>
+            </de>
+            <en>
+                <title>Articles</title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <module>
+        <id>list</id>
+        <treenode>270</treenode>
+        <main_param>categories</main_param>
+        <main_content_type>271</main_content_type>
+        <lang>
+            <de>
+                <name>Artikel (Liste)</name>
+                <description>Liste der Artikel</description>
+            </de>
+            <en>
+                <name>Article (List)</name>
+                <description>List</description>
+            </en>
+        </lang>
+        <param>
+            <id>count</id>
+            <lang>
+                <de>
+                    <title>Anzahl</title>
+                    <description>Wieviele Einträge sollen dargestellt werden?</description>
+                </de>
+                <en>
+                    <title>Count</title>
+                    <description>How many entries you want to be displayed in the list?</description>
+                </en>
+            </lang>
+            <values>5</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>target_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Welches ist die Seite welche den vollen Artikel darstellen soll?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which is the Page (TPL) for displaying the article</description>
+                </en>
+            </lang>
+            <values>113</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>categories</id>
+            <lang>
+                <de>
+                    <title>Kategorien</title>
+                    <description>Aus welcher Kategorie wollen sie Artikel darstellen?
+                    Wenn Artikel aus allen Kategorien dargestellt werden sollen lassen sie dieses Feld leer, sonst geben Sie die IDs der Kategorien mit Kommas getrennt an (Bsp.: "2,17" oder nur "2"). </description>
+                </de>
+                <en>
+                    <title>Categories</title>
+                    <description>From which categories you want to display news?
+                    Leave this field empty if you want to display the news from all categories.</description>
+                </en>
+            </lang>
+            <values>[230][4000]</values>
+            <valuetype>popup</valuetype>
+        </param>
+
+        <param>
+            <id>link2details</id>
+            <lang>
+                <de>
+                    <title>Verlinkung</title>
+                    <description>Sollen die Nachrichten auf die Darstellungsseite verlinkt werden?</description>
+                </de>
+                <en>
+                    <title>Linking</title>
+                    <description>Do you want to link the news entries to the target_tpl Page?</description>
+                </en>
+            </lang>
+            <values>yes,no</values>
+            <valuetype>normal</valuetype>
+        </param>
+
+        <param>
+            <id>order</id>
+            <lang>
+                <de>
+                    <title>Sortierung</title>
+                    <description>Wonach soll die Liste sortiert werden?</description>
+                </de>
+                <en>
+                    <title>Ordering</title>
+                    <description>Wonach soll die Liste sortiert werden?</description>
+                </en>
+            </lang>
+            <values>title asc,title desc,id desc,id asc,date desc, date asc, mod_date desc, mod_date asc</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>recursive</id>
+            <lang>
+                <de>
+                    <title>Rekursive Auflistung</title>
+                    <description>Sollen Nachrichten in den Unterkategorien auch aufgelistet werden?</description>
+                </de>
+            </lang>
+            <values>yes,no</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>xml</id>
+            <lang>
+                <de>
+                    <title>XML Header senden</title>
+                    <description>Wollen Sie die Liste als rss feed verwenden?</description>
+                </de>
+            </lang>
+            <values>false,true</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>connector</id>
+            <lang>
+                <de>
+                    <title>Name</title>
+                    <description>Geben sie beim Archivmodul den selben namen beim connector ein.</description>
+                </de>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>random</id>
+        <treenode>270</treenode>
+        <main_param>categories</main_param>
+        <main_content_type>271</main_content_type>
+        <lang>
+            <de>
+                <name>Artikel (Zufällig)</name>
+                <description>Zufälliger Artikel aus einer oder mehreren Kategorien</description>
+            </de>
+            <en>
+                <name>Article (Random)</name>
+                <description>Random article</description>
+            </en>
+        </lang>
+        <param>
+            <id>categories</id>
+            <lang>
+                <de>
+                    <title>Kategorien</title>
+                    <description>Aus welcher Kategorie wollen sie Artikel darstellen?
+                    Wenn Artikel aus allen Kategorien dargestellt werden sollen lassen sie dieses Feld leer, sonst geben Sie die IDs der Kategorien mit Kommas getrennt an (Bsp.: "2,17" oder nur "2"). </description>
+                </de>
+                <en>
+                    <title>Categories</title>
+                    <description>From which categories you want to display news?
+                    Leave this field empty if you want to display the news from all categories.</description>
+                </en>
+            </lang>
+            <values>[230][4000]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>count</id>
+            <lang>
+                <de>
+                    <title>Anzahl</title>
+                    <description>Wie viele Artikel aus der gewählten Kategorie sollen ausgegeben werden</description>
+                </de>
+                <en>
+                    <title>Count</title>
+                    <description>How many articles you want to display?</description>
+                </en>
+            </lang>
+            <values>1</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>link2details</id>
+            <lang>
+                <de>
+                    <title>Verlinkung</title>
+                    <description>Sollen die Nachrichten auf die Darstellungsseite verlinkt werden?</description>
+                </de>
+                <en>
+                    <title>Linking</title>
+                    <description>Do you want to link the news entries to the target_tpl Page?</description>
+                </en>
+            </lang>
+            <values>yes,no</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>recursive</id>
+            <lang>
+                <de>
+                    <title>Rekursiv</title>
+                    <description>Sollen die Nachrichten der Unterordner auch dargestellt werden?</description>
+                </de>
+            </lang>
+            <values>no,yes</values>
+            <valuetype>normal</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>archive</id>
+        <treenode>270</treenode>
+        <main_param>months_back</main_param>
+        <main_content_type>270</main_content_type>
+        <lang>
+            <de>
+                <name>Archiv</name>
+                <description>Zeigt Artikel aus einem definierten Zeitraum</description>
+            </de>
+            <en>
+                <name>Archive</name>
+                <description>Displays articles from a custom date range</description>
+            </en>
+        </lang>
+        <param>
+            <id>months_back</id>
+            <lang>
+                <de>
+                    <title>Monate</title>
+                    <description>Wie viele Monate sollen im Archiv angezeigt werden.</description>
+                </de>
+                <en>
+                    <title>Months</title>
+                    <description>How many months should be displayed in the archive?</description>
+                </en>
+            </lang>
+            <values>12</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>connector</id>
+            <lang>
+                <de>
+                    <title>Name</title>
+                    <description>Geben sie bei der Artikelliste den selben namen beim connector ein um gezielt eine Liste zu steuern.</description>
+                </de>
+                <en>
+                    <title>Name</title>
+                    <description>Geben sie bei der Artikelliste den selben namen beim connector ein um gezielt eine Liste zu steuern.</description>
+                </en>
+            </lang>
+            <values>archivelist</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>viewer</id>
+        <treenode>270</treenode>
+        <treenode>1</treenode>
+        <main_param>id</main_param>
+        <main_content_type>270</main_content_type>
+        <lang>
+            <de>
+                <name>Artikel</name>
+                <description>Darstellung eines Artikels</description>
+            </de>
+            <en>
+                <name>Article</name>
+                <description>Displays an article</description>
+            </en>
+        </lang>
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>ID</title>
+                    <description>Wählen Sie einen Artikel aus</description>
+                </de>
+                <en>
+                    <title>ID</title>
+                    <description>Select an article</description>
+                </en>
+            </lang>
+            <values>[130][270]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>slave</id>
+            <lang>
+                <de>
+                    <title>Slave</title>
+                    <description>Identifier für das Slave-Modul.</description>
+                </de>
+                <en>
+                    <title>Slave</title>
+                    <description>Identifier for the Slave-Module.</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+     </module>
+
+     <module>
+        <id>slave</id>
+        <treenode>270</treenode>
+        <main_param>master</main_param>
+        <main_content_type>270</main_content_type>
+        <lang>
+            <de>
+                <name>Artikel (slave)</name>
+                <description>Darstellung eines Slave-Artikels</description>
+            </de>
+            <en>
+                <name>Article (slave)</name>
+                <description>Displays a slave-article</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+        <param>
+            <id>master</id>
+            <lang>
+                <de>
+                    <title>Master</title>
+                    <description>Identifier für das Master-Modul.</description>
+                </de>
+                <en>
+                    <title>Master</title>
+                    <description>Identifier for the Master-Module.</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+        <param>
+            <id>priority</id>
+            <lang>
+                <de>
+                    <title>Priorität</title>
+                    <description>Priorität für das Slave-Modul.</description>
+                </de>
+                <en>
+                    <title>Priority</title>
+                    <description>Priority for the Slave-Module.</description>
+                </en>
+            </lang>
+            <values>15,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20</values>
+            <valuetype>normal</valuetype>
+        </param>
+     </module>
+
+     <module>
+        <id>guided</id>
+        <treenode>270</treenode>
+        <main_param>id</main_param>
+        <main_content_type>270</main_content_type>
+
+        <lang>
+            <de>
+                <name>Guided Tour (Kapitelnavigator)</name>
+                <description>Darstellung eines Artikels als Guided Tour</description>
+            </de>
+            <en>
+                <name>Guided Tour (Chapter navigator)</name>
+                <description>Displays an article as guided tour</description>
+            </en>
+        </lang>
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>ID</title>
+                    <description>Wählen Sie einen Artikel aus</description>
+                </de>
+                <en>
+                    <title>ID</title>
+                    <description>Select an article</description>
+                </en>
+            </lang>
+            <values>[130][4]</values>
+            <valuetype>popup</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>step_style</id>
+            <lang>
+                <de>
+                    <title>Kapitel Style</title>
+                    <description>Geben sie default_step.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Chapter Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default_step.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+     </module>
+
+    <table>
+        <id>articles</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.articles}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `active` tinyint(1) unsigned NOT NULL default '0',
+              `title` varchar(255) default NULL,
+              `subtitle` varchar(255) default NULL,
+              `autor` varchar(40) default NULL,
+              `introduction` text,
+              `maintext` text,
+              `time_active` tinyint(3) unsigned NOT NULL default '0',
+              `time_start` int(11) unsigned default NULL,
+              `time_end` int(11) unsigned default NULL,
+              `time_r_active` tinyint(3) unsigned NOT NULL default '0',
+              `time_r_monthdays` int(11) unsigned default NULL,
+              `time_r_weekdays` int(11) unsigned default NULL,
+              `time_r_months` int(11) unsigned default NULL,
+              `time_r_start` int(11) unsigned default NULL,
+              `time_r_end` int(11) unsigned default NULL,
+              `creation_date` int(11) unsigned NOT NULL default '0',
+              `creation_user` int(11) unsigned NOT NULL default '0',
+              `mod_date` int(11) unsigned NOT NULL default '0',
+              `mod_user` int(11) unsigned NOT NULL default '0',
+              `image` int(11) unsigned default NULL,
+              `image_version` varchar(11) default NULL,
+              `image_link` varchar(255) default NULL,
+              `image_link_target` varchar(20) default NULL,
+              `image_zoom` tinyint(1) unsigned default '0',
+              `locked` tinyint(1) unsigned default '0',
+              `locked_user` int(11) unsigned default NULL,
+              `locked_date` int(11) unsigned default NULL,
+              `rid` int(11) unsigned default NULL,
+              `lang` char(3) NOT NULL default '',
+              PRIMARY KEY  (`id`,`lang`)
+            )ENGINE=MyISAM ;
+            alter table `{TABLE.articles}` add column `display_time_type` int (1) UNSIGNED  DEFAULT '0' NOT NULL  after `lang`;
+            alter table `{TABLE.articles}` add column `display_time_start` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `display_time_type`;
+            alter table `{TABLE.articles}` add column `display_time_end` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `display_time_start`;
+            alter table `{TABLE.articles}` add column `hide_title` int (1) UNSIGNED  DEFAULT '0' NULL  after `title`;
+            alter table `{TABLE.articles}` add column `date` int (11)  NULL  after `subtitle`;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>articles_tree_rel</id>
+        <mysql>
+         <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.articles_tree_rel}` (
+              `node_id` int(11) unsigned NOT NULL default '0',
+              `article_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`node_id`,`article_id`)
+            )ENGINE=MyISAM ;
+
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>articles_tree</id>
+        <mysql>
+         <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.articles_tree}` (
+              `id` int(11) NOT NULL auto_increment,
+              `l` int(11) NOT NULL default '0',
+              `r` int(11) NOT NULL default '0',
+              `pid` int(11) NOT NULL default '0',
+              `level` int(11) NOT NULL default '0',
+              `tree_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`id`),
+              KEY `l` (`l`),
+              KEY `r` (`r`),
+              KEY `level` (`level`),
+              KEY `pid` (`pid`)
+            )ENGINE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>articles_tree_details</id>
+        <mysql>
+         <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.articles_tree_details}` (
+              `node_id` int(11) NOT NULL auto_increment,
+              `lang` char(3) NOT NULL default '',
+              `creation_date` int(11) NOT NULL default '0',
+              `creation_user` int(11) NOT NULL default '0',
+              `mod_date` int(11) NOT NULL default '0',
+              `mod_user` int(11) NOT NULL default '0',
+              `description` varchar(255) NOT NULL default '',
+              `title` varchar(255) NOT NULL default '',
+              `active` tinyint(4) NOT NULL default '0',
+              `download_count` int(11) unsigned NOT NULL default '0',
+              `md5` varchar(32) NOT NULL default '',
+              `isFolder` tinyint(1) unsigned NOT NULL default '1',
+              `public` tinyint(1) unsigned default '0',
+              PRIMARY KEY  (`node_id`,`lang`)
+            )ENGINE=MyISAM ;
+
+            ALTER TABLE `{TABLE.articles_tree_details}` ADD `image` int(11);
+            ALTER TABLE `{TABLE.articles_tree_details}` ADD `image_version` int(11);
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>articles_chapters</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.articles_chapters}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `active` tinyint(1) unsigned NOT NULL default '0',
+              `title` varchar(255) default NULL,
+              `subtitle` varchar(255) default NULL,
+              `maintext` text,
+              `level` tinyint(3) unsigned NOT NULL default '1',
+              `image` int(11) unsigned default NULL,
+              `image_version` varchar(11) default NULL,
+              `image_link` varchar(255) default NULL,
+              `image_link_target` varchar(20) default NULL,
+              `image_zoom` tinyint(1) unsigned default '0',
+              `rid` int(11) unsigned default NULL,
+              `lang` char(3) NOT NULL default '',
+              `layout` varchar(255) default NULL,
+              PRIMARY KEY  (`id`,`level`,`lang`)
+            )ENGINE=MyISAM ;
+        ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>articles_v</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.articles_v}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `active` tinyint(1) unsigned NOT NULL default '0',
+              `title` varchar(255) default NULL,
+              `subtitle` varchar(255) default NULL,
+              `autor` varchar(40) default NULL,
+              `introduction` text,
+              `maintext` text,
+              `time_active` tinyint(3) unsigned NOT NULL default '0',
+              `time_start` int(11) unsigned default NULL,
+              `time_end` int(11) unsigned default NULL,
+              `time_r_active` tinyint(3) unsigned NOT NULL default '0',
+              `time_r_monthdays` int(11) unsigned default NULL,
+              `time_r_weekdays` int(11) unsigned default NULL,
+              `time_r_months` int(11) unsigned default NULL,
+              `time_r_start` int(11) unsigned default NULL,
+              `time_r_end` int(11) unsigned default NULL,
+              `creation_date` int(11) unsigned NOT NULL default '0',
+              `creation_user` int(11) unsigned NOT NULL default '0',
+              `mod_date` int(11) unsigned NOT NULL default '0',
+              `mod_user` int(11) unsigned NOT NULL default '0',
+              `image` int(11) unsigned default NULL,
+              `image_version` varchar(11) default NULL,
+              `image_link` varchar(255) default NULL,
+              `image_link_target` varchar(20) default NULL,
+              `image_zoom` tinyint(1) unsigned default '0',
+              `locked` tinyint(1) unsigned default '0',
+              `locked_user` int(11) unsigned default NULL,
+              `locked_date` int(11) unsigned default NULL,
+              `rid` int(11) unsigned NOT NULL auto_increment,
+              `published` tinyint(1) unsigned NOT NULL default '0',
+              `latest` tinyint(1) unsigned NOT NULL default '0',
+              `lang` char(3) NOT NULL default '',
+              PRIMARY KEY  (`id`,`rid`,`lang`)
+            )ENGINE=MyISAM ;
+            alter table `{TABLE.articles_v}` add column `display_time_type` int (1) UNSIGNED  DEFAULT '0' NOT NULL  after `lang`;
+            alter table `{TABLE.articles_v}` add column  `display_time_start` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `display_time_type`;
+            alter table `{TABLE.articles_v}` add column  `display_time_end` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `display_time_start`;
+            alter table `{TABLE.articles_v}` add column `hide_title` int (1) UNSIGNED  DEFAULT '0' NULL  after `title`;
+            alter table `{TABLE.articles_v}` add column `date` int (11)  NULL  after `subtitle`;
+        ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>articles_chapters_v</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.articles_chapters_v}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `active` tinyint(1) unsigned NOT NULL default '0',
+              `title` varchar(255) default NULL,
+              `subtitle` varchar(255) default NULL,
+              `maintext` text,
+              `level` tinyint(3) unsigned NOT NULL default '1',
+              `image` int(11) unsigned default NULL,
+              `image_version` varchar(11) default NULL,
+              `image_link` varchar(255) default NULL,
+              `image_link_target` varchar(20) default NULL,
+              `image_zoom` tinyint(1) unsigned default '0',
+              `rid` int(11) unsigned NOT NULL default '0',
+              `published` tinyint(1) unsigned NOT NULL default '0',
+              `lang` char(3) NOT NULL default '',
+              `layout` varchar(255) default NULL,
+              PRIMARY KEY  (`id`,`level`,`rid`,`lang`)
+            )ENGINE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+
+    <openfile>scripts/tabs.js</openfile>
+    <openfile>xt/includes/classes/xt.class.php</openfile>
+    <openfile>styles/live/article.css</openfile>
+
+    <file>scripts/base.js</file>
+    <file>xt/templates/default/includes/widgets/relations.tpl</file>
+    <excludefile>xt/templates/default/ch.iframe.snode.article/viewer/blogstyle.tpl</excludefile>
+    <file>xt/includes/template/ch.iframe.snode.article.inc.php</file>
+
+    <folder>images/icons</folder>
+    <folder>images/emoticons</folder>
+    <folder>images/admin/tipps/ch.iframe.snode.articles</folder>
+
+
+<changelog>
+    <rev>4435 Added xt/includes/template/ch.iframe.snode.article.inc.php</rev>
+    <rev>2495 imagelinks</rev>
+    <rev>2436 added time control</rev>
+    <rev>1600 added guided tour module</rev>
+    <rev>1545 article list ported from newslist</rev>
+    <rev>1521 edit buttons in live modules removed</rev>
+    <rev>1246 delete chapters reordering repaired</rev>
+</changelog>
+
+</package>

@@ -1,0 +1,3 @@
+Gibt regionen anhand eines landes zurück
+style html.tpl gibt ein dropdown zurück
+style default.tpl gibt ein json objekt zurück

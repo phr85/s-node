@@ -1,0 +1,112 @@
+@import url(/styles/live/liveadmin.css);
+
+/* Toolbox */
+
+#toolboxswitcher2 {
+    display: inline;
+    position: absolute;
+    cursor:hand;
+    cursor:pointer;
+    top: 0px;
+    right:0px;
+    padding: 0px;
+    margin: 0px;
+    width: 84px;
+    background-image: url(/images/admin/toolbox_gradient.gif);
+    z-index:999;
+}
+#toolboxswitcher2_end {
+    display: inline;
+    position: absolute;
+    cursor:hand;
+    cursor:pointer;
+    top: 484px;
+    right:0px;
+    padding: 0px;
+    margin: 0px;
+    width: 84px;
+    background-image: url(/images/admin/end.gif);
+    z-index:999;
+}
+
+.toolboxswitcherbuttons2 {
+    padding: 9px 3px 0px 5px;
+    margin: 0px;
+    width: 71px;
+    height: 21px;
+    background-image: url(/images/admin/button.gif);
+    background-repeat:no-repeat;
+    font-size: 10px;
+    float:right;
+}
+
+.toolboxswitcherbuttons2_live {
+    padding: 9px 3px 0px 5px;
+    margin: 0px;
+    width: 71px;
+    height: 21px;
+    background-image: url(/images/admin/live_edit.gif);
+    background-repeat:no-repeat;
+    font-size: 10px;
+    float:right;
+}
+
+.toolboxswitcherlogo2 {
+    padding: 9px 3px 0px 5px;
+    margin: 0px;
+    width: 71px;
+    height: 30px;
+    background-image: url(/images/admin/toolbox_logo.gif);
+    background-repeat:no-repeat;
+    font-size: 10px;
+    float:right;
+}
+
+#toolbox2 {
+    position: absolute;
+    top: 174px;
+    right: 0px;
+    background-color: white;
+    border: 1px solid #95A6BD;
+    z-index:999;
+    min-height: 332px;
+    width:370px;
+    font-family: Tahoma, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+#toolbox2 a {
+	text-decoration: none;
+	color: #3C69C0;
+}
+
+#toolbox2 a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+#toolbox2 TD, #toolbox2 INPUT, #toolbox2 TEXTAREA, #toolbox2 SELECT { font-family: Tahoma, Helvetica, sans-serif; font-size: 11px; }
+
+#toolbox2 #title {
+    padding: 5px;
+    color: white;
+    background-color: #95A6BD;
+    -moz-opacity: 0.7; filter: alpha(0.7);
+}
+
+#toolbox2 #buttons {
+    padding: 5px;
+    color: black;
+    -moz-opacity: 0.7; filter: alpha(0.7);
+}
+
+#toolbox2 #buttons input {
+    color: black;
+}
+
+#toolbox2 .info {
+    padding: 5px;
+    color: black;
+    border-bottom: 1px solid #95A6BD;
+    -moz-opacity: 0.7; filter: alpha(0.7);
+}

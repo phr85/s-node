@@ -1,0 +1,47 @@
+1. Installation
+============
+
+Die Installation des Paketes kann per Online-Update durchgeführt werden. Alle notwendigen Dateien werden mitgeliefert.
+Zusätzlich muss ch.iframe.snode.permissions ch.iframe.snode.securitycenter und ch.iframe.snode.nodepermissions installiert werden, um in der Navigation 
+sowie in der Administration die nötige Strukturierung der Rechte vor zu nehmen. Da die Adressen der Kunden und Mitarbeiter mittels des Adressmanagers verwaltet
+werden muss sichergestellt werden, dass das Plugin ch.iframe.snode.addressmanager installiert ist.
+
+2. Konfiguration der Gruppen & Rollen
+===================================
+Erstellen Sie eine Gruppe, welche alle Kunden beinhalten soll. Diese Gruppe wird benötigt um den Zugriff per Navigation zu steuern. Nur Benutzer
+der Gruppe Kunden sollen auf das Ticket-System zugreifen können.
+
+Für die Mitarbeiter muss es eine Rolle geben. Standardmässig ist dies die Rolle "Superusers" mit der ID 1. Die Rolle wird mit der Systeminstallation
+automatisch erstellt. Wenn Sie eine andere Rolle für ihre Mitarbeiter angeben wollen, ändern Sie "XT::addConfig('admin_role', 1);" in der Datei 
+xt/plugins/ch.iframe.snode.tickets/includes/config.inc.php.
+
+3. Erfassen eines neuen Mitarbeiters
+=================================
+Erstellen Sie eine neue Adresse im Adressmanager. Sobald Sie einen geschäftliche E-Mailadresse angegeben haben, erscheint ein Knopf, mit dem man die Adresse als Benutzer
+registrieren kann. Bei diesem Vorgang wird ein User mit Username gleich der E-Mailadresse erstellt und diesem ein Passwort zugestellt. 
+
+Der neue Benutzer dieses Mitarbeiters muss jetzt nur noch Administrationsrechte für die Administrationsfläche bekommen und der Rolle Zugewiesen werden, in welcher alle 
+Mitarbeiter erfasste werden (Siehe 2.).
+
+4. Erfassen eines Kunden
+=====================
+Erstellen Sie eine neue Adresse im Adressmanager. Sobald Sie einen geschäftliche E-Mailadresse angegeben haben, erscheint ein Knopf, mit dem man die Adresse als Benutzer
+registrieren kann. Bei diesem Vorgang wird ein User mit Username gleich der E-Mailadresse erstellt und diesem ein Passwort zugestellt. 
+
+Der neue Benutzer dieses Kunden muss jetzt nur noch der Gruppe oder Rolle Zugewiesen werden, in welcher alle Kunden erfasste werden (Siehe 2.).
+
+5. Konfiguration des öffentlichen Interfaces
+=============================================
+In der Navigation wird nun eine neue Seite erfasst. In diese Seite wird via Assistent das Client-Center (Tickets -> Ticket Client Center) hinzugefügt.
+Die Rechte zu dieser Seite sind entprechend so zu setzen, dass nur angemoldene Benutzer der Kundengruppe diese Seite sehen können.
+Zu beachten ist, dass der Benutzer mit einer Adresse aus dem Adressmanager vernküpft ist, ansonsten kommt eine Fehlermeldung, die besagt, dass keine
+Daten gefunden wurden.
+
+Das Design des Client Center ist in einem separaten CSS definiert (styles/live/ticketcenter.css). Dies muss im CSS des Themes noch importiert werden 
+via "@import url(/styles/live/ticketcenter.css);".
+
+Damit Kunden neue Tickets erfassen können kann wiederum ein Seite erstellt werden, die nur für die Kundengruppe ersichtlich ist. Als Inhalt kann via Assistent das Modul
+"Tickets -> Ticket hinzufügen" hinzugefügt werden. Wenn eine Antwortseite nach dem Hinzufügen gewünscht wird, kann dies  realisiert werden, in dem der 
+Parameter "Ziel TPL" definiert wird. Wenn kein Fehler auftritt wird der Kunde nach dem Hinzufügen dorthin weiter geleitet.
+
+Optional kann eine automatische Registration integriert werden mittels des Registrations-Modules.

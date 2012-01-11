@@ -1,0 +1,6 @@
+Um den katalog mit relations auszurüsten einfach nur 
+<a href="javascript:popup('/index.php?TPL=557&amp;ctype={$BASEID}&amp;cid={$cid}&amp;ctitle={$ctitle}&amp;conf[table_tree]=catalog_tree&amp;conf[table_nodes]=catalog_tree_nodes&amp;conf[itemrelfieldname]=article_id&amp;conf[noderelfieldname]=node_id&amp;conf[table_items]=catalog_articles_details&amp;conf[table_items_relation]=catalog_tree_articles&amp;conf[tree_ctype]=1201&amp;conf[item_ctype]=1200',370,300);"><img src="{$XT_IMAGES}icons/package.png" {"catalog"|alttag} /></a>
+in /templates/widgets/relations.tpl eintragen.
+
+
+

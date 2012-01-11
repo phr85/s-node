@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>7000</baseid>
+    <id>ch.iframe.snode.gmap</id>
+    <version>$Rev: 4666 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Google Maps</name>
+            <description>Erstellen und Verwalten von Google Maps</description>
+        </de>
+        <en>
+            <name>Google Maps</name>
+            <description>Create and manage Googe Maps</description>
+        </en>
+    </lang>
+    <contenttype>
+        <id>7000</id>
+        <title>Google Map</title>
+        <open_url></open_url>
+        <content_table>gmap</content_table>
+        <title_field>title</title_field>
+        <icon>gmaplogo.gif</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    <page>
+        <parentnode>101</parentnode>
+        <id>7000</id>
+        <lang>
+            <de>
+                <title>Google Maps</title>
+                <file>7000.tpl</file>
+            </de>
+            <en>
+                <title>Google Maps</title>
+                <file>7000.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <contenttree>
+        <id>7000</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Google Maps</title>
+                <description>Module für Google Maps</description>
+            </de>
+            <en>
+                <title>Google Maps</title>
+                <description>Modules for Google Maps</description>
+            </en>
+        </lang>
+    </contenttree>
+    <module>
+        <id>viewer</id>
+        <treenode>7000</treenode>
+        <treenode>1</treenode>
+        <main_param>id</main_param>
+        <main_content_type>7000</main_content_type>
+
+        <lang>
+            <de>
+                <name>Google Maps</name>
+                <description>Google Map darstellen</description>
+            </de>
+            <en>
+                <name>Google Maps</name>
+                <description>Display a Google Map</description>
+            </en>
+        </lang>
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>Google Map</title>
+                    <description>Wählen Sie eine Google Map aus.</description>
+                </de>
+                <en>
+                    <title>Google Map</title>
+                    <description>Select a Google Map.</description>
+                </en>
+            </lang>
+            <values>[SELECT id,title FROM {PREFIX}gmap WHERE active=1 ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+          <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard Style zu verwenden, oder Ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl, otherwise use default.tpl.</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <table>
+        <id>gmap</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.gmap}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `title` varchar(255) NOT NULL default '',
+            `active` tinyint(1) unsigned NOT NULL default '1',
+            `creation_date` int(11) unsigned NOT NULL default '0',
+            `creation_user` int(11) unsigned NOT NULL default '0',
+            `description` varchar(255) default NULL,
+            `lang` varchar(255) NOT NULL default '',
+            `maplatlong` varchar(255) default NULL,
+  			`mapzoom` int(11) default NULL,
+			`markerlatlong` varchar(255) default NULL,
+             PRIMARY KEY  (`id`));
+
+            ALTER TABLE `{TABLE.gmap}` ,add column `maplatlong` varchar(255) default NULL after `lang`;
+            ALTER TABLE `{TABLE.gmap}` ,add column `mapzoom` int(11) default NULL after `maplatlong`;
+            ALTER TABLE `{TABLE.gmap}` ,add column `markerlatlong` varchar(255) default NULL after `mapzoom`;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>gmap_markers</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.gmap_details}` (
+            `id` int(11) unsigned NOT NULL,
+            `mapid` int(11) unsigned NOT NULL,
+            `name` varchar(255) NOT NULL default '',
+            `active` tinyint(1) unsigned NOT NULL default '1',
+            `creation_date` int(11) unsigned NOT NULL default '0',
+            `creation_user` int(11) unsigned NOT NULL default '0',
+            `description` varchar(255) default NULL,
+            `lang` varchar(255) NOT NULL default '',
+            `markerlatlong` varchar(255) NOT NULL default '',
+             PRIMARY KEY  (`id`));
+            ]]>
+        </mysql>
+    </table>
+
+  <file>images/icons/gmaplogo.gif</file>
+  <file>xt/templates/default/includes/admin/h_pane_2_gmap.tpl</file>
+  <file>xt/templates/default/includes/header/header_admin_empty_gmap.tpl</file>
+  <changelog>
+      <rev>3200 initial version</rev>
+  </changelog>
+</package>

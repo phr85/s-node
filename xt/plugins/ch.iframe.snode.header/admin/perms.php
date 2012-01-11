@@ -1,0 +1,1 @@
+<?php  XT::log('C:\svn\xt\public_html/../plugins/ch.iframe.snode.header/admin/perms.php autocreated',__FILE__,__LINE__,XT_WARNING); ?>

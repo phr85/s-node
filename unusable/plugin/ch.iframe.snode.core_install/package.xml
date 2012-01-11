@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>1</baseid>
+    <id>ch.iframe.snode.core_install</id>
+    <version>$Rev: 1533 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Systemkern</name>
+            <description>Erstinstallation</description>
+        </de>
+        <en>
+            <name>system core</name>
+            <description>First installation</description>
+        </en>
+    </lang>
+    
+    <table>
+        <id>content_types</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.content_types}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `title` varchar(255) default NULL,
+              `open_url` varchar(255) default NULL,
+              `content_table` varchar(255) NOT NULL default '',
+              `title_field` varchar(255) NOT NULL default '',
+              `icon` varchar(255) NOT NULL default '',
+              `id_field` varchar(255) NOT NULL default '',
+              PRIMARY KEY  (`id`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>group_roles</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.group_roles}` (
+              `group_id` int(11) unsigned NOT NULL default '0',
+              `role_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`role_id`,`group_id`)
+            ) TYPE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>groups</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.groups}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `title` varchar(255) default NULL,
+              `maintainer` int(11) unsigned default NULL,
+              `description` varchar(255) default NULL,
+              `creation_date` int(11) unsigned default NULL,
+              `creation_user` int(11) unsigned default NULL,
+              `mod_date` int(11) unsigned default NULL,
+              `mod_user` int(11) unsigned default NULL,
+              `active` tinyint(1) unsigned default '0',
+              PRIMARY KEY  (`id`)
+            ) TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>i18n_untranslated</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.i18n_untranslated}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `word` varchar(255) default NULL,
+              `lang` char(3) default NULL,
+              `plugin` varchar(255) default NULL,
+              `creation_date` int(11) unsigned default NULL,
+              PRIMARY KEY  (`id`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>locks</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.locks}` (
+              `content_type` int(11) unsigned NOT NULL default '0',
+              `content_id` int(11) unsigned NOT NULL default '0',
+              `user_id` int(11) unsigned default NULL,
+              `lock_date` int(11) unsigned default NULL,
+              `lang` char(3) NOT NULL default '',
+              PRIMARY KEY  (`content_type`,`content_id`,`lang`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>navigation</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.navigation}` (
+            `id` int(11) NOT NULL auto_increment,
+            `l` int(11) NOT NULL default '0',
+            `r` int(11) NOT NULL default '0',
+            `pid` int(11) NOT NULL default '0',
+            `level` int(11) NOT NULL default '0',
+            `title` varchar(255) NOT NULL default '',
+            `isProfile` int(1) NOT NULL default '0',
+            `tree_id` int(11) unsigned NOT NULL default '1',
+            `active` tinyint(1) unsigned default '0',
+            PRIMARY KEY  (`id`),
+            KEY `l` (`l`),
+            KEY `r` (`r`),
+            KEY `pid` (`pid`),
+            KEY `level` (`level`)
+            ) TYPE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>navigation_contents</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.navigation_contents}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `node_id` int(11) unsigned NOT NULL default '0',
+              `package` int(11) unsigned NOT NULL default '0',
+              `module` varchar(50) NOT NULL default '0',
+              `position` int(11) unsigned NOT NULL default '0',
+              `params` varchar(255) default NULL,
+              `active` int(1) unsigned NOT NULL default '1',
+              PRIMARY KEY  (`id`)
+            ) TYPE=MyISAM;
+            
+            ALTER TABLE `{TABLE.navigation_contents}` ADD `main_value` VARCHAR(255);
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>navigation_details</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.navigation_details}` (
+              `node_id` int(11) NOT NULL auto_increment,
+              `lang` char(3) NOT NULL default '',
+              `creation_date` int(11) NOT NULL default '0',
+              `creation_user` int(11) NOT NULL default '0',
+              `mod_date` int(11) NOT NULL default '0',
+              `mod_user` int(11) NOT NULL default '0',
+              `description` varchar(255) NOT NULL default '',
+              `title` varchar(255) NOT NULL default '',
+              `tpl_file` varchar(40) NOT NULL default '',
+              `ext_link` varchar(255) NOT NULL default '',
+              `target` varchar(20) NOT NULL default '',
+              `active` tinyint(4) NOT NULL default '0',
+              `live` tinyint(1) unsigned default '0',
+              `public` tinyint(1) default '0',
+              `cache` int(11) unsigned default '0',
+              `keywords` tinytext,
+              `copyright` varchar(255) default NULL,
+              `author` varchar(255) default NULL,
+              `halflife` int(11) unsigned default '0',
+              `visitorexcept` int(11) unsigned default '0',
+              `visitorexcept_mode` tinyint(1) unsigned default '0',
+              `article_id` int(11) unsigned default '0',
+              `charset` varchar(255) default NULL,
+              `c_lang` varchar(10) default NULL,
+              `article_layout` varchar(255) default NULL,
+              `visible` tinyint(1) unsigned default '1',
+              `image` int(11) unsigned default NULL,
+              `image_version` int(11) unsigned default NULL,
+              `show_in_overview` tinyint(1) unsigned default '1',
+              `header` varchar(255) default NULL,
+              `footer` varchar(255) default NULL,
+              `css` varchar(255) default NULL,
+              `nav_image` int(11) unsigned default NULL,
+              `nav_image_rollover` int(11) unsigned default NULL,
+              `nav_image_active` int(11) unsigned default NULL,
+              `nav_image_active_rollover` int(11) unsigned default NULL,
+              `nav_image_version` tinyint(3) default '1',
+              `nav_image_rollover_version` tinyint(3) unsigned default '1',
+              `nav_image_active_version` tinyint(3) unsigned default '1',
+              `nav_image_active_rollover_version` tinyint(3) unsigned default '1',
+              `nav_image_generated_enabled` tinyint(1) unsigned default '0',
+              `nav_image_active_generated_enabled` tinyint(1) unsigned default '0',
+              `nav_image_rollover_generated_enabled` tinyint(1) unsigned default '0',
+              `nav_image_active_rollover_generated_enabled` tinyint(1) unsigned default '0',
+              `nav_image_generated_params` varchar(255) default NULL,
+              `nav_image_active_generated_params` varchar(255) default NULL,
+              `nav_image_rollover_generated_params` varchar(255) default NULL,
+              `nav_image_active_rollover_generated_params` varchar(255) default NULL,
+              PRIMARY KEY  (`node_id`,`lang`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>node_perms</id>
+        <mysql>
+         <![CDATA[
+            CREATE TABLE `{TABLE.node_perms}` (
+              `base_id` int(11) unsigned NOT NULL default '0',
+              `node_id` int(11) unsigned NOT NULL default '0',
+              `principal_id` int(11) unsigned NOT NULL default '0',
+              `principal_type` tinyint(1) unsigned NOT NULL default '0',
+              `tree` varchar(50) NOT NULL default '',
+              `perms` int(11) unsigned default '0',
+              `lang` char(3) NOT NULL default '',
+              PRIMARY KEY  (`base_id`,`node_id`,`tree`,`lang`,`principal_id`,`principal_type`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>perms</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.perms}` (
+              `base_id` int(11) unsigned NOT NULL default '0',
+              `principal_id` int(11) unsigned NOT NULL default '0',
+              `perms` int(11) unsigned NOT NULL default '0',
+              `principal_type` tinyint(1) NOT NULL default '1',
+              `lang` char(3) NOT NULL default '',
+              PRIMARY KEY  (`base_id`,`principal_id`,`lang`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>plugins_contents</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.plugins_contents}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `l` int(11) unsigned NOT NULL default '0',
+              `r` int(11) unsigned NOT NULL default '0',
+              `level` int(11) unsigned NOT NULL default '0',
+              `pid` int(11) unsigned NOT NULL default '0',
+              `tree_id` int(10) unsigned NOT NULL default '1',
+              PRIMARY KEY  (`id`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>plugins_contents_details</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.plugins_contents_details}` (
+              `node_id` int(11) NOT NULL default '0',
+              `lang` char(3) NOT NULL default '',
+              `description` varchar(255) NOT NULL default '',
+              `title` varchar(255) NOT NULL default '',
+              PRIMARY KEY  (`node_id`,`lang`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>plugins_contents_rel</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.plugins_contents_rel}` (
+              `node_id` int(11) unsigned NOT NULL default '0',
+              `package` int(10) unsigned NOT NULL default '0',
+              `module` varchar(50) NOT NULL default '',
+              PRIMARY KEY  (`node_id`,`module`,`package`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>plugins_modules</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.plugins_modules}` (
+              `package` int(10) unsigned NOT NULL default '0',
+              `module` varchar(255) NOT NULL default '',
+              `lang` char(2) NOT NULL default 'de',
+              `title` varchar(50) default NULL,
+              `description` tinytext,
+              PRIMARY KEY  (`module`,`package`,`lang`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>plugins_packages</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.plugins_packages}` (
+              `id` int(10) unsigned NOT NULL auto_increment,
+              `package` varchar(255) NOT NULL default '',
+              `version` varchar(20) default '0.000',
+              `provider` varchar(50) default NULL,
+              PRIMARY KEY  (`id`),
+              UNIQUE KEY `package` (`package`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>plugins_packages_details</id>
+        <mysql>
+            <![CDATA[
+            CREATE TABLE `{TABLE.plugins_packages_details}` (
+              `id` int(10) unsigned NOT NULL default '0',
+              `lang` char(2) NOT NULL default '',
+              `title` varchar(50) default NULL,
+              `description` tinytext,
+              PRIMARY KEY  (`id`,`lang`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>plugins_params</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.plugins_params}` (
+              `package` int(11) unsigned NOT NULL default '0',
+              `module` varchar(20) NOT NULL default '0',
+              `param_name` varchar(20) NOT NULL default '',
+              `allowed_values` varchar(255) NOT NULL default '',
+              `value_type` tinyint(4) NOT NULL default '0',
+              `image` varchar(255) default NULL,
+              PRIMARY KEY  (`param_name`,`package`,`module`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>plugins_params_details</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.plugins_params_details}` (
+              `package` int(11) unsigned NOT NULL default '0',
+              `module` varchar(20) NOT NULL default '0',
+              `param_name` varchar(20) NOT NULL default '',
+              `lang` char(2) NOT NULL default '',
+              `title` varchar(255) NOT NULL default '',
+              `description` text,
+              PRIMARY KEY  (`param_name`,`package`,`module`,`lang`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>plugins_updates</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.plugins_updates}` (
+              `id` int(10) unsigned NOT NULL auto_increment,
+              `package` varchar(255) default NULL,
+              `module` varchar(255) default NULL,
+              `version` float NOT NULL default '0',
+              `reqversion` float NOT NULL default '0',
+              PRIMARY KEY  (`id`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>relations</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.relations}` (
+              `content_id` int(11) unsigned NOT NULL default '0',
+              `content_type` int(11) unsigned NOT NULL default '0',
+              `target_content_type` int(11) unsigned NOT NULL default '0',
+              `target_content_id` int(11) unsigned NOT NULL default '0'
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>roles</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.roles}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `title` varchar(255) default NULL,
+              `maintainer` int(11) unsigned default NULL,
+              `description` varchar(255) default NULL,
+              `creation_date` int(11) unsigned default NULL,
+              `creation_user` int(11) unsigned default NULL,
+              `mod_date` int(11) unsigned default NULL,
+              `mod_user` int(11) unsigned default NULL,
+              `active` tinyint(1) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`id`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>security_pools</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.security_pools}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `l` int(11) unsigned default NULL,
+              `r` int(11) unsigned default NULL,
+              `pid` int(11) unsigned default NULL,
+              `level` int(11) unsigned default NULL,
+              `tree_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`id`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>security_pools_details</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.security_pools_details}` (
+              `node_id` int(11) unsigned default NULL,
+              `title` varchar(255) default NULL,
+              `active` tinyint(1) unsigned default '0',
+              `lang` char(3) default 'sys',
+              `public` tinyint(1) unsigned NOT NULL default '0'
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>security_pools_rel</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.security_pools_rel}` (
+              `node_id` int(11) unsigned default NULL,
+              `principal_id` int(11) unsigned default NULL,
+              `principal_type` tinyint(3) unsigned default '0'
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>tracking</id>
+        <mysql>
+         <![CDATA[
+            CREATE TABLE `{TABLE.tracking}` (
+              `user_id` int(11) unsigned NOT NULL default '0',
+              `session_id` varchar(40) NOT NULL default '',
+              `page_url` varchar(255) NOT NULL default '',
+              `call_time` int(11) NOT NULL default '0',
+              `agent` varchar(255) NOT NULL default '',
+              `host` varchar(255) NOT NULL default '',
+              `addr` varchar(50) NOT NULL default '',
+              `uri` varchar(255) NOT NULL default '',
+              `tpl` int(11) NOT NULL default '0',
+              `os` varchar(255) NOT NULL default '',
+              `referer` varchar(255) NOT NULL default '',
+              PRIMARY KEY  (`call_time`,`session_id`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>tracking_archives</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.tracking_archives}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `start_date` int(11) unsigned default NULL,
+              `end_date` int(11) unsigned default NULL,
+              `cached` tinyint(1) unsigned default '0',
+              PRIMARY KEY  (`id`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>tree</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.tree}` (
+              `id` int(11) NOT NULL auto_increment,
+              `l` int(11) NOT NULL default '0',
+              `r` int(11) NOT NULL default '0',
+              `pid` int(11) NOT NULL default '0',
+              `level` int(11) NOT NULL default '0',
+              `tree_id` int(11) NOT NULL default '0',
+              `active` int(1) NOT NULL default '0',
+              PRIMARY KEY  (`id`),
+              KEY `l` (`l`),
+              KEY `r` (`r`),
+              KEY `pid` (`pid`),
+              KEY `level` (`level`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>units</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.units}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `standard` varchar(20) default NULL,
+              PRIMARY KEY  (`id`),
+              UNIQUE KEY `id` (`id`),
+              KEY `id_2` (`id`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>units_details</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.units_details}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `lang` varchar(5) NOT NULL default '',
+              `short` varchar(10) NOT NULL default '',
+              `full` varchar(100) NOT NULL default '',
+              PRIMARY KEY  (`id`,`lang`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>units_relations</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.units_relations}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `relation_id` int(10) unsigned NOT NULL default '0',
+              `factor` float NOT NULL default '1',
+              PRIMARY KEY  (`id`,`relation_id`),
+              UNIQUE KEY `id` (`id`,`relation_id`),
+              KEY `id_2` (`id`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>updates</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.updates}` (
+              `id` int(10) unsigned NOT NULL auto_increment,
+              `package_id` int(11) default NULL,
+              `module_id` int(11) default NULL,
+              `version` int(11) NOT NULL default '0',
+              `reqversion` int(11) NOT NULL default '0',
+              PRIMARY KEY  (`id`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>user</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.user}` (
+              `id` int(11) NOT NULL auto_increment,
+              `username` varchar(40) default NULL,
+              `password` varchar(40) NOT NULL default '',
+              `tpl_read` int(11) NOT NULL default '0',
+              `tpl_write` int(11) NOT NULL default '0',
+              `tpl_edit` int(11) NOT NULL default '0',
+              `tpl_delete` int(11) NOT NULL default '0',
+              `plugin_read` int(11) NOT NULL default '0',
+              `plugin_write` int(11) NOT NULL default '0',
+              `plugin_edit` int(11) NOT NULL default '0',
+              `plugin_delete` int(11) NOT NULL default '0',
+              `creation_date` int(11) NOT NULL default '0',
+              `creation_user` int(11) NOT NULL default '0',
+              `mod_date` int(11) NOT NULL default '0',
+              `mod_user` int(11) NOT NULL default '0',
+              `last_login_date` int(11) NOT NULL default '0',
+              `firstName` varchar(40) NOT NULL default '',
+              `lastName` varchar(40) NOT NULL default '',
+              `active` int(1) NOT NULL default '0',
+              `street` varchar(255) NOT NULL default '',
+              `plz` varchar(5) NOT NULL default '',
+              `city` varchar(255) NOT NULL default '',
+              `email` varchar(255) NOT NULL default '',
+              `tel` varchar(20) NOT NULL default '',
+              `facsimile` varchar(20) NOT NULL default '',
+              `lang` char(3) NOT NULL default '',
+              `date_short` varchar(40) NOT NULL default '',
+              `date_long` varchar(40) NOT NULL default '',
+              `description` text NOT NULL,
+              `image` int(11) unsigned default NULL,
+              `image_version` char(3) default NULL,
+              PRIMARY KEY  (`id`),
+              UNIQUE KEY `username` (`username`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>user_groups</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.user_groups}` (
+              `user_id` int(11) unsigned NOT NULL default '0',
+              `group_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`group_id`,`user_id`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>user_perms</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.user_perms}` (
+              `node_id` int(11) NOT NULL default '0',
+              `user_id` int(11) NOT NULL default '0',
+              `rights` int(11) NOT NULL default '0',
+              `lang` char(3) NOT NULL default '',
+              PRIMARY KEY  (`node_id`,`user_id`,`lang`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+         <id>countries</id>
+         <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.countries}` (
+              `country` char(2) NOT NULL default '0',
+              `name` varchar(50) default NULL,
+              `continent` tinyint(3) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`country`)
+            )TYPE=MyISAM ;
+            ]]>
+         </mysql>
+    </table>
+    
+    <table>
+        <id>user_roles</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.user_roles}` (
+              `user_id` int(11) unsigned NOT NULL default '0',
+              `role_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`role_id`,`user_id`)
+            )TYPE=MyISAM ;
+            ]]>
+        </mysql>
+    </table>
+    
+    <folder>images</folder>
+    <todo_excludefolder>images/admin/tipps</todo_excludefolder>
+    <todo_createfolder>images/admin/tipps</todo_createfolder>
+    <folder>scripts</folder>
+    <folder>styles</folder>
+    <folder>tools</folder>
+    <folder>xt/cache</folder>
+    <folder>xt/includes</folder>
+    <excludefile>xt/includes/config.inc.php</excludefile>
+    <createfolder>xt/tmp</createfolder>
+    <folder>xt/templates/default/includes</folder>
+    <createfolder>xt/templates_c</createfolder>
+    <createfolder>xt/data/installer/repository</createfolder>
+    <createfolder>xt/data/files</createfolder>
+    <folder>admin</folder>        
+    <file>download.php</file>
+    <file>.htaccess</file>
+    <file>xt/.htaccess</file>
+    <file>index.php</file>
+    
+    <changelog>
+        <rev>1570 this file created</rev>
+    </changelog>
+</package>

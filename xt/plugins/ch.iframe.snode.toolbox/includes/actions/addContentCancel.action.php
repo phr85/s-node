@@ -1,0 +1,3 @@
+<?php
+XT::setSessionValue('ctrl',"");
+?>

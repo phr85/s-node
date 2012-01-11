@@ -1,0 +1,28 @@
+= ch.iframe.snode.guestbook (list) =
+
+== Funktion ==
+Listet alle Gästebucheinträge die aktiviert wurde auf.
+
+== Möglicher Einsatzbereich ==
+Gästebuch
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+*xt1500_list array Alle Daten.
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.guestbook" module="list" style="default.tpl"}
+
+== Todo ==

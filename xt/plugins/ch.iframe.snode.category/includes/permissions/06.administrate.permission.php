@@ -1,0 +1,31 @@
+<?php
+$GLOBALS['plugin']->addPermission("Add Categories", array(
+                                                "activateNodeLang", 
+												"editNode",      
+												"addAllSubCategoryToObject",      
+												"editNodePerms",      
+												"addAllSubCategoryToObjectUniv",      
+												"exitNode",      
+												"addCategoryToObject", 
+												"exitSaveNode",      
+												"addCategoryToObjectUniv",      
+												"insertNode",      
+												"addFirstNode", 
+												"moveDownCategory",      
+												"addNode", 
+												"moveUpCategory",      
+												"cancel", "openNode",      
+												"cleanUpDuplicas", 
+												"removeAllSubCategoryToObject",      
+												"cleanupPositions", 
+												"removeAllSubCategoryToObjectUniv",      
+												"copyNode", 
+												"removeCategoryFromObject",      
+												"cutNode", 
+												"removeCategoryFromObjectUniv",      
+												"deactivateNodeLang", 
+												"saveNode",      
+												"showBrowserArticles",
+												"deleteRelation"
+                                               ));
+?>

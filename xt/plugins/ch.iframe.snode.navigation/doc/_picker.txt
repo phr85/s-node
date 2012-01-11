@@ -1,0 +1,36 @@
+= ch.iframe.snode.navigation (_picker) =
+
+== Funktion ==
+Mit Hilfe des Pickers kann eine Seite aus der Navigation ausgwählt werden.
+
+== Möglicher Einsatzbereich ==
+Administrationsbereich in Zusammenhang mit anderen Plugins
+
+== Mitgelieferte Templates ==
+*tree.tpl
+
+
+== Parameter ==
+keine
+
+== Templatevariablen ==
+*OPEN int Momentan aufgeklappter Navigationspunkt
+*LANGS array Im System installierte Sprachen
+*ACTIVE_LANG string Zu verwendende Sprache
+*CTRL int Zielnode muss gewählt werden.
+*FORM string Zielformular
+*FIELD string Zielfeld
+*TITLEFIELD string Feld welches den Nodetitel im Zielformular beinhaltet
+*MODE ?? OBSOLET??
+
+== Sessionvarablen ==
+*open int Momentan aufgeklappter Navigationspunkt
+*ctrl_add int 1 Wenn ein neuer Node hinzugefügt werden soll und der Zielnode noch bestimmt werden muss.
+*ctrl_cut int 1 Wenn ein Node ausgeschnitten werden soll und der Zielnode noch bestimmt werden muss.
+
+== Hinweise ==
+Daten werden durch XT_WidgetTree zur Verfügung gestellt.
+
+== Beispiel ==
+
+== Todo ==

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>1</baseid>
+    <id>ch.iframe.snode.core</id>
+    <version>$Rev: 1533 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>System (Demodaten)</name>
+            <description>Demodaten für das Grundsystem</description>
+        </de>
+        <en>
+            <name>System (Sample Data)</name>
+            <description>Demo data for the first installation</description>
+        </en>
+    </lang>
+    
+    <file>favicon.ico</file>
+    <file>xt/templates/default/_pages/99.tpl</file>
+    <file>xt/templates/default/_pages/100.tpl</file>
+    <file>xt/templates/default/_pages/101.tpl</file>
+    <file>xt/templates/default/_pages/102.tpl</file>
+    <file>xt/templates/default/_pages/106.tpl</file>
+    <file>xt/templates/default/_pages/108.tpl</file>
+    <file>xt/templates/default/_pages/111.tpl</file>
+    <file>xt/templates/default/_pages/106.tpl</file>
+    <file>xt/templates/default/_pages/113.tpl</file>
+    <file>xt/templates/default/_pages/10000.tpl</file>
+    <file>xt/templates/default/_pages/10028.tpl</file>
+    <file>xt/templates/default/_pages/10029.tpl</file>
+    <file>xt/templates/default/_pages/10030.tpl</file>
+    <file>xt/templates/default/_pages/10050.tpl</file>
+    <file>xt/templates/default/_pages/10051.tpl</file>
+    <file>xt/templates/default/_pages/10052.tpl</file>
+    <file>xt/templates/default/_pages/10053.tpl</file>
+    <file>xt/templates/default/_pages/10054.tpl</file>
+    <file>xt/templates/default/_pages/10057.tpl</file>
+    <file>xt/templates/default/_pages/10060.tpl</file>
+
+    <createfolder>xt/cache</createfolder>
+    <excludefolder>images/admin/tipps</excludefolder>
+    <createfolder>images/admin/tipps</createfolder>
+    
+    <changelog>
+        <rev>2700 new sampledata</rev>
+        <rev>1600 Initial release</rev>
+    </changelog>
+</package>

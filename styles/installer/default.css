@@ -1,0 +1,100 @@
+input, body, select, textarea {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: black;
+}
+
+body {
+    background-image: url(../../images/installer/bg.gif);
+    background-color: #49678F;
+    background-repeat: repeat-x;
+    margin: 0px;
+    font-size: 12px;
+    color: #91A9C9;
+}
+
+#content {
+    padding: 30px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0px;
+}
+
+form {
+    margin: 0px;
+}
+
+#subline {
+    margin: 0px;
+    line-height: 125%;
+}
+
+#introduction {
+    width: 600px;
+    color: white;
+    margin: 0px;
+    margin-top: 20px;
+    line-height: 200%;
+}
+
+#control {
+    padding-left: 30px;
+    clear: both;
+}
+
+label {
+    width: 150px;
+    padding-left: 30px;
+    float: left;
+    text-align: left;
+    margin: 0 1em 10px 0;
+    clear: both
+}
+
+#form {
+    margin-bottom: 20px;
+}
+
+#form input {
+    margin-bottom: 10px;
+}
+
+.plain, .plain_ok, .plain_failed, .plain_warning {
+    display: block;
+    height: 9px;
+    color: #91A9C9;
+}
+
+.plain_ok {
+    color: lightgreen;
+}
+
+.plain_failed {
+    color: red;
+}
+
+.plain_warning {
+    color: orange;
+}
+
+#form select {
+    margin-bottom: 10px;
+}
+
+#form textarea {
+    margin-bottom: 10px;
+}
+
+#packages {
+    list-style: none;
+}
+
+.icon {
+    margin-bottom: 5px;
+    margin-left: 5px;
+    cursor: hand;
+    cursor: pointer;
+}

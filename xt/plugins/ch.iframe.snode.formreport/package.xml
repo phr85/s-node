@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>7300</baseid>
+    <id>ch.iframe.snode.formreport</id>
+    <version>$Rev: 4814 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Formular auswertung</name>
+            <description>Erstellen Sie Umfragen mittels Formularen und werten Sie diese aus.</description>
+        </de>
+        <en>
+            <name>Formular reporting</name>
+            <description>Create a survey with forms and analyse it.</description>
+        </en>
+    </lang>
+    
+    <page>
+        <parentnode>101</parentnode>
+        <id>800</id>
+        <lang>
+            <de>
+                <title>Formular auswertung</title>
+                <file>800.tpl</file>
+            </de>
+            <en>
+                <title>Form report</title>
+                <file>800.tpl</file>
+            </en>
+        </lang>
+    </page>
+   
+	<table>
+        <id>formreport</id>
+        <mysql>
+        <![CDATA[
+			 CREATE TABLE `{TABLE.formreport}` (
+			  `id` int(11) NOT NULL auto_increment,
+			  `form_id` int(11) NOT NULL default '0',
+			  `title` text NOT NULL,
+			  `time_start` int(11) unsigned default NULL,
+			  `time_end` int(11) unsigned default NULL,
+			  `creation_date` int(11) unsigned NOT NULL default '0',
+			  `lang` char(1) NOT NULL default '',
+			   PRIMARY KEY  (`id`)
+			) TYPE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>formreport_tree</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.formreport_tree}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `l` int(11) unsigned NOT NULL default '0',
+              `r` int(11) unsigned NOT NULL default '0',
+              `pid` int(11) unsigned NOT NULL default '0',
+              `level` int(11) unsigned NOT NULL default '0',
+              `tree_id` int(11) unsigned NOT NULL default '0',
+              PRIMARY KEY  (`id`)
+            ) ENGINE=MyISAM;
+            INSERT INTO `{TABLE.formreport_tree}` (id, l, r, pid, level,tree_id) VALUES(1, 1, 2, 0, 1, 1);
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>formreport_tree_details</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.formreport_tree_details}` (
+              `node_id` int(11) unsigned NOT NULL auto_increment,
+              `lang` char(3) NOT NULL default '',
+              `creation_date` int(11) unsigned default NULL,
+              `creation_user` int(11) unsigned default NULL,
+              `mod_date` int(11) unsigned default NULL,
+              `mod_user` int(11) unsigned default NULL,
+              `title` varchar(255) default NULL,
+              `description` varchar(255) default NULL,
+              `active` tinyint(1) unsigned NOT NULL default '0',
+              `isFolder` tinyint(1) unsigned NOT NULL default '0',
+              `public` tinyint(1) unsigned NOT NULL default '0',
+              `form_id` int(11) NOT NULL default '0',
+              `time_start` int(11) unsigned default NULL,
+ 			  `time_end` int(11) unsigned default NULL,
+              PRIMARY KEY  (`node_id`,`lang`)
+            ) ENGINE=MyISAM;
+            INSERT INTO `{TABLE.formreport_tree_details}` (node_id, lang, title, active, isFolder) VALUES (1, 'de', 'Root', 1, 1);
+            INSERT INTO `{TABLE.formreport_tree_details}` (node_id, lang, title, active, isFolder) VALUES (1, 'en', 'Root', 1, 1);
+            ]]>
+        </mysql>
+    </table>
+     <table>
+        <id>formreport_tree_rel</id>
+        <mysql>
+        <![CDATA[
+            CREATE TABLE `{TABLE.formreport_tree_rel}` (
+              `node_id` int(11) NOT NULL default '0',
+              `report_id` int(11) NOT NULL default '0',
+              PRIMARY KEY  (`node_id`,`report_id`)
+            ) ENGINE=MyISAM;
+            INSERT INTO `{TABLE.formreport_tree_rel}` (node_id,report_id) VALUES(1, 1);
+            ]]>
+        </mysql>
+    </table>
+    <folder>xt/includes/classes/writeexcel</folder>
+    <changelog>
+        <rev>3461 initial plugin</rev>
+    </changelog>
+</package>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid></baseid>
+    <id>ch.iframe.snode</id>
+    <version>$Rev: 1533 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Pluginname</name>
+            <description></description>
+        </de>
+        <en>
+            <name>Pluginname</name>
+            <description></description>
+        </en>
+    </lang>
+    <contenttype>
+        <id></id>
+        <title></title>
+        <open_url></open_url>
+        <content_table></content_table>
+        <title_field></title_field>
+        <icon></icon>
+        <id_field></id_field>
+    </contenttype>
+    <requires>
+        <package>
+        <id></id>
+        <version>$Rev: 1533 $</version>
+        </package>
+    </requires>
+    <page>
+        <parentnode></parentnode>
+        <id></id>
+        <lang>
+            <de>
+                <title></title>
+                <file></file>
+            </de>
+        </lang>
+    </page>
+    <contenttree>
+        <id></id>
+        <parentnode></parentnode>
+        <lang>
+            <de>
+                <title></title>
+            </de>
+            <en>
+                <title></title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <contenttree>
+        <id></id>
+        <parentnode>5</parentnode>
+        <lang>
+            <de>
+                <title></title>
+                <description></description>
+            </de>
+            <en>
+                <title></title>
+                <description></description>
+            </en>
+        </lang>
+    </contenttree>
+    
+    <module>
+        <id></id>
+        <treenode></treenode>
+        <treenode></treenode>
+        <lang>
+            <de>
+                <name></name>
+                <description></description>
+            </de>
+            <en>
+                <name></name>
+                <description></description>
+            </en>
+        </lang>
+        <param>
+            <id></id>
+            <lang>
+                <de>
+                    <title></title>
+                    <description></description>
+                </de>
+                <en>
+                    <title></title>
+                    <description></description>
+                </en>
+            </lang>
+            <values>[SELECT id,title FROM {PREFIX}tablename ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+        <param>
+            <id></id>
+            <lang>
+                <de>
+                    <title></title>
+                    <description></description>
+                </de>
+                <en>
+                    <title></title>
+                    <description></description>
+                </en>
+            </lang>
+            <values>ch.iframe.snode.filemanager => imageversions</values>
+            <valuetype>configarray</valuetype>
+        </param>
+        
+        <param>
+            <id></id>
+            <lang>
+                <de>
+                    <title></title>
+                    <description></description>
+                </de>
+                <en>
+                    <title></title>
+                    <description></description>
+                </en>
+            </lang>
+            <values>a,b,c,d</values>
+            <valuetype>normal</valuetype>
+        </param>
+    </module>
+    
+    <table>
+        <id>tablename</id>
+        <mysql>
+            CREATE TABLE `{TABLE.tablename}` (
+            `id` int(11) unsigned NOT NULL auto_increment
+            PRIMARY KEY  (`id`)
+            )ENGINE=MyISAM ;
+        </mysql>
+    </table>
+    
+    <table>
+        <id>tablename</id>
+        <mysql>
+            CREATE TABLE `{TABLE.tablename}` (
+            `id` int(11) unsigned NOT NULL auto_increment
+            PRIMARY KEY  (`id`)
+            )ENGINE=MyISAM ;
+        </mysql>
+    </table>
+    
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

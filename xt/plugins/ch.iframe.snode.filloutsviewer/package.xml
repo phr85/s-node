@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>7100</baseid>
+    <id>ch.iframe.snode.filloutsviewer</id>
+    <version>$Rev: 4813 $</version>
+    <permissions>false</permissions>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Fillouts betrachter</name>
+            <description>Betrachten Sie die ausgefüllten Felder der Formulare.</description>
+        </de>
+        <en>
+            <name>Fillouts viewer</name>
+            <description>View the filled out informations for each form</description>
+        </en>
+    </lang>
+
+    <page>
+        <parentnode>121</parentnode>
+        <id>7100</id>
+        <lang>
+            <de>
+                <title>Fillouts betrachter</title>
+                <file>7100.tpl</file>
+            </de>
+            <en>
+                <title>Fillouts viewer</title>
+                <file>7100.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>7100</parentnode>
+        <id>7101</id>
+        <lang>
+            <de>
+                <title>Fillouts betrachter CSV export</title>
+                <file>7101.tpl</file>
+            </de>
+            <en>
+                <title>Fillouts viewer CSV export</title>
+                <file>7101.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <file>images/icons/data_find.png</file>
+    <file>xt/templates/default/_pages/7100.tpl</file>
+    <changelog>
+        <rev></rev>
+    </changelog>
+</package>

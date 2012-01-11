@@ -1,0 +1,123 @@
+@import url(/styles/live/articles.css);
+@import url(/styles/live/navigation.css);
+@import url(/styles/live/thickbox.css);
+@import url(/styles/live/jquery-ui-theme.css);
+
+html, body {
+    border: none;
+}
+
+body {
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 12px;
+    line-height: 200%;
+}
+
+#header {
+    display: none;
+}
+
+#side {
+    display: none;
+}
+
+#content_header {
+    display: none;
+}
+
+#footer {
+    display: none;
+}
+
+.chapter_control {
+    display: none;
+}
+.chapter {
+    clear: both;
+}
+/* Headings */
+h1 {
+    margin: 0px;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+}
+
+h2 {
+    font-size: 15px;
+    color: black;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.subtitle {
+    text-align: center;
+}
+
+
+
+form {
+    margin: 0px;
+}
+
+img {
+    border: 0px;
+}
+
+/* Preset :: Image floating */
+.left {
+    float: left; margin: 0px 15px 5px 0px;
+}
+.right {
+    float: right; margin: 0px 0px 5px 10px;
+}
+.top {
+    display: block; margin: 0px 0px 5px 0px;
+}
+
+/* Preset :: Toolbox */
+#toolboxswitcher {
+    display: none;
+    position: absolute;
+    cursor:hand;
+    cursor:pointer;
+    top: 150px;
+    right:0px;
+}
+.toolboxswitcherbuttons {
+    border-top: 1px solid #FFFFFF;
+}
+#toolbox {
+    display: none;
+    position: absolute;
+    top: 171px;
+    right: 21px;
+    background-color: white;
+    border: 1px solid #95A6BD;
+    -moz-opacity: 0.7; filter: alpha(0.7);
+}
+
+#toolbox #title {
+    padding: 5px;
+    color: white;
+    background-color: #95A6BD;
+    -moz-opacity: 0.7; filter: alpha(0.7);
+}
+
+#toolbox #buttons {
+    padding: 5px;
+    color: black;
+    -moz-opacity: 0.7; filter: alpha(0.7);
+}
+
+#toolbox #buttons input {
+    color: black;
+}
+
+#toolbox .info {
+    padding: 5px;
+    color: black;
+    border-bottom: 1px solid #95A6BD;
+    -moz-opacity: 0.7; filter: alpha(0.7);
+}
+

@@ -1,0 +1,27 @@
+= ch.iframe.snode.navigation (article_redirect) =
+
+== Funktion ==
+Anhand der article_id wird der Benutzer zum dazugehörigen Menupunkt resp. TPL weitergeleitet.
+
+== Möglicher Einsatzbereich ==
+Anzeige eines Artikels mit dazugehörigem Template, wenn nur die article_id bekannt ist.
+
+== Mitgelieferte Templates ==
+keine
+
+== Parameter ==
+keine
+
+== Templatevariablen ==
+keine
+
+== Sessionvarablen ==
+keine
+
+== Hinweise ==
+article_id im Request benötigt
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.navigation" module="article_redirect"}
+
+== Todo ==

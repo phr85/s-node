@@ -1,0 +1,32 @@
+= ch.iframe.snode.faq (tree) =
+
+== Funktion ==
+Anzeige des Kategorienbaumes
+
+== Möglicher Einsatzbereich ==
+
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+viewer_tpl       | integer      | Templatenummer für die Ansicht der Frage (Autoval R)| 10212
+node_id          | integer      | Identifikationsnummer des ausgewählten Node (Autoval R) | default.tpl
+
+
+== Templatevariablen ==
+*xt1400_viewer_tpl integer Templatenummer für die Ansicht der Frage
+*xt1400_DATA array Daten der gesamten Baumstruktur
+*xt1400_items array Daten zu den Fragelisten
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.faq" module="tree" viewer_tpl=1021 node_id=1 style="default.tpl"}
+
+== Todo ==

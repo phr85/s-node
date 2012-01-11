@@ -1,0 +1,1 @@
+{include file="ch.iframe.snode.navigation/tree/default/recursion.tpl" node=$xt60_tree.metadata.node}

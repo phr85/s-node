@@ -1,0 +1,39 @@
+= ch.iframe.snode.formmanager (viewer) =
+
+== Funktion ==
+Anzeige und Verarbeitung von Formularen
+
+== Möglicher Einsatzbereich ==
+Diverse Formulare für Kontakt, Bewerbungen, etc.
+
+== Mitgelieferte Templates ==
+*default.tpl
+*tables.tpl (obsolet)
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+name             | string       | Formular anhand des Namens (aus Feld identifier) | Kontakt
+form_id          | integer      | Identifikationsnummer des darzustellenden Formulares | 221
+
+
+== Templatevariablen ==
+*FORM array Daten zum Formular
+*ADMIN_TPL int Templatenummer für den Administrationsbereich
+*ERRORS array Fehler, die bei der Verarbeitung aufgetreten sind (Leere Felder, falsche E-Mailadresse, meist mittels Regeln im Formular definiert)
+*POSTS array Überarbeitete Postdaten
+*LABELS array Labels der Elemente
+*VALUES array Werte der Elemente
+*ELEMENTS array Daten zu den Elementen
+== Sessionvarablen ==
+
+== Hinweise ==
+Die aus den Formularen generierten E-Mails können unter ch.iframe.snode.formmanager/viewer/mail/default.tpl angepasst werden.
+ch.iframe.snode.formmanager/viewer/mail/plaintext.tpl wird auch verwendet und ist für die Alternative darstellung (mails ohne HTML) zuständig. 
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.formmanager" module="viewer" form_id="273" style="default.tpl" ncpos="1"}
+
+== Todo ==
+Zuweisungen für das E-Mail sind noch nicht dokumentiert.

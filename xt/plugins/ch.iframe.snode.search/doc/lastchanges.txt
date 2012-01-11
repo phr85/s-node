@@ -1,0 +1,28 @@
+= ch.iframe.snode.search (lastchanges) =
+
+== Funktion ==
+Letzte Änderungen an Inhalten
+
+== Möglicher Einsatzbereich ==
+Aktuelle Änderungen an der Seite aufzeigen
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+*ENTRIES array Alle Einträge aus der Datenbank des Suchindexes
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.search" module="lastchanges"  style="default.tpl"}
+
+== Todo ==

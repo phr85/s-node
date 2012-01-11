@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>5000</baseid>
+    <id>ch.iframe.snode.packaging_units</id>
+    <version>$Rev: 4212 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Packaging units</name>
+            <description>Gebinde</description>
+        </de>
+        <en>
+            <name>Packaging units</name>
+            <description>Units</description>
+        </en>
+    </lang>
+    <contenttype>
+        <id>5000</id>
+        <title>Packaging units</title>
+        <content_table>packaging_units</content_table>
+        <title_field>standard</title_field>
+        <icon>box.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    <page>
+        <parentnode>100</parentnode>
+        <id>142</id>
+        <lang>
+            <de>
+                <url>index.php?TPL=143&amp;adminmode=1</url>
+                <title>Katalog</title>
+                <file>142.tpl</file>
+            </de>
+            <en>
+                <url>index.php?TPL=143&amp;adminmode=1</url>
+                <title>Catalog</title>
+                <file>142.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>142</parentnode>
+        <id>285</id>
+        <lang>
+            <de>
+                <title>Gebinde</title>
+                <file>285.tpl</file>
+            </de>
+            <en>
+                <title>Packaging units</title>
+                <file>285.tpl</file>
+            </en>
+        </lang>
+    </page>     
+    
+    <table>
+        <id>packaging_units</id>
+        <mysql>
+           CREATE TABLE `{TABLE.packaging_units}` (
+           `id` int(11) unsigned NOT NULL auto_increment,
+           `standard` varchar(20) default NULL,
+           PRIMARY KEY  (`id`),
+           UNIQUE KEY `id` (`id`),
+           KEY `id_2` (`id`)
+           ) ENGINE=MyISAM;
+        </mysql>
+    </table>
+    
+    <table>
+        <id>packaging_units_details</id>
+        <mysql>
+           CREATE TABLE `{TABLE.packaging_units_details}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `lang` varchar(5) NOT NULL default '',
+              `short` varchar(50) NOT NULL default '',
+              `full` varchar(100) NOT NULL default '',
+              PRIMARY KEY  (`id`,`lang`)
+            ) ENGINE=MyISAM;
+        </mysql>
+    </table>
+    
+    <table>
+        <id>packaging_units_relations</id>
+        <mysql>
+           CREATE TABLE `{TABLE.packaging_units_relations}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `relation_id` int(10) unsigned NOT NULL default '0',
+              `factor` float NOT NULL default '1',
+              PRIMARY KEY  (`id`,`relation_id`),
+              UNIQUE KEY `id` (`id`,`relation_id`),
+              KEY `id_2` (`id`)
+            ) ENGINE=MyISAM;
+        </mysql>
+    </table>
+    
+    <changelog>
+        <rev>1898 changelog added</rev>
+    </changelog>
+</package>

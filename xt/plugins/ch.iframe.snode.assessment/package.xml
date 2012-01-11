@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>8200</baseid>
+    <id>ch.iframe.snode.assessment</id>
+    <version>4000</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Einschätzungstests</name>
+            <description>Einschätzungstests z.B: Persönlichkeitstests</description>
+        </de>
+        <en>
+            <name>Assessment test</name>
+            <description>Assessment test i.e: Personality test</description>
+        </en>
+    </lang>
+    <page>
+        <parentnode>101</parentnode>
+        <id>8200</id>
+        <lang>
+            <de>
+                <title>Einschätzungstests</title>
+                <file>8200.tpl</file>
+            </de>
+            <en>
+                <title>Assessment tests</title>
+                <file>8200.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <contenttype>
+        <id>8200</id>
+        <title>Einschätzungstests</title>
+        <open_url></open_url>
+        <content_table>assessment</content_table>
+        <title_field>title</title_field>
+        <icon>form_blue.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <contenttree>
+        <id>8200</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Einschätzungstests</title>
+            </de>
+            <en>
+                <title>Assessment tests</title>
+            </en>
+        </lang>
+    </contenttree>
+    
+	<module>
+        <id>viewer</id>
+        <treenode>8200</treenode>
+        <treenode>1</treenode>
+        <main_param>style</main_param>
+        <lang>
+            <de>
+                <name>Einschätzungstest</name>
+                <description>Öffentliches Interface für einen Einschätzungstest.</description>
+            </de>
+            <en>
+                <name>Assessment test</name>
+                <description>Public interface for an assessment test.</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>ID</title>
+                    <description>Wählen Sie ein Einschätzungstest aus</description>
+                </de>
+                <en>
+                    <title>ID</title>
+                    <description>Select an assessment test</description>
+                </en>
+            </lang>
+            <values>[SELECT id,title FROM {PREFIX}assessment ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+    </module>
+    <table>
+        <id>assessment</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.assessment}` (
+                  `id` int(11) NOT NULL auto_increment,
+                  `title` varchar(255) NOT NULL default '',
+                  `mod_date` int(11) NOT NULL default '0',
+                  `mod_user` int(11) NOT NULL default '0',
+                  `creation_date` int(11) NOT NULL default '0',
+                  `creation_user` int(11) NOT NULL default '0',
+  				  `active` int(1) unsigned NOT NULL default '0',
+                  `description` text,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>assessment_questions</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.assessment_questions}` (
+                  `id` int(11) NOT NULL auto_increment,
+                  `assessment_id` int(2) NOT NULL default '0',
+                  `title` varchar(255) NOT NULL default '',
+                  `mod_date` int(11) NOT NULL default '0',
+                  `mod_user` int(11) NOT NULL default '0',
+                  `creation_date` int(11) NOT NULL default '0',
+                  `creation_user` int(11) NOT NULL default '0',
+                  `description` text,
+                  `position` int(2) NOT NULL default '0',
+                  PRIMARY KEY (`id`)
+                ) ENGINE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>assessment_answers</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.assessment_answers}` (
+                  `id` int(11) NOT NULL auto_increment,
+                  `question_id` int(2) NOT NULL default '0',
+                  `mod_date` int(11) NOT NULL default '0',
+                  `mod_user` int(11) NOT NULL default '0',
+                  `creation_date` int(11) NOT NULL default '0',
+                  `creation_user` int(11) NOT NULL default '0',
+                  `description` text,
+                  `position` int(2) NOT NULL default '0',
+                  `value` int(2) NOT NULL default '0',
+                  `comment` text NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+     <table>
+        <id>assessment_solutions</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.assessment_solutions}` (
+                  `id` int(11) NOT NULL auto_increment,
+                  `assessment_id` int(2) NOT NULL default '0',
+                  `title` varchar(255) NOT NULL default '',
+                  `mod_date` int(11) NOT NULL default '0',
+                  `mod_user` int(11) NOT NULL default '0',
+                  `creation_date` int(11) NOT NULL default '0',
+                  `creation_user` int(11) NOT NULL default '0',
+                  `description` text,
+                  `lower_level` int(11) NOT NULL default '0',
+                  `upper_level` int(11) NOT NULL default '0',
+                  PRIMARY KEY (`id`)
+                ) ENGINE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <folder>images/icons/</folder>
+    <file>scripts/querystring.js</file>
+    <file>styles/live/ch.iframe.snode.assessment.css</file>
+    <changelog>
+        <rev>3500 initial plugin</rev>
+    </changelog>
+</package>

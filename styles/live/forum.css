@@ -1,0 +1,150 @@
+/* Forum */
+
+#forum {
+    border: 1px solid #6E8AAF;
+}
+#forum .category {
+    padding: 5px;
+    background-color: #F3F3F3;
+    font-weight: bold;
+    color: #000000;
+    font-size: 16px;
+}
+#forum .forum_dark {
+    background-color: #DADADA;
+    color: #4A678C;
+    padding: 5px;
+}
+#forum .forum_icon {
+    background-color: #F4F4F4;
+    width: 50px;
+}
+
+#forum .forum_light {
+    background-color: #F5F5F5;
+    padding: 5px;
+    text-align: center;
+}
+
+#forum .forum_title {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#forum .header {
+    padding: 5px;
+    background-color: #F0F0F0;
+    color: #000000;
+}
+#forum a {
+    color: #4A678C;
+}
+
+#forum a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+#forum .topic_dark {
+    background-color: #DBDBDB;
+    padding: 5px;
+}
+
+#forum .topic_light {
+    background-color: #F4F4F4;
+    padding: 5px;
+}
+
+#forum .topic_icon {
+    background-color: #F4F4F4;
+    padding-left: 5px;
+    width: 20px;
+}
+
+TR.posting_light {
+    background-color: #F4F4F4;
+}
+
+TR.posting_dark {
+    background-color: #CCD8E8;
+}
+
+#forum .posting {
+    padding: 5px;
+    background-color:#DDDDDD;
+}
+
+#forum .posting_body {
+    padding: 5px 10px;
+    line-height: 200%;
+    font-size: 12px;
+    color: black;
+}
+
+#forum .posting_separator {
+    background-color: #758DAC;
+    height: 3px;
+}
+
+#forum .posting_author {
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#forum .posting_info {
+    padding: 5px;
+    font-size: 11px;
+    color: black;
+    text-align: right;
+}
+
+#forum .img_button {
+    margin-top: 5px;
+    padding: 2px 5px;
+    color: black;
+}
+
+h1.forum {
+    margin-bottom: 10px;
+}
+
+h2.forum {
+    border-bottom: 0px;
+    font-size: 11px;
+    font-weight: normal;
+}
+.forum_pages {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.forum_pages li {
+    padding: 0px;
+    float: left;
+}
+.forum_pages a {
+    float:left;
+    display:block;
+    padding: 1px 6px;
+    background-color: #F4F4F4;
+    border-right: 1px solid white;
+}
+.forum_pages a.current {
+    background-color: #CCD8E8;
+    font-weight: bold;
+    color: black;
+}
+.forum_pages a:hover {
+    background-color: #CCD8E8;
+}
+
+.forum_pages .title {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.forum_pages .info {
+    padding-right: 10px;
+    border-right: 2px solid #CCD8E8;
+}

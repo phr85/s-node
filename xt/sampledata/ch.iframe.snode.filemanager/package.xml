@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>240</baseid>
+    <id>ch.iframe.snode.filemanager</id>
+    <version>$Rev: 1533 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Filemanager (Demodaten)</name>
+            <description>Demodaten für das Grundsystem</description>
+        </de>
+        <en>
+            <name>Filemanager (Sample Data)</name>
+            <description>Demo data for the filemanager</description>
+        </en>
+    </lang>
+  
+    <changelog>
+        <rev>2700 new sample data</rev>
+        <rev>1600 Initial release</rev>
+    </changelog>
+</package>

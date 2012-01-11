@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>3500</baseid>
+    <id>ch.iframe.snode.webmail_imap</id>
+    <version>$Rev: 1523 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Mail</name>
+            <description>E-Mail Center</description>
+        </de>
+        <en>
+            <name>Mail</name>
+            <description>Manage E-Mails</description>
+        </en>
+    </lang>
+    
+    <contenttype>
+        <id>3500</id>
+        <title>Mail</title>
+        <open_url></open_url>
+        <content_table></content_table>
+        <title_field></title_field>
+        <icon></icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <page>
+        <parentnode>100</parentnode>
+        <id>152</id>
+        <lang>
+            <de>
+                <url>/index.php?TPL=153&amp;adminmode=1</url>
+                <title>Mail</title>
+                <file>152.tpl</file>
+            </de>
+            <en>
+                <url>/index.php?TPL=153&amp;adminmode=1</url>
+                <title>Mail</title>
+                <file>152.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>152</parentnode>
+        <id>153</id>
+        <lang>
+            <de>
+                <title>Mail</title>
+                <file>153.tpl</file>
+            </de>
+            <en>
+                <title>Mail</title>
+                <file>153.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <file>xt/includes/classes/PEAR/PEAR.php</file>
+    <folder>xt/includes/classes/PEAR/Mail</folder>
+        
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

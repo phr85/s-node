@@ -1,0 +1,41 @@
+= ch.iframe.snode.events (listing) =
+
+== Funktion ==
+Auflistung von Events
+
+== Möglicher Einsatzbereich ==
+Eventlisten
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+now              | integer      | Unixtimestamp welcher die Gegenwart repräsentiert (ohne diesen Parameter wird time() verwendet)| 110550
+display_old      | boolen       | Stellt abgelaufen oder laufende Events dar wenn true | true
+limit            | integer      | Anzahl einträge | 15
+category_id      | integer      | Idenfikationsnummer der Event-Kategorie die dargestellt werden soll (autoval R) | 21
+filter_country
+filter_date_from | integer      | unix timestamp für events ab... | default: unset
+filter_date_to   | integer      | unix timestamp für events bis... | default: unset
+recursive        | boolsch      | events aus unterordnern darstellen?
+
+== Templatevariablen ==
+$x15100_list array Daten aller Events in $x15100_list.data und der nodes in $x15100_list.nodes
+
+== Sessionvarablen ==
+*filter_country string Land, auf unset setzen um den filter zu entfernen, auf iso codes setzen i.e. "CH" um nur schweizer events zu bekommen
+*filter_region string Region,  auf unset setzen um den filter zu entfernen, functioniert nur wenn country nicht unset ist, auf ids wie sie in der tabelle xt_countries_regions verwendet werden
+*category_id integer Kateorie
+
+== Hinweise ==
+Events werden anhand des startdatums gefiltert und angezeigt.
+
+filter_date_from und filter_date_to lassen sich kombinieren um einen zeitbereich einzugrenzen
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.events" module="listing" details_tpl="150" style="default.tpl" category_id="2" ncpos="2"}
+
+== Todo ==

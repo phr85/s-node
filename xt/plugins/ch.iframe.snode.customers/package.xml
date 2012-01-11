@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>1300</baseid>
+    <id>ch.iframe.snode.customers</id>
+    <version>$Rev: 1533 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Kundenstamm</name>
+            <description>Kunden verwalten</description>
+        </de>
+        <en>
+            <name>Customers</name>
+            <description>Manage Customers</description>
+        </en>
+    </lang>
+    
+    <contenttype>
+        <id>1300</id>
+        <title>Customer</title>
+        <open_url></open_url>
+        <content_table></content_table>
+        <title_field></title_field>
+        <icon></icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <page>
+        <parentnode>100</parentnode>
+        <id>150</id>
+        <lang>
+            <de>
+                <url>/index.php?TPL=151&amp;adminmode=1</url>
+                <title>CRM</title>
+                <file>150.tpl</file>
+            </de>
+            <en>
+                <url>/index.php?TPL=151&amp;adminmode=1</url>
+                <title>CRM</title>
+                <file>150.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>150</parentnode>
+        <id>151</id>
+        <lang>
+            <de>
+                <title>Kundenstamm</title>
+                <file>151.tpl</file>
+            </de>
+            <en>
+                <title>Customers</title>
+                <file>151.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <table>
+        <id>customers</id>
+        <mysql>
+            CREATE TABLE IF NOT EXISTS `{TABLE.customers}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `cnr` varchar(40) default NULL,
+              `title` varchar(255) default NULL,
+              `creation_date` int(11) unsigned default '0',
+              `creation_user` int(11) unsigned default '0',
+              `mod_date` int(11) unsigned default '0',
+              `mod_user` int(11) unsigned default '0',
+              `active` tinyint(1) unsigned default '0',
+              `city` varchar(255) default NULL,
+              `postalCode` int(6) unsigned default NULL,
+              `tel` varchar(20) default NULL,
+              `facsimile` varchar(20) default NULL,
+              `status` tinyint(2) unsigned default '0',
+              `our_consultant` int(11) unsigned default NULL,
+              `our_technician` int(11) unsigned default NULL,
+              PRIMARY KEY  (`id`)
+            )ENGINE=MyISAM ;
+            
+            ALTER TABLE `{TABLE.customers}` ADD `street` VARCHAR(255);
+            ALTER TABLE `{TABLE.customers}` ADD `street_nr` VARCHAR(10);
+            ALTER TABLE `{TABLE.customers}` ADD `po_box` VARCHAR(20);
+            ALTER TABLE `{TABLE.customers}` ADD `country` CHAR(3);
+        </mysql>
+    </table>
+    <table>
+        <id>customers_persons</id>
+        <mysql>
+            CREATE TABLE IF NOT EXISTS `{TABLE.customers_persons}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `customer_id` int(11) unsigned default NULL,
+              `firstName` varchar(255) default NULL,
+              `lastName` varchar(255) default NULL,
+              `position` varchar(255) default NULL,
+              `active` tinyint(1) unsigned default '0',
+              `email` varchar(255) default NULL,
+              `street` varchar(255) default NULL,
+              `street_nr` varchar(10) default NULL,
+              `cityCode` varchar(6) default NULL,
+              `city` varchar(255) default NULL,
+              `cnr` varchar(100) default NULL,
+              `user_id` int(11) unsigned default NULL,
+              `shipping_firstName` varchar(255) default NULL,
+              `shipping_lastName` varchar(255) default NULL,
+              `shipping_street` varchar(255) default NULL,
+              `shipping_street_nr` varchar(10) default NULL,
+              `shipping_cityCode` varchar(255) default NULL,
+              `shipping_city` varchar(255) default NULL,
+              `email_type` tinyint(1) default '0',
+              `anrede` tinyint(1) unsigned default '0',
+              `comment` varchar(255) default NULL,
+              `tel` varchar(20) default NULL,
+              PRIMARY KEY  (`id`)
+            )ENGINE=MyISAM ;
+            
+            ALTER TABLE `{TABLE.customers_persons}` ADD `gender` TINYINT(1)  UNSIGNED DEFAULT "1";
+            ALTER TABLE `{TABLE.customers_persons}` ADD `country` CHAR(3);
+        </mysql>
+    </table>
+    
+    <file>images/icons/telephone.png</file>
+    <file>images/icons/telephone_na.png</file>
+    
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

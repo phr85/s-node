@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>4800</baseid>
+    <id>ch.iframe.snode.autopilot</id>
+    <version>$Rev: 3178 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Slideshows</name>
+            <description>Präsentationen</description>
+        </de>
+        <en>
+            <name>Slideshows</name>
+            <description>Manage Slideshows</description>
+        </en>
+    </lang>
+
+    
+    <contenttype>
+        <id>4800</id>
+        <title>Slideshow</title>
+        <open_url></open_url>
+        <content_table>autopilot</content_table>
+        <title_field>title</title_field>
+        <icon>document.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <page>
+        <parentnode>101</parentnode>
+        <id>253</id>
+        <lang>
+            <de>
+                <title>Slideshows</title>
+                <file>253.tpl</file>
+            </de>
+            <en>
+                <title>Slideshows</title>
+                <file>253.tpl</file>
+            </en>
+        </lang>
+    </page>
+   
+    
+
+
+    <contenttree>
+        <id>4800</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Slideshows</title>
+                <description>Module fuer Slideshows</description>
+            </de>
+            <en>
+                <title>Slideshows</title>
+                <description>Modules for Slideshows</description>
+            </en>
+        </lang>
+    </contenttree>
+    
+    <module>
+        <id>viewer</id>
+        <treenode>4800</treenode>
+        <treenode>1</treenode>
+        <main_param>slide</main_param>
+        <main_content_type>4800</main_content_type>
+        
+        <lang>
+            <de>
+                <name>Slideshows</name>
+                <description>Slideshows darstellen</description>
+            </de>
+            <en>
+                <name>Slideshows</name>
+                <description>Display a Slideshows</description>
+            </en>
+        </lang>
+        <param>
+            <id>slide</id>
+            <lang>
+                <de>
+                    <title>Präsentation</title>
+                    <description>Wählen sie eine Präsentation aus.</description>
+                </de>
+                <en>
+                    <title>Slide</title>
+                    <description>Select Slide</description>
+                </en>
+            </lang>
+            <values>[SELECT id,title FROM {PREFIX}autopilot WHERE active=1 ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+          <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>loop</id>
+            <lang>
+                <de>
+                    <title>Endlos</title>
+                    <description>Wenn Sie die Einstellung für die Endlosschleife überschreiben wollen, tragen sie hier eine 0 zum ausschalten oder eine 1 zum einschalten der Endlosschleife ein. Ansonsten lassen Sie dieses Feld einfach leer</description>
+                </de>
+                <en>
+                    <title>Loop mode</title>
+                    <description>If you want to override the loop settings from the slideshow, type in a 0 to dissable or a 1 to enable the loop mode. Leave this field empty to use the Settings from the slide.</description>
+                </en>
+            </lang>
+            <values>1,0</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>random</id>
+            <lang>
+                <de>
+                    <title>Zufallsmodus</title>
+                    <description>Wenn Sie die Einstellung für den Zufallsmodus überschreiben wollen, tragen sie hier eine 0 zum ausschalten oder eine 1 zum einschalten des Zufallsmodus ein. Ansonsten lassen Sie dieses Feld einfach leer</description>
+                </de>
+                <en>
+                    <title>random mode</title>
+                    <description>If you want to override the random settings from the slideshow, type in a 0 to dissable or a 1 to enable the random mode. Leave this field empty to use the Settings from the slide.</description>
+                </en>
+            </lang>
+            <values>1,0</values>
+            <valuetype>normal</valuetype>
+        </param>
+    </module>
+    
+    <table>
+        <id>autopilot</id>
+        <mysql> <![CDATA[
+            CREATE TABLE `{TABLE.autopilot}` (
+              `id` int(11) unsigned NOT NULL auto_increment,          
+                `title` varchar(255) NOT NULL default '',               
+                `loop` int(1) unsigned NOT NULL default '1',            
+                `active` tinyint(1) unsigned NOT NULL default '1',      
+                `random` tinyint(1) unsigned NOT NULL default '0',      
+                `creation_date` int(11) unsigned NOT NULL default '0',  
+                `creation_user` int(11) unsigned NOT NULL default '0',  
+                `description` varchar(255) default NULL,                
+                PRIMARY KEY  (`id`)           
+            );
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>autopilot_data</id>
+        <mysql> <![CDATA[       
+            CREATE TABLE `{TABLE.autopilot_data}` (
+              `id` int(11) unsigned NOT NULL default '0',
+              `position` int(3) unsigned NOT NULL default '1',
+              `page` varchar(255) NOT NULL default '',
+              `duration` int(3) unsigned NOT NULL default '20',
+              `comment` varchar(255) default NULL,
+              `active` int(1) unsigned NOT NULL default '0',
+              `page_type` tinyint(1) unsigned NOT NULL default '1',
+              PRIMARY KEY  (`id`,`position`)
+            );
+            ]]>
+        </mysql>
+    </table>
+    
+<changelog>
+    <rev>1850 initial version completed</rev>
+    <rev>1800 initial version</rev>
+</changelog>
+</package>

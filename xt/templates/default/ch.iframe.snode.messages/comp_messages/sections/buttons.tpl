@@ -1,0 +1,1 @@
+{include file="ch.iframe.snode.messages/comp_messages/components/buttonbar.tpl"}

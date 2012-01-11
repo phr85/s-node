@@ -1,0 +1,38 @@
+= ch.iframe.snode.banner (viewer) =
+
+== Funktion ==
+Anzeige eines Banners
+
+== Möglicher Einsatzbereich ==
+Bannerwerbung, Slideshows etc..
+
+== Mitgelieferte Templates ==
+*default.tpl
+*slider.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+allbanner		 | boolen		| Alle Banner einer Zone anzegen | true
+zone			 | int			| Id der Bannerzone | 21
+version			 | int 			| Bildversion des Dateimanagers | 3
+
+
+== Templatevariablen ==
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Wird der Parameter allbanner gesetzt, werden alle Baner einer Zone dargestellt. Dies kann nützlich sein,
+wenn man beispielsweise einen zeitlich verschobene Einblendung der Banner mittels Javascript realisieren will.
+Ansonsten per zufall ein Banner aus der Zone dargestellt.
+
+Beinhaltet der Request den Parameter zonename (bsp; http://www.iframe.ch/index.php?TPL=10000&zonename=Hauptseite), wird
+die der Zone mit diesem Namen herausgesucht und dargestellt. In unserem Beispiel wird die Zone Hauptseite dargestellt. 
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.banner" module="viewer" version="1" style="default.tpl" zone="2"}
+
+== Todo ==
+Parameter ignore_same_tpl Dokumentieren.

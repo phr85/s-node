@@ -1,0 +1,30 @@
+= ch.iframe.snode.search (quickinfo) =
+
+== Funktion ==
+Zeigt die vorhandenen Daten der Suche zu einem Eintrag anhand des Types und seiner Identität
+
+== Möglicher Einsatzbereich ==
+Darstellung letzte Änderung der Seite/des Inhaltes.
+Autor des Inhaltes Anzeigen, etc.
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+cytpe            | integer      | Content type 			 | 60
+cid              | integer      | Content id			 | 10000
+
+== Templatevariablen ==
+*DATA array Daten zur suchinfo
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.search" module="quickinfo" cid=10104 ctype=60  style="default.tpl"}
+
+== Todo ==

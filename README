@@ -1,0 +1,30 @@
+Systemvoraussetzungen
+======================
+PHP 5
+-----
+- zlib 1.2.3 oder höher
+- GD 2 oder höher
+- FreeType 2.1.7 oder höher
+- Zend Optimizer v3.0 oder höher
+
+MySQL 4
+-------
+- Version 4.x oder 5.x wird unterstützt.
+
+Webserver
+---------
+- Apache 1.3.x oder 2.x
+  oder Microsoft Internet Information Services mit PHP Unterstützung
+
+
+Installation
+============
+1. Entpacken Sie die Datei XT_Installer_xxxx.zip in ihrem Webverzeichnis.
+2. Um die Installation zu starten muss gewährleistet sein, dass der Benutzer des Webservers vollen
+Lese- und Schreibzugriff auf das gesammte Webverzeichnis hat.
+3. Legen Sie eine Datenbank und einen dazugehörigen Benutzer für ihr S-Node an.
+4. Öffnen Sie die Seite unter http://localhost und folgen den Anweisungen. Die Lizenznummer für die
+Demo lautet 555.(Sollten sie einen anderen Domainnamen verwenden, beispielsweise www.meinedomain.ch,
+kopieren Sie die von uns erhaltenen Lizenzen in den Ordner /xt/licenses. Ohne Lizenzierung können
+Sie S-Node nur unter localhost betreiben.)
+

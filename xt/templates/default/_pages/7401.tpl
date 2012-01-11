@@ -1,0 +1,1 @@
+{plugin package="ch.iframe.snode.addressmanager" module="viewer"}

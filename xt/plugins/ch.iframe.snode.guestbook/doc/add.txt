@@ -1,0 +1,30 @@
+= ch.iframe.snode.guestbook (add) =
+
+== Funktion ==
+Eingabemaske um einen Gästebucheintrag hinzufügen.
+
+== Möglicher Einsatzbereich ==
+Gästebuch
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+captcha          | boolen       | Eine Captcha-Abrage wird eingeblendet, wenn der User nicht eingeloggt ist | 1
+
+== Templatevariablen ==
+*xt1500_add array Alle Daten.
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Es empfiehlt sich Captcha einzuschalten um Spam zu verhindern. Zusätzlich sollte man über die Moderationsfunktion verwenden.
+Diese ist automatisch aktiviert und sendet die Moderationsanfragen an die System-Email-Adresse.
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.guestbook" module="add" style="default.tpl" captcha="1"}
+
+== Todo ==

@@ -1,0 +1,1 @@
+{print_data array=$xt7500_viewer}

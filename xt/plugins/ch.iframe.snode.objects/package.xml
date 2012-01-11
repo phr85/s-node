@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>4200</baseid>
+    <id>ch.iframe.snode.objects</id>
+    <version>$Rev: 4056 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Objects</name>
+            <description>Systemobjekte verwalten</description>
+        </de>
+        <en>
+            <name>Objects</name>
+            <description>Manage system objects</description>
+        </en>
+    </lang>
+    
+    <contenttype>
+        <id>4200</id>
+        <title>Object Type</title>
+        <open_url>?TPL=10000&amp;x4200_id=%id%</open_url>
+        <content_table>content_types</content_table>
+        <title_field>title</title_field>
+        <icon>data.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    <page>
+        <parentnode>100</parentnode>
+        <id>121</id>
+        <lang>
+            <de>
+                <title>System</title>
+                <file>121.tpl</file>
+            </de>
+            <en>
+                <title>System</title>
+                <file>121.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>121</parentnode>
+        <id>210</id>
+        <lang>
+            <de>
+                <title>Objekte</title>
+                <file>210.tpl</file>
+            </de>
+            <en>
+                <title>Objects</title>
+                <file>210.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <table>
+        <id>content_types</id>
+        <mysql>
+        <![CDATA[
+           CREATE TABLE `{TABLE.content_types}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `title` varchar(255) default NULL,
+              `open_url` varchar(255) default NULL,
+              `content_table` varchar(255) NOT NULL default '',
+              `title_field` varchar(255) NOT NULL default '',
+              `icon` varchar(255) NOT NULL default '',
+              `id_field` varchar(255) NOT NULL default '',
+              PRIMARY KEY  (`id`)
+            )ENGINE=MyISAM ;
+
+            ]]>
+        </mysql>
+    </table>
+    
+    <changelog>
+        <rev>1586 Package created</rev>
+    </changelog>
+</package>

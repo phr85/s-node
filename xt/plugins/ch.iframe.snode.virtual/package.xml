@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>160</baseid>
+    <id>ch.iframe.snode.virtual</id>
+    <version>$Rev: 4781 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Virtuelle Adressen</name>
+            <description>Hier können virtuelle Adressen mit besseren Namen erstellt werden (/team => index.php?TPL=xxx&amp;x1000_id=99). </description>
+        </de>
+        <en>
+            <name>Virtual URL</name>
+            <description>Create aliases with good names for your page (/team => index.php?TPL=xxx&amp;x1000_id=99).</description>
+        </en>
+    </lang>
+
+    
+
+    <page>
+        <parentnode>100</parentnode>
+        <id>121</id>
+        <lang>
+            <de>
+                <url>/index.php?TPL=126&amp;adminmode=1</url>
+                <title>System</title>
+                <file>121.tpl</file>
+            </de>
+            <en>
+                <url>/index.php?TPL=126&amp;adminmode=1</url>
+                <title>System</title>
+                <file>121.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>121</parentnode>
+        <forceupdate>true</forceupdate>
+        <id>126</id>
+        <lang>
+            <de>
+                <title>Virtuelle URL</title>
+                <file>126.tpl</file>
+            </de>
+            <en>
+                <title>Virtual URL</title>
+                <file>126.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <table>
+        <id>virtual_url</id>
+        <mysql>
+            CREATE TABLE `{TABLE.virtual_url}` (
+            `id` int(11) unsigned NOT NULL auto_increment,
+            `pattern` varchar(255) default NULL,
+            `pattern_mode` tinyint(3) default '0',
+            `url` varchar(255) default NULL,
+            PRIMARY KEY  (`id`)
+            ) ENGINE=MyISAM ;
+
+            INSERT INTO {TABLE.virtual_url} VALUES("1","admin","0","/index.php?TPL=99");
+        </mysql>
+    </table>
+    
+    <changelog>
+        <rev>1521 changelog added </rev>
+    </changelog>
+</package>

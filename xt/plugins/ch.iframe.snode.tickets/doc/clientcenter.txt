@@ -1,0 +1,31 @@
+= ch.iframe.snode.tickets (clientcenter) =
+
+== Funktion ==
+Das Modul client center repräsentiert das Frontend für die Kunden.
+Dort werden alle Offenen und erledigten Tickets dargestellt und der Kontakt 
+zu den jeweiligen Supportern aufgezeigt.
+
+== Möglicher Einsatzbereich ==
+Ticket-Center
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+*xt8100_clientcenter array Alle nötigen Daten für das Kundeninterface.
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Das Modul muss so eingebunden werden, dass eine Kundengruppe nur Recht hat auf das Template zu zu greifen.
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.tickets" module="clientcenter" style="default.tpl" ncpos="1"}
+
+== Todo ==

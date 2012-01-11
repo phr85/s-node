@@ -1,0 +1,44 @@
+= ch.iframe.snode.gallery (viewer) =
+
+== Funktion ==
+Anzeige einer Gallerie
+
+== Möglicher Einsatzbereich ==
+Gallerie
+
+== Mitgelieferte Templates ==
+*default.tpl
+*lightwindow.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+id               | integer      | Identifikationsnummer der Gallerie | 43
+image_version    | integer      | Nummer der Bildversion die als Vorschau verwendet werden soll | 1
+per_page         | integer      | Anzahl Bilder pro Seite | 12
+per_line         | integer      | Anzahl Bilder pro Linie| 3
+show_titles      | boolen       | Titel der Bilder darstellen? | true
+show_views       | boolen       | Anzahl Aufrufe der Bilder anzeigen? | true
+
+
+== Templatevariablen ==
+*SHOW_TITLES int Titel der Bilder darstellen?
+*SHOW_VIEWS int Anzahl Aufrufe der Bilder anzeigen?
+*IMAGE array Bilddaten für Einzelbildansicht.
+*GALLERY array Galleriedaten
+*PREV_IMAGES array Bilddaten vorhergegangener Bilderserie.
+*NEXT_IMAGES array Bilddaten nächster Bilderserie.
+*N_IMAGE array Nächstes Bild.
+*P_IMAGE array Vorheriges Bild.
+*PER_LINE int Anzahl Bilder pro Linie
+
+== Sessionvarablen ==
+*id int Aktuelle Gallerie. (Auswahl der Gallerie, wenn die Gallerie nicht per Parameter angeben werden soll, sondern per Request. Bsp: Ansicht aus Liste.)
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.gallery" module="viewer" id="2" image_version="1" per_page="20" per_line="5" style="default.tpl"}
+
+== Todo ==

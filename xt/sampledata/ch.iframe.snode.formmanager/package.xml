@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>220</baseid>
+    <id>ch.iframe.snode.formmanager</id>
+    <version>$Rev: 1767 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Formularmanager (Demodaten)</name>
+            <description>Formulare erstellen und bearbeiten</description>
+        </de>
+        <en>
+            <name>Formmanager (Demodata)</name>
+            <description>Manage Forms</description>
+        </en>
+    </lang>
+    <openfolder>xt/data/scripts/ch.iframe.snode.formmanager</openfolder>
+
+</package>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <baseid>1600</baseid>
+    <id>ch.iframe.snode.hr</id>
+    <version>$Rev: 4212 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Mitarbeiter</name>
+            <description>Verwalten der Mitarbeiter</description>
+        </de>
+        <en>
+            <name>Employees</name>
+            <description>Manage employees</description>
+        </en>
+    </lang>
+    
+    <page>
+        <parentnode>100</parentnode>
+        <id>250</id>
+        <lang>
+            <de>
+                <url>/index.php?TPL=251&amp;adminmode=1</url>
+                <title>Unternehmen</title>
+                <file>250.tpl</file>
+            </de>
+            <en>
+                <url>/index.php?TPL=251&amp;adminmode=1</url>
+                <title>Company</title>
+                <file>250.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>250</parentnode>
+        <id>251</id>
+        <lang>
+            <de>
+                <title>Mitarbeiter</title>
+                <file>251.tpl</file>
+            </de>
+            <en>
+                <title>Employees</title>
+                <file>251.tpl</file>
+            </en>
+        </lang>
+    </page>
+    
+    <contenttype>
+        <id>1600</id>
+        <title>Employee</title>
+        <open_url></open_url>
+        <content_table>employees</content_table>
+        <title_field>title</title_field>
+        <icon>user.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+    
+    <table>
+        <id>employees</id>
+        <mysql>
+            <![CDATA[
+                CREATE TABLE `{TABLE.employees}` (
+                  `id` int(11) unsigned NOT NULL auto_increment,
+                  `user_id` int(11) unsigned default NULL,
+                  `firstName` varchar(255) default NULL,
+                  `lastName` varchar(255) default NULL,
+                  `email` varchar(255) default NULL,
+                  `active` tinyint(1) unsigned default '0',
+                  `position` varchar(255) default NULL,
+                  `birthday` int(11) unsigned default NULL,
+                  `social_nr` varchar(40) default NULL,
+                  `mobile` varchar(20) default NULL,
+                  `tel` varchar(20) default NULL,
+                  `street_nr` varchar(10) default NULL,
+                  `street` varchar(255) default NULL,
+                  `cityCode` varchar(5) default NULL,
+                  `city` varchar(255) default NULL,
+                  `image` int(11) unsigned default NULL,
+                  `image_version` int(11) unsigned default NULL,
+                  `facsimile` varchar(20) default NULL,
+                  PRIMARY KEY  (`id`)
+                ) ENGINE=MyISAM;
+            ]]>
+        </mysql>
+    </table>
+    <changelog>
+        <rev>1572 initial release</rev>
+    </changelog>
+</package>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>80</baseid>
+    <id>ch.iframe.snode.search</id>
+    <version>$Rev: 3025 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Suche</name>
+            <description>Inhalt indexieren und finden</description>
+        </de>
+        <en>
+            <name>Search</name>
+            <description>Index content</description>
+        </en>
+    </lang>
+    
+    <page>
+        <parentnode>10000</parentnode>
+        <id>10029</id>
+        <lang>
+            <de>
+                <live>1</live>
+                <public>1</public>
+                <title>Tools</title>
+                <file>10029.tpl</file>
+            </de>
+            <en>
+                <live>1</live>
+                <public>1</public>
+                <title>Tools</title>
+                <file>10029.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>10029</parentnode>
+        <id>10028</id>
+        <lang>
+            <de>
+                <live>1</live>
+                <public>1</public>
+                <title>Suche</title>
+                <file>10028.tpl</file>
+            </de>
+            <en>
+                <live>1</live>
+                <public>1</public>
+                <title>Suche</title>
+                <file>10028.tpl</file>
+            </en>
+        </lang>
+    </page>  
+    <changelog>
+        <rev>1790 Initial release</rev>
+    </changelog>
+</package>

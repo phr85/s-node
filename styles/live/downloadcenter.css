@@ -1,0 +1,96 @@
+div.downloadcenterwrapper {
+    clear: both;
+    float: left;
+    width: 100%;
+    font-size: 11px;
+    border-left: 1px solid #6A6E6D;
+    border-right: 1px solid #6A6E6D;
+    border-bottom: 1px solid #6A6E6D;
+}
+
+div.downloadcenterwrapper a {
+    color: #000000;
+    text-decoration: none;
+}
+
+div.downloadcenterwrapper .bold {
+    font-weight: bold;
+}
+
+div.downloadcentertreewrapper {
+    clear: both;
+    float: left;
+    width: 100%;
+    background-color:#DADFE1;
+    border-top: 1px solid #6A6E6D;
+}
+
+div.downloadcenterwrapper a {
+    color: #000000;
+}
+
+div.downloadcentertreename {
+    clear: both;
+    float: left;
+}
+
+div.downloadcentertreenamefirst {
+    clear: both;
+    float: left;
+    padding: 5px 0 6px;
+    font-weight: bold;
+}
+
+img.downloadcenterfolder {
+    vertical-align: middle;
+}
+
+span.downloadcenterfoldertitle {
+    vertical-align: middle;
+}
+
+div.downloadcentertreemeta {
+    float: right;
+    font-weight: bold;
+    padding: 7px 0 0;
+}
+
+div.downloadcenterfilewrapper {
+    clear: both;
+    border-bottom: 1px solid #6A6E6D;
+}
+
+div.downloadcenterfiledata {
+    clear: both;
+    float: left;
+    padding: 4px 0;
+}
+
+div.downloadcenterfilename {
+    clear: both;
+    float: left;
+    padding-right: 15px;
+}
+
+img.downloadcenterfileicon {
+    vertical-align: middle;
+}
+
+span.downloadcenterfiletitle {
+    vertical-align: top;
+}
+
+div.downloadcenterfilemeta {
+    float: right;
+    padding: 4px 0;
+}
+
+div.downloadcenterfiledate {
+    float: right;
+    width: 75px;
+}
+
+div.downloadcenterfilesize {
+    float: right;
+    width: 70px;
+}

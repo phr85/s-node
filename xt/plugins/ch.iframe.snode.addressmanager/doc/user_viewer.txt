@@ -1,0 +1,30 @@
+= ch.iframe.snode.addressmanager (user_viewer) =
+
+== Funktion ==
+Anzeige einer Adresse
+
+== Möglicher Einsatzbereich ==
+Adressdetails anzeigen
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+id               | integer      | Identifikationsnummer der gewünschten Adresse (nur als Request parameter) | 2
+
+== Templatevariablen ==
+*DATA array Alle für die Anzeige der Adresse verfügbaren Daten.
+*REGIONS array Daten aller Regionen
+*COUNTRIES array Daten aller Länder
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Wird die id nicht im Request angegeben, wird die eigene Adresse angezeigt.
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.addressmanager" module="user_viewer" style="defult.tpl"}
+== Todo ==

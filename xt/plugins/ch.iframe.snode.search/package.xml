@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>80</baseid>
+    <id>ch.iframe.snode.search</id>
+    <version>$Rev: 5404 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Suche</name>
+            <description>Inhalt indexieren und finden</description>
+        </de>
+        <en>
+            <name>Search</name>
+            <description>Index content</description>
+        </en>
+    </lang>
+
+    <page>
+        <parentnode>100</parentnode>
+        <id>121</id>
+        <lang>
+            <de>
+                <url>/index.php?TPL=126&amp;adminmode=1</url>
+                <title>System</title>
+                <file>121.tpl</file>
+            </de>
+            <en>
+                <url>/index.php?TPL=126&amp;adminmode=1</url>
+                <title>System</title>
+                <file>121.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>121</parentnode>
+        <id>122</id>
+        <lang>
+            <de>
+                <title>Suchindex</title>
+                <file>122.tpl</file>
+            </de>
+            <en>
+                <title>Searchindex</title>
+                <file>122.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <page>
+        <parentnode>106</parentnode>
+        <id>80</id>
+        <lang>
+            <de>
+                <title>Searchengine Sitemap</title>
+                <file>80.tpl</file>
+            </de>
+            <en>
+                <title>Searchengine Sitemap</title>
+                <file>80.tpl</file>
+            </en>
+        </lang>
+    </page>
+
+    <contenttree>
+        <id>8</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Suche</title>
+            </de>
+            <en>
+                <title>Search</title>
+            </en>
+        </lang>
+    </contenttree>
+
+
+    <module>
+        <id>simple</id>
+        <treenode>8</treenode>
+        <lang>
+            <de>
+                <name>Suchresultate</name>
+                <description>Darstellung der Suchergebnisse</description>
+            </de>
+            <en>
+                <name>Searchresults</name>
+                <description>Display the results of the search</description>
+            </en>
+        </lang>
+        <param>
+            <id>results</id>
+            <lang>
+                <de>
+                    <title>Anzahl Resultate</title>
+                    <description>Geben Sie hier die Anzahl der Suchresultate ein die auf einer Seite dargestellt werden sollen</description>
+                </de>
+                <en>
+                    <title>Results</title>
+                    <description>Type in the number of results you want to display.</description>
+                </en>
+            </lang>
+            <values>10</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>similar</id>
+            <lang>
+                <de>
+                    <title>Aehnlichkeiten</title>
+                    <description>Soll die Suchmaschine nach Ähnlichkeiten suchen falls dass gesuchte Wort nicht im index vorkommt (Löffl => Löffel) </description>
+                </de>
+                <en>
+                    <title>Similarities</title>
+                    <description>Do you want the search engine find words that sounds similar</description>
+                </en>
+            </lang>
+            <values>0,1</values>
+            <valuetype>normal</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>submitter</id>
+        <treenode>8</treenode>
+        <lang>
+            <de>
+                <name>Suchfeld</name>
+                <description>Sucheingabe</description>
+            </de>
+            <en>
+                <name>Searchnox</name>
+                <description>Enter a search term</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+             <param>
+            <id>target_tpl</id>
+            <lang>
+                <de>
+                    <title>Ziel TPL</title>
+                    <description>Welche Seite enthält die Suchresultate (default:10028)?</description>
+                </de>
+                <en>
+                    <title>Target TPL</title>
+                    <description>Which is the Page (TPL) for displaying the search results (default:10028)?</description>
+                </en>
+            </lang>
+            <values>10028</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <table>
+        <id>search_assoc_global</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_assoc_global}_{LANG}` (
+              `info_id` int(14) NOT NULL default '0',
+              `kw_id` int(14) NOT NULL default '0',
+              `weight` smallint(4) NOT NULL default '0',
+              KEY `spider_id` (`info_id`),
+              KEY `key_id` (`kw_id`)
+            ) TYPE=MyISAM;
+        </mysql>
+    </table>
+    <table>
+        <id>search_assoc_global_sys</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_assoc_global_sys}` (
+              `info_id` int(14) NOT NULL default '0',
+              `kw_id` int(14) NOT NULL default '0',
+              `weight` smallint(4) NOT NULL default '0',
+              KEY `spider_id` (`info_id`),
+              KEY `key_id` (`kw_id`)
+            ) TYPE=MyISAM;
+        </mysql>
+    </table>
+    <table>
+        <id>search_found</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_found}_{LANG}` (
+              `id` int(14) unsigned NOT NULL auto_increment,
+              `kw_id` int(14) NOT NULL default '0',
+              `search_date` int(11) unsigned NOT NULL default '0',
+              `profile` varchar(20) default NULL,
+              `session_id` varchar(32) NOT NULL default '',
+              PRIMARY KEY  (`id`)
+            ) TYPE=MyISAM;
+        </mysql>
+    </table>
+    <table>
+        <id>search_found_sys</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_found_sys}` (
+              `id` int(14) unsigned NOT NULL auto_increment,
+              `kw_id` int(14) NOT NULL default '0',
+              `search_date` int(11) unsigned NOT NULL default '0',
+              `profile` varchar(20) default NULL,
+              `session_id` varchar(32) NOT NULL default '',
+              PRIMARY KEY  (`id`)
+            ) TYPE=MyISAM;
+        </mysql>
+    </table>
+    <table>
+        <id>search_infos_global</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_infos_global}_{LANG}` (
+              `id` int(14) unsigned NOT NULL auto_increment,
+			  `title` varchar(255) NOT NULL default '',
+			  `description` text NOT NULL,
+			  `active` int(1) NOT NULL default '1',
+			  `ext_link` varchar(255) default NULL,
+			  `content_id` int(14) unsigned NOT NULL default '0',
+			  `content_type` int(8) unsigned NOT NULL default '0',
+			  `mod_date` int(11) unsigned NOT NULL default '0',
+			  `image` int(11) unsigned default '0',
+			  `public` tinyint(1) unsigned default '0',
+			  `creation_date` int(11) default NULL,
+			  `creation_user` int(11) default NULL,
+			  `mod_user` int(11) default NULL,
+			  `valid_from` int(11) unsigned NOT NULL default '0',
+			  `valid_until` int(11) unsigned NOT NULL default '0',
+			  `manual_date` int(11) unsigned default '0',
+              PRIMARY KEY  (`id`)
+            ) TYPE=MyISAM;
+
+            ALTER TABLE `{TABLE.search_infos_global}_{LANG}` ADD `creation_date` int(11);
+            ALTER TABLE `{TABLE.search_infos_global}_{LANG}` ADD `creation_user` int(11);
+            ALTER TABLE `{TABLE.search_infos_global}_{LANG}` ADD `mod_user` int(11);
+            ALTER TABLE `{TABLE.search_infos_global}_{LANG}` ,
+            add column `valid_from` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `mod_user`,
+            add column `valid_until` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `valid_from`;
+            ALTER TABLE `{TABLE.search_infos_global}_{LANG}` ADD  `manual_date` int (11) UNSIGNED  DEFAULT '0' after `valid_until`;
+        </mysql>
+    </table>
+    <table>
+        <id>search_infos_global_sys</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_infos_global_sys}` (
+              `id` int(14) unsigned NOT NULL auto_increment,
+              `title` varchar(255) NOT NULL,
+              `description` text NOT NULL,
+              `active` int(1) NOT NULL default '1',
+              `ext_link` varchar(255) default NULL,
+              `content_id` int(14) unsigned NOT NULL default '0',
+              `content_type` int(8) unsigned NOT NULL default '0',
+              `mod_date` int(11) unsigned NOT NULL default '0',
+              `image` int(11) unsigned default '0',
+              `public` tinyint(1) unsigned default '0',
+              PRIMARY KEY  (`id`)
+            ) TYPE=MyISAM;
+
+            ALTER TABLE `{TABLE.search_infos_global_sys}` ADD `creation_date` int(11);
+            ALTER TABLE `{TABLE.search_infos_global_sys}` ADD `creation_user` int(11);
+            ALTER TABLE `{TABLE.search_infos_global_sys}` ADD `mod_user` int(11);
+            ALTER TABLE `{TABLE.search_infos_global_sys}` ADD `manual_date` int(11);
+        </mysql>
+    </table>
+    <table>
+        <id>search_keywords</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_keywords}_{LANG}` (
+            `id` int(14) NOT NULL auto_increment,
+            `two` char(6) NOT NULL default '',
+            `kw` varchar(64) NOT NULL default '',
+            `soundex` varchar(4) NOT NULL default '',
+            PRIMARY KEY  (`kw`),
+            UNIQUE KEY `key_id_2` (`id`),
+            KEY `twoletters` (`two`),
+            FULLTEXT KEY `soundex` (`soundex`)
+            ) TYPE=MyISAM;
+            ALTER TABLE `{TABLE.search_keywords}_{LANG}` change  two two CHAR(6);
+        </mysql>
+    </table>
+    <table>
+        <id>search_keywords_sys</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_keywords_sys}` (
+            `id` int(14) NOT NULL auto_increment,
+            `two` char(6) NOT NULL default '',
+            `kw` varchar(64) NOT NULL default '',
+            `soundex` varchar(4) NOT NULL default '',
+            PRIMARY KEY  (`kw`),
+            UNIQUE KEY `key_id_2` (`id`),
+            KEY `twoletters` (`two`),
+            FULLTEXT KEY `soundex` (`soundex`)
+            ) TYPE=MyISAM;
+            ALTER TABLE `{TABLE.search_keywords}_{LANG}` change  two two CHAR(6);
+        </mysql>
+    </table>
+    <table>
+        <id>search_nonwords</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_nonwords}_{LANG}` (
+            `id` int(14) NOT NULL auto_increment,
+            `two` char(6) NOT NULL default '',
+            `kw` varchar(64) NOT NULL default '',
+            PRIMARY KEY  (`kw`),
+            UNIQUE KEY `key_id_2` (`id`),
+            KEY `twoletters` (`two`)
+            ) TYPE=MyISAM;
+            ALTER TABLE `{TABLE.search_keywords}_{LANG}` change  two two CHAR(6);
+        </mysql>
+    </table>
+    <table>
+        <id>search_nonwords_sys</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_nonwords_sys}` (
+            `id` int(14) NOT NULL auto_increment,
+            `two` char(6) NOT NULL default '',
+            `kw` varchar(64) NOT NULL default '',
+            PRIMARY KEY  (`kw`),
+            UNIQUE KEY `key_id_2` (`id`),
+            KEY `twoletters` (`two`)
+            ) TYPE=MyISAM;
+            ALTER TABLE `{TABLE.search_keywords}_{LANG}` change  two two CHAR(6);
+        </mysql>
+    </table>
+    <table>
+        <id>search_notfound</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_notfound}_{LANG}` (
+            `id` int(14) unsigned NOT NULL auto_increment,
+            `kw` varchar(64) NOT NULL default '',
+            `search_date` int(11) unsigned NOT NULL default '0',
+            `profile` varchar(20) default NULL,
+            `session_id` varchar(32) NOT NULL default '',
+            PRIMARY KEY  (`id`)
+            ) TYPE=MyISAM;
+        </mysql>
+    </table>
+    <table>
+        <id>search_notfound_sys</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_notfound_sys}` (
+            `id` int(14) unsigned NOT NULL auto_increment,
+            `kw` varchar(64) NOT NULL default '',
+            `search_date` int(11) unsigned NOT NULL default '0',
+            `profile` varchar(20) default NULL,
+            `session_id` varchar(32) NOT NULL default '',
+            PRIMARY KEY  (`id`)
+            ) TYPE=MyISAM;
+        </mysql>
+    </table>
+    <table>
+        <id>links</id>
+        <mysql>
+            CREATE TABLE `{TABLE.links}` (
+              `id` int(11) unsigned NOT NULL auto_increment,
+              `link` varchar(255) default NULL,
+              `status` int(3) unsigned default NULL,
+              `alt_link` varchar(255) default NULL,
+              `link_title` varchar(255) default NULL,
+              PRIMARY KEY  (`id`),
+              UNIQUE KEY `link` (`link`)
+            ) ENGINE=MyISAM;
+        </mysql>
+    </table>
+    <table>
+        <id>links_rel</id>
+        <mysql>
+            CREATE TABLE `{TABLE.links_rel}` (
+              `link_id` int(11) unsigned NOT NULL default '0',
+              `content_type` int(11) unsigned NOT NULL default '0',
+              `content_id` int(11) NOT NULL default '0',
+              PRIMARY KEY  (`link_id`,`content_id`,`content_type`)
+            ) ENGINE=MyISAM;
+        </mysql>
+    </table>
+    <file>xt/includes/classes/search.class.php</file>
+    <file>xt/includes/classes/search.sys.class.php</file>
+    <file>xt/includes/classes/searchindex.class.php</file>
+    <file>searchenginesitemap.inc.php</file>
+    <changelog>
+        <rev>1797 link extracting added</rev>
+        <rev>1697 sys tables added</rev>
+        <rev>1545 content_type limitation in search.class fixed</rev>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

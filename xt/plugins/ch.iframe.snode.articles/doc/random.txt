@@ -1,0 +1,37 @@
+= ch.iframe.snode.articles (random) =
+
+== Funktion ==
+Zeigt einen Zufälligen Artikel aus vorher bestimmten Kategorien
+
+== Möglicher Einsatzbereich ==
+Eyecatcher, erweiterter Banner etc.
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+categories       | string       | Startkategorie		 | 1
+link2details     | string       | Link für Detailansicht erstellen | no
+order			 | string		| Sortierungsoption		 | 
+count			 | int			| Anzahl der Eintäge	 | 5
+target_tpl		 | int			| Template für die Artikeldetails | 113
+
+== Templatevariablen ==
+*LINK2DETAILS Boolen Details verlinken
+*TARGET_TPL int Template für die Artikeldetails
+*DATA array Daten für die Liste
+*ADMIN_TPL	int Template für die Administrationsoberfläche
+*CATEGORY	int	Kategorie
+*TITLE		string Titel
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.articles" module="random" categories="0,15" count="5" link2details="yes"  style="default.tpl" target_tpl="10062" ncpos="1"}
+
+== Todo ==

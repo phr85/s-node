@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>9100</baseid>
+    <id>ch.iframe.snode.googlemaps</id>
+    <version>5700</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>GoogleMaps Manager</name>
+            <description>Verwaltet aktive und inaktive Google Maps</description>
+        </de>
+        <en>
+            <name>GoogleMaps Manager</name>
+            <description>Manages active and inactive Google Maps</description>
+        </en>
+    </lang>
+    <page>
+        <parentnode>101</parentnode>
+        <id>9100</id>
+        <lang>
+            <de>
+                <title>GoogleMaps</title>
+                <file>9100.tpl</file>
+            </de>
+            <en>
+                <title>GoogleMaps</title>
+                <file>9100.tpl</file>
+            </en>
+        </lang>
+    </page>
+    <contenttype>
+        <id>9100</id>
+        <title>googlemaps</title>
+        <content_table>googlemaps</content_table>
+        <title_field>title</title_field>
+        <icon>member1.png</icon>
+        <id_field>id</id_field>
+    </contenttype>
+
+    <contenttree>
+        <id>9100</id>
+        <parentnode>1</parentnode>
+        <lang>
+            <de>
+                <title>Google Maps</title>
+            </de>
+            <en>
+                <title>Google Maps</title>
+            </en>
+        </lang>
+    </contenttree>
+
+    <module>
+        <id>address_list</id>
+        <treenode>9100</treenode>
+        <main_param>id</main_param>
+        <main_content_type>9100</main_content_type>
+        <lang>
+            <de>
+                <name>Adressliste</name>
+                <description>Liste der Adressen nach Karte</description>
+            </de>
+            <en>
+                <name>Adresslist</name>
+                <description>List of addresses on a map</description>
+            </en>
+        </lang>
+
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>Karte</title>
+                    <description>Von welcher Karte sollen die Adressen dargestellt werden?</description>
+                </de>
+                <en>
+                    <title>Map</title>
+                    <description>Which Addresses should be displayed?</description>
+                </en>
+            </lang>
+            <values>[SELECT main.id,lang.title FROM {PREFIX}googlemaps as main left join {PREFIX}googlemaps_lang as lang on main.id = lang.map_id and lang.lang=\'{LANG}\' WHERE active=1 ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+
+        <param>
+            <id>directiontpl</id>
+            <lang>
+                <de>
+                    <title>Routenplaner TPL</title>
+                    <description>Welches ist die Seite welche die Route zu der Adresse darstellen soll?</description>
+                </de>
+                <en>
+                    <title>Directions TPL</title>
+                    <description>Which is the Page (TPL) for displaying the directions of these addresses</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+	<module>
+        <id>directions</id>
+        <treenode>9100</treenode>
+        <main_param>addr_id</main_param>
+        <lang>
+            <de>
+                <name>Routenplaner</name>
+                <description>Zeigt Route zu einer gegebenen Adresse an.</description>
+            </de>
+            <en>
+                <name>Directions</name>
+                <description>Shows directions for a given address</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+         <param>
+            <id>viewertpl</id>
+            <lang>
+                <de>
+                    <title>Viewer TPL</title>
+                    <description>Auf welche Seite wird die Karte dargestellt?</description>
+                </de>
+                <en>
+                    <title>Viewer TPL</title>
+                    <description>Which Page (TPL) displays the map?</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>list</id>
+        <treenode>9100</treenode>
+        <main_param>style</main_param>
+        <lang>
+            <de>
+                <name>Karten-Liste</name>
+                <description>Listet aktive Karten auf.</description>
+            </de>
+            <en>
+                <name>Map List</name>
+                <description>Lists all active maps</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+        <param>
+            <id>limit</id>
+            <lang>
+                <de>
+                    <title>Limit</title>
+                    <description>Wie viele Karten sollen maximal dargestellt werden?</description>
+                </de>
+                <en>
+                    <title>Limit</title>
+                    <description>How many maps should be listed at once?</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+         <param>
+            <id>viewertpl</id>
+            <lang>
+                <de>
+                    <title>Viewer TPL</title>
+                    <description>Auf welche Seite wird die Karte dargestellt?</description>
+                </de>
+                <en>
+                    <title>Viewer TPL</title>
+                    <description>Which Page (TPL) displays the map itself?</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+    </module>
+
+    <module>
+        <id>viewer</id>
+        <treenode>9100</treenode>
+        <main_param>style</main_param>
+        <lang>
+            <de>
+                <name>Karten-Viewer</name>
+                <description>Zeigt eine ausgewählte Karte im Detail auf.</description>
+            </de>
+            <en>
+                <name>Map Viewer</name>
+                <description>Displays a selected map.</description>
+            </en>
+        </lang>
+        <param>
+            <id>style</id>
+            <lang>
+                <de>
+                    <title>Style</title>
+                    <description>Geben sie default.tpl um den standard style zu verwenden, oder ihr eigenes angepasstes tpl an.</description>
+                </de>
+                <en>
+                    <title>Style</title>
+                    <description>If you have a own tpl for this module, type in yourtplname.tpl</description>
+                </en>
+            </lang>
+            <values>default.tpl</values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+        <param>
+            <id>id</id>
+            <lang>
+                <de>
+                    <title>Karte</title>
+                    <description>Welche Karte soll angezeigt werden?</description>
+                </de>
+                <en>
+                    <title>Map</title>
+                    <description>Which Map shall be displayed?</description>
+                </en>
+            </lang>
+            <values>[SELECT main.id,lang.title FROM {PREFIX}googlemaps as main left join {PREFIX}googlemaps_lang as lang on main.id = lang.map_id and lang.lang=\'{LANG}\' WHERE active=1 ORDER BY title ASC][id][title]</values>
+            <valuetype>sql</valuetype>
+        </param>
+
+         <param>
+            <id>listtpl</id>
+            <lang>
+                <de>
+                    <title>List TPL</title>
+                    <description>Auf welche Seite wird die Kartenliste dargestellt?</description>
+                </de>
+                <en>
+                    <title>List TPL</title>
+                    <description>Which Page (TPL) displays the map list?</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+        <param>
+            <id>directiontpl</id>
+            <lang>
+                <de>
+                    <title>Routenplaner TPL</title>
+                    <description>Welches ist die Seite welche die Route zu der Adresse darstellen soll?</description>
+                </de>
+                <en>
+                    <title>Directions TPL</title>
+                    <description>Which is the Page (TPL) for displaying the directions of these addresses</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+
+        <param>
+            <id>width</id>
+            <lang>
+                <de>
+                    <title>Kartenbreite</title>
+                    <description>Wie breit soll die Karte sein? (Standart: 400px)</description>
+                </de>
+                <en>
+                    <title>Map Width</title>
+                    <description>How many pixels should the map have in width? (Default: 400px)</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+        <param>
+            <id>height</id>
+            <lang>
+                <de>
+                    <title>Kartehoehe</title>
+                    <description>Wie hoch soll die Karte sein? (Standart: 250px)</description>
+                </de>
+                <en>
+                    <title>Map height</title>
+                    <description>How many pixels should the map have in height? (Default: 250px)</description>
+                </en>
+            </lang>
+            <values></values>
+            <valuetype>userinput</valuetype>
+        </param>
+
+    </module>
+
+    <table>
+        <id>googlemaps</id>
+        <mysql> <![CDATA[
+				 CREATE TABLE IF NOT EXISTS `{TABLE.googlemaps}` (
+				  `id` int(11) NOT NULL auto_increment,
+				  `address` varchar(255) NOT NULL,
+				  `address_type` int(11) NOT NULL,
+				  `c_date` int(11) NOT NULL,
+				  `c_user` int(11) NOT NULL,
+				  `active` tinyint(2) NOT NULL,
+				  `image` int(11) NOT NULL,
+				  `image_version` int(11) NOT NULL,
+				  `image_zoom` tinyint(2) NOT NULL,
+				  `icon` int(11) NOT NULL,
+				  `type` int(11) NOT NULL,
+				  `zoom` int(11) NOT NULL,
+				  `latitude` varchar(255) NOT NULL,
+				  `longitude` varchar(255) NOT NULL,
+				  PRIMARY KEY  (`id`)
+			);
+            ]]>
+        </mysql>
+    </table>
+    <table>
+        <id>googlemaps_lang</id>
+        <mysql> <![CDATA[
+				 CREATE TABLE IF NOT EXISTS `{TABLE.googlemaps_lang}` (
+				  `map_id` int(11) NOT NULL auto_increment,
+				  `lang` varchar(10) NOT NULL default '',
+				  `description` varchar(255) NOT NULL default '',
+				  `title` varchar(255) NOT NULL default '',
+				  `c` int(1) NOT NULL default '0',
+				  PRIMARY KEY  (`map_id`,`lang`)
+			);
+            ]]>
+        </mysql>
+    </table>
+	<table>
+        <id>googlemaps_entries</id>
+        <mysql> <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.googlemaps_entries}` (
+			  `id` int(11) NOT NULL auto_increment,
+			  `addr_id` int(11) NOT NULL,
+			  `title` varchar(255) NOT NULL,
+			  `address` varchar(255) NOT NULL,
+			  `description` varchar(255) NOT NULL,
+			  `active` int(2) NOT NULL,
+			  `image` int(11) NOT NULL,
+			  `image_version` int(11) NOT NULL,
+			  `position` int(11) NOT NULL,
+			  `planer` tinyint(2) NOT NULL,
+			  `map_id` int(11) NOT NULL,
+			  `latitude` varchar(255) NOT NULL,
+			  `longitude` varchar(255) NOT NULL,
+			  `icon` int(11) NOT NULL,
+			  `type` int(11) NOT NULL,
+			  PRIMARY KEY  (`id`)
+			);
+            ]]>
+        </mysql>
+	</table>
+	<table>
+        <id>googlemaps_entries_lang</id>
+        <mysql> <![CDATA[
+            CREATE TABLE IF NOT EXISTS `{TABLE.googlemaps_entries_lang}` (
+			  `entry_id` int(11) NOT NULL,
+			  `lang` varchar(10) NOT NULL default '',
+			  `title` varchar(255) NOT NULL default '',
+			  `description` varchar(255) NOT NULL default '',
+			  `c` int(1) NOT NULL default '0',
+			  PRIMARY KEY  (`entry_id`,`lang`)
+			);
+            ]]>
+        </mysql>
+	</table>
+    <openfile>styles/live/googlemaps.css</openfile>
+    <folder>images/admin/tipps/ch.iframe.snode.googlemaps</folder>
+    <changelog>
+        <rev>9100 initial plugin</rev>
+    </changelog>
+</package>

@@ -1,0 +1,27 @@
+= ch.iframe.snode.navigation (breadcrumb) =
+
+== Funktion ==
+Brotkrümmelnavigation
+
+== Möglicher Einsatzbereich ==
+Darstellung des Pfades in dem man sich befindet aufgrund der aktuellen Seitennummer
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+*WAY array Pfad zur akktuellen Seite
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.navigation" module="breadcrumb" style="default.tpl"}
+
+== Todo ==

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package>
+    <id>ch.iframe.snode.banner</id>
+    <version>$Rev: 1523 $</version>
+    <provider>iframe AG</provider>
+    <baseid>3200</baseid>
+    <lang>
+        <de>
+            <name>Domain Checker</name>
+            <description>Prüft die Verfügbarkeit einer Domain</description>
+        </de>
+        <en>
+            <name>Domain Checker</name>
+            <description>Checks domain availablebility</description>
+        </en>
+    </lang>
+    <module>
+        <id>checker</id>
+        <lang>
+            <de>
+                <name>Domain Checker</name>
+                <description>Prüft die Verfügbarkeit einer Domain</description>
+            </de>
+            <en>
+                <name>Domain Checker</name>
+                <description>Checks domain availablebility</description>
+            </en>
+        </lang>
+    </module>
+        
+    <changelog>
+        <rev>1521 changelog added</rev>
+    </changelog>
+</package>

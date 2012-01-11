@@ -1,0 +1,13 @@
+====
+RATINGS
+====
+
+Ermöglicht es dem User, jeglichen Content zu bewerten.
+
+====
+Beispielaufruf
+====
+
+{plugin package="ch.iframe.snode.ratings" module="ratings" style="default.tpl" content_type=270 content_id=2}
+
+content_type=270 und content_id=2 werden ZWINGEND benötigt.

@@ -1,0 +1,1 @@
+{print_data array=$xt50_desktop}

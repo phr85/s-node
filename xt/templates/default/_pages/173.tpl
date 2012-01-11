@@ -1,0 +1,1 @@
+{plugin package="ch.iframe.snode.newsletter" module="send" debug=true}

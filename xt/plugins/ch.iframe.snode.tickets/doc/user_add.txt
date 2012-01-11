@@ -1,0 +1,28 @@
+= ch.iframe.snode.tickets (user_add) =
+
+== Funktion ==
+Frontend für Kunden um Tickets erfassen zu können.
+
+== Möglicher Einsatzbereich ==
+Ticket-System
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+redirect_tpl     | int          | template welches nach erfolgreichem ausfüllen des Formulares angezeigt werden soll | 10000
+
+== Templatevariablen ==
+*xt8100_user_add array Alle Daten des Moduls
+
+== Sessionvarablen ==
+
+== Hinweise ==
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.tickets" module="user_add" redirect_tpl="" style="default.tpl" ncpos="1"}
+
+== Todo ==

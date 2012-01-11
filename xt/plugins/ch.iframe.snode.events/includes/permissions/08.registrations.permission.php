@@ -1,0 +1,9 @@
+<?php
+$GLOBALS['plugin']->addPermission('Registrations',array(
+'editRegistration', 
+'saveRegistration', 
+'showRegistrations', 
+'saveRegistrationAndClose', 
+'exportCsv' 
+));
+?>

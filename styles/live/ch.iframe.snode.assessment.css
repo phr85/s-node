@@ -1,0 +1,40 @@
+.assessment_question {
+	padding: 3px;
+	margin-bottom: 5px;
+}
+.assessment_question_title {
+	color : #000000;
+    font-size : 12px;
+    font-weight : bold;
+    border-bottom : 2px solid #dddddd;
+    padding-bottom : 5px;
+    margin-bottom : 5px;
+    clear : both;
+}
+
+.assessment_question_buttons {
+	color : #000000;
+    font-size : 12px;
+    font-weight : bold;
+    border-top : 2px solid #dddddd;
+    padding-top : 5px;
+    margin-top : 5px;
+    clear : both;
+}
+
+.assessment_answer {
+	padding: 3px;
+}
+.assessment_solutions {
+	padding: 3px;
+	margin-bottom: 5px;
+}
+.assessment_solutions_title {
+	color : #000000;
+    font-size : 12px;
+    font-weight : bold;
+    border-bottom : 2px solid #dddddd;
+    padding-bottom : 5px;
+    margin-bottom : 5px;
+    clear : both;
+}

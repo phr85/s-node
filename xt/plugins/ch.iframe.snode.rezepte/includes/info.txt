@@ -1,0 +1,11 @@
+TODO: rezept PDF generieren
+TODO: ratings
+TODO: verfeinerte suche
+
+
+Um den katalog mit relations auszur�sten einfach nur
+<a href="javascript:popup('/index.php?TPL=557&amp;ctype={$BASEID}&amp;cid={$cid}&amp;ctitle={$ctitle}&amp;conf[table_tree]=rezepte_tree&amp;conf[table_nodes]=rezepte_tree_nodes&amp;conf[itemrelfieldname]=recipe_id&amp;conf[noderelfieldname]=node_id&amp;conf[table_items]=rezepte_details&amp;conf[table_items_relation]=rezepte_r2tree&amp;conf[tree_ctype]=5701&amp;conf[item_ctype]=5700',370,300);"><img src="{$XT_IMAGES}icons/package.png" {"rezepte"|alttag} /></a>
+in /templates/widgets/relations.tpl eintragen.
+
+
+

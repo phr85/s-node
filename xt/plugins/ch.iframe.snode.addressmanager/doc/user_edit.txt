@@ -1,0 +1,35 @@
+= ch.iframe.snode.addressmanager (user_edit) =
+
+== Funktion ==
+Editiermaske für Adresseintäge
+
+== Möglicher Einsatzbereich ==
+Editieren der Adressen, z.B für Shop (Bestell- und Lieferadressen)
+
+== Mitgelieferte Templates ==
+*default.tpl
+*login.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+*REGIONS array Daten aller Regionen
+*DATA array Alle zuvor ausgefüllten und abgesendeten Daten für das Modul
+*COUNTRIES array Daten aller Länder
+*REQUIRED_FIELDS array Benötigte Felder (Wird in config.inc.php des Plugins festgelegt)
+*IMAGE_PICKER_TPL int Templatenummer des Bildpickers (Wird in config.inc.php des Plugins festgelegt)
+*IMAGE_PICKER_BASE_ID int BaseId des Bildpickers (Wird in config.inc.php des Plugins festgelegt)
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Hat der Benutzer nicht die Rechte "selfmanage" oder ist nicht angemolden, wird das Template login.tpl geladen. 
+
+== Beispiel ==
+{plugin package="ch.iframe.snode.addressmanager" module="user_edit" style="defult.tpl"}
+
+== Todo ==

@@ -1,0 +1,27 @@
+trackback.php
+=============
+Die Datei trackback.php auf dem Wurzelverzeichnis nimmt eingehende Trackbacks entgegen.
+
+Bsp für ch.iframe.snode.articles/viewer/default.txt:
+<a href="trackback.php?ctype=270&amp;cid={$ARTICLE.id}"><img src="images/icons/trackback.png" alt="{"Trackback URI"|translate}" title="{"Trackback URI"|translate}" /></a>
+
+Aufbau von trackback.php
+------------------------
+Einkommende Trackbacks sind gekoppelt an den Content type und die Content id. Somit sind eingehende Trackbacks eindeutig mit einem 
+Inhalt von S-Node verknüpft.
+
+ctype	:	Content type des lokalen trackbacks.
+cid		: 	content id des lokalen trackbaks.
+
+Weitere Beispiele:
+------------------
+Page	:	ctype=60, cid=$TPL
+Gallery	:	ctype=460, cid="ID der Gallery"
+usw...
+Um die eingehenden Trackbacks darzustellen müssen die Parameter des trackback_viewer entsprechend gewählt werden.
+
+Virtuelle Trackbacks:
+-------------------
+Sollen virtuelle Tackbacks zur verfügung gestellt werden, also Trackbacks, die zu keinem Content direkt verknüpft sind muss der content type
+und die content id so gewählt werden, dass es kein Konflikt mit bestehenden Inhalten gibt. Um die eingehenden Trackbacks darzustellen müssen die
+Parameter des trackback_viewer entsprechend gewählt werden.

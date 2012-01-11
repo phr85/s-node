@@ -1,0 +1,1 @@
+<a href="{$smarty.server.PHP_SELF}?logout=1">{"Logout"|translate}</a>

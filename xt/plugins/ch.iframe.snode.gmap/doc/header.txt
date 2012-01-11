@@ -1,0 +1,35 @@
+= ch.iframe.snode.gmap (header) =
+
+== Funktion ==
+Der Header integriert das von Google nötige Javascript im Header bereich der Seite.
+
+== Möglicher Einsatzbereich ==
+Dieses Modul muss eingebunden werden, damit das gmap-Plugin überhaupt funktioniert.
+
+== Mitgelieferte Templates ==
+*default.tpl
+
+
+== Parameter ==
+Name             | DatenTyp     | Beschreibung           | Beispieldaten
+style            | string       | template für den build | default.tpl
+
+
+== Templatevariablen ==
+
+== Sessionvarablen ==
+
+== Hinweise ==
+Dieses Modul muss eingebunden werden, damit das gmap-Plugin überhaupt funktioniert.
+
+Geben Sie ihren API-Key von google maps in der Konfigurationsdatei dieses Plugins an.
+Beispiel für ch.iframe.snode.gmap/includes/config.inc.php:
+XT::addConfig("key","ABQIAAAAzsQgAraedoQ0iLtU3UoBpBRXOyrdeTyf6c28WuREa1OaB5p1rBQj-l_CHT1f7eczYWrQdcOH4gTzUw");
+
+== Beispiel ==
+Im Header (meist includes/header/header.tpl) sollte folgender Aufruf zwischen <head> und </head> stehen:
+{plugin package="ch.iframe.snode.gmap" module="header"}
+
+Vergewissern Sie sich dass Sie dies für jedes Template machen, welches das gmap-Plugin verwendet!
+
+== Todo ==

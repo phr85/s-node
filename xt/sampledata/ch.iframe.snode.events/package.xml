@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>5100</baseid>
+    <id>ch.iframe.snode.events</id>
+    <version>$Rev: 1978 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Events</name>
+            <description>Events verwalten</description>
+        </de>
+        <en>
+            <name>Events</name>
+            <description>Manage events</description>
+        </en>
+    </lang>
+    <changelog>
+        <rev>1978 Initial</rev>
+    </changelog>
+</package>

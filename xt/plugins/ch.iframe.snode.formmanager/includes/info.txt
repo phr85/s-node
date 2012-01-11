@@ -1,0 +1,38 @@
+Fileupload:
+für den fileupload unbedingt den scripting identifier angeben. 
+Keine einträge in initialwert,als obligatorisch markieren?,schreibgeschützt? machen
+
+
+Das upgeloadete file befindet sich in XT/tmp/TMPNAMEOFFILE       (ROOT_DIR . $fileinfos[tmp_name])
+Weitere infos zur datei ist mit getSessionValue(scripting_identifier) zu holen
+Array
+(
+    [name] => dateiname
+    [type] => application/force-download
+    [tmp_name] => /tmp/phpMhrQ2A
+    [error] => 0
+    [size] => 63473
+)
+
+Die Weiterbearbeitung der Dateien mit dem Postscript machen. 
+- Dateien vom tmpordner aus verschieben
+- unsetSessionValue(scripting_identifier) machen wenn man nochmals dateien raufladen will
+- Mit rulescripts arbeiten wenn man noch vor der veröffentlichung was mit den dateien machen 
+  will (bspw. multiuploader)
+-----------------------------------------------------------------------------------------------------
+
+
+EMAILS:
+Wenn ein Feld $fields['email_copy'] auf 1 oder true gesetzt wird, dann wird eine mail im CC an $fields['email'] geschikt
+Wenn ein Feld $fields['email_bcc'] auf 1 oder true gesetzt wird, dann wird eine mail im BCC an $fields['email'] geschikt
+
+Wenn $fields['email_cc'] vorhanden ist wird auch noch auf $fields['email_cc'] eine CC gesendet
+Wenn $fields['subject'] nicht leer ist wird $fields['subject'] mit dem systemnamen und dem form-title und der fillout id als Betreff Verwenden. 
+
+Wenn der Scripting identifier auf "email" gesetzt wird, wird diese Adresse als antwortadresse verwendet
+-----------------------------------------------------------------------------------------------------
+
+Initalwert:
+Als Initialwert kann ein Session, Post, Get oder Request verwendet werden. 
+Einfach session:foobaar eingeben, damit wird der wert von $_SESSION[foobaar] als initialwert verwendet.
+

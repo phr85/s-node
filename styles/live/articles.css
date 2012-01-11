@@ -1,0 +1,105 @@
+/* Articles */
+
+/* Layout */
+
+div.introduction {
+        color: #000000;
+        margin: 5px 0;
+}
+
+div.flying_left {
+        width:400px;
+        float:left;
+        margin-right:20px;
+}
+
+div.flying_right {
+        width:230px;
+        float:left;
+}
+
+div.art_float{
+        float:left;
+        margin-right:5px;
+}
+
+/* Images */
+
+.left {
+    float: left;
+    margin: 0px 15px 5px 0px;
+}
+
+.right {
+    float: right;
+    margin: 0px 0px 5px 10px;
+}
+
+.top {
+    display: block;
+    margin: 0px 0px 5px 0px;
+}
+
+/* Newslist */
+div.newslist {
+    background-color: #EEEEEE;
+    padding:10px;
+}
+
+img.newslist {
+    border: 1px solid #6F94B2;
+    margin: 0px 10px 0px 0px;
+    float:left;
+}
+
+h2.newslisttitle{
+    font-size:13px;
+    font-weight:bold;
+    margin-top:0px;
+}
+
+h3.newslistsubtitle{
+    font-size:12px;
+    font-weight:normal;
+}
+div.newslistitem{
+    margin-bottom:10px;
+}
+
+/* Tabs */
+div.tabs {
+    border:1px solid #DFDFDF;
+    min-height:200px;
+}
+
+div.tabchapter {
+	margin:4px;
+}
+
+ul.tabs {
+	clear: both;
+	height: 25px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.tabs li {
+	float: left;
+	height: 25px;
+}
+
+ul.tabs li a {
+	position: relative;
+	display: block;
+    min-width:100px;
+	padding: 5px 15px 5px 15px;
+	color: #000000;
+	background-color:#EFEFEF;
+	border-right:1px solid #DFDFDF;
+	border-bottom:1px solid #DFDFDF;
+}
+
+ul.tabs li a.active {
+	background-color: #DEDEDE;
+}

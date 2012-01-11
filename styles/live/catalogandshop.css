@@ -1,0 +1,36 @@
+td.cathead {
+padding: 5px;
+background-color:#CDCDCD;
+}
+td.catbasketrow{
+padding:5px;
+border-bottom: 1px solid #CDCDCD;
+}
+td.catbasketrowbtop{
+padding:5px;
+border-top: 1px solid #CDCDCD;
+}
+
+div.catDoError{
+background-color: #DEACAC;
+padding: 10px;
+color: white;
+}
+
+div.catopwrapper{
+background-color: #DADADA;
+border:1px solid #F0F0F0;
+}
+
+div.catop{
+float:left;
+padding: 2px 9px;
+border-right:1px solid white;
+}
+
+div.catopselected{
+float:left;
+background-color: #CDCDCD;
+padding: 2px 9px;
+border-right:1px solid white;
+}

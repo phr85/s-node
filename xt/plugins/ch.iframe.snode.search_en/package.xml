@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <baseid>81</baseid>
+    <id>ch.iframe.snode.search_en</id>
+    <version>$Rev: 5404 $</version>
+    <provider>iframe AG</provider>
+    <lang>
+        <de>
+            <name>Suche Englische Erweiterung</name>
+            <description>Inhalt indexieren und finden</description>
+        </de>
+        <en>
+            <name>Search enlish extension</name>
+            <description>Index content</description>
+        </en>
+    </lang>
+    <table>
+        <id>search_found</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_found}_en` (
+              `id` int(14) unsigned NOT NULL auto_increment,
+              `kw_id` int(14) NOT NULL default '0',
+              `search_date` int(11) unsigned NOT NULL default '0',
+              `profile` varchar(20) default NULL,
+              `session_id` varchar(32) NOT NULL default '',
+              PRIMARY KEY  (`id`)
+            );
+        </mysql>
+    </table>
+    <table>
+        <id>search_assoc_global</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_assoc_global}_en` (
+              `info_id` int(14) NOT NULL default '0',
+              `kw_id` int(14) NOT NULL default '0',
+              `weight` smallint(4) NOT NULL default '0',
+              KEY `spider_id` (`info_id`),
+              KEY `key_id` (`kw_id`)
+            );
+        </mysql>
+    </table>
+    <table>
+        <id>search_infos_global</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_infos_global}_en` (
+             `id` int(14) unsigned NOT NULL auto_increment,
+			  `title` varchar(255) NOT NULL default '',
+			  `description` text NOT NULL,
+			  `active` int(1) NOT NULL default '1',
+			  `ext_link` varchar(255) default NULL,
+			  `content_id` int(14) unsigned NOT NULL default '0',
+			  `content_type` int(8) unsigned NOT NULL default '0',
+			  `mod_date` int(11) unsigned NOT NULL default '0',
+			  `image` int(11) unsigned default '0',
+			  `public` tinyint(1) unsigned default '0',
+			  `creation_date` int(11) default NULL,
+			  `creation_user` int(11) default NULL,
+			  `mod_user` int(11) default NULL,
+			  `valid_from` int(11) unsigned NOT NULL default '0',
+			  `valid_until` int(11) unsigned NOT NULL default '0',
+			  `manual_date` int(11) unsigned default '0',
+              PRIMARY KEY  (`id`)
+            );
+
+            ALTER TABLE `{TABLE.search_infos_global}_en` ADD `creation_date` int(11);
+            ALTER TABLE `{TABLE.search_infos_global}_en` ADD `creation_user` int(11);
+            ALTER TABLE `{TABLE.search_infos_global}_en` ADD `mod_user` int(11);
+            ALTER TABLE `{TABLE.search_infos_global}_en` ,
+            add column `valid_from` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `mod_user`,
+            add column `valid_until` int (11) UNSIGNED  DEFAULT '0' NOT NULL  after `valid_from`;
+            ALTER TABLE `{TABLE.search_infos_global}_en` ADD  `manual_date` int (11) UNSIGNED  DEFAULT '0' after `valid_until`;
+        </mysql>
+    </table>
+    <table>
+        <id>search_keywords</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_keywords}_en` (
+            `id` int(14) NOT NULL auto_increment,
+            `two` char(6) NOT NULL default '',
+            `kw` varchar(64) NOT NULL default '',
+            `soundex` varchar(4) NOT NULL default '',
+            PRIMARY KEY  (`kw`),
+            UNIQUE KEY `key_id_2` (`id`),
+            KEY `twoletters` (`two`),
+            FULLTEXT KEY `soundex` (`soundex`)
+            );
+            ALTER TABLE `{TABLE.search_keywords}_en` change  two two CHAR(6);
+        </mysql>
+    </table>
+    <table>
+        <id>search_nonwords</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_nonwords}_en` (
+            `id` int(14) NOT NULL auto_increment,
+            `two` char(6) NOT NULL default '',
+            `kw` varchar(64) NOT NULL default '',
+            PRIMARY KEY  (`kw`),
+            UNIQUE KEY `key_id_2` (`id`),
+            KEY `twoletters` (`two`)
+            );
+            ALTER TABLE `{TABLE.search_keywords}_en` change  two two CHAR(6);
+        </mysql>
+    </table>
+    <table>
+        <id>search_notfound</id>
+        <mysql>
+            CREATE TABLE `{TABLE.search_notfound}_en` (
+            `id` int(14) unsigned NOT NULL auto_increment,
+            `kw` varchar(64) NOT NULL default '',
+            `search_date` int(11) unsigned NOT NULL default '0',
+            `profile` varchar(20) default NULL,
+            `session_id` varchar(32) NOT NULL default '',
+            PRIMARY KEY  (`id`)
+            );
+        </mysql>
+    </table>
+</package>
